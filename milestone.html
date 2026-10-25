@@ -1,0 +1,2470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Avenue Milestone | Digital Brochure | The Avenue Builders &amp; Developers Nashik</title>
+  <meta name="description" content="Explore The Avenue Milestone: Nashik's first-ever 4.5 BHK Prestigious Homes featuring 12.5 ft ceiling heights, 2 iconic high-rise towers, 60 exclusive units, and 50+ unique lifestyle experiences at Karmayogi Nagar, Nashik. Interactive digital brochure." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base Site Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Digital Brochure Presentation Styles for The Avenue Milestone -->
+  <style>
+    :root {
+      --milestone-brand: #2b1b17;
+      --milestone-brand-dark: #1b110e;
+      --milestone-brand-light: #3e2822;
+      --milestone-bronze: #c49e72;
+      --milestone-bronze-light: #dfbe97;
+      --milestone-bronze-dark: #9f784d;
+      --milestone-plum: #8c3b68;
+      --milestone-plum-light: #ab5183;
+      --milestone-sand: #fbf9f5;
+      --milestone-border: rgba(196, 158, 114, 0.22);
+      --milestone-sidebar-width: 215px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.milestone-digital-brochure-page {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--milestone-brand-dark);
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FIXED VERTICAL SIDEBAR NAVIGATION
+       ========================================================= */
+    .milestone-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--milestone-sidebar-width);
+      background-color: var(--milestone-brand);
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.55);
+      border-right: 1px solid var(--milestone-border);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .milestone-sidebar-brand {
+      padding: 26px 16px 20px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .milestone-emblem-wrap {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 12px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 80%, #f6f1ea 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45), 0 0 0 3px rgba(196, 158, 114, 0.55);
+      position: relative;
+    }
+
+    .milestone-emblem-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(196, 158, 114, 0.6);
+      pointer-events: none;
+    }
+
+    .milestone-emblem-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.12));
+    }
+
+    .milestone-brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .milestone-brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--milestone-bronze);
+      display: block;
+      font-weight: 600;
+    }
+
+    .milestone-nav-list {
+      list-style: none;
+      padding: 22px 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .milestone-nav-item {
+      width: 100%;
+    }
+
+    .milestone-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 11px 20px;
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-left: 3px solid transparent;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .milestone-nav-link:hover {
+      background-color: rgba(196, 158, 114, 0.12);
+      color: #ffffff;
+      padding-left: 24px;
+    }
+
+    .milestone-nav-link.active {
+      background-color: rgba(196, 158, 114, 0.2);
+      color: #ffffff;
+      border-left-color: var(--milestone-bronze);
+      font-weight: 700;
+    }
+
+    .milestone-nav-link.active::after {
+      content: '●';
+      position: absolute;
+      right: 18px;
+      font-size: 0.65rem;
+      color: var(--milestone-bronze);
+    }
+
+    .milestone-sidebar-footer {
+      padding: 18px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(27, 17, 14, 0.65);
+    }
+
+    .milestone-return-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid rgba(196, 158, 114, 0.4);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .milestone-return-btn:hover {
+      background-color: var(--milestone-bronze);
+      border-color: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+    }
+
+    /* Mobile Header Bar */
+    .milestone-mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background-color: var(--milestone-brand);
+      z-index: 1001;
+      padding: 0 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      border-bottom: 1px solid var(--milestone-border);
+    }
+
+    .milestone-mobile-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .milestone-mobile-logo img {
+      height: 38px;
+      width: auto;
+      background: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .milestone-mobile-logo-text {
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .milestone-menu-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .milestone-menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .milestone-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(3px);
+      z-index: 999;
+    }
+
+    /* Content Area */
+    .milestone-content-wrapper {
+      margin-left: var(--milestone-sidebar-width);
+      position: relative;
+      background-color: #ffffff;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* =========================================================
+       SECTION 1: HERO (#home)
+       ========================================================= */
+    .milestone-hero-section {
+      min-height: 100vh;
+      position: relative;
+      background: #1b110e;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 60px 60px 60px;
+      overflow: hidden;
+    }
+
+    .milestone-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/milestone-brochure/milestone-hero-render.jpg');
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.48;
+      transform: scale(1.02);
+      transition: transform 8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .milestone-hero-section:hover .milestone-hero-bg {
+      transform: scale(1.06);
+    }
+
+    .milestone-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(27, 17, 14, 0.94) 0%,
+        rgba(43, 27, 23, 0.75) 45%,
+        rgba(27, 17, 14, 0.92) 100%
+      );
+    }
+
+    .milestone-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin-top: 20px;
+    }
+
+    .milestone-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--milestone-bronze);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .milestone-eyebrow::before,
+    .milestone-eyebrow::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--milestone-bronze);
+    }
+
+    .milestone-hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .milestone-hero-tagline {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+      color: var(--milestone-bronze-light);
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+    }
+
+    .milestone-hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 780px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .milestone-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .milestone-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(196, 158, 114, 0.15);
+      border: 1px solid var(--milestone-border);
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ffffff;
+      backdrop-filter: blur(4px);
+    }
+
+    .milestone-badge-pill.accent-plum {
+      background: rgba(140, 59, 104, 0.25);
+      border-color: rgba(140, 59, 104, 0.6);
+      color: #f7d2e7;
+    }
+
+    .milestone-hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .milestone-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .milestone-cta-primary {
+      background-color: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+      box-shadow: 0 4px 18px rgba(196, 158, 114, 0.4);
+    }
+
+    .milestone-cta-primary:hover {
+      background-color: var(--milestone-bronze-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 158, 114, 0.55);
+    }
+
+    .milestone-cta-secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .milestone-cta-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .milestone-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 32px;
+      margin-top: 40px;
+    }
+
+    .milestone-stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .milestone-stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--milestone-bronze-light);
+    }
+
+    .milestone-stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Common Section Styles */
+    .milestone-section {
+      padding: 100px 60px;
+      position: relative;
+    }
+
+    .milestone-section-header {
+      max-width: 800px;
+      margin-bottom: 50px;
+    }
+
+    .milestone-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--milestone-brand);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .milestone-subheading {
+      font-size: 1.05rem;
+      color: #64748b;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* =========================================================
+       SECTION 2: ABOUT MILESTONE (#about)
+       ========================================================= */
+    .milestone-about-section {
+      background-color: var(--milestone-sand);
+    }
+
+    .milestone-about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .milestone-about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: #475569;
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+
+    .milestone-about-text p strong {
+      color: var(--milestone-brand);
+      font-weight: 600;
+    }
+
+    .milestone-about-quote-box {
+      border-left: 3px solid var(--milestone-bronze);
+      padding: 16px 20px;
+      background: rgba(196, 158, 114, 0.08);
+      border-radius: 0 6px 6px 0;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--milestone-brand);
+      font-style: italic;
+    }
+
+    .milestone-about-media-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(43, 27, 23, 0.16);
+      border: 1px solid rgba(196, 158, 114, 0.3);
+    }
+
+    .milestone-about-media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .milestone-about-media-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .milestone-media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(27, 17, 14, 0.9) 0%, rgba(27, 17, 14, 0) 100%);
+      color: #ffffff;
+    }
+
+    .milestone-media-caption h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      color: var(--milestone-bronze-light);
+    }
+
+    .milestone-media-caption p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Pillars of Milestone */
+    .milestone-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .milestone-pillar-card {
+      background: #ffffff;
+      border: 1px solid #ebe5dc;
+      border-radius: 8px;
+      padding: 32px 28px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .milestone-pillar-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--milestone-bronze), var(--milestone-plum));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .milestone-pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(43, 27, 23, 0.12);
+      border-color: var(--milestone-bronze);
+    }
+
+    .milestone-pillar-card:hover::before {
+      opacity: 1;
+    }
+
+    .milestone-pillar-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .milestone-pillar-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--milestone-brand);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .milestone-pillar-desc {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    /* Ceiling Height Feature Strip */
+    .milestone-ceiling-strip {
+      background: linear-gradient(135deg, var(--milestone-brand) 0%, var(--milestone-brand-dark) 100%);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 40px;
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      align-items: center;
+      border: 1px solid var(--milestone-border);
+    }
+
+    .milestone-ceiling-highlight {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .milestone-ceiling-val {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--milestone-bronze-light);
+      line-height: 1;
+    }
+
+    .milestone-ceiling-sub {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .milestone-ceiling-content h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.4rem;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .milestone-ceiling-content p {
+      font-size: 0.94rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.75;
+    }
+
+    /* =========================================================
+       SECTION 3: 50+ UNIQUE EXPERIENCES (#amenities)
+       ========================================================= */
+    .milestone-amenities-section {
+      background: var(--milestone-brand-dark);
+      color: #ffffff;
+      padding: 100px 60px;
+      position: relative;
+    }
+
+    .milestone-amenities-section .milestone-eyebrow {
+      color: var(--milestone-bronze-light);
+    }
+
+    .milestone-amenities-section .milestone-title {
+      color: #ffffff;
+    }
+
+    .milestone-amenities-section .milestone-subheading {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .milestone-experience-categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .milestone-exp-category-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--milestone-border);
+      border-radius: 8px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .milestone-exp-category-card:hover {
+      background: rgba(196, 158, 114, 0.08);
+      border-color: var(--milestone-bronze);
+      transform: translateY(-4px);
+    }
+
+    .milestone-exp-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--milestone-bronze-light);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .milestone-exp-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .milestone-exp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .milestone-exp-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .milestone-exp-list li::before {
+      content: '◆';
+      color: var(--milestone-bronze);
+      font-size: 0.55rem;
+    }
+
+    /* Amenities Visual Showcase Grid */
+    .milestone-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .milestone-gallery-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 280px;
+      cursor: pointer;
+    }
+
+    .milestone-gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .milestone-gallery-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .milestone-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(27, 17, 14, 0.95) 0%, rgba(27, 17, 14, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      transition: background 0.3s ease;
+    }
+
+    .milestone-gallery-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .milestone-gallery-tag {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--milestone-bronze-light);
+    }
+
+    /* =========================================================
+       SECTION 4: FLOOR PLANS & TERRACES (#floor-plans)
+       ========================================================= */
+    .milestone-plans-section {
+      background-color: #ffffff;
+    }
+
+    .milestone-plan-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .milestone-tab-btn {
+      padding: 10px 20px;
+      background: var(--milestone-sand);
+      border: 1px solid #ebe5dc;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--milestone-brand);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .milestone-tab-btn:hover {
+      border-color: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+    }
+
+    .milestone-tab-btn.active {
+      background: var(--milestone-brand);
+      color: #ffffff;
+      border-color: var(--milestone-brand);
+    }
+
+    .milestone-plans-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .milestone-plan-card {
+      background: var(--milestone-sand);
+      border: 1px solid #ebe5dc;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .milestone-plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(43, 27, 23, 0.1);
+      border-color: var(--milestone-bronze);
+    }
+
+    .milestone-plan-img-wrap {
+      height: 320px;
+      background: #f4eee6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .milestone-plan-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .milestone-plan-card:hover .milestone-plan-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .milestone-plan-details {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .milestone-plan-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--milestone-brand);
+      font-weight: 700;
+    }
+
+    .milestone-plan-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    .milestone-plan-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid #f0eae1;
+      margin-top: 8px;
+    }
+
+    .milestone-spec-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .milestone-spec-k {
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .milestone-spec-v {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--milestone-brand);
+    }
+
+    .milestone-plan-action {
+      margin-top: 16px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .milestone-enlarge-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--milestone-brand);
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: background 0.25s ease;
+    }
+
+    .milestone-enlarge-btn:hover {
+      background: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+    }
+
+    /* =========================================================
+       SECTION 5: SPECIFICATIONS (#specifications)
+       ========================================================= */
+    .milestone-specs-section {
+      background-color: var(--milestone-sand);
+    }
+
+    .milestone-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .milestone-spec-card {
+      background: #ffffff;
+      border: 1px solid #ebe5dc;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+    }
+
+    .milestone-spec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(43, 27, 23, 0.08);
+      border-color: var(--milestone-bronze);
+    }
+
+    .milestone-spec-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--milestone-brand);
+      margin-bottom: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .milestone-spec-bullet {
+      width: 6px;
+      height: 6px;
+      background: var(--milestone-bronze);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .milestone-spec-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* =========================================================
+       SECTION 6: LOCATION & CONNECTIVITY (#location)
+       ========================================================= */
+    .milestone-location-section {
+      background-color: #ffffff;
+    }
+
+    .milestone-location-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .milestone-location-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .milestone-loc-item {
+      background: var(--milestone-sand);
+      border: 1px solid #ebe5dc;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .milestone-loc-item h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--milestone-brand);
+      margin-bottom: 6px;
+    }
+
+    .milestone-loc-item p {
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .milestone-location-card {
+      background: var(--milestone-brand);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 40px;
+      border: 1px solid var(--milestone-border);
+      box-shadow: 0 16px 36px rgba(43, 27, 23, 0.2);
+    }
+
+    .milestone-location-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      color: var(--milestone-bronze-light);
+      margin-bottom: 14px;
+    }
+
+    .milestone-location-card p {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .milestone-address-box {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .milestone-address-box strong {
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       SECTION 7: DOWNLOAD & CONTACT (#contact)
+       ========================================================= */
+    .milestone-contact-section {
+      background: linear-gradient(135deg, var(--milestone-brand-dark) 0%, var(--milestone-brand) 100%);
+      color: #ffffff;
+      padding: 100px 60px;
+    }
+
+    .milestone-contact-section .milestone-eyebrow {
+      color: var(--milestone-bronze-light);
+    }
+
+    .milestone-contact-section .milestone-title {
+      color: #ffffff;
+    }
+
+    .milestone-contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .milestone-contact-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .milestone-rera-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--milestone-border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .milestone-rera-tag {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--milestone-bronze-light);
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .milestone-rera-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .milestone-rera-site {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    .milestone-office-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+    }
+
+    .milestone-office-details strong {
+      color: var(--milestone-bronze-light);
+    }
+
+    .milestone-download-box {
+      background: linear-gradient(135deg, rgba(43, 27, 23, 0.85) 0%, rgba(27, 17, 14, 0.95) 100%);
+      border: 1px solid var(--milestone-bronze);
+      border-radius: 8px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+    }
+
+    .milestone-download-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(196, 158, 114, 0.15);
+      border: 1px solid var(--milestone-bronze);
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--milestone-bronze);
+    }
+
+    .milestone-download-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.55rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .milestone-download-desc {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .milestone-download-btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 32px;
+      background: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(196, 158, 114, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .milestone-download-btn-main:hover {
+      background: var(--milestone-bronze-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(196, 158, 114, 0.55);
+    }
+
+    /* Modal */
+    .milestone-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(27, 17, 14, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .milestone-modal.open {
+      display: flex;
+      animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .milestone-modal-content {
+      position: relative;
+      max-width: 1200px;
+      max-height: 90vh;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .milestone-modal-header {
+      padding: 18px 24px;
+      background: var(--milestone-brand);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--milestone-border);
+    }
+
+    .milestone-modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .milestone-modal-close {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 4px;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .milestone-modal-close:hover {
+      opacity: 1;
+      color: var(--milestone-bronze);
+    }
+
+    .milestone-modal-body {
+      padding: 24px;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fbf9f5;
+      flex: 1;
+    }
+
+    .milestone-modal-body img {
+      max-width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .milestone-modal-footer {
+      padding: 14px 24px;
+      background: #ffffff;
+      border-top: 1px solid #ebe5dc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .milestone-modal-footer span {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    .milestone-modal-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--milestone-brand);
+      color: #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.25s;
+    }
+
+    .milestone-modal-download-btn:hover {
+      background: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+    }
+
+    .milestone-back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--milestone-bronze);
+      color: var(--milestone-brand-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 990;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .milestone-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .milestone-back-to-top:hover {
+      background: var(--milestone-bronze-light);
+      transform: translateY(-3px);
+    }
+
+    /* Responsiveness */
+    @media (max-width: 1024px) {
+      .milestone-sidebar {
+        transform: translateX(-100%);
+      }
+      .milestone-sidebar.open {
+        transform: translateX(0);
+      }
+      .milestone-mobile-bar {
+        display: flex;
+      }
+      .milestone-overlay.open {
+        display: block;
+      }
+      .milestone-content-wrapper {
+        margin-left: 0;
+        padding-top: 64px;
+      }
+      .milestone-hero-section {
+        padding: 60px 30px;
+      }
+      .milestone-section {
+        padding: 70px 30px;
+      }
+      .milestone-hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .milestone-about-grid,
+      .milestone-location-grid,
+      .milestone-contact-grid,
+      .milestone-ceiling-strip {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .milestone-pillars-grid,
+      .milestone-plans-grid,
+      .milestone-experience-categories,
+      .milestone-gallery-grid,
+      .milestone-specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .milestone-hero-section {
+        padding: 40px 20px;
+      }
+      .milestone-section {
+        padding: 50px 20px;
+      }
+      .milestone-hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .milestone-location-features {
+        grid-template-columns: 1fr;
+      }
+      .milestone-hero-actions {
+        flex-direction: column;
+      }
+      .milestone-cta-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .milestone-modal {
+        padding: 12px;
+      }
+      .milestone-plan-img-wrap {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body class="milestone-digital-brochure-page">
+
+  <!-- =========================================================
+       FIXED VERTICAL SIDEBAR NAVIGATION
+       ========================================================= -->
+  <aside class="milestone-sidebar" id="milestoneSidebar">
+    <div class="milestone-sidebar-brand">
+      <div class="milestone-emblem-wrap">
+        <img src="assets/logo-avenue-milestone.png" alt="The Avenue Milestone" class="milestone-emblem-img" />
+      </div>
+      <span class="milestone-brand-title">The Avenue Milestone</span>
+      <span class="milestone-brand-sub">4.5 BHK Prestigious Homes</span>
+    </div>
+
+    <ul class="milestone-nav-list" id="milestoneNavList">
+      <li class="milestone-nav-item">
+        <a href="#home" class="milestone-nav-link active">Home</a>
+      </li>
+      <li class="milestone-nav-item">
+        <a href="#about" class="milestone-nav-link">About Milestone</a>
+      </li>
+      <li class="milestone-nav-item">
+        <a href="#amenities" class="milestone-nav-link">50+ Experiences</a>
+      </li>
+      <li class="milestone-nav-item">
+        <a href="#floor-plans" class="milestone-nav-link">Floor Plans</a>
+      </li>
+      <li class="milestone-nav-item">
+        <a href="#specifications" class="milestone-nav-link">Specifications</a>
+      </li>
+      <li class="milestone-nav-item">
+        <a href="#location" class="milestone-nav-link">Location &amp; Map</a>
+      </li>
+      <li class="milestone-nav-item">
+        <a href="#contact" class="milestone-nav-link">Download &amp; Contact</a>
+      </li>
+    </ul>
+
+    <div class="milestone-sidebar-footer">
+      <a href="projects.html#milestone" class="milestone-return-btn" title="Back to All Projects">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Projects</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <div class="milestone-mobile-bar" id="milestoneMobileBar">
+    <a href="#home" class="milestone-mobile-logo">
+      <img src="assets/logo-avenue-milestone.png" alt="The Avenue Milestone" />
+      <span class="milestone-mobile-logo-text">The Avenue Milestone</span>
+    </a>
+    <button class="milestone-menu-toggle" id="milestoneMenuToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="milestone-overlay" id="milestoneOverlay"></div>
+
+  <!-- =========================================================
+       MAIN CONTENT WRAPPER
+       ========================================================= -->
+  <main class="milestone-content-wrapper">
+
+    <!-- 1. HERO SECTION (#home) -->
+    <section class="milestone-hero-section" id="home">
+      <div class="milestone-hero-bg"></div>
+      <div class="milestone-hero-overlay"></div>
+
+      <div class="milestone-hero-content">
+        <span class="milestone-eyebrow">The Avenue Builders &amp; Developers &bull; Karmayogi Nagar</span>
+        <h1 class="milestone-hero-title">The Avenue Milestone</h1>
+        <p class="milestone-hero-tagline">Nashik's First-Ever 4.5 BHK Prestigious Homes</p>
+        
+        <p class="milestone-hero-desc">
+          Celebrating your achievements with architectural grandeur. Introducing Nashik's premier twin-tower high-rise landmark featuring unprecedented <strong>12.5 ft ceiling heights</strong>, expansive 30-foot living salons, dual rooftop lifestyle sanctuaries, and over 50 unique experiences at prime Karmayogi Nagar.
+        </p>
+
+        <div class="milestone-hero-badges">
+          <span class="milestone-badge-pill">Twin High-Rise Towers</span>
+          <span class="milestone-badge-pill">Only 60 Prestigious Units</span>
+          <span class="milestone-badge-pill">12.5 Ft. High Ceilings</span>
+          <span class="milestone-badge-pill accent-plum">50+ Unique Experiences</span>
+          <span class="milestone-badge-pill">RERA: P51600053718</span>
+        </div>
+
+        <div class="milestone-hero-actions">
+          <a href="#floor-plans" class="milestone-cta-btn milestone-cta-primary">
+            Explore Floor Plans
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="milestone-cta-btn milestone-cta-secondary">
+            Download Official Brochure
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="milestone-hero-stats">
+        <div class="milestone-stat-item">
+          <span class="milestone-stat-num">4.5 BHK</span>
+          <span class="milestone-stat-label">Prestigious Residences</span>
+        </div>
+        <div class="milestone-stat-item">
+          <span class="milestone-stat-num">12.5 FT.</span>
+          <span class="milestone-stat-label">Clear Ceiling Heights</span>
+        </div>
+        <div class="milestone-stat-item">
+          <span class="milestone-stat-num">2 TOWERS</span>
+          <span class="milestone-stat-label">60 Limited Edition Units</span>
+        </div>
+        <div class="milestone-stat-item">
+          <span class="milestone-stat-num">50+</span>
+          <span class="milestone-stat-label">Curated Experiences</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT SECTION (#about) -->
+    <section class="milestone-section milestone-about-section" id="about">
+      <div class="milestone-section-header">
+        <span class="milestone-eyebrow">Philosophy &amp; Vision</span>
+        <h2 class="milestone-title">Celebrating Your Achievements</h2>
+        <p class="milestone-subheading">
+          A milestone is a symbol of progress, a testament to our journey through life. Owning a home at The Avenue Milestone is not just a financial milestone &mdash; it's where dreams, hard work, and aspirations are realized.
+        </p>
+      </div>
+
+      <div class="milestone-about-grid">
+        <div class="milestone-about-text">
+          <p>
+            At <strong>The Avenue Milestone</strong>, we understand the profound significance of life's greatest moments. We don't just offer you a prestigious home; we offer you an opulent stage for your family's life journey.
+          </p>
+          <div class="milestone-about-quote-box">
+            &ldquo;I can conquer every milestone in my life. Live your life, one milestone at a time.&rdquo;
+          </div>
+          <p>
+            Rising gracefully in prime Karmayogi Nagar, Milestone comprises two majestic high-rise towers engineered to redefine luxury living. With only 60 residences across the entire project, privacy and exclusivity remain paramount. Every home is endowed with Nashik's first-ever <strong>12.5 ft clear ceiling height</strong>, creating grand volumetric living spaces that bathe each room in natural daylight and gentle breezes.
+          </p>
+          <p>
+            From the grand double-height entrance drop-off porch with illuminated water fountains to the dedicated reception lobbies with access control and high-speed elevators, Milestone stands as an icon of modern prestige.
+          </p>
+        </div>
+
+        <div class="milestone-about-media-card">
+          <img src="assets/milestone-brochure/milestone-entrance-porch.jpg" alt="The Avenue Milestone Grand Entrance Porch &amp; Water Fountains" />
+          <div class="milestone-media-caption">
+            <h4>Grand Entrance Drop-Off</h4>
+            <p>Illuminated water fountains, lush canopy, and separate drop-off lobbies for Tower 1 &amp; Tower 2</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12.5 FT CEILING HEIGHT HIGHLIGHT STRIP -->
+      <div class="milestone-ceiling-strip">
+        <div class="milestone-ceiling-highlight">
+          <span class="milestone-ceiling-val">12.5 FT.</span>
+          <span class="milestone-ceiling-sub">Volumetric Ceiling Grandeur</span>
+        </div>
+        <div class="milestone-ceiling-content">
+          <h3>Nashik's First-Ever 12.5 Ft. High Ceilings</h3>
+          <p>
+            Unlike standard residential developments with standard 10-ft ceilings, The Avenue Milestone introduces majestic 12.5 ft floor-to-ceiling heights. This creates extraordinary vertical air volumes, enhances natural illumination, enables bespoke chandelier installations, and lends an aristocratic mansion-like ambiance to every room.
+          </p>
+        </div>
+      </div>
+
+      <!-- 3 PILLARS OF MILESTONE -->
+      <div class="milestone-pillars-grid">
+        <div class="milestone-pillar-card">
+          <span class="milestone-pillar-icon">🏛️</span>
+          <h3 class="milestone-pillar-title">Twin Tower Grandeur</h3>
+          <p class="milestone-pillar-desc">
+            Two iconic architectural towers connected by a grand lifestyle podium, with street-facing commercial frontage on the ground floor and private residential sanctuaries above.
+          </p>
+        </div>
+
+        <div class="milestone-pillar-card">
+          <span class="milestone-pillar-icon">👑</span>
+          <h3 class="milestone-pillar-title">60 Exclusive Units</h3>
+          <p class="milestone-pillar-desc">
+            A low-density community ensuring utmost privacy, quietude, and refined camaraderie with like-minded achievers, corporate leaders, and elite families.
+          </p>
+        </div>
+
+        <div class="milestone-pillar-card">
+          <span class="milestone-pillar-icon">🌿</span>
+          <h3 class="milestone-pillar-title">Three Lifestyle Tiers</h3>
+          <p class="milestone-pillar-desc">
+            Engineered across three distinct lifestyle realms: Ground realm with commercial retail, 1st-floor podium with swimming pool and club, and dual rooftop sky terraces.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 50+ UNIQUE EXPERIENCES (#amenities) -->
+    <section class="milestone-section milestone-amenities-section" id="amenities">
+      <div class="milestone-section-header">
+        <span class="milestone-eyebrow">World-Class Lifestyle</span>
+        <h2 class="milestone-title">50+ Unique Experiences</h2>
+        <p class="milestone-subheading">
+          Thoughtfully curated across the Ground realm, First Floor Podium Sanctuary, Club Milestone, and Dual Rooftop Sky Terraces to enrich every facet of your daily life.
+        </p>
+      </div>
+
+      <div class="milestone-experience-categories">
+        <!-- Category 1: Lifestyle -->
+        <div class="milestone-exp-category-card">
+          <span class="milestone-exp-badge">Active &amp; Wellness</span>
+          <h3 class="milestone-exp-title">Lifestyle Experiences</h3>
+          <ul class="milestone-exp-list">
+            <li>Outdoor Fitness Zone &amp; Calisthenics</li>
+            <li>Indoor Games Arena (Table Tennis, Billiards)</li>
+            <li>Multifunctional Studio (Zumba, Dance, Aerobics)</li>
+            <li>Aerial Yoga &amp; Meditation Studio</li>
+            <li>Toddlers' Creative Studio</li>
+            <li>Card &amp; Board Games Room</li>
+            <li>World-Class Luxury Spa with Steam &amp; Jacuzzi</li>
+            <li>Powder Room &amp; Designer Changing Suites</li>
+          </ul>
+        </div>
+
+        <!-- Category 2: Therapeutic -->
+        <div class="milestone-exp-category-card">
+          <span class="milestone-exp-badge">Mind &amp; Nature</span>
+          <h3 class="milestone-exp-title">Therapeutic Experiences</h3>
+          <ul class="milestone-exp-list">
+            <li>Aroma Garden with Healing Flora</li>
+            <li>Acupressure Reflexology Walking Path</li>
+            <li>Rooftop Celestial Observatory</li>
+            <li>Panoramic Sky Walkway connecting towers</li>
+            <li>Hammock Reading Garden</li>
+            <li>Star Gazing &amp; Sunning Deck</li>
+            <li>Tranquil Water Body Fountains</li>
+            <li>Lush Landscaped Zen Pockets</li>
+          </ul>
+        </div>
+
+        <!-- Category 3: Networking -->
+        <div class="milestone-exp-category-card">
+          <span class="milestone-exp-badge">Social &amp; Leisure</span>
+          <h3 class="milestone-exp-title">Networking Experiences</h3>
+          <ul class="milestone-exp-list">
+            <li>The 'Milestone' Cafe &amp; Social Lounge</li>
+            <li>Celebration Party Lawn on Podium &amp; Terrace</li>
+            <li>Multipurpose Community Banquet Hall</li>
+            <li>Mini Golf Putting Green on Sky Terrace</li>
+            <li>Rooftop Turf Cricket Pitch Arena</li>
+            <li>Acoustically Treated Music Room</li>
+            <li>Designer Reception Lounge with Concierge</li>
+            <li>Resort-Style Swimming Pool with Sunken Deck</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- VISUAL SHOWCASE GALLERY -->
+      <div class="milestone-gallery-grid">
+        <div class="milestone-gallery-card">
+          <img src="assets/milestone-brochure/milestone-lobby.jpg" alt="The Avenue Milestone Grand Lobby" />
+          <div class="milestone-gallery-overlay">
+            <span class="milestone-gallery-tag">Arrival Realm</span>
+            <h4 class="milestone-gallery-title">Double-Height Lobby</h4>
+          </div>
+        </div>
+
+        <div class="milestone-gallery-card">
+          <img src="assets/milestone-brochure/milestone-clubhouse-kids.jpg" alt="Clubhouse and Toddlers Creative Studio" />
+          <div class="milestone-gallery-overlay">
+            <span class="milestone-gallery-tag">Community &amp; Play</span>
+            <h4 class="milestone-gallery-title">Clubhouse &amp; Kids Studio</h4>
+          </div>
+        </div>
+
+        <div class="milestone-gallery-card">
+          <img src="assets/milestone-brochure/milestone-gym-games.jpg" alt="State of the Art Gym and Indoor Games" />
+          <div class="milestone-gallery-overlay">
+            <span class="milestone-gallery-tag">Fitness &amp; Recreations</span>
+            <h4 class="milestone-gallery-title">State-of-the-Art Gym</h4>
+          </div>
+        </div>
+
+        <div class="milestone-gallery-card">
+          <img src="assets/milestone-brochure/milestone-yoga-music.jpg" alt="Aerial Yoga Studio &amp; Music Lounge" />
+          <div class="milestone-gallery-overlay">
+            <span class="milestone-gallery-tag">Serenity &amp; Arts</span>
+            <h4 class="milestone-gallery-title">Aerial Yoga &amp; Music Room</h4>
+          </div>
+        </div>
+
+        <div class="milestone-gallery-card">
+          <img src="assets/milestone-brochure/milestone-amenities-aerial.jpg" alt="Podium and Rooftop Amenities Aerial Perspective" />
+          <div class="milestone-gallery-overlay">
+            <span class="milestone-gallery-tag">Master Aerial</span>
+            <h4 class="milestone-gallery-title">Podium &amp; Sky Sanctuaries</h4>
+          </div>
+        </div>
+
+        <div class="milestone-gallery-card">
+          <img src="assets/milestone-brochure/milestone-night-aerial.jpg" alt="Night Aerial View of The Avenue Milestone Towers" />
+          <div class="milestone-gallery-overlay">
+            <span class="milestone-gallery-tag">Architectural Skyline</span>
+            <h4 class="milestone-gallery-title">Twin Towers Illuminated</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FLOOR PLANS SECTION (#floor-plans) -->
+    <section class="milestone-section milestone-plans-section" id="floor-plans">
+      <div class="milestone-section-header">
+        <span class="milestone-eyebrow">Architectural Layouts</span>
+        <h2 class="milestone-title">Master Floor Plans &amp; Terraces</h2>
+        <p class="milestone-subheading">
+          Explore the authentic floor layouts for Ground floor commercial &amp; ingress, 1st floor podium sanctuary, typical 4.5 BHK Prestigious Residences, recreation club, and twin sky terraces.
+        </p>
+      </div>
+
+      <!-- Plan Filter Buttons -->
+      <div class="milestone-plan-tabs" id="milestonePlanTabs">
+        <button class="milestone-tab-btn active" data-plan="all">All Plans</button>
+        <button class="milestone-tab-btn" data-plan="residence">4.5 BHK Residences</button>
+        <button class="milestone-tab-btn" data-plan="podium">Ground &amp; Podium</button>
+        <button class="milestone-tab-btn" data-plan="terrace">Recreation &amp; Terraces</button>
+      </div>
+
+      <div class="milestone-plans-grid" id="milestonePlansGrid">
+
+        <!-- Plan 1: Wing A Flat No. 1 -->
+        <div class="milestone-plan-card" data-category="residence">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-wing-a-flat-1.jpg" alt="Wing A Flat No. 1 4.5 BHK Floor Plan" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">Wing A Flat No. 1 (4.5 BHK)</h3>
+              <p class="milestone-plan-desc">
+                Opulent 4.5 BHK layout featuring an expansive 29' x 19'7" living salon, 22'7" sit-out balcony, 4 en-suite bedrooms with walk-in wardrobes, dedicated pooja mandir, kitchen with island counter, utility, store room, and private servant quarters with attached bath.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Living / Dining</span>
+                  <span class="milestone-spec-v">29'0" x 19'7"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Promenade Balcony</span>
+                  <span class="milestone-spec-v">22'7" x 5'0"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Master Suite 1</span>
+                  <span class="milestone-spec-v">15'7" x 13'1" (W.I.W)</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Servant Quarters</span>
+                  <span class="milestone-spec-v">5'9" x 7'10" (Bath)</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-wing-a-flat-1.jpg" data-title="Wing A Flat No. 1 (4.5 BHK Floor Plan)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 2: Wing A Flat No. 2 -->
+        <div class="milestone-plan-card" data-category="residence">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-wing-a-flat-2.jpg" alt="Wing A Flat No. 2 4.5 BHK Floor Plan" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">Wing A Flat No. 2 (4.5 BHK)</h3>
+              <p class="milestone-plan-desc">
+                Lavish 4.5 BHK residence boasting an even wider 30'2" x 18'7" living and dining salon, full-length 24'7" sit-out deck, 4 en-suite bedrooms, pooja room, kitchen with utility, store, and independent servant quarters.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Living / Dining</span>
+                  <span class="milestone-spec-v">30'2" x 18'7"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Promenade Balcony</span>
+                  <span class="milestone-spec-v">24'7" x 5'0"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Master Suite</span>
+                  <span class="milestone-spec-v">15'9" x 13'2" (W.I.W)</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Servant Quarters</span>
+                  <span class="milestone-spec-v">6'9" x 11'3" (Bath)</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-wing-a-flat-2.jpg" data-title="Wing A Flat No. 2 (4.5 BHK Floor Plan)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 3: Typical Floor Plan (Wing A 2nd to 15th Floor) -->
+        <div class="milestone-plan-card" data-category="residence">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-wing-a-typical.jpg" alt="Wing A Typical Floor Plan 2nd to 15th" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">Wing A Typical Floor (2nd - 15th)</h3>
+              <p class="milestone-plan-desc">
+                High-rise typical floor layout displaying the exclusive 2-units-per-floor configuration. Features wide smoke-check lift lobby, dual high-speed elevators, fire duct, service slab, and garbage chute.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Units Per Floor</span>
+                  <span class="milestone-spec-v">2 Units Only</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Elevators</span>
+                  <span class="milestone-spec-v">Dual High-Speed (6'x8')</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Floor Span</span>
+                  <span class="milestone-spec-v">2nd to 15th Floors</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Safety</span>
+                  <span class="milestone-spec-v">Smoke Check &amp; Chute</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-wing-a-typical.jpg" data-title="Wing A Typical Floor Plan (2nd to 15th Floor)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 4: Ground Floor Master Plan -->
+        <div class="milestone-plan-card" data-category="podium">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-ground-floor.jpg" alt="Ground Floor Master Plan" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">Ground Floor Master Plan</h3>
+              <p class="milestone-plan-desc">
+                Comprehensive ground layout fronting an 18.00M main road on the west and proposed 9.00M road on south &amp; east. Showcases 3 prominent street-facing commercial showrooms, separate vehicular ingress &amp; egress, reception lobbies, and ample stilt parking.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Road Frontage</span>
+                  <span class="milestone-spec-v">18M &amp; 9M Wide Roads</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Commercial</span>
+                  <span class="milestone-spec-v">3 Frontage Showrooms</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Ingress / Egress</span>
+                  <span class="milestone-spec-v">Dual Driveway Access</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Parking</span>
+                  <span class="milestone-spec-v">Organized Stilt Grid</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-ground-floor.jpg" data-title="Ground Floor Master Plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 5: 1st Floor Podium Sanctuary -->
+        <div class="milestone-plan-card" data-category="podium">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-first-podium.jpg" alt="1st Floor Podium Lifestyle Plan" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">1st Floor Podium Sanctuary</h3>
+              <p class="milestone-plan-desc">
+                Elevated podium deck connecting Wing A and Wing B. Featuring luxury resort swimming pool with timber sundeck, landscaped celebration lawn, kids play pavilion, and podium residential units.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Lap Pool</span>
+                  <span class="milestone-spec-v">Swimming Pool &amp; Deck</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Podium Green</span>
+                  <span class="milestone-spec-v">Celebration Lawn</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Kids Realm</span>
+                  <span class="milestone-spec-v">Outdoor Play Zone</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Tower Link</span>
+                  <span class="milestone-spec-v">Connected Podium</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-first-podium.jpg" data-title="1st Floor Podium Lifestyle Plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 6: Recreational Club Floor Plan -->
+        <div class="milestone-plan-card" data-category="terrace">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-recreational-floor.jpg" alt="Typical Recreational Club Floor Plan" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">Recreational Club Floor Plan</h3>
+              <p class="milestone-plan-desc">
+                Full-floor lifestyle club layout comprising the grand Multipurpose Hall (41'8" x 22'8"), Gymnasium (37'1" x 18'), Indoor Games (23'3" x 33'5"), Music Room, Toddlers' Creative Studio, Card Room, and Luxury Spa with Steam &amp; Jacuzzi.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Multipurpose Hall</span>
+                  <span class="milestone-spec-v">41'8" x 22'8"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Fitness Center</span>
+                  <span class="milestone-spec-v">37'1" x 18'0" (Gym)</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Indoor Arena</span>
+                  <span class="milestone-spec-v">23'3" x 33'5"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Luxury Spa</span>
+                  <span class="milestone-spec-v">14'0" x 22'0" (Jacuzzi)</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-recreational-floor.jpg" data-title="Recreational Club Floor Plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 7: Wing A & Wing B Sky Terraces -->
+        <div class="milestone-plan-card" data-category="terrace">
+          <div class="milestone-plan-img-wrap">
+            <img src="assets/milestone-brochure/plan-sky-terraces.jpg" alt="Wing A &amp; Wing B Rooftop Sky Terraces Plan" />
+          </div>
+          <div class="milestone-plan-details">
+            <div>
+              <h3 class="milestone-plan-title">Wing A &amp; Wing B Sky Terraces</h3>
+              <p class="milestone-plan-desc">
+                Dual rooftop sky terraces commanding Nashik's panoramic horizons. Featuring a full Turf Cricket pitch (48'1" x 18'10"), Skywalk, Yoga &amp; Meditation pavilion, Mini Golf course (51'6" x 21'3"), Hammock Garden, Star Gazing deck, and Aroma gardens.
+              </p>
+              <div class="milestone-plan-specs">
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Wing A Terrace</span>
+                  <span class="milestone-spec-v">Turf Cricket &amp; Skywalk</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Wing B Terrace</span>
+                  <span class="milestone-spec-v">Mini Golf &amp; Hammocks</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Yoga Pavilion</span>
+                  <span class="milestone-spec-v">17'5" x 10'5"</span>
+                </div>
+                <div class="milestone-spec-col">
+                  <span class="milestone-spec-k">Star Gazing</span>
+                  <span class="milestone-spec-v">11'10" x 22'2" Deck</span>
+                </div>
+              </div>
+            </div>
+            <div class="milestone-plan-action">
+              <button class="milestone-enlarge-btn" data-src="assets/milestone-brochure/plan-sky-terraces.jpg" data-title="Wing A &amp; Wing B Rooftop Sky Terraces Plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SPECIFICATIONS SECTION (#specifications) -->
+    <section class="milestone-section milestone-specs-section" id="specifications">
+      <div class="milestone-section-header">
+        <span class="milestone-eyebrow">Crafted with Expertise</span>
+        <h2 class="milestone-title">Technical Specifications</h2>
+        <p class="milestone-subheading">
+          Engineered with uncompromising precision, premium branded fittings, and advanced safety standards in accordance with official brochure documentation.
+        </p>
+      </div>
+
+      <div class="milestone-specs-grid">
+        <!-- Spec 1: RCC & Masonry -->
+        <div class="milestone-spec-card">
+          <h3 class="milestone-spec-title"><span class="milestone-spec-bullet"></span> Structure &amp; Masonry</h3>
+          <ul class="milestone-spec-list">
+            <li><strong>RCC:</strong> Robust RCC Earthquake Resistant Frame Structure</li>
+            <li><strong>Brick Work:</strong> Autoclaved Aerated Concrete (AAC) Block Work</li>
+            <li><strong>External Plaster:</strong> Double Coat Sand-Faced Plaster</li>
+            <li><strong>Internal Plaster:</strong> Smooth Gypsum Finish</li>
+            <li><strong>Ceilings:</strong> Unmatched 12.5 Ft. High Volumetric Ceiling Height</li>
+          </ul>
+        </div>
+
+        <!-- Spec 2: Flooring & Paint -->
+        <div class="milestone-spec-card">
+          <h3 class="milestone-spec-title"><span class="milestone-spec-bullet"></span> Flooring &amp; Wall Finishes</h3>
+          <ul class="milestone-spec-list">
+            <li><strong>Living &amp; Bedrooms:</strong> Premium Vitrified Tile Flooring</li>
+            <li><strong>Balcony:</strong> Rustic &amp; Anti-Skid Floor Tiles</li>
+            <li><strong>Wash Area:</strong> Anti-Skid or Rustic Vitrified Tiles</li>
+            <li><strong>Internal Paint:</strong> Wall Putty Finish with Acrylic Emulsion Paint</li>
+            <li><strong>External Paint:</strong> Weather-resistant Acrylic Exterior Paint</li>
+          </ul>
+        </div>
+
+        <!-- Spec 3: Kitchen & Store -->
+        <div class="milestone-spec-card">
+          <h3 class="milestone-spec-title"><span class="milestone-spec-bullet"></span> Kitchen &amp; Utility</h3>
+          <ul class="milestone-spec-list">
+            <li><strong>Platform:</strong> Natural Granite / Composite Marble Island Platform</li>
+            <li><strong>Flooring:</strong> Vitrified Tile Flooring with Dedicated Island Space</li>
+            <li><strong>Dado:</strong> Premium Designer Ceramic Tiles</li>
+            <li><strong>Store Room:</strong> Dedicated Built-In Store &amp; Pantry Area</li>
+            <li><strong>Wash Area:</strong> Provision for Washing Machine &amp; Utility Sink</li>
+          </ul>
+        </div>
+
+        <!-- Spec 4: Doors & Windows -->
+        <div class="milestone-spec-card">
+          <h3 class="milestone-spec-title"><span class="milestone-spec-bullet"></span> Doors &amp; Windows</h3>
+          <ul class="milestone-spec-list">
+            <li><strong>Main Entrance:</strong> Decorative Both-Side Veneer Designer Main Door</li>
+            <li><strong>Internal Doors:</strong> Laminated Internal Doors &amp; Quality Door Frames</li>
+            <li><strong>Windows:</strong> High-Quality UPVC / Anodized Aluminium Sliding Windows</li>
+            <li><strong>Balcony Railings:</strong> MS / Aluminium / Toughened Safety Glass Railing</li>
+            <li><strong>Hardware:</strong> Premium Architectural Locks &amp; Brass Fixtures</li>
+          </ul>
+        </div>
+
+        <!-- Spec 5: Bathrooms & Sanitary -->
+        <div class="milestone-spec-card">
+          <h3 class="milestone-spec-title"><span class="milestone-spec-bullet"></span> Bathrooms &amp; Plumbing</h3>
+          <ul class="milestone-spec-list">
+            <li><strong>Dado Tiles:</strong> Premium Ceramic Tiles up to Lintel Level</li>
+            <li><strong>Basins:</strong> Granite / Composite Marble Countertop Basin</li>
+            <li><strong>Sanitary Ware:</strong> Wall-Hung EWCs (Hindware / Kohler / Toto / Eq.)</li>
+            <li><strong>CP Fittings:</strong> Premium Brass Fixtures (Jaquar / Artize / Grohe / Eq.)</li>
+            <li><strong>Piping:</strong> Concealed Corrosion-Free CPVC/UPVC Piping</li>
+          </ul>
+        </div>
+
+        <!-- Spec 6: Electrical & Security -->
+        <div class="milestone-spec-card">
+          <h3 class="milestone-spec-title"><span class="milestone-spec-bullet"></span> Electrification &amp; Safety</h3>
+          <ul class="milestone-spec-list">
+            <li><strong>Power Supply:</strong> 3-Phase Dedicated Electrical Power Connection</li>
+            <li><strong>Wiring:</strong> Concealed ISI-Certified Fire-Retardant Copper Wiring</li>
+            <li><strong>Switches:</strong> Elegant Modular Switches with MCB Distribution</li>
+            <li><strong>Security:</strong> Video Door Phone Linked with Reception &amp; Lobby Access</li>
+            <li><strong>Surveillance:</strong> Entire Campus &amp; Common Areas Under 24x7 CCTV</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LOCATION & CONNECTIVITY SECTION (#location) -->
+    <section class="milestone-section milestone-location-section" id="location">
+      <div class="milestone-section-header">
+        <span class="milestone-eyebrow">Strategic Neighborhood</span>
+        <h2 class="milestone-title">Location &amp; Road Frontage</h2>
+        <p class="milestone-subheading">
+          Situated at Survey No 773, Karmayogi Nagar, Nashik &mdash; commanding prominent 18M and proposed 9M wide corner road frontages near Sambhaji Raje Gymnastic Centre.
+        </p>
+      </div>
+
+      <div class="milestone-location-grid">
+        <div>
+          <p style="font-size: 1rem; color: #475569; line-height: 1.8;">
+            The Avenue Milestone enjoys an enviable corner address in Karmayogi Nagar, one of Nashik's most coveted upscale residential corridors. Its dual-road access via an 18-metre wide road and 9-metre proposed road provides smooth vehicular ingress, zero congestion, and unhindered urban visibility.
+          </p>
+
+          <div class="milestone-location-features">
+            <div class="milestone-loc-item">
+              <h4>18.00M Main Road</h4>
+              <p>Direct frontage ensuring grand ceremonial entrance and high-street commercial accessibility.</p>
+            </div>
+            <div class="milestone-loc-item">
+              <h4>Highway Connectivity</h4>
+              <p>Minutes from the Mumbai-Agra Highway (NH-3) and R.D. Circle for swift intercity commuting.</p>
+            </div>
+            <div class="milestone-loc-item">
+              <h4>Sports &amp; Recreation</h4>
+              <p>Adjacent to Sambhaji Raje Gymnastic Centre and Govind Nagar Jogging Track.</p>
+            </div>
+            <div class="milestone-loc-item">
+              <h4>Retail &amp; Healthcare</h4>
+              <p>Proximity to City Centre Mall, multi-specialty hospitals, and leading ICSE/CBSE schools.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="milestone-location-card">
+          <h3>The Avenue Milestone</h3>
+          <p>
+            A landmark development redefining luxury, convenience, and status for Nashik's most distinguished families.
+          </p>
+
+          <div class="milestone-address-box">
+            <span><strong>Site Address:</strong> Survey No 773, Near Sambhaji Raje Gymnastic Centre, Karmayogi Nagar, Nashik - 422009</span>
+            <span><strong>MahaRERA Registration:</strong> P51600053718 (Wing A)</span>
+            <span><strong>Developer:</strong> The Avenue Builders &amp; Developers</span>
+            <span><strong>Direct Helpline:</strong> +91 72 77 99 55 66</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DOWNLOAD & CONTACT SECTION (#contact) -->
+    <section class="milestone-section milestone-contact-section" id="contact">
+      <div class="milestone-section-header">
+        <span class="milestone-eyebrow">Connect &amp; Experience</span>
+        <h2 class="milestone-title">Download Official Brochure</h2>
+        <p class="milestone-subheading">
+          Obtain the complete official 26-page The Avenue Milestone brochure document or schedule a private consultation with our sales advisors.
+        </p>
+      </div>
+
+      <div class="milestone-contact-grid">
+        <div class="milestone-contact-info-block">
+          <div class="milestone-rera-box">
+            <span class="milestone-rera-tag">Official MahaRERA Registration</span>
+            <div class="milestone-rera-num">WING A: P51600053718</div>
+            <div class="milestone-rera-site">Verified online at: maharera.mahaonline.gov.in</div>
+          </div>
+
+          <div class="milestone-office-details">
+            <p><strong>Corporate Developer:</strong> The Avenue Builders &amp; Developers</p>
+            <p><strong>Site Office:</strong> Survey No 773, Near Sambhaji Raje Gymnastic Centre, Karmayogi Nagar, Nashik &mdash; 422009, Maharashtra, India</p>
+            <p><strong>Helpline Number:</strong> <a href="tel:7277995566" style="color: var(--milestone-bronze-light); text-decoration: none; font-weight: 700;">+91 72 77 99 55 66</a></p>
+            <p><strong>Official Email:</strong> theavenuensk@gmail.com</p>
+            <p><strong>Official Website:</strong> www.tabd.in</p>
+          </div>
+
+          <div style="font-size: 0.76rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6;">
+            <strong>Disclaimer:</strong> The developer reserves the right to amend the plans and specifications without prior notice. The contents of this digital brochure are purely conceptual and have no legal binding on the developer.
+          </div>
+        </div>
+
+        <div class="milestone-download-box">
+          <div class="milestone-download-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </div>
+          <h3 class="milestone-download-title">Official E-Brochure</h3>
+          <p class="milestone-download-desc">
+            Download the complete high-resolution 26-page master brochure of The Avenue Milestone including floor dimensions, twin-tower architectural plans, and amenity details in PDF format.
+          </p>
+          <a href="assets/Milestone E-Brochure New.pdf" class="milestone-download-btn-main" download="The Avenue Milestone E-Brochure.pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Brochure (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FULLSCREEN LIGHTBOX MODAL FOR FLOOR PLANS
+       ========================================================= -->
+  <div class="milestone-modal" id="milestonePlanModal">
+    <div class="milestone-modal-content">
+      <div class="milestone-modal-header">
+        <h3 class="milestone-modal-title" id="milestoneModalTitle">Floor Plan View</h3>
+        <button class="milestone-modal-close" id="milestoneModalClose" aria-label="Close Lightbox">&times;</button>
+      </div>
+      <div class="milestone-modal-body">
+        <img src="" alt="Enlarged Floor Plan" id="milestoneModalImg" />
+      </div>
+      <div class="milestone-modal-footer">
+        <span>Use browser zoom or save image for high-resolution inspection</span>
+        <a href="" download="" class="milestone-modal-download-btn" id="milestoneModalDownload">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Save Plan Image
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="milestone-back-to-top" id="milestoneBackToTop" title="Back to Top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </a>
+
+  <!-- =========================================================
+       INTERACTION SCRIPTS
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Mobile Sidebar Drawer Navigation
+      const menuToggle = document.getElementById('milestoneMenuToggle');
+      const sidebar = document.getElementById('milestoneSidebar');
+      const overlay = document.getElementById('milestoneOverlay');
+      const navLinks = document.querySelectorAll('.milestone-nav-link');
+
+      function toggleMobileMenu() {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      }
+
+      function closeMobileMenu() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+
+      if (menuToggle) menuToggle.addEventListener('click', toggleMobileMenu);
+      if (overlay) overlay.addEventListener('click', closeMobileMenu);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 1024) {
+            closeMobileMenu();
+          }
+        });
+      });
+
+      // 2. Active Navigation Highlighting on Scroll (Intersection Observer)
+      const sections = document.querySelectorAll('section[id]');
+      
+      function updateActiveNav() {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 200;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      }
+
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+
+      // 3. Back to Top Button Visibility
+      const backToTop = document.getElementById('milestoneBackToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      // 4. Floor Plan Tab Filtering
+      const tabBtns = document.querySelectorAll('.milestone-tab-btn');
+      const planCards = document.querySelectorAll('.milestone-plan-card');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-plan');
+
+          planCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 5. Floor Plan Fullscreen Modal Lightbox
+      const modal = document.getElementById('milestonePlanModal');
+      const modalImg = document.getElementById('milestoneModalImg');
+      const modalTitle = document.getElementById('milestoneModalTitle');
+      const modalClose = document.getElementById('milestoneModalClose');
+      const modalDownload = document.getElementById('milestoneModalDownload');
+      const enlargeBtns = document.querySelectorAll('.milestone-enlarge-btn');
+
+      enlargeBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const src = this.getAttribute('data-src');
+          const title = this.getAttribute('data-title');
+          modalImg.src = src;
+          modalTitle.textContent = title;
+          modalDownload.href = src;
+          modalDownload.download = title.replace(/\s+/g, '_') + '.jpg';
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Also allow clicking plan card images to enlarge
+      const planImgWraps = document.querySelectorAll('.milestone-plan-img-wrap');
+      planImgWraps.forEach(wrap => {
+        wrap.style.cursor = 'pointer';
+        wrap.addEventListener('click', function() {
+          const btn = this.closest('.milestone-plan-card').querySelector('.milestone-enlarge-btn');
+          if (btn) btn.click();
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+        });
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

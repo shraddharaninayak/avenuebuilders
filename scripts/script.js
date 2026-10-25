@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVideo();
   initCloudIntro();
   initScrollAnimations();
+  initWelcomeParallax();
   initProjectFiltering();
   initContactForm();
 });
@@ -223,6 +224,70 @@ function initScrollAnimations() {
   });
 
   animElements.forEach(el => observer.observe(el));
+}
+
+/* 5b. Smooth Parallax Scroll for Welcome Section */
+function initWelcomeParallax() {
+  const welcomeSection = document.getElementById('welcome') || document.querySelector('.home-welcome-section');
+  if (!welcomeSection) return;
+
+  const welcomeContent = welcomeSection.querySelector('.welcome-container');
+  if (!welcomeContent) return;
+
+  // Respect prefers-reduced-motion
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    const rect = welcomeSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Check if section is within active viewport range (with 120px buffer)
+    if (rect.bottom > -120 && rect.top < windowHeight + 120) {
+      const viewportCenter = windowHeight / 2;
+      const sectionCenter = rect.top + rect.height / 2;
+      const distanceFromCenter = sectionCenter - viewportCenter;
+
+      // Responsive subtle parallax shift
+      // Desktop: max ~38px, Mobile: max ~18px
+      const isMobile = window.innerWidth <= 768;
+      const maxShift = isMobile ? 18 : 38;
+      const parallaxFactor = isMobile ? 0.06 : 0.10;
+      const rawShift = distanceFromCenter * parallaxFactor;
+      const shift = Math.max(-maxShift, Math.min(maxShift, rawShift));
+
+      // Layered fade curve near edges of the viewport
+      let opacity = 1;
+      const fadeDistance = 140;
+      if (rect.top > windowHeight - fadeDistance) {
+        // Entering from bottom
+        const enterProgress = (windowHeight - rect.top) / fadeDistance;
+        opacity = Math.max(0.65, Math.min(1, 0.65 + enterProgress * 0.35));
+      } else if (rect.bottom < fadeDistance) {
+        // Exiting at top
+        const exitProgress = rect.bottom / fadeDistance;
+        opacity = Math.max(0.65, Math.min(1, 0.65 + exitProgress * 0.35));
+      }
+
+      welcomeContent.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0)`;
+      welcomeContent.style.opacity = opacity.toFixed(3);
+    }
+    ticking = false;
+  };
+
+  const onScroll = () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+
+  // Initial trigger after layout
+  requestAnimationFrame(updateParallax);
 }
 
 /* 6. Projects Page Filter Tabs */

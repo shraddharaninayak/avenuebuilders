@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Avenue Flora | Digital Brochure | The Avenue Builders &amp; Developers Nashik</title>
+  <meta name="description" content="Explore The Avenue Flora: A New Era of Affordability. Premium Showrooms &amp; Corporate Offices at Old Gangapur Naka, Nashik. Interactive digital brochure featuring authentic floor plans, specifications, and connectivity." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base Site Stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Digital Brochure Presentation Styles for Flora (Reusing Bliss Architecture & Aesthetic) -->
+  <style>
+    :root {
+      --flora-brand: #0b3060;
+      --flora-brand-dark: #071f3d;
+      --flora-brand-light: #12437e;
+      --flora-sand: #f5f8fc;
+      --flora-gold: #d49b1a;
+      --flora-gold-light: #f3be48;
+      --flora-sidebar-width: 210px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.flora-digital-brochure-page {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0b1a2e;
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FIXED SIDEBAR NAVIGATION (Matching Bliss / Video Reference)
+       ========================================================= */
+    .flora-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--flora-sidebar-width);
+      background-color: var(--flora-brand);
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.4);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .flora-sidebar-brand {
+      padding: 30px 18px 20px 18px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .flora-emblem-wrap {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 12px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 68%, #f0f4fa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(212, 155, 26, 0.5);
+      position: relative;
+    }
+
+    .flora-emblem-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      pointer-events: none;
+    }
+
+    .flora-emblem-img {
+      max-width: 92%;
+      max-height: 92%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .flora-brand-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .flora-brand-sub {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Navigation list */
+    .flora-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 15px 0;
+      margin: 0;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .flora-nav-item {
+      width: 100%;
+    }
+
+    .flora-nav-link {
+      display: block;
+      padding: 14px 24px;
+      color: #dbe7f7;
+      text-decoration: none;
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.22s ease;
+      position: relative;
+      outline: none;
+    }
+
+    .flora-nav-link:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.08);
+      padding-left: 28px;
+    }
+
+    /* Active nav item matching Bliss dotted indicator */
+    .flora-nav-link.active {
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.22);
+      outline: 1px dotted rgba(255, 255, 255, 0.85);
+      outline-offset: -4px;
+      font-weight: 700;
+    }
+
+    .flora-nav-link.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--flora-gold);
+    }
+
+    .flora-sidebar-footer {
+      padding: 18px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .flora-return-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .flora-return-btn:hover {
+      background: #ffffff;
+      color: var(--flora-brand);
+      border-color: #ffffff;
+    }
+
+    /* =========================================================
+       MOBILE TOP BAR & HAMBURGER
+       ========================================================= */
+    .flora-mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background-color: var(--flora-brand);
+      color: #fff;
+      z-index: 1001;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    .flora-mobile-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .flora-mobile-brand-emblem {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flora-mobile-brand-emblem img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .flora-mobile-brand-text {
+      font-family: 'Philosopher', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .flora-mobile-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .flora-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .flora-mobile-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .flora-mobile-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .flora-mobile-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .flora-sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 999;
+      backdrop-filter: blur(4px);
+    }
+
+    /* =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= */
+    .flora-main-wrapper {
+      margin-left: var(--flora-sidebar-width);
+      min-height: 100vh;
+      width: calc(100% - var(--flora-sidebar-width));
+      background-color: #f7f9fc;
+      position: relative;
+    }
+
+    /* =========================================================
+       SECTION 1: HERO (#home)
+       ========================================================= */
+    .flora-hero-section {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background-image: url('../assets/hero-avenue-flora.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 30px;
+      overflow: hidden;
+    }
+
+    .flora-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(7, 31, 61, 0.6) 0%, rgba(11, 48, 96, 0.65) 100%);
+      z-index: 1;
+    }
+
+    .flora-hero-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(11, 48, 96, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 50px 60px;
+      text-align: center;
+      max-width: 720px;
+      width: 90%;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      color: #ffffff;
+      animation: floraFadeScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes floraFadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .flora-hero-tagline {
+      font-family: 'Philosopher', serif;
+      font-size: 1.25rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--flora-gold-light);
+      margin-bottom: 8px;
+    }
+
+    .flora-hero-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .flora-hero-subtitle {
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .flora-hero-meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .flora-meta-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 0.76rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+
+    .flora-meta-badge.highlight {
+      background: var(--flora-gold);
+      color: #071f3d;
+      border-color: var(--flora-gold);
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       SECTION 2: ABOUT (#about)
+       ========================================================= */
+    .flora-about-section {
+      background-color: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .flora-about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .flora-about-media {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(7, 31, 61, 0.15);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #f0f4fa;
+    }
+
+    .flora-about-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .flora-about-media:hover img {
+      transform: scale(1.03);
+    }
+
+    .flora-about-content {
+      padding: 10px 0;
+    }
+
+    .flora-section-eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--flora-brand);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .flora-about-heading {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      color: var(--flora-brand);
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .flora-about-subheading {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .flora-lead-text {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .flora-body-text {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .flora-feature-bullets {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .flora-bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .flora-bullet-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(11, 48, 96, 0.12);
+      color: var(--flora-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       SECTION 3: FEATURES (#features)
+       ========================================================= */
+    .flora-features-section {
+      background: linear-gradient(180deg, rgba(7, 31, 61, 0.92) 0%, rgba(11, 48, 96, 0.94) 100%),
+                  url('../assets/hero-commercial-avenue.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .flora-features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .flora-features-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .flora-features-header .flora-section-eyebrow {
+      color: var(--flora-gold);
+    }
+
+    .flora-features-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+    }
+
+    .flora-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .flora-feature-card {
+      background: rgba(255, 255, 255, 0.07);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 36px 32px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .flora-card-header-tag {
+      font-family: 'Philosopher', serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      color: var(--flora-gold);
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .flora-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .flora-feature-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .flora-feature-list li::before {
+      content: '•';
+      position: absolute;
+      left: 6px;
+      color: var(--flora-gold);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       SECTION 4: FLOOR PLANS (#floor-plans)
+       ========================================================= */
+    .flora-plans-section {
+      background: linear-gradient(180deg, rgba(6, 24, 48, 0.93) 0%, rgba(10, 39, 78, 0.95) 100%),
+                  url('../assets/hero-avenue-flora.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .flora-plans-container {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+
+    .flora-plans-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .flora-plans-header .flora-section-eyebrow {
+      color: var(--flora-gold);
+    }
+
+    .flora-plans-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .flora-plans-subtitle {
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* 3 Frosted Cards Side by Side Matching Bliss Reference Layout */
+    .flora-plans-three-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .flora-plan-glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .flora-plan-glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      border-color: var(--flora-gold);
+    }
+
+    .flora-plan-img-holder {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2px;
+      padding: 12px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .flora-plan-img-holder img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .flora-plan-glass-card:hover .flora-plan-img-holder img {
+      transform: scale(1.04);
+    }
+
+    .flora-plan-card-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .flora-plan-card-specs {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .flora-plan-zoom-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--flora-gold);
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    /* Prominent Centered Download Brochure Button Matching Bliss Reference */
+    .flora-download-row {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .flora-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--flora-brand);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 34px;
+      border-radius: 4px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .flora-download-btn:hover {
+      background-color: var(--flora-brand-light);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+      border-color: #ffffff;
+    }
+
+    .flora-download-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       SECTION 5: LOCATION & CONTACT (#contact)
+       ========================================================= */
+    .flora-contact-section {
+      background: linear-gradient(135deg, #071933 0%, #0d284d 100%);
+      color: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .flora-contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .flora-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Column 1: Official Details */
+    .flora-contact-info-col h3 {
+      font-family: 'Philosopher', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .flora-contact-block {
+      margin-bottom: 28px;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.7;
+    }
+
+    .flora-contact-block p {
+      margin-bottom: 8px;
+    }
+
+    .flora-contact-link {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .flora-contact-link:hover {
+      color: var(--flora-gold);
+    }
+
+    .flora-rera-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(212, 155, 26, 0.15);
+      border: 1px solid var(--flora-gold);
+      color: var(--flora-gold);
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* Column 2: Location Map */
+    .flora-map-col {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #0a1f3a;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .flora-map-col-header {
+      padding: 12px 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .flora-map-col-header span {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--flora-gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .flora-map-thumb-wrap {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      max-height: 200px;
+      background: #fff;
+    }
+
+    .flora-map-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .flora-map-thumb-wrap:hover img {
+      transform: scale(1.03);
+    }
+
+    .flora-map-thumb-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(11, 48, 96, 0.9);
+      color: #fff;
+      font-size: 0.72rem;
+      padding: 4px 8px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .flora-map-col iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      display: block;
+    }
+
+    /* Column 3: Inquiry Form */
+    .flora-form-col {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .flora-form-col form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .flora-form-input,
+    .flora-form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 3px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .flora-form-input::placeholder,
+    .flora-form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .flora-form-input:focus,
+    .flora-form-textarea:focus {
+      border-color: var(--flora-gold);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .flora-form-textarea {
+      height: 95px;
+      resize: vertical;
+    }
+
+    .flora-form-submit-btn {
+      background-color: var(--flora-brand);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 14px 20px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .flora-form-submit-btn:hover {
+      background-color: var(--flora-brand-light);
+      border-color: #ffffff;
+    }
+
+    .flora-form-feedback {
+      display: none;
+      padding: 12px;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .flora-form-feedback.success {
+      display: block;
+      background: rgba(46, 125, 50, 0.3);
+      border: 1px solid #4caf50;
+      color: #a5d6a7;
+    }
+
+    /* =========================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================= */
+    .flora-back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px;
+      height: 44px;
+      background: #071f3d;
+      color: var(--flora-gold);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 998;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .flora-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .flora-back-to-top:hover {
+      background: var(--flora-brand);
+      color: #ffffff;
+      transform: translateY(-4px);
+    }
+
+    .flora-back-to-top svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       FLOOR PLAN LIGHTBOX MODAL
+       ========================================================= */
+    .flora-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .flora-modal.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .flora-modal-content {
+      position: relative;
+      background: #fff;
+      border-radius: 4px;
+      max-width: 95vw;
+      max-height: 90vh;
+      overflow: auto;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .flora-modal-img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .flora-modal-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--flora-brand);
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    .flora-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .flora-modal-close:hover {
+      background: var(--flora-brand);
+      color: #fff;
+    }
+
+    /* =========================================================
+       RESPONSIVE ADAPTATIONS
+       ========================================================= */
+    @media (max-width: 1080px) {
+      .flora-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .flora-plans-three-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .flora-sidebar {
+        transform: translateX(-100%);
+        width: 260px;
+        z-index: 1002;
+      }
+
+      .flora-sidebar.open {
+        transform: translateX(0);
+      }
+
+      .flora-sidebar-backdrop.active {
+        display: block;
+      }
+
+      .flora-mobile-bar {
+        display: flex;
+      }
+
+      .flora-main-wrapper {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 64px;
+      }
+
+      .flora-about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .flora-features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flora-about-section,
+      .flora-features-section,
+      .flora-plans-section,
+      .flora-contact-section {
+        padding: 70px 24px;
+      }
+
+      .flora-hero-card {
+        padding: 35px 24px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .flora-feature-bullets {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="flora-digital-brochure-page">
+
+  <!-- =========================================================
+       FIXED SIDE NAVIGATION BAR (Matches Bliss Template)
+       ========================================================= -->
+  <aside class="flora-sidebar" id="floraSidebar">
+    <div class="flora-sidebar-brand">
+      <div class="flora-emblem-wrap" title="The Avenue Flora">
+        <img src="../assets/logo-avenue-flora.png" alt="The Avenue Flora Logo" class="flora-emblem-img" />
+      </div>
+      <h2 class="flora-brand-title">The Avenue Flora</h2>
+      <p class="flora-brand-sub">Old Gangapur Naka, Nashik</p>
+    </div>
+
+    <ul class="flora-nav-list" id="floraNavList">
+      <li class="flora-nav-item">
+        <a href="#home" class="flora-nav-link active" data-section="home">Home</a>
+      </li>
+      <li class="flora-nav-item">
+        <a href="#about" class="flora-nav-link" data-section="about">About</a>
+      </li>
+      <li class="flora-nav-item">
+        <a href="#features" class="flora-nav-link" data-section="features">Features</a>
+      </li>
+      <li class="flora-nav-item">
+        <a href="#floor-plans" class="flora-nav-link" data-section="floor-plans">Floor Plans</a>
+      </li>
+      <li class="flora-nav-item">
+        <a href="#contact" class="flora-nav-link" data-section="contact">Location &amp; Contact</a>
+      </li>
+    </ul>
+
+    <div class="flora-sidebar-footer">
+      <a href="../projects.html" class="flora-return-btn">
+        <span>&larr; Return to Website</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <header class="flora-mobile-bar" id="floraMobileBar">
+    <a href="#home" class="flora-mobile-brand">
+      <div class="flora-mobile-brand-emblem">
+        <img src="../assets/logo-avenue-flora.png" alt="Flora Logo" />
+      </div>
+      <span class="flora-mobile-brand-text">The Avenue Flora</span>
+    </a>
+    <button type="button" class="flora-mobile-toggle" id="floraMobileToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="flora-sidebar-backdrop" id="floraBackdrop"></div>
+
+  <!-- =========================================================
+       MAIN SCROLLABLE CONTENT VIEWPORT
+       ========================================================= -->
+  <div class="flora-main-wrapper" id="floraMain">
+
+    <!-- 1. SECTION: HERO (#home) -->
+    <section class="flora-hero-section" id="home">
+      <div class="flora-hero-overlay"></div>
+      <div class="flora-hero-card">
+        <p class="flora-hero-tagline">A New Era of Affordability</p>
+        <h1 class="flora-hero-title">The Avenue Flora</h1>
+        <p class="flora-hero-subtitle">Showrooms &amp; Corporate Offices</p>
+        
+        <div class="flora-hero-meta-badges">
+          <span class="flora-meta-badge highlight">Old Gangapur Naka &bull; Nashik</span>
+          <span class="flora-meta-badge">Ground + 7 Commercial Landmark</span>
+          <span class="flora-meta-badge">MahaRERA: P51600047890</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SECTION: ABOUT (#about) -->
+    <section class="flora-about-section" id="about">
+      <div class="flora-about-grid">
+        
+        <div class="flora-about-media">
+          <img src="../assets/flora-elevation-hd.jpg" alt="The Avenue Flora Architectural Elevation" />
+        </div>
+
+        <div class="flora-about-content">
+          <span class="flora-section-eyebrow">Commercial Prestige</span>
+          <h2 class="flora-about-heading">Step into a World of Opportunities</h2>
+          <p class="flora-about-subheading">Showrooms &amp; Corporate Office Suites</p>
+
+          <p class="flora-lead-text">
+            Welcome to a world of elegance, opportunities and dreams that blossom. Here, amidst the vibrant life of <strong>OLD GANGAPUR NAKA, NASHIK</strong>, we invite you to join us on a journey where aspirations find their wings, and business meets prosperity. Experience <strong>The Avenue Flora &mdash; A New Era of Affordability</strong>.
+          </p>
+
+          <p class="flora-body-text">
+            The Avenue Flora is an iconic commercial destination, setting new standards in luxury commercial lifestyle. Located at the landmark Gangapur Naka in the heart of the city, it is minutes from CBS &amp; College Road. Marked by contemporary modern architecture keeping in sync with the sleek lines of the facade.
+          </p>
+
+          <ul class="flora-feature-bullets">
+            <li class="flora-bullet-item">
+              <span class="flora-bullet-icon">&check;</span>
+              <span>15.00 M Main Road Frontage</span>
+            </li>
+            <li class="flora-bullet-item">
+              <span class="flora-bullet-icon">&check;</span>
+              <span>9.00 M Side Road Access</span>
+            </li>
+            <li class="flora-bullet-item">
+              <span class="flora-bullet-icon">&check;</span>
+              <span>Double Height Showrooms</span>
+            </li>
+            <li class="flora-bullet-item">
+              <span class="flora-bullet-icon">&check;</span>
+              <span>High-Speed Automatic Lifts</span>
+            </li>
+            <li class="flora-bullet-item">
+              <span class="flora-bullet-icon">&check;</span>
+              <span>Basement &amp; Ground Parking Ramps</span>
+            </li>
+            <li class="flora-bullet-item">
+              <span class="flora-bullet-icon">&check;</span>
+              <span>Offices with Private Balconies</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SECTION: FEATURES (#features) -->
+    <section class="flora-features-section" id="features">
+      <div class="flora-features-container">
+        
+        <div class="flora-features-header">
+          <span class="flora-section-eyebrow">Strategic Advantage</span>
+          <h2 class="flora-features-title">Connectivity &amp; Architectural Excellence</h2>
+        </div>
+
+        <div class="flora-features-grid">
+          
+          <!-- Card 1: Prime Commercial Hub & Connectivity -->
+          <div class="flora-feature-card">
+            <h3 class="flora-card-header-tag">Prime Location &amp; Connectivity</h3>
+            <ul class="flora-feature-list">
+              <li>Located at the prestigious landmark <strong>OLD GANGAPUR NAKA</strong>, in the bustling heart of Nashik.</li>
+              <li>Minutes from <strong>CBS (Central Bus Stand)</strong> and the vibrant <strong>College Road</strong> shopping district.</li>
+              <li>Dual road corner accessibility: <strong>15.00 Meter main arterial road</strong> and <strong>9.00 Meter wide secondary road</strong>.</li>
+              <li>Close proximity to <strong>Dongre Vasatigruh Ground</strong>, Pramod Mahajan Garden, and Chopada Lawns.</li>
+              <li>Immediate walking access to Vihar Misal, Jankalyan Blood Bank, and premier financial institutes.</li>
+              <li>Unrivalled pedestrian footfall and high-visibility vehicular frontage for retail showrooms.</li>
+              <li>Convenient, smooth connectivity to Gangapur Road, Canada Corner, and Mumbai-Agra Highway.</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Modern Commercial Architecture -->
+          <div class="flora-feature-card">
+            <h3 class="flora-card-header-tag">Commercial Infrastructure</h3>
+            <ul class="flora-feature-list">
+              <li>Distinctive glass curtain wall facade delivering an imposing, modern corporate identity.</li>
+              <li>Expansive ground and first floor retail showrooms with maximized glazed display frontage.</li>
+              <li>Independent <strong>Wing A and Wing B</strong> entrance lobbies with dedicated high-speed automatic elevators.</li>
+              <li>Spacious 6-foot wide central distribution corridors ensuring effortless visitor circulation.</li>
+              <li>Corporate suites on 2nd to 7th floors engineered with private balconies and uninhibited natural light.</li>
+              <li>Dedicated ramp access to multi-level basement parking plus ample surface vehicular parking.</li>
+              <li>Advanced fire-fighting network, electrical transformer backup, and 24x7 security surveillance infrastructure.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SECTION: FLOOR PLANS (#floor-plans) -->
+    <section class="flora-plans-section" id="floor-plans">
+      <div class="flora-plans-container">
+        
+        <div class="flora-plans-header">
+          <span class="flora-section-eyebrow">Architectural Excellence</span>
+          <h2 class="flora-plans-title">Commercial &amp; Corporate Layouts</h2>
+          <p class="flora-plans-subtitle">
+            Inspect the official authentic floor plans from The Avenue Flora commercial brochure. Click any plan to open full-resolution inspection mode.
+          </p>
+        </div>
+
+        <!-- 3 Frosted Glass Cards (Matching Bliss Reference Layout) -->
+        <div class="flora-plans-three-cards">
+          
+          <!-- Card 1: Ground Floor Plan -->
+          <div class="flora-plan-glass-card" onclick="openFloraModal('../assets/flora-brochure/page_3.png', 'Ground Floor Plan &bull; Showrooms 01 to 08')">
+            <div class="flora-plan-img-holder">
+              <img src="../assets/flora-brochure/page_3.png" alt="The Avenue Flora Ground Floor Plan" />
+            </div>
+            <h3 class="flora-plan-card-title">Ground Floor Plan</h3>
+            <p class="flora-plan-card-specs">Showrooms 01 to 08 &bull; 15.00 M Road Frontage &bull; Ramp to Basement</p>
+            <span class="flora-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+          <!-- Card 2: 1st Floor Plan -->
+          <div class="flora-plan-glass-card" onclick="openFloraModal('../assets/flora-brochure/page_4.png', '1st Floor Plan &bull; Showrooms &amp; Corporate Offices')">
+            <div class="flora-plan-img-holder">
+              <img src="../assets/flora-brochure/page_4.png" alt="The Avenue Flora 1st Floor Plan" />
+            </div>
+            <h3 class="flora-plan-card-title">1st Floor Plan</h3>
+            <p class="flora-plan-card-specs">First Floor Showrooms &bull; Offices 01, 02, 03 &bull; Wing A &amp; B Lobbies</p>
+            <span class="flora-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+          <!-- Card 3: 2nd to 7th Floor Plan -->
+          <div class="flora-plan-glass-card" onclick="openFloraModal('../assets/flora-brochure/page_5.png', '2nd to 7th Floor Plan &bull; Corporate Offices 01 to 06')">
+            <div class="flora-plan-img-holder">
+              <img src="../assets/flora-brochure/page_5.png" alt="The Avenue Flora 2nd to 7th Floor Plan" />
+            </div>
+            <h3 class="flora-plan-card-title">2nd to 7th Floor Plan</h3>
+            <p class="flora-plan-card-specs">Corporate Offices 01 to 06 &bull; Private Balconies &bull; 6' Wide Passages</p>
+            <span class="flora-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Prominent Centered Download Brochure Button Matching Bliss Reference -->
+        <div class="flora-download-row">
+          <a href="../assets/brochures/The Avenue Flora Commercial.pdf" download="The-Avenue-Flora-Commercial-Brochure.pdf" class="flora-download-btn" id="floraDownloadBtn" title="Download Official Brochure PDF">
+            <svg viewBox="0 0 24 24">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+            </svg>
+            <span>Download Brochure</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SECTION: LOCATION & CONTACT (#contact) -->
+    <section class="flora-contact-section" id="contact">
+      <div class="flora-contact-container">
+        
+        <div class="flora-contact-grid">
+          
+          <!-- Column 1: Official Details -->
+          <div class="flora-contact-info-col">
+            <h3>Address</h3>
+            <div class="flora-contact-block">
+              <p><strong>Site Address:</strong></p>
+              <p>Old Gangapur Naka, Behind Vihar Misal, Gangapur Road, Nashik 422013.</p>
+              
+              <p style="margin-top: 14px;"><strong>Registered Office:</strong></p>
+              <p>Shop No 1, The Avenue, Chowk No 1, Behind Prakash Petrol Pump, Govind Nagar, Nashik.</p>
+            </div>
+
+            <h3>Contact</h3>
+            <div class="flora-contact-block">
+              <p>
+                <a href="tel:9699006377" class="flora-contact-link">
+                  <span>📞 +91 9699006377</span>
+                </a>
+              </p>
+              <p>
+                <a href="tel:7277995566" class="flora-contact-link">
+                  <span>📞 +91 7277995566</span>
+                </a>
+              </p>
+              <p>
+                <a href="mailto:theavenuensk@gmail.com" class="flora-contact-link">
+                  <span>✉️ theavenuensk@gmail.com</span>
+                </a>
+              </p>
+              <p>
+                <a href="https://wa.me/919699006377" target="_blank" rel="noopener noreferrer" class="flora-contact-link" style="color: #4ade80;">
+                  <span>💬 WhatsApp: +91 9699 00 63 77</span>
+                </a>
+              </p>
+            </div>
+
+            <div class="flora-rera-badge">
+              MahaRERA Reg. No: Applied for / P51600047890
+            </div>
+          </div>
+
+          <!-- Column 2: Official Location Map & Google Map Embed -->
+          <div class="flora-map-col">
+            <div class="flora-map-col-header">
+              <span>Site Location &bull; Old Gangapur Naka</span>
+            </div>
+            
+            <div class="flora-map-thumb-wrap" onclick="openFloraModal('../assets/flora-brochure/page_7.png', 'The Avenue Flora &bull; Location Landmark Map')" title="Click to view full Route Map">
+              <img src="../assets/flora-location-map-hd.jpg" alt="The Avenue Flora Location Map" />
+              <span class="flora-map-thumb-badge">Click to Enlarge Map</span>
+            </div>
+
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.887588079208!2d73.77457787595856!3d19.998634922238474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb65dbd6a133%3A0xe543fa00cb3e51d9!2sGangapur%20Rd%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="The Avenue Flora Site Location Map">
+            </iframe>
+          </div>
+
+          <!-- Column 3: Contact Form (Matching Bliss Reference) -->
+          <div class="flora-form-col">
+            <form id="floraInquiryForm">
+              <input type="text" id="floraName" class="flora-form-input" placeholder="Name" required />
+              <input type="email" id="floraEmail" class="flora-form-input" placeholder="Email" required />
+              <input type="tel" id="floraPhone" class="flora-form-input" placeholder="Contact No" required />
+              <textarea id="floraMessage" class="flora-form-textarea" placeholder="Message / Space Requirements" rows="4"></textarea>
+              <button type="submit" class="flora-form-submit-btn">Send Inquiry</button>
+              <div id="floraFormFeedback" class="flora-form-feedback"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- =========================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================= -->
+  <a href="#home" class="flora-back-to-top" id="floraBackToTop" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </a>
+
+  <!-- =========================================================
+       FULL-SCREEN FLOOR PLAN LIGHTBOX MODAL
+       ========================================================= -->
+  <div class="flora-modal" id="floraModal">
+    <div class="flora-modal-content">
+      <button type="button" class="flora-modal-close" onclick="closeFloraModal()">&times;</button>
+      <img id="floraModalImg" src="" alt="Full-Screen Floor Plan" class="flora-modal-img" />
+      <h3 id="floraModalTitle" class="flora-modal-title"></h3>
+      <div style="margin-top: 14px;">
+        <a id="floraModalDownload" href="" download class="flora-download-btn" style="padding: 10px 22px; font-size: 0.8rem;">
+          Download This Plan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INTERACTION SCRIPTS (Exact same logic as Bliss)
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('floraMobileToggle');
+      const sidebar = document.getElementById('floraSidebar');
+      const backdrop = document.getElementById('floraBackdrop');
+
+      function toggleMobileMenu() {
+        mobileToggle.classList.toggle('open');
+        sidebar.classList.toggle('open');
+        backdrop.classList.toggle('active');
+      }
+
+      function closeMobileMenu() {
+        mobileToggle.classList.remove('open');
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('active');
+      }
+
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', closeMobileMenu);
+      }
+
+      // 2. Smooth Navigation and Active Scroll-Spy
+      const navLinks = document.querySelectorAll('.flora-nav-link');
+      const sections = document.querySelectorAll('#floraMain section');
+      const backToTop = document.getElementById('floraBackToTop');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              closeMobileMenu();
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // Scroll event for active section highlight & back-to-top button
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + 200;
+
+        // Toggle back to top visibility
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+
+        // Active link tracking
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      });
+
+      // 3. Contact Form Submission
+      const form = document.getElementById('floraInquiryForm');
+      const feedback = document.getElementById('floraFormFeedback');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('floraName').value;
+          feedback.textContent = `Thank you, ${name}! Your inquiry for The Avenue Flora has been received. Our corporate leasing team will contact you shortly.`;
+          feedback.className = 'flora-form-feedback success';
+          form.reset();
+        });
+      }
+    });
+
+    // 4. Floor Plan Lightbox Modal
+    const modal = document.getElementById('floraModal');
+    const modalImg = document.getElementById('floraModalImg');
+    const modalTitle = document.getElementById('floraModalTitle');
+    const modalDownload = document.getElementById('floraModalDownload');
+
+    function openFloraModal(imgSrc, title) {
+      modalImg.src = imgSrc;
+      modalTitle.textContent = title;
+      modalDownload.href = imgSrc;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeFloraModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeFloraModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeFloraModal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Viraj Avenue | Digital Brochure | The Avenue Builders &amp; Developers Nashik</title>
+  <meta name="description" content="Explore Viraj Avenue: Premier Commercial Landmark featuring Modern Office Spaces, Showrooms, Shops, Banquet Hall, and Hospital opposite Bali Mandir, Panchavati Annex, Nashik. Interactive digital brochure with authentic floor plans and specifications." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base Site Stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Digital Brochure Presentation Styles for Viraj Avenue -->
+  <style>
+    :root {
+      --viraj-brand: #082d4a;
+      --viraj-brand-dark: #041626;
+      --viraj-brand-light: #0d4672;
+      --viraj-accent: #d49b42;
+      --viraj-accent-light: #f3cf8c;
+      --viraj-accent-dark: #aa7424;
+      --viraj-blue-highlight: #0072b2;
+      --viraj-sand: #f8fafc;
+      --viraj-border: rgba(8, 45, 74, 0.12);
+      --viraj-sidebar-width: 215px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.viraj-digital-brochure-page {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--viraj-brand-dark);
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Fixed Sidebar Navigation */
+    .viraj-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--viraj-sidebar-width);
+      background-color: var(--viraj-brand);
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.45);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .viraj-sidebar-brand {
+      padding: 28px 16px 20px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .viraj-emblem-wrap {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 12px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 75%, #f1f5f9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35), 0 0 0 3px rgba(212, 155, 66, 0.5);
+      position: relative;
+    }
+
+    .viraj-emblem-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      pointer-events: none;
+    }
+
+    .viraj-emblem-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    }
+
+    .viraj-brand-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .viraj-brand-sub {
+      font-size: 0.65rem;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      color: var(--viraj-accent);
+      display: block;
+      font-weight: 600;
+    }
+
+    .viraj-nav-list {
+      list-style: none;
+      padding: 24px 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .viraj-nav-item {
+      width: 100%;
+    }
+
+    .viraj-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-left: 3px solid transparent;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .viraj-nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      padding-left: 24px;
+    }
+
+    .viraj-nav-link.active {
+      background-color: rgba(212, 155, 66, 0.16);
+      color: #ffffff;
+      border-left-color: var(--viraj-accent);
+      font-weight: 700;
+    }
+
+    .viraj-nav-link.active::after {
+      content: '●';
+      position: absolute;
+      right: 18px;
+      font-size: 0.65rem;
+      color: var(--viraj-accent);
+    }
+
+    .viraj-sidebar-footer {
+      padding: 18px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      background-color: rgba(4, 22, 38, 0.55);
+    }
+
+    .viraj-return-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .viraj-return-btn:hover {
+      background-color: var(--viraj-accent);
+      border-color: var(--viraj-accent);
+      color: var(--viraj-brand-dark);
+    }
+
+    /* Mobile Header Bar & Hamburger */
+    .viraj-mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background-color: var(--viraj-brand);
+      z-index: 1001;
+      padding: 0 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .viraj-mobile-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .viraj-mobile-logo img {
+      height: 38px;
+      width: auto;
+      background: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .viraj-mobile-logo-text {
+      color: #fff;
+      font-family: 'Philosopher', serif;
+      font-size: 1.05rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .viraj-menu-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .viraj-menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .viraj-menu-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .viraj-menu-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .viraj-menu-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .viraj-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      z-index: 999;
+    }
+
+    /* Content Wrapper */
+    .viraj-content-wrapper {
+      margin-left: var(--viraj-sidebar-width);
+      min-height: 100vh;
+      background-color: #ffffff;
+      position: relative;
+    }
+
+    /* Section 1: Hero Overview */
+    .viraj-hero-section {
+      min-height: 100vh;
+      position: relative;
+      background-color: var(--viraj-brand-dark);
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 60px 60px;
+      overflow: hidden;
+    }
+
+    .viraj-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../assets/viraj-brochure/page_1.png');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.32;
+      filter: saturate(1.15) brightness(0.85);
+      transform: scale(1.02);
+      transition: transform 8s ease;
+    }
+
+    .viraj-hero-section:hover .viraj-hero-bg {
+      transform: scale(1.05);
+    }
+
+    .viraj-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(4, 22, 38, 0.94) 0%, rgba(8, 45, 74, 0.88) 50%, rgba(4, 22, 38, 0.96) 100%);
+    }
+
+    .viraj-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .viraj-badge-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 18px;
+      background: rgba(212, 155, 66, 0.16);
+      border: 1px solid rgba(212, 155, 66, 0.45);
+      border-radius: 50px;
+      color: var(--viraj-accent-light);
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .viraj-hero-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2.4rem, 4.6vw, 4.2rem);
+      line-height: 1.15;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 14px;
+      letter-spacing: 1px;
+    }
+
+    .viraj-hero-title span {
+      color: var(--viraj-accent);
+      display: block;
+      font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin-top: 6px;
+    }
+
+    .viraj-hero-lead {
+      font-size: clamp(1rem, 1.3vw, 1.2rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 820px;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .viraj-categories-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .viraj-cat-pill {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(6px);
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .viraj-cat-pill::before {
+      content: '■';
+      color: var(--viraj-accent);
+      font-size: 0.6rem;
+    }
+
+    .viraj-hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    .viraj-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .viraj-cta-primary {
+      background: var(--viraj-accent);
+      color: var(--viraj-brand-dark);
+      border: 1px solid var(--viraj-accent);
+      box-shadow: 0 4px 18px rgba(212, 155, 66, 0.35);
+    }
+
+    .viraj-cta-primary:hover {
+      background: var(--viraj-accent-light);
+      border-color: var(--viraj-accent-light);
+      transform: translateY(-2px);
+    }
+
+    .viraj-cta-outline {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .viraj-cta-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .viraj-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .viraj-stat-card {
+      background: rgba(4, 22, 38, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px 20px;
+      border-radius: 6px;
+    }
+
+    .viraj-stat-val {
+      font-family: 'Philosopher', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--viraj-accent-light);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .viraj-stat-label {
+      font-size: 0.74rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Section Styles */
+    .viraj-section {
+      padding: 100px 60px;
+      position: relative;
+    }
+
+    .viraj-section-header {
+      margin-bottom: 50px;
+    }
+
+    .viraj-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--viraj-accent-dark);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .viraj-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.2vw, 2.8rem);
+      line-height: 1.2;
+      color: var(--viraj-brand-dark);
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .viraj-divider {
+      width: 70px;
+      height: 3px;
+      background: var(--viraj-accent);
+      margin-bottom: 24px;
+    }
+
+    .viraj-about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .viraj-about-text p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #475569;
+      margin-bottom: 20px;
+    }
+
+    .viraj-about-highlight-box {
+      background: #f8fafc;
+      border-left: 4px solid var(--viraj-brand);
+      padding: 22px 26px;
+      border-radius: 0 8px 8px 0;
+      margin: 26px 0;
+    }
+
+    .viraj-about-highlight-box p {
+      margin-bottom: 0;
+      color: var(--viraj-brand-dark);
+      font-weight: 600;
+      font-size: 1.02rem;
+    }
+
+    .viraj-elevation-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(4, 22, 38, 0.18);
+      border: 1px solid rgba(8, 45, 74, 0.1);
+      background: #fff;
+    }
+
+    .viraj-elevation-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .viraj-elevation-card:hover img {
+      transform: scale(1.02);
+    }
+
+    .viraj-elevation-badge {
+      position: absolute;
+      bottom: 16px;
+      right: 16px;
+      background: rgba(4, 22, 38, 0.88);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      backdrop-filter: blur(4px);
+    }
+
+    .viraj-commercial-types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .viraj-type-card {
+      background: #ffffff;
+      border: 1px solid rgba(8, 45, 74, 0.1);
+      border-radius: 8px;
+      padding: 32px 26px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .viraj-type-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(4, 22, 38, 0.12);
+      border-color: var(--viraj-accent);
+    }
+
+    .viraj-type-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      background: rgba(8, 45, 74, 0.08);
+      color: var(--viraj-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .viraj-type-card:hover .viraj-type-icon {
+      background: var(--viraj-brand);
+      color: var(--viraj-accent-light);
+    }
+
+    .viraj-type-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.35rem;
+      color: var(--viraj-brand-dark);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .viraj-type-desc {
+      font-size: 0.92rem;
+      color: #64748b;
+      line-height: 1.7;
+    }
+
+    /* Section 3: Amenities */
+    .viraj-amenities-section {
+      background: #061a2d;
+      color: #ffffff;
+      padding: 100px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .viraj-amenities-section .viraj-eyebrow {
+      color: var(--viraj-accent-light);
+    }
+
+    .viraj-amenities-section .viraj-title {
+      color: #ffffff;
+    }
+
+    .viraj-amenities-spread-wrapper {
+      margin-bottom: 50px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .viraj-amenities-spread-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .viraj-amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .viraj-amenity-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 26px 20px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .viraj-amenity-card:hover {
+      background: rgba(255, 255, 255, 0.09);
+      border-color: var(--viraj-accent);
+      transform: translateY(-4px);
+    }
+
+    .viraj-amenity-num {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      font-family: 'Philosopher', serif;
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.25);
+      font-weight: 700;
+    }
+
+    .viraj-amenity-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.25rem;
+      color: var(--viraj-accent-light);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .viraj-amenity-desc {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.6;
+    }
+
+    /* Section 4: Floor Plans */
+    .viraj-plans-section {
+      padding: 100px 60px;
+      background: #f8fafc;
+    }
+
+    .viraj-plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .viraj-plan-card {
+      background: #ffffff;
+      border: 1px solid rgba(8, 45, 74, 0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transition: all 0.35s ease;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .viraj-plan-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(4, 22, 38, 0.16);
+      border-color: var(--viraj-brand);
+    }
+
+    .viraj-plan-img-wrap {
+      height: 320px;
+      overflow: hidden;
+      position: relative;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+    }
+
+    .viraj-plan-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .viraj-plan-card:hover .viraj-plan-img-wrap img {
+      transform: scale(1.04);
+    }
+
+    .viraj-plan-zoom-hint {
+      position: absolute;
+      inset: 0;
+      background: rgba(4, 22, 38, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: #fff;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      gap: 8px;
+    }
+
+    .viraj-plan-card:hover .viraj-plan-zoom-hint {
+      opacity: 1;
+    }
+
+    .viraj-plan-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .viraj-plan-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--viraj-accent-dark);
+      margin-bottom: 6px;
+    }
+
+    .viraj-plan-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.35rem;
+      color: var(--viraj-brand-dark);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .viraj-plan-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .viraj-plan-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background: var(--viraj-brand);
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background 0.25s ease;
+    }
+
+    .viraj-plan-btn:hover {
+      background: var(--viraj-accent);
+      color: var(--viraj-brand-dark);
+    }
+
+    /* Section 5: Location */
+    .viraj-location-section {
+      padding: 100px 60px;
+      background: #ffffff;
+    }
+
+    .viraj-location-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .viraj-map-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(8, 45, 74, 0.12);
+      box-shadow: 0 12px 32px rgba(4, 22, 38, 0.12);
+      background: #fff;
+      cursor: pointer;
+    }
+
+    .viraj-map-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .viraj-map-card:hover img {
+      transform: scale(1.02);
+    }
+
+    .viraj-location-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .viraj-loc-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 18px;
+      background: #f8fafc;
+      border-radius: 6px;
+      border-left: 3px solid var(--viraj-brand);
+    }
+
+    .viraj-loc-item-title {
+      font-weight: 700;
+      color: var(--viraj-brand-dark);
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .viraj-loc-item-desc {
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* Section 6: Contact & Download */
+    .viraj-contact-section {
+      padding: 100px 60px;
+      background: var(--viraj-brand-dark);
+      color: #ffffff;
+      position: relative;
+    }
+
+    .viraj-contact-section .viraj-eyebrow {
+      color: var(--viraj-accent-light);
+    }
+
+    .viraj-contact-section .viraj-title {
+      color: #ffffff;
+    }
+
+    .viraj-contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .viraj-jv-box {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 8px;
+      padding: 36px;
+    }
+
+    .viraj-jv-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 24px;
+      font-weight: 700;
+    }
+
+    .viraj-partners-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 30px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .viraj-partner-col {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 20px;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+    }
+
+    .viraj-partner-name {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--viraj-accent-light);
+      margin-bottom: 4px;
+    }
+
+    .viraj-partner-tag {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .viraj-office-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+    }
+
+    .viraj-office-details strong {
+      color: var(--viraj-accent-light);
+    }
+
+    .viraj-download-box {
+      background: linear-gradient(135deg, rgba(8, 45, 74, 0.75) 0%, rgba(4, 22, 38, 0.9) 100%);
+      border: 1px solid rgba(212, 155, 66, 0.4);
+      border-radius: 8px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.4);
+    }
+
+    .viraj-download-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(212, 155, 66, 0.15);
+      border: 1px solid var(--viraj-accent);
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--viraj-accent);
+    }
+
+    .viraj-download-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .viraj-download-desc {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .viraj-download-btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 32px;
+      background: var(--viraj-accent);
+      color: var(--viraj-brand-dark);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(212, 155, 66, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .viraj-download-btn-main:hover {
+      background: var(--viraj-accent-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(212, 155, 66, 0.55);
+    }
+
+    /* Modal */
+    .viraj-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(4, 22, 38, 0.94);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .viraj-modal.open {
+      display: flex;
+      animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .viraj-modal-content {
+      position: relative;
+      max-width: 1200px;
+      max-height: 90vh;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .viraj-modal-header {
+      padding: 18px 24px;
+      background: var(--viraj-brand);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .viraj-modal-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .viraj-modal-close {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 4px;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .viraj-modal-close:hover {
+      opacity: 1;
+      color: var(--viraj-accent);
+    }
+
+    .viraj-modal-body {
+      padding: 24px;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8fafc;
+      flex: 1;
+    }
+
+    .viraj-modal-body img {
+      max-width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .viraj-modal-footer {
+      padding: 14px 24px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .viraj-modal-footer span {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    .viraj-modal-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--viraj-brand);
+      color: #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.25s;
+    }
+
+    .viraj-modal-download-btn:hover {
+      background: var(--viraj-accent);
+      color: var(--viraj-brand-dark);
+    }
+
+    .viraj-back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--viraj-accent);
+      color: var(--viraj-brand-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 990;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .viraj-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .viraj-back-to-top:hover {
+      background: var(--viraj-accent-light);
+      transform: translateY(-3px);
+    }
+
+    @media (max-width: 1024px) {
+      .viraj-sidebar {
+        transform: translateX(-100%);
+      }
+      .viraj-sidebar.open {
+        transform: translateX(0);
+      }
+      .viraj-mobile-bar {
+        display: flex;
+      }
+      .viraj-overlay.open {
+        display: block;
+      }
+      .viraj-content-wrapper {
+        margin-left: 0;
+        padding-top: 64px;
+      }
+      .viraj-hero-section {
+        padding: 60px 30px;
+      }
+      .viraj-section {
+        padding: 70px 30px;
+      }
+      .viraj-hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .viraj-about-grid,
+      .viraj-location-grid,
+      .viraj-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .viraj-commercial-types,
+      .viraj-plans-grid {
+        grid-template-columns: 1fr;
+      }
+      .viraj-amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .viraj-hero-section {
+        padding: 40px 20px;
+      }
+      .viraj-section {
+        padding: 60px 20px;
+      }
+      .viraj-hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .viraj-amenities-grid {
+        grid-template-columns: 1fr;
+      }
+      .viraj-partners-row {
+        grid-template-columns: 1fr;
+      }
+      .viraj-hero-actions {
+        flex-direction: column;
+      }
+      .viraj-cta-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .viraj-modal {
+        padding: 12px;
+      }
+      .viraj-plan-img-wrap {
+        height: 240px;
+      }
+    }
+  </style>
+</head>
+
+<body class="viraj-digital-brochure-page">
+
+  <!-- Fixed Sidebar Navigation -->
+  <aside class="viraj-sidebar" id="virajSidebar">
+    <div class="viraj-sidebar-brand">
+      <div class="viraj-emblem-wrap">
+        <img src="../assets/logo-viraj-avenue.png" alt="Viraj Avenue" class="viraj-emblem-img" />
+      </div>
+      <span class="viraj-brand-title">Viraj Avenue</span>
+      <span class="viraj-brand-sub">Commercial Hub</span>
+    </div>
+
+    <ul class="viraj-nav-list" id="virajNavList">
+      <li class="viraj-nav-item">
+        <a href="#home" class="viraj-nav-link active">Home</a>
+      </li>
+      <li class="viraj-nav-item">
+        <a href="#about" class="viraj-nav-link">About Project</a>
+      </li>
+      <li class="viraj-nav-item">
+        <a href="#amenities" class="viraj-nav-link">Amenities</a>
+      </li>
+      <li class="viraj-nav-item">
+        <a href="#floor-plans" class="viraj-nav-link">Floor Plans</a>
+      </li>
+      <li class="viraj-nav-item">
+        <a href="#location" class="viraj-nav-link">Location &amp; Map</a>
+      </li>
+      <li class="viraj-nav-item">
+        <a href="#contact" class="viraj-nav-link">Download &amp; Contact</a>
+      </li>
+    </ul>
+
+    <div class="viraj-sidebar-footer">
+      <a href="projects.html#viraj" class="viraj-return-btn" title="Back to All Projects">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Projects</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <div class="viraj-mobile-bar" id="virajMobileBar">
+    <a href="#home" class="viraj-mobile-logo">
+      <img src="../assets/logo-viraj-avenue.png" alt="Viraj Avenue" />
+      <span class="viraj-mobile-logo-text">Viraj Avenue</span>
+    </a>
+    <button class="viraj-menu-toggle" id="virajMenuToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="viraj-overlay" id="virajOverlay"></div>
+
+  <!-- Main Content Wrapper -->
+  <main class="viraj-content-wrapper" id="pageContent">
+
+    <!-- Section 1: Hero Overview -->
+    <section class="viraj-hero-section" id="home">
+      <div class="viraj-hero-bg"></div>
+      <div class="viraj-hero-overlay"></div>
+
+      <div class="viraj-hero-content">
+        <div class="viraj-badge-top">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          <span>Prime Commercial &amp; Healthcare Landmark</span>
+        </div>
+
+        <h1 class="viraj-hero-title">
+          Viraj Avenue
+          <span>Discover a World of Opportunities</span>
+        </h1>
+
+        <p class="viraj-hero-lead">
+          An upcoming landmark in Nashik offering a premier blend of Modern Office Spaces, Showrooms, Shops, Banquet Hall, and Advanced Hospital Facilities. Strategically located opposite Bali Mandir, Panchavati Annex.
+        </p>
+
+        <!-- Categories Row from Official Brochure -->
+        <div class="viraj-categories-bar">
+          <span class="viraj-cat-pill">Office Spaces</span>
+          <span class="viraj-cat-pill">Showrooms</span>
+          <span class="viraj-cat-pill">Shops</span>
+          <span class="viraj-cat-pill">Banquette Hall</span>
+          <span class="viraj-cat-pill">Hospital</span>
+        </div>
+
+        <div class="viraj-hero-actions">
+          <a href="#floor-plans" class="viraj-cta-btn viraj-cta-primary">
+            <span>Explore Floor Plans</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="../assets/Viraj Avenue Brochure.pdf" download="Viraj Avenue Brochure.pdf" class="viraj-cta-btn viraj-cta-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span>Download Brochure</span>
+          </a>
+        </div>
+
+        <div class="viraj-hero-stats">
+          <div class="viraj-stat-card">
+            <span class="viraj-stat-val">60.00 M</span>
+            <span class="viraj-stat-label">Wide D.P. Road Frontage</span>
+          </div>
+          <div class="viraj-stat-card">
+            <span class="viraj-stat-val">3 Wings</span>
+            <span class="viraj-stat-label">Integrated Wing A, B &amp; C</span>
+          </div>
+          <div class="viraj-stat-card">
+            <span class="viraj-stat-val">Double Stack</span>
+            <span class="viraj-stat-label">Rear Parking &amp; Front Bays</span>
+          </div>
+          <div class="viraj-stat-card">
+            <span class="viraj-stat-val">342.56 Sq.M</span>
+            <span class="viraj-stat-label">Open Space &amp; Club House</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: About Project -->
+    <section class="viraj-section" id="about">
+      <div class="viraj-section-header">
+        <span class="viraj-eyebrow">Visionary Commercial Architecture</span>
+        <h2 class="viraj-title">Welcome to Viraj Avenue</h2>
+        <div class="viraj-divider"></div>
+      </div>
+
+      <div class="viraj-about-grid">
+        <div class="viraj-about-text">
+          <p>
+            <strong>Viraj Avenue</strong> is an upcoming commercial landmark in Nashik, thoughtfully engineered to offer an exceptional blend of Modern Office Spaces, Showrooms, Shops, a Banquet Hall, and a Hospital.
+          </p>
+          <p>
+            Strategically located opposite Bali Mandir, Panchavati Annex, this multi-tier development caters to a complete spectrum of business, corporate, and healthcare needs with state-of-the-art infrastructure and elevated facilities.
+          </p>
+
+          <div class="viraj-about-highlight-box">
+            <p>
+              Fronting a massive <strong>60.00 Meter Wide D.P. Road</strong> with seamless access to Mumbai-Agra Highway, Viraj Avenue commands supreme visibility and effortless customer ingress.
+            </p>
+          </div>
+
+          <p>
+            Featuring dedicated passenger lifts for each wing, double-height shop mezzanines, a grand 342.56 Sq.M landscaped open court, and a clubhouse, Viraj Avenue sets a new benchmark in commercial excellence.
+          </p>
+        </div>
+
+        <div class="viraj-elevation-card" onclick="openVirajModal('../assets/viraj-brochure/page_2.png', 'Viraj Avenue Architectural Perspective View');">
+          <img src="../assets/viraj-brochure/viraj-elevation.jpg" alt="Viraj Avenue Architectural Elevation" />
+          <div class="viraj-elevation-badge">Click to Inspect Perspective</div>
+        </div>
+      </div>
+
+      <!-- 5 Main Commercial Sectors -->
+      <div class="viraj-commercial-types">
+        <div class="viraj-type-card">
+          <div class="viraj-type-icon">🏢</div>
+          <h3 class="viraj-type-title">Modern Office Spaces</h3>
+          <p class="viraj-type-desc">Flexible corporate office suites on upper levels featuring wide 2.45M central corridors, private attached restrooms, high natural illumination, and high-speed elevator connectivity.</p>
+        </div>
+
+        <div class="viraj-type-card">
+          <div class="viraj-type-icon">🛍️</div>
+          <h3 class="viraj-type-title">Spacious Showrooms</h3>
+          <p class="viraj-type-desc">Expansive ground-level retail showpieces fronting the 60.00M D.P. road with panoramic floor-to-ceiling glass facades engineered for flagship corporate and luxury brands.</p>
+        </div>
+
+        <div class="viraj-type-card">
+          <div class="viraj-type-icon">🏪</div>
+          <h3 class="viraj-type-title">Versatile Shops</h3>
+          <p class="viraj-type-desc">Ground-floor and mezzanine shops with internal private staircases, individual restrooms, and ample parking bays designed for high daily commercial footfall.</p>
+        </div>
+
+        <div class="viraj-type-card">
+          <div class="viraj-type-icon">🎉</div>
+          <h3 class="viraj-type-title">Elegant Banquet Hall</h3>
+          <p class="viraj-type-desc">A dedicated banquet venue tailored for corporate conferences, exhibitions, seminars, banqueting celebrations, and community gatherings.</p>
+        </div>
+
+        <div class="viraj-type-card">
+          <div class="viraj-type-icon">🏥</div>
+          <h3 class="viraj-type-title">Advanced Hospital Facilities</h3>
+          <p class="viraj-type-desc">Purpose-built healthcare infrastructure accommodating multi-specialty medical wings, diagnostic centres, pathology clinics, and consulting rooms.</p>
+        </div>
+
+        <div class="viraj-type-card">
+          <div class="viraj-type-icon">🌳</div>
+          <h3 class="viraj-type-title">Clubhouse &amp; Open Space</h3>
+          <p class="viraj-type-desc">342.56 Sq.M dedicated rear recreation court with an 18'10" x 17'7" clubhouse offering a serene environment for business networking and relaxation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Amenities -->
+    <section class="viraj-amenities-section" id="amenities">
+      <div class="viraj-section-header">
+        <span class="viraj-eyebrow">Enterprise Infrastructure</span>
+        <h2 class="viraj-title">Commercial Amenities &amp; Facilities</h2>
+        <div class="viraj-divider"></div>
+      </div>
+
+      <!-- High-res amenities spread image from page 6 -->
+      <div class="viraj-amenities-spread-wrapper">
+        <img src="../assets/viraj-brochure/page_6.png" alt="Viraj Avenue Corporate Amenities" />
+      </div>
+
+      <div class="viraj-amenities-grid">
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">01</span>
+          <h3 class="viraj-amenity-title">Modern Office Spaces</h3>
+          <p class="viraj-amenity-desc">State-of-the-art office layouts designed for productivity with optimal natural ventilation and dedicated high-speed utility shafts.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">02</span>
+          <h3 class="viraj-amenity-title">Spacious Showrooms</h3>
+          <p class="viraj-amenity-desc">Prime roadside retail spaces with wide frontage on 60M D.P. Road for maximum brand visibility and exposure.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">03</span>
+          <h3 class="viraj-amenity-title">Versatile Shops</h3>
+          <p class="viraj-amenity-desc">Customizable retail configurations with mezzanine floors, dedicated customer entrances, and separate staff facilities.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">04</span>
+          <h3 class="viraj-amenity-title">Elegant Banquet Hall</h3>
+          <p class="viraj-amenity-desc">Sophisticated banqueting venue with catering provisions, acoustic insulation, and convenient access lobbies.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">05</span>
+          <h3 class="viraj-amenity-title">Advanced Hospital Facilities</h3>
+          <p class="viraj-amenity-desc">Custom-engineered healthcare zones ready for medical equipment, patient lifts, ambulance bays, and clinics.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">06</span>
+          <h3 class="viraj-amenity-title">Ample Parking Space</h3>
+          <p class="viraj-amenity-desc">Dedicated front visitor parking bays alongside a multi-tier stack parking system at the rear 12.00M road.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">07</span>
+          <h3 class="viraj-amenity-title">24/7 Security</h3>
+          <p class="viraj-amenity-desc">Round-the-clock trained security personnel, centralized CCTV surveillance, and secure controlled entry/exit points.</p>
+        </div>
+
+        <div class="viraj-amenity-card">
+          <span class="viraj-amenity-num">08</span>
+          <h3 class="viraj-amenity-title">High-Speed Lifts &amp; Lobbies</h3>
+          <p class="viraj-amenity-desc">Independent high-speed elevators in each wing (8'2" x 6'3") and expansive designer lobbies up to 24'3" x 23'2".</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Floor Plans -->
+    <section class="viraj-plans-section" id="floor-plans">
+      <div class="viraj-section-header">
+        <span class="viraj-eyebrow">Architectural Layouts</span>
+        <h2 class="viraj-title">Official Floor Plans</h2>
+        <div class="viraj-divider"></div>
+        <p style="max-width: 720px; color: #64748b; font-size: 1rem; line-height: 1.7;">
+          Explore the master commercial layouts for Viraj Avenue. Click any floor plan card below to inspect the high-resolution architectural blueprint in full-screen lightbox view.
+        </p>
+      </div>
+
+      <div class="viraj-plans-grid">
+        <!-- Floor Plan 1: Ground Floor -->
+        <article class="viraj-plan-card" onclick="openVirajModal('../assets/viraj-brochure/page_3.png', 'Viraj Avenue - Ground Floor Plan');">
+          <div class="viraj-plan-img-wrap">
+            <img src="../assets/viraj-brochure/page_3.png" alt="Viraj Avenue Ground Floor Plan" />
+            <div class="viraj-plan-zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+              <span>Click to Zoom &amp; Inspect</span>
+            </div>
+          </div>
+          <div class="viraj-plan-body">
+            <span class="viraj-plan-tag">Road Frontage &amp; Retail</span>
+            <h3 class="viraj-plan-title">Ground Floor Plan</h3>
+            <p class="viraj-plan-desc">
+              Showcases 60.00M D.P. Road frontage, Shops A-01 to A-05 (16'1"x50'0"), B-01 to B-04, C-01 to C-05, Lobbies, 342.56 Sq.M Open Space, Club House, and rear stack parking.
+            </p>
+            <button class="viraj-plan-btn" type="button">Inspect High-Res Plan</button>
+          </div>
+        </article>
+
+        <!-- Floor Plan 2: First Floor Mezzanine -->
+        <article class="viraj-plan-card" onclick="openVirajModal('../assets/viraj-brochure/page_4.png', 'Viraj Avenue - First Floor Plan (Mezzanines)');">
+          <div class="viraj-plan-img-wrap">
+            <img src="../assets/viraj-brochure/page_4.png" alt="Viraj Avenue First Floor Plan" />
+            <div class="viraj-plan-zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+              <span>Click to Zoom &amp; Inspect</span>
+            </div>
+          </div>
+          <div class="viraj-plan-body">
+            <span class="viraj-plan-tag">Mezzanine Level</span>
+            <h3 class="viraj-plan-title">First Floor Plan</h3>
+            <p class="viraj-plan-desc">
+              Features upper mezzanine levels for double-height shops across Wing A, B, and C with attached private toilets, internal stairways, and lift lobbies.
+            </p>
+            <button class="viraj-plan-btn" type="button">Inspect High-Res Plan</button>
+          </div>
+        </article>
+
+        <!-- Floor Plan 3: Typical 2nd & 3rd Floor -->
+        <article class="viraj-plan-card" onclick="openVirajModal('../assets/viraj-brochure/page_5.png', 'Viraj Avenue - Typical 2nd to 3rd Floor Plan');">
+          <div class="viraj-plan-img-wrap">
+            <img src="../assets/viraj-brochure/page_5.png" alt="Viraj Avenue Typical 2nd to 3rd Floor Plan" />
+            <div class="viraj-plan-zoom-hint">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35M11 8v6M8 11h6"/></svg>
+              <span>Click to Zoom &amp; Inspect</span>
+            </div>
+          </div>
+          <div class="viraj-plan-body">
+            <span class="viraj-plan-tag">Corporate Suites</span>
+            <h3 class="viraj-plan-title">Typical 2nd &amp; 3rd Floor</h3>
+            <p class="viraj-plan-desc">
+              Details the upper corporate suites with wide 2.45M central passages, individual attached toilets for every unit, passenger elevators, and emergency fire stairs.
+            </p>
+            <button class="viraj-plan-btn" type="button">Inspect High-Res Plan</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Section 5: Location -->
+    <section class="viraj-location-section" id="location">
+      <div class="viraj-section-header">
+        <span class="viraj-eyebrow">Strategic Landmark Advantage</span>
+        <h2 class="viraj-title">Location &amp; Route Connectivity</h2>
+        <div class="viraj-divider"></div>
+      </div>
+
+      <div class="viraj-location-grid">
+        <div class="viraj-map-card" onclick="openVirajModal('../assets/viraj-brochure/page_7.png', 'Viraj Avenue Strategic Location & Route Map');">
+          <img src="../assets/viraj-brochure/viraj-map-crop.png" alt="Viraj Avenue Route Map" />
+        </div>
+
+        <div class="viraj-location-details">
+          <h3 style="font-family: 'Philosopher', serif; font-size: 1.5rem; color: var(--viraj-brand-dark); margin-bottom: 14px;">
+            Opp. Bali Mandir, Panchavati Annex
+          </h3>
+          <p style="color: #64748b; font-size: 0.96rem; line-height: 1.7; margin-bottom: 20px;">
+            Positioned along the vibrant Mumbai-Agra Highway corridor in Panchavati Annex, Viraj Avenue provides unmatched arterial connectivity across Nashik's residential, commercial, and transit hubs.
+          </p>
+
+          <ul class="viraj-location-info-list">
+            <li class="viraj-loc-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--viraj-brand)" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div>
+                <div class="viraj-loc-item-title">Bali Maharaj Mandir</div>
+                <div class="viraj-loc-item-desc">Directly opposite the project site for instant civic recognition.</div>
+              </div>
+            </li>
+            <li class="viraj-loc-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--viraj-brand)" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div>
+                <div class="viraj-loc-item-title">Mumbai-Agra National Highway</div>
+                <div class="viraj-loc-item-desc">Seamless vehicular transit toward Mumbai, Dhule, and Nashik city centre.</div>
+              </div>
+            </li>
+            <li class="viraj-loc-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--viraj-brand)" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div>
+                <div class="viraj-loc-item-title">Apollo Hospital &amp; KK Wagh College</div>
+                <div class="viraj-loc-item-desc">Major healthcare and premier educational institutions within quick reach.</div>
+              </div>
+            </li>
+            <li class="viraj-loc-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--viraj-brand)" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              <div>
+                <div class="viraj-loc-item-title">DMart, Dhatrak Phata &amp; Amrutdham</div>
+                <div class="viraj-loc-item-desc">High-density retail markets and prominent transit intersections nearby.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Joint Venture & Download -->
+    <section class="viraj-contact-section" id="contact">
+      <div class="viraj-section-header">
+        <span class="viraj-eyebrow">Official Project Documentation</span>
+        <h2 class="viraj-title">Joint Venture &amp; Brochure Download</h2>
+        <div class="viraj-divider"></div>
+      </div>
+
+      <div class="viraj-contact-grid">
+        <div class="viraj-jv-box">
+          <h3 class="viraj-jv-title">A Joint Venture of Trust &amp; Excellence</h3>
+
+          <div class="viraj-partners-row">
+            <div class="viraj-partner-col">
+              <div class="viraj-partner-name">Viraj Estates</div>
+              <div class="viraj-partner-tag">Beyond Trust</div>
+            </div>
+            <div class="viraj-partner-col">
+              <div class="viraj-partner-name">The Avenue</div>
+              <div class="viraj-partner-tag">Builders &amp; Developers</div>
+            </div>
+          </div>
+
+          <div class="viraj-office-details">
+            <div>
+              <strong>Site Address:</strong> Viraj Avenue, Opp. Bali Mandir, Panchavati Annex, Nashik.
+            </div>
+            <div>
+              <strong>Corporate Office:</strong> Shop No 8, Chandrawel Apartment, Behind Prakash Petrol Pump, Govind Nagar, Nashik.
+            </div>
+            <div>
+              <strong>Enquiry Desk &amp; WhatsApp:</strong>
+              <a href="tel:7277995566" style="color: var(--viraj-accent-light); text-decoration: none; font-weight: 700; margin-left: 6px;">+91 7277995566</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="viraj-download-box">
+          <div class="viraj-download-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+
+          <h3 class="viraj-download-title">Download Official PDF Brochure</h3>
+          <p class="viraj-download-desc">
+            Download the complete, authentic Viraj Avenue commercial brochure in high-definition PDF format to your device for offline inspection and detailed review.
+          </p>
+
+          <a href="../assets/Viraj Avenue Brochure.pdf" download="Viraj Avenue Brochure.pdf" class="viraj-download-btn-main">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span>DOWNLOAD BROCHURE (PDF)</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal -->
+  <div class="viraj-modal" id="virajModal" role="dialog" aria-modal="true" aria-labelledby="virajModalTitle">
+    <div class="viraj-modal-content">
+      <div class="viraj-modal-header">
+        <h3 class="viraj-modal-title" id="virajModalTitle">Viraj Avenue Architectural Blueprint</h3>
+        <button class="viraj-modal-close" onclick="closeVirajModal()" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="viraj-modal-body">
+        <img id="virajModalImg" src="" alt="Viraj Avenue Architectural Detail" />
+      </div>
+      <div class="viraj-modal-footer">
+        <span>Click outside or press Esc to close</span>
+        <a id="virajModalDownload" href="" download class="viraj-modal-download-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Save Image</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Floating Button -->
+  <a href="#home" class="viraj-back-to-top" id="virajBackToTop" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </a>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.getElementById('virajMenuToggle');
+      const sidebar = document.getElementById('virajSidebar');
+      const overlay = document.getElementById('virajOverlay');
+      const navLinks = document.querySelectorAll('.viraj-nav-link');
+      const sections = document.querySelectorAll('section[id]');
+      const backToTop = document.getElementById('virajBackToTop');
+
+      function toggleMobileMenu() {
+        menuToggle.classList.toggle('open');
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+        document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
+      }
+
+      function closeMobileMenu() {
+        menuToggle.classList.remove('open');
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      menuToggle?.addEventListener('click', toggleMobileMenu);
+      overlay?.addEventListener('click', closeMobileMenu);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              closeMobileMenu();
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + 220;
+
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      });
+    });
+
+    function openVirajModal(imgSrc, titleText) {
+      const modal = document.getElementById('virajModal');
+      const modalImg = document.getElementById('virajModalImg');
+      const modalTitle = document.getElementById('virajModalTitle');
+      const modalDownload = document.getElementById('virajModalDownload');
+
+      modalImg.src = imgSrc;
+      modalTitle.textContent = titleText || 'Viraj Avenue Architectural Blueprint';
+      modalDownload.href = imgSrc;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVirajModal() {
+      const modal = document.getElementById('virajModal');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('virajModal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'virajModal') {
+        closeVirajModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVirajModal();
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Avenue Bliss | Digital Brochure | The Avenue Builders &amp; Developers Nashik</title>
+  <meta name="description" content="Explore The Avenue Bliss: Limited Edition 2 &amp; 3 BHK Homes at Govind Nagar, Nashik. Interactive digital brochure featuring authentic floor plans, rooftop living amenities, and specifications." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="../assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base Site Stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- Digital Brochure Presentation Styles -->
+  <style>
+    :root {
+      --bliss-brand: #784931;
+      --bliss-brand-dark: #563321;
+      --bliss-brand-light: #945d41;
+      --bliss-sand: #fbf9f6;
+      --bliss-gold: #c59b6d;
+      --bliss-sidebar-width: 210px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.bliss-digital-brochure-page {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #111;
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FIXED SIDEBAR NAVIGATION (Matching Video Reference)
+       ========================================================= */
+    .bliss-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--bliss-sidebar-width);
+      background-color: var(--bliss-brand);
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.35);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bliss-sidebar-brand {
+      padding: 30px 18px 20px 18px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .bliss-emblem-wrap {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 12px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 65%, #f4ede6 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), 0 0 0 3px rgba(197, 155, 109, 0.45);
+      position: relative;
+    }
+
+    .bliss-emblem-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.4);
+      pointer-events: none;
+    }
+
+    .bliss-emblem-img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .bliss-brand-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .bliss-brand-sub {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.75);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Navigation list */
+    .bliss-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 15px 0;
+      margin: 0;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .bliss-nav-item {
+      width: 100%;
+    }
+
+    .bliss-nav-link {
+      display: block;
+      padding: 14px 24px;
+      color: #eeded3;
+      text-decoration: none;
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.22s ease;
+      position: relative;
+      outline: none;
+    }
+
+    .bliss-nav-link:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.08);
+      padding-left: 28px;
+    }
+
+    /* Active nav item matching video reference dotted indicator */
+    .bliss-nav-link.active {
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.15);
+      outline: 1px dotted rgba(255, 255, 255, 0.85);
+      outline-offset: -4px;
+      font-weight: 700;
+    }
+
+    .bliss-nav-link.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--bliss-gold);
+    }
+
+    .bliss-sidebar-footer {
+      padding: 18px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    .bliss-return-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .bliss-return-btn:hover {
+      background: #ffffff;
+      color: var(--bliss-brand);
+      border-color: #ffffff;
+    }
+
+    /* =========================================================
+       MOBILE TOP BAR & HAMBURGER
+       ========================================================= */
+    .bliss-mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background-color: var(--bliss-brand);
+      color: #fff;
+      z-index: 1001;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .bliss-mobile-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .bliss-mobile-brand-emblem {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .bliss-mobile-brand-emblem img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .bliss-mobile-brand-text {
+      font-family: 'Philosopher', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .bliss-mobile-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .bliss-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .bliss-mobile-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .bliss-mobile-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .bliss-mobile-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .bliss-sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 999;
+      backdrop-filter: blur(4px);
+    }
+
+    /* =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= */
+    .bliss-main-wrapper {
+      margin-left: var(--bliss-sidebar-width);
+      min-height: 100vh;
+      width: calc(100% - var(--bliss-sidebar-width));
+      background-color: #f7f5f2;
+      position: relative;
+    }
+
+    /* =========================================================
+       SECTION 1: HERO (#home)
+       ========================================================= */
+    .bliss-hero-section {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background-image: url('../assets/hero-avenue-bliss.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 30px;
+      overflow: hidden;
+    }
+
+    .bliss-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.45) 0%, rgba(30, 15, 8, 0.5) 100%);
+      z-index: 1;
+    }
+
+    .bliss-hero-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(120, 73, 49, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 50px 60px;
+      text-align: center;
+      max-width: 680px;
+      width: 90%;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      border-radius: 3px;
+      color: #ffffff;
+      animation: blissFadeScale 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes blissFadeScale {
+      from {
+        opacity: 0;
+        transform: scale(0.96) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .bliss-hero-tagline {
+      font-family: 'Philosopher', serif;
+      font-size: 1.25rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f8dfcb;
+      margin-bottom: 8px;
+    }
+
+    .bliss-hero-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #ffffff;
+      line-height: 1.15;
+      margin-bottom: 12px;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .bliss-hero-subtitle {
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    .bliss-hero-meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .bliss-meta-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      background: rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      font-size: 0.76rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 2px;
+    }
+
+    .bliss-meta-badge.highlight {
+      background: var(--bliss-gold);
+      color: #1a1a1a;
+      border-color: var(--bliss-gold);
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       SECTION 2: ABOUT (#about)
+       ========================================================= */
+    .bliss-about-section {
+      background-color: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .bliss-about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .bliss-about-media {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .bliss-about-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .bliss-about-media:hover img {
+      transform: scale(1.03);
+    }
+
+    .bliss-about-content {
+      padding: 10px 0;
+    }
+
+    .bliss-section-eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--bliss-brand);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .bliss-about-heading {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      color: var(--bliss-brand);
+      line-height: 1.2;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .bliss-about-subheading {
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .bliss-lead-text {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.8;
+      margin-bottom: 18px;
+    }
+
+    .bliss-body-text {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .bliss-feature-bullets {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .bliss-bullet-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .bliss-bullet-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(120, 73, 49, 0.12);
+      color: var(--bliss-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    /* =========================================================
+       SECTION 3: FEATURES (#features)
+       ========================================================= */
+    .bliss-features-section {
+      background: linear-gradient(180deg, rgba(20, 12, 8, 0.88) 0%, rgba(35, 20, 13, 0.92) 100%),
+                  url('../assets/hero-commercial-avenue.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .bliss-features-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .bliss-features-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .bliss-features-header .bliss-section-eyebrow {
+      color: var(--bliss-gold);
+    }
+
+    .bliss-features-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+    }
+
+    .bliss-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .bliss-feature-card {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      padding: 36px 32px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .bliss-card-header-tag {
+      font-family: 'Philosopher', serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      color: var(--bliss-gold);
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .bliss-feature-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .bliss-feature-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 0.94rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .bliss-feature-list li::before {
+      content: '•';
+      position: absolute;
+      left: 6px;
+      color: var(--bliss-gold);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       SECTION 4: AMENITIES (#amenities)
+       ========================================================= */
+    .bliss-amenities-section {
+      background: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .bliss-amenities-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .bliss-amenities-hero-text {
+      text-align: center;
+      max-width: 950px;
+      margin: 0 auto 50px auto;
+    }
+
+    .bliss-amenities-quote {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.95rem);
+      font-weight: 700;
+      color: var(--bliss-brand);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .bliss-amenities-quote-sub {
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #777;
+      font-weight: 600;
+    }
+
+    /* Master 3D Rooftop Visual Showcase */
+    .bliss-amenity-master-showcase {
+      margin-bottom: 50px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .bliss-amenity-master-showcase img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .bliss-amenity-master-caption {
+      padding: 16px 24px;
+      background: var(--bliss-sand);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .bliss-amenity-master-caption h4 {
+      font-family: 'Philosopher', serif;
+      font-size: 1.2rem;
+      color: var(--bliss-brand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 3x3 Photo Grid */
+    .bliss-amenities-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .bliss-amenity-tile {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      group: hover;
+    }
+
+    .bliss-amenity-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .bliss-amenity-tile:hover img {
+      transform: scale(1.08);
+    }
+
+    .bliss-amenity-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(20, 10, 5, 0.85) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px 20px;
+      color: #fff;
+    }
+
+    .bliss-amenity-name {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .bliss-amenity-desc {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.4;
+    }
+
+    /* =========================================================
+       SECTION 5: FLOOR PLANS (#floor-plans)
+       ========================================================= */
+    .bliss-plans-section {
+      background: linear-gradient(180deg, rgba(15, 10, 8, 0.9) 0%, rgba(25, 15, 10, 0.92) 100%),
+                  url('../assets/hero-residential-nx.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .bliss-plans-container {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+
+    .bliss-plans-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .bliss-plans-header .bliss-section-eyebrow {
+      color: var(--bliss-gold);
+    }
+
+    .bliss-plans-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .bliss-plans-subtitle {
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.75);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* 3 Frosted Cards Side by Side Matching Reference Recording */
+    .bliss-plans-three-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .bliss-plan-glass-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .bliss-plan-glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+      border-color: var(--bliss-gold);
+    }
+
+    .bliss-plan-img-holder {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2px;
+      padding: 12px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .bliss-plan-img-holder img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .bliss-plan-glass-card:hover .bliss-plan-img-holder img {
+      transform: scale(1.04);
+    }
+
+    .bliss-plan-card-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .bliss-plan-card-specs {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .bliss-plan-zoom-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--bliss-gold);
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    /* Prominent Centered Download Button Matching Reference Recording */
+    .bliss-download-row {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .bliss-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--bliss-brand);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 34px;
+      border-radius: 4px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .bliss-download-btn:hover {
+      background-color: var(--bliss-brand-light);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+      border-color: #ffffff;
+    }
+
+    .bliss-download-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       SECTION 6: CONTACT (#contact)
+       ========================================================= */
+    .bliss-contact-section {
+      background: linear-gradient(135deg, #18110d 0%, #291a13 100%);
+      color: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .bliss-contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .bliss-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Column 1: Info */
+    .bliss-contact-info-col h3 {
+      font-family: 'Philosopher', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .bliss-contact-block {
+      margin-bottom: 28px;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+    }
+
+    .bliss-contact-block p {
+      margin-bottom: 8px;
+    }
+
+    .bliss-contact-link {
+      color: rgba(255, 255, 255, 0.95);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .bliss-contact-link:hover {
+      color: var(--bliss-gold);
+    }
+
+    .bliss-rera-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      background: rgba(197, 155, 109, 0.15);
+      border: 1px solid var(--bliss-gold);
+      color: var(--bliss-gold);
+      font-size: 0.82rem;
+      letter-spacing: 1px;
+      border-radius: 2px;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+
+    /* Column 2: Map */
+    .bliss-map-col {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .bliss-map-col iframe {
+      width: 100%;
+      height: 340px;
+      border: none;
+      display: block;
+    }
+
+    /* Column 3: Form */
+    .bliss-form-col {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    }
+
+    .bliss-form-col form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .bliss-form-input,
+    .bliss-form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 3px;
+      padding: 12px 16px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      color: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .bliss-form-input::placeholder,
+    .bliss-form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .bliss-form-input:focus,
+    .bliss-form-textarea:focus {
+      border-color: var(--bliss-gold);
+      background: rgba(255, 255, 255, 0.18);
+    }
+
+    .bliss-form-textarea {
+      height: 95px;
+      resize: vertical;
+    }
+
+    .bliss-form-submit-btn {
+      background-color: var(--bliss-brand);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 14px 20px;
+      font-family: inherit;
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    }
+
+    .bliss-form-submit-btn:hover {
+      background-color: var(--bliss-brand-light);
+      border-color: #ffffff;
+    }
+
+    .bliss-form-feedback {
+      display: none;
+      padding: 12px;
+      border-radius: 3px;
+      font-size: 0.88rem;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .bliss-form-feedback.success {
+      display: block;
+      background: rgba(46, 125, 50, 0.25);
+      border: 1px solid #4caf50;
+      color: #a5d6a7;
+    }
+
+    /* =========================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================= */
+    .bliss-back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 44px;
+      height: 44px;
+      background: #1a1a1a;
+      color: var(--bliss-gold);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 998;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bliss-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .bliss-back-to-top:hover {
+      background: var(--bliss-brand);
+      color: #ffffff;
+      transform: translateY(-4px);
+    }
+
+    .bliss-back-to-top svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       FLOOR PLAN LIGHTBOX MODAL
+       ========================================================= */
+    .bliss-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 2000;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .bliss-modal.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .bliss-modal-content {
+      position: relative;
+      background: #fff;
+      border-radius: 4px;
+      max-width: 95vw;
+      max-height: 90vh;
+      overflow: auto;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .bliss-modal-img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .bliss-modal-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--bliss-brand);
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    .bliss-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .bliss-modal-close:hover {
+      background: var(--bliss-brand);
+      color: #fff;
+    }
+
+    /* =========================================================
+       RESPONSIVE ADAPTATIONS
+       ========================================================= */
+    @media (max-width: 1080px) {
+      .bliss-amenities-tiles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .bliss-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .bliss-plans-three-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .bliss-sidebar {
+        transform: translateX(-100%);
+        width: 260px;
+        z-index: 1002;
+      }
+
+      .bliss-sidebar.open {
+        transform: translateX(0);
+      }
+
+      .bliss-sidebar-backdrop.active {
+        display: block;
+      }
+
+      .bliss-mobile-bar {
+        display: flex;
+      }
+
+      .bliss-main-wrapper {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 64px;
+      }
+
+      .bliss-about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .bliss-features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .bliss-about-section,
+      .bliss-features-section,
+      .bliss-amenities-section,
+      .bliss-plans-section,
+      .bliss-contact-section {
+        padding: 70px 24px;
+      }
+
+      .bliss-hero-card {
+        padding: 35px 24px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .bliss-amenities-tiles-grid {
+        grid-template-columns: 1fr;
+      }
+      .bliss-feature-bullets {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="bliss-digital-brochure-page">
+
+  <!-- =========================================================
+       FIXED SIDE NAVIGATION BAR (Matches Reference Recording)
+       ========================================================= -->
+  <aside class="bliss-sidebar" id="blissSidebar">
+    <div class="bliss-sidebar-brand">
+      <div class="bliss-emblem-wrap" title="The Avenue Bliss">
+        <img src="../assets/logo-avenue-bliss.png" alt="The Avenue Bliss Logo" class="bliss-emblem-img" />
+      </div>
+      <h2 class="bliss-brand-title">The Avenue Bliss</h2>
+      <p class="bliss-brand-sub">Govind Nagar, Nashik</p>
+    </div>
+
+    <ul class="bliss-nav-list" id="blissNavList">
+      <li class="bliss-nav-item">
+        <a href="#home" class="bliss-nav-link active" data-section="home">Home</a>
+      </li>
+      <li class="bliss-nav-item">
+        <a href="#about" class="bliss-nav-link" data-section="about">About</a>
+      </li>
+      <li class="bliss-nav-item">
+        <a href="#features" class="bliss-nav-link" data-section="features">Features</a>
+      </li>
+      <li class="bliss-nav-item">
+        <a href="#amenities" class="bliss-nav-link" data-section="amenities">Amenities</a>
+      </li>
+      <li class="bliss-nav-item">
+        <a href="#floor-plans" class="bliss-nav-link" data-section="floor-plans">Floor Plan</a>
+      </li>
+      <li class="bliss-nav-item">
+        <a href="#contact" class="bliss-nav-link" data-section="contact">Contact</a>
+      </li>
+    </ul>
+
+    <div class="bliss-sidebar-footer">
+      <a href="projects.html" class="bliss-return-btn">
+        <span>&larr; Return to Website</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <header class="bliss-mobile-bar" id="blissMobileBar">
+    <a href="#home" class="bliss-mobile-brand">
+      <div class="bliss-mobile-brand-emblem">
+        <img src="../assets/logo-avenue-bliss.png" alt="Bliss Logo" />
+      </div>
+      <span class="bliss-mobile-brand-text">The Avenue Bliss</span>
+    </a>
+    <button type="button" class="bliss-mobile-toggle" id="blissMobileToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="bliss-sidebar-backdrop" id="blissBackdrop"></div>
+
+  <!-- =========================================================
+       MAIN SCROLLABLE CONTENT VIEWPORT
+       ========================================================= -->
+  <div class="bliss-main-wrapper" id="blissMain">
+
+    <!-- 1. SECTION: HERO (#home) -->
+    <section class="bliss-hero-section" id="home">
+      <div class="bliss-hero-overlay"></div>
+      <div class="bliss-hero-card">
+        <p class="bliss-hero-tagline">Elevate Your Life</p>
+        <h1 class="bliss-hero-title">The Avenue Bliss</h1>
+        <p class="bliss-hero-subtitle">Limited Edition 2 &amp; 3 BHK Homes</p>
+        
+        <div class="bliss-hero-meta-badges">
+          <span class="bliss-meta-badge highlight">Possession in 3 Months</span>
+          <span class="bliss-meta-badge">Govind Nagar &bull; Nashik</span>
+          <span class="bliss-meta-badge">MahaRERA: P51600034057</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SECTION: ABOUT (#about) -->
+    <section class="bliss-about-section" id="about">
+      <div class="bliss-about-grid">
+        
+        <div class="bliss-about-media">
+          <img src="../assets/bliss-brochure/page_2.png" alt="The Avenue Bliss Architectural Elevation" />
+        </div>
+
+        <div class="bliss-about-content">
+          <span class="bliss-section-eyebrow">Aspirational Living</span>
+          <h2 class="bliss-about-heading">Step into a World of Elegance</h2>
+          <p class="bliss-about-subheading">Limited Edition 2 &amp; 3 BHK Homes</p>
+
+          <p class="bliss-lead-text">
+            <strong>The Avenue Bliss</strong> is located in the micro-level planned layout of <strong>GOVIND NAGAR, NASHIK</strong>. Designed and planned to meet multinational architectural standards, each residence balances private sanctuary spaces with expansive family living.
+          </p>
+
+          <p class="bliss-body-text">
+            Floor plates are thoughtfully engineered to afford flexibility in interior layouts with cross-ventilation, abundant daylight, and panoramic rooftop leisure. Specifications adhere to global health, security, and environmental parameters.
+          </p>
+
+          <ul class="bliss-feature-bullets">
+            <li class="bliss-bullet-item">
+              <span class="bliss-bullet-icon">&check;</span>
+              <span>12 M Wide Road Frontage</span>
+            </li>
+            <li class="bliss-bullet-item">
+              <span class="bliss-bullet-icon">&check;</span>
+              <span>Dual High Speed Automatic Lifts</span>
+            </li>
+            <li class="bliss-bullet-item">
+              <span class="bliss-bullet-icon">&check;</span>
+              <span>Wide Passages &amp; Privacy Foyers</span>
+            </li>
+            <li class="bliss-bullet-item">
+              <span class="bliss-bullet-icon">&check;</span>
+              <span>Dedicated Crockery &amp; Wash Balconies</span>
+            </li>
+            <li class="bliss-bullet-item">
+              <span class="bliss-bullet-icon">&check;</span>
+              <span>Rooftop Sky Recreation Terrace</span>
+            </li>
+            <li class="bliss-bullet-item">
+              <span class="bliss-bullet-icon">&check;</span>
+              <span>MahaRERA Approved: P51600034057</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SECTION: FEATURES (#features) -->
+    <section class="bliss-features-section" id="features">
+      <div class="bliss-features-container">
+        
+        <div class="bliss-features-header">
+          <span class="bliss-section-eyebrow">Master Engineering</span>
+          <h2 class="bliss-features-title">Design Philosophy &amp; Connectivity</h2>
+        </div>
+
+        <div class="bliss-features-grid">
+          
+          <!-- Card 1: Nearby Locations & Connectivity -->
+          <div class="bliss-feature-card">
+            <h3 class="bliss-card-header-tag">Nearby Locations</h3>
+            <ul class="bliss-feature-list">
+              <li>Located in the micro-level planned layout of <strong>GOVIND NAGAR, NASHIK</strong>.</li>
+              <li>Close proximity to City Centre Mall as well as daily commercial conveniences.</li>
+              <li>15 minutes' drive from Ozar International Airport.</li>
+              <li>2 minutes' drive from Mahamarg Bus Stand and Mumbai Naka (Mumbai-Agra Highway).</li>
+              <li>Railway Station accessible within 20 minutes.</li>
+              <li>Easy and quick connectivity to Airport, Bus Stop, Malls, Hospitals, Schools, and Hotels.</li>
+              <li>Walk to work concept &mdash; strategic proximity to prime corporate hubs.</li>
+              <li>Access Roads: 12 Meter (40 feet) wide main access road.</li>
+              <li>Star Hotel: 10 minutes' drive from Hotel Taj Gateway, Nashik.</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Optimizing & Minimizing Design -->
+          <div class="bliss-feature-card">
+            <h3 class="bliss-card-header-tag">Optimizing Function in Design</h3>
+            <ul class="bliss-feature-list" style="margin-bottom: 24px;">
+              <li>Orientation of tower &amp; open spaces designed to achieve absolute privacy, natural light &amp; cross-ventilation to all apartments.</li>
+              <li>Building structure, basement, service installations, walkways &amp; driveways integrated at the micro-level.</li>
+            </ul>
+
+            <h3 class="bliss-card-header-tag">Minimizing Cost in Design</h3>
+            <ul class="bliss-feature-list">
+              <li>Clean line modern architecture with minimum redundancies.</li>
+              <li>Micro-level &amp; methodically planned locations of private &amp; public spaces.</li>
+              <li>Optimum layout &amp; integrated network of MEP engineering services.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SECTION: AMENITIES (#amenities) -->
+    <section class="bliss-amenities-section" id="amenities">
+      <div class="bliss-amenities-container">
+        
+        <div class="bliss-amenities-hero-text">
+          <h2 class="bliss-amenities-quote">
+            The outside ambience is as important as the one inside, so at The Avenue Bliss the external amenities do reflect a well-planned layout and much more...
+          </h2>
+          <p class="bliss-amenities-quote-sub">Rooftop Living Experience</p>
+        </div>
+
+        <!-- Master Aerial Perspective -->
+        <div class="bliss-amenity-master-showcase">
+          <img src="../assets/bliss-amenities/bliss-amenity-aerial.jpg" alt="The Avenue Bliss Rooftop Sky Recreation Master Visual" />
+          <div class="bliss-amenity-master-caption">
+            <h4>Rooftop Sky Deck &bull; Landscaped Leisure Horizon</h4>
+            <span style="font-size: 0.85rem; color: #666; font-weight: 600;">Panoramic Open Air Recreation</span>
+          </div>
+        </div>
+
+        <!-- 3x3 Photo Grid Matching Video Recording Demo -->
+        <div class="bliss-amenities-tiles-grid">
+          
+          <div class="bliss-amenity-tile">
+            <img src="../assets/bliss-amenities/bliss-amenity-pergola.jpg" alt="Sit Out &amp; Pergola Cabana" />
+            <div class="bliss-amenity-overlay">
+              <h4 class="bliss-amenity-name">Pergola Cabana Lounge</h4>
+              <p class="bliss-amenity-desc">Designer wooden pergola deck with comfortable outdoor sofas.</p>
+            </div>
+          </div>
+
+          <div class="bliss-amenity-tile">
+            <img src="../assets/bliss-amenities/bliss-amenity-yoga.jpg" alt="Yoga &amp; Meditation Deck" />
+            <div class="bliss-amenity-overlay">
+              <h4 class="bliss-amenity-name">Yoga &amp; Aerobics Deck</h4>
+              <p class="bliss-amenity-desc">Open-air morning meditation deck on soft synthetic lawn.</p>
+            </div>
+          </div>
+
+          <div class="bliss-amenity-tile">
+            <img src="../assets/bliss-amenities/bliss-amenity-sitout.jpg" alt="Umbrella Sit-Outs" />
+            <div class="bliss-amenity-overlay">
+              <h4 class="bliss-amenity-name">Umbrella Sit-Outs</h4>
+              <p class="bliss-amenity-desc">Private shade alcoves for evening coffee and sunset reading.</p>
+            </div>
+          </div>
+
+          <div class="bliss-amenity-tile">
+            <img src="../assets/bliss-amenities/bliss-amenity-track.jpg" alt="Perimeter Jogging Track" />
+            <div class="bliss-amenity-overlay">
+              <h4 class="bliss-amenity-name">Perimeter Jogging Track</h4>
+              <p class="bliss-amenity-desc">Paved continuous walking and fitness jogging circuit.</p>
+            </div>
+          </div>
+
+          <div class="bliss-amenity-tile">
+            <img src="../assets/bliss-amenities/bliss-amenity-play.jpg" alt="Children's Play Turf" />
+            <div class="bliss-amenity-overlay">
+              <h4 class="bliss-amenity-name">Children's Play Area</h4>
+              <p class="bliss-amenity-desc">Safe, secure elevated play ground with fresh breezes.</p>
+            </div>
+          </div>
+
+          <div class="bliss-amenity-tile">
+            <img src="../assets/bliss-amenities/bliss-amenity-seating.jpg" alt="Garden Seating Alcoves" />
+            <div class="bliss-amenity-overlay">
+              <h4 class="bliss-amenity-name">Senior Citizen Benches</h4>
+              <p class="bliss-amenity-desc">Perimeter garden seating with architectural illumination.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SECTION: FLOOR PLANS (#floor-plans) -->
+    <section class="bliss-plans-section" id="floor-plans">
+      <div class="bliss-plans-container">
+        
+        <div class="bliss-plans-header">
+          <span class="bliss-section-eyebrow">Architectural Excellence</span>
+          <h2 class="bliss-plans-title">Elegant &amp; Planned Residences</h2>
+          <p class="bliss-plans-subtitle">
+            Inspect the original authentic floor plans from the official brochure. Click any plan to open full-resolution inspection mode.
+          </p>
+        </div>
+
+        <!-- 3 Frosted Glass Cards (Matching Video Frame 18) -->
+        <div class="bliss-plans-three-cards">
+          
+          <!-- Card 1: Typical 1st to 6th Floor Plan -->
+          <div class="bliss-plan-glass-card" onclick="openBlissModal('../assets/bliss-brochure/page_3.png', '1st to 6th Typical Floor Plan (2 &amp; 3 BHK)')">
+            <div class="bliss-plan-img-holder">
+              <img src="../assets/bliss-brochure/page_3.png" alt="1st to 6th Typical Floor Plan" />
+            </div>
+            <h3 class="bliss-plan-card-title">Typical Floor Grid</h3>
+            <p class="bliss-plan-card-specs">1st to 6th Floors &bull; 1078, 1114, 1396 &amp; 1434 Sq.Ft</p>
+            <span class="bliss-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+          <!-- Card 2: 7th Floor Plan & Penthouses -->
+          <div class="bliss-plan-glass-card" onclick="openBlissModal('../assets/bliss-brochure/page_4.png', '7th Floor Plan &amp; Luxury Penthouses')">
+            <div class="bliss-plan-img-holder">
+              <img src="../assets/bliss-brochure/page_4.png" alt="7th Floor Plan" />
+            </div>
+            <h3 class="bliss-plan-card-title">7th Floor Layout</h3>
+            <p class="bliss-plan-card-specs">Penthouse Floor &bull; 1078, 1114, 1870 &amp; 1922 Sq.Ft</p>
+            <span class="bliss-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+          <!-- Card 3: 4 BHK Options -->
+          <div class="bliss-plan-glass-card" onclick="openBlissModal('../assets/bliss-brochure/page_5.png', '4 BHK Customization Options (Option 1 &amp; 2)')">
+            <div class="bliss-plan-img-holder">
+              <img src="../assets/bliss-brochure/page_5.png" alt="4 BHK Customization Options" />
+            </div>
+            <h3 class="bliss-plan-card-title">4 BHK Custom Options</h3>
+            <p class="bliss-plan-card-specs">Option 1 &amp; Option 2 &bull; 2,198.00 Sq.Ft</p>
+            <span class="bliss-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Download Brochure Button Matching Video Reference -->
+        <div class="bliss-download-row">
+          <a href="../assets/brochures/the-avenue-bliss.pdf" download="The-Avenue-Bliss-Brochure.pdf" class="bliss-download-btn" id="blissDownloadBtn" title="Download Official Brochure PDF">
+            <svg viewBox="0 0 24 24">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+            </svg>
+            <span>Download Brochure</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. SECTION: CONTACT (#contact) -->
+    <section class="bliss-contact-section" id="contact">
+      <div class="bliss-contact-container">
+        
+        <div class="bliss-contact-grid">
+          
+          <!-- Column 1: Official Details -->
+          <div class="bliss-contact-info-col">
+            <h3>Address</h3>
+            <div class="bliss-contact-block">
+              <p><strong>Site Address:</strong></p>
+              <p>S. No. 788, Chowk No. 4, Behind Prakash Petrol Pump, Govind Nagar, Nashik.</p>
+              
+              <p style="margin-top: 14px;"><strong>Registered Office:</strong></p>
+              <p>Shop No 1, The Avenue, Chowk No 1, Behind Prakash Petrol Pump, Govind Nagar, Nashik.</p>
+            </div>
+
+            <h3>Contact</h3>
+            <div class="bliss-contact-block">
+              <p>
+                <a href="tel:7277995566" class="bliss-contact-link">
+                  <span>📞 +91 7277995566</span>
+                </a>
+              </p>
+              <p>
+                <a href="mailto:theavenuensk@gmail.com" class="bliss-contact-link">
+                  <span>✉️ theavenuensk@gmail.com</span>
+                </a>
+              </p>
+              <p>
+                <a href="https://wa.me/917277995566" target="_blank" rel="noopener noreferrer" class="bliss-contact-link" style="color: #4ade80;">
+                  <span>💬 WhatsApp: +91 7277 99 55 66</span>
+                </a>
+              </p>
+            </div>
+
+            <div class="bliss-rera-badge">
+              MahaRERA Reg. No: P51600034057
+            </div>
+          </div>
+
+          <!-- Column 2: Google Maps Embed -->
+          <div class="bliss-map-col">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.697491753556!2d73.76562087595778!3d19.979188023348123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb65dbd6a133%3A0xe543fa00cb3e51d9!2sThe%20Avenue%20Builders%20%26%20Developers!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="The Avenue Bliss Site Map">
+            </iframe>
+          </div>
+
+          <!-- Column 3: Contact Form (Matching Video Recording) -->
+          <div class="bliss-form-col">
+            <form id="blissInquiryForm">
+              <input type="text" id="blissName" class="bliss-form-input" placeholder="Name" required />
+              <input type="email" id="blissEmail" class="bliss-form-input" placeholder="Email" required />
+              <input type="tel" id="blissPhone" class="bliss-form-input" placeholder="Contact No" required />
+              <textarea id="blissMessage" class="bliss-form-textarea" placeholder="Message" rows="4"></textarea>
+              <button type="submit" class="bliss-form-submit-btn">Send</button>
+              <div id="blissFormFeedback" class="bliss-form-feedback"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- =========================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================= -->
+  <a href="#home" class="bliss-back-to-top" id="blissBackToTop" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </a>
+
+  <!-- =========================================================
+       FULL-SCREEN FLOOR PLAN LIGHTBOX MODAL
+       ========================================================= -->
+  <div class="bliss-modal" id="blissModal">
+    <div class="bliss-modal-content">
+      <button type="button" class="bliss-modal-close" onclick="closeBlissModal()">&times;</button>
+      <img id="blissModalImg" src="" alt="Full-Screen Floor Plan" class="bliss-modal-img" />
+      <h3 id="blissModalTitle" class="bliss-modal-title"></h3>
+      <div style="margin-top: 14px;">
+        <a id="blissModalDownload" href="" download class="bliss-download-btn" style="padding: 10px 22px; font-size: 0.8rem;">
+          Download This Plan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INTERACTION SCRIPTS
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('blissMobileToggle');
+      const sidebar = document.getElementById('blissSidebar');
+      const backdrop = document.getElementById('blissBackdrop');
+
+      function toggleMobileMenu() {
+        mobileToggle.classList.toggle('open');
+        sidebar.classList.toggle('open');
+        backdrop.classList.toggle('active');
+      }
+
+      function closeMobileMenu() {
+        mobileToggle.classList.remove('open');
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('active');
+      }
+
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', closeMobileMenu);
+      }
+
+      // 2. Smooth Navigation and Active Scroll-Spy
+      const navLinks = document.querySelectorAll('.bliss-nav-link');
+      const sections = document.querySelectorAll('#blissMain section');
+      const backToTop = document.getElementById('blissBackToTop');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              closeMobileMenu();
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // Scroll event for active section highlight & back-to-top button
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + 200;
+
+        // Toggle back to top visibility
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+
+        // Active link tracking
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      });
+
+      // 3. Contact Form Submission
+      const form = document.getElementById('blissInquiryForm');
+      const feedback = document.getElementById('blissFormFeedback');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('blissName').value;
+          feedback.textContent = `Thank you, ${name}! Your inquiry for The Avenue Bliss has been recorded. Our team will contact you shortly.`;
+          feedback.className = 'bliss-form-feedback success';
+          form.reset();
+        });
+      }
+    });
+
+    // 4. Floor Plan Lightbox Modal
+    const modal = document.getElementById('blissModal');
+    const modalImg = document.getElementById('blissModalImg');
+    const modalTitle = document.getElementById('blissModalTitle');
+    const modalDownload = document.getElementById('blissModalDownload');
+
+    function openBlissModal(imgSrc, title) {
+      modalImg.src = imgSrc;
+      modalTitle.textContent = title;
+      modalDownload.href = imgSrc;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeBlissModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeBlissModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeBlissModal();
+      }
+    });
+  </script>
+</body>
+</html>

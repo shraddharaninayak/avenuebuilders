@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Avenue Aura | Digital Brochure | The Avenue Builders &amp; Developers Nashik</title>
+  <meta name="description" content="Explore The Avenue Aura: Limited Edition 3 &amp; 4 BHK Luxury Residences at Govind Nagar, Nashik. Interactive digital brochure featuring authentic floor plans, rooftop infinity pool, 45+ amenities, and specifications." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base Site Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Digital Brochure Presentation Styles for Aura (Reusing Bliss/Flora Architecture & Aesthetic) -->
+  <style>
+    :root {
+      --aura-brand: #784f30;
+      --aura-brand-dark: #4d311b;
+      --aura-brand-light: #94643f;
+      --aura-sand: #fbf8f4;
+      --aura-gold: #c99a5e;
+      --aura-gold-light: #e6be82;
+      --aura-bg-dark: #1f1610;
+      --aura-sidebar-width: 210px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.aura-digital-brochure-page {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--aura-bg-dark);
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FIXED SIDEBAR NAVIGATION (Matching Bliss / Flora Template)
+       ========================================================= */
+    .aura-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--aura-sidebar-width);
+      background-color: var(--aura-brand);
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.4);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .aura-sidebar-brand {
+      padding: 30px 18px 20px 18px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .aura-emblem-wrap {
+      width: 105px;
+      height: 105px;
+      margin: 0 auto 12px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 68%, #fbf8f4 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), 0 0 0 3px rgba(201, 154, 94, 0.5);
+      position: relative;
+    }
+
+    .aura-emblem-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(255, 255, 255, 0.45);
+      pointer-events: none;
+    }
+
+    .aura-emblem-img {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .aura-brand-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .aura-brand-sub {
+      font-size: 0.72rem;
+      color: rgba(255, 255, 255, 0.8);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    /* Navigation list */
+    .aura-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      padding: 15px 0;
+      margin: 0;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .aura-nav-item {
+      width: 100%;
+    }
+
+    .aura-nav-link {
+      display: block;
+      padding: 14px 24px;
+      color: #eeded3;
+      text-decoration: none;
+      font-family: 'Philosopher', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.22s ease;
+      position: relative;
+      outline: none;
+    }
+
+    .aura-nav-link:hover {
+      color: #ffffff;
+      background-color: rgba(255, 255, 255, 0.08);
+      padding-left: 28px;
+    }
+
+    /* Active nav item matching Bliss dotted indicator */
+    .aura-nav-link.active {
+      color: #ffffff;
+      background-color: rgba(0, 0, 0, 0.22);
+      outline: 1px dotted rgba(255, 255, 255, 0.85);
+      outline-offset: -4px;
+      font-weight: 700;
+    }
+
+    .aura-nav-link.active::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--aura-gold);
+    }
+
+    .aura-sidebar-footer {
+      padding: 18px 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .aura-return-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 8px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 2px;
+      transition: all 0.25s ease;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .aura-return-btn:hover {
+      background: #ffffff;
+      color: var(--aura-brand);
+      border-color: #ffffff;
+    }
+
+    /* =========================================================
+       MOBILE TOP BAR & HAMBURGER
+       ========================================================= */
+    .aura-mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background-color: var(--aura-brand);
+      color: #fff;
+      z-index: 1001;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+    }
+
+    .aura-mobile-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .aura-mobile-brand-emblem {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .aura-mobile-brand-emblem img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .aura-mobile-brand-text {
+      font-family: 'Philosopher', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .aura-mobile-toggle {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .aura-mobile-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .aura-mobile-toggle.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .aura-mobile-toggle.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .aura-mobile-toggle.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .aura-sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 999;
+      backdrop-filter: blur(4px);
+    }
+
+    /* =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= */
+    .aura-main-wrapper {
+      margin-left: var(--aura-sidebar-width);
+      min-height: 100vh;
+      width: calc(100% - var(--aura-sidebar-width));
+      background-color: #fbf8f4;
+      position: relative;
+    }
+
+    /* =========================================================
+       SECTION 1: HERO (#home)
+       ========================================================= */
+    .aura-hero-section {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      background-image: url('assets/hero-avenue-aura.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 30px;
+      overflow: hidden;
+    }
+
+    .aura-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(45, 28, 16, 0.62) 0%, rgba(77, 49, 27, 0.68) 100%);
+      z-index: 1;
+    }
+
+    .aura-hero-card {
+      position: relative;
+      z-index: 2;
+      background: rgba(77, 49, 27, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 50px 60px;
+      text-align: center;
+      max-width: 740px;
+      width: 90%;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      border-radius: 4px;
+      animation: auraFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes auraFadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .aura-hero-tagline {
+      font-size: 0.88rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--aura-gold-light);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .aura-hero-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .aura-hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .aura-hero-meta-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .aura-meta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      padding: 8px 18px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .aura-meta-badge.highlight {
+      background: var(--aura-gold);
+      color: #2b180a;
+      border-color: var(--aura-gold-light);
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       SECTION 2: ABOUT (#about)
+       ========================================================= */
+    .aura-about-section {
+      background-color: #fbf8f4;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .aura-about-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .aura-about-media {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .aura-about-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .aura-about-media:hover img {
+      transform: scale(1.03);
+    }
+
+    .aura-about-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .aura-section-eyebrow {
+      font-size: 0.82rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--aura-brand);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .aura-about-heading {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      color: #1a120c;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .aura-about-subheading {
+      font-size: 1.05rem;
+      color: #795232;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .aura-lead-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #44372e;
+      margin-bottom: 18px;
+    }
+
+    .aura-body-text {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #66564c;
+      margin-bottom: 28px;
+    }
+
+    .aura-feature-bullets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .aura-bullet-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: #33271f;
+      font-weight: 500;
+    }
+
+    .aura-bullet-icon {
+      color: var(--aura-gold);
+      font-size: 1.1rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* =========================================================
+       SECTION 3: GROUND AMENITIES (#ground-amenities)
+       ========================================================= */
+    .aura-ground-section {
+      background: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .aura-amenities-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .aura-amenities-hero-text {
+      text-align: center;
+      max-width: 950px;
+      margin: 0 auto 50px auto;
+    }
+
+    .aura-amenities-quote {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(1.4rem, 2.3vw, 1.95rem);
+      font-weight: 700;
+      color: var(--aura-brand);
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 14px;
+    }
+
+    .aura-amenities-quote-sub {
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      color: #66564c;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* Master visual showcase banner */
+    .aura-amenity-master-showcase {
+      margin-bottom: 50px;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .aura-amenity-master-showcase img {
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .aura-amenity-master-caption {
+      padding: 16px 24px;
+      background: var(--aura-sand);
+      border-top: 1px solid rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .aura-amenity-master-caption h4 {
+      font-family: 'Philosopher', serif;
+      font-size: 1.2rem;
+      color: var(--aura-brand);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* 4-col / 2-col Amenity Card Grid */
+    .aura-amenities-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .aura-amenity-tile {
+      background: #ffffff;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .aura-amenity-tile:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+      border-color: var(--aura-gold);
+    }
+
+    .aura-amenity-tile-media {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+
+    .aura-amenity-tile-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .aura-amenity-tile:hover .aura-amenity-tile-media img {
+      transform: scale(1.08);
+    }
+
+    .aura-amenity-tile-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .aura-amenity-name {
+      font-family: 'Philosopher', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--aura-brand-dark);
+      margin-bottom: 6px;
+    }
+
+    .aura-amenity-desc {
+      font-size: 0.85rem;
+      color: #66564c;
+      line-height: 1.5;
+    }
+
+    /* =========================================================
+       SECTION 4: ROOFTOP LIVING (#rooftop-amenities)
+       ========================================================= */
+    .aura-rooftop-section {
+      background: linear-gradient(180deg, #1f1610 0%, #2a1b12 100%);
+      color: #ffffff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .aura-rooftop-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .aura-rooftop-hero-text {
+      text-align: center;
+      max-width: 950px;
+      margin: 0 auto 50px auto;
+    }
+
+    .aura-rooftop-hero-text .aura-section-eyebrow {
+      color: var(--aura-gold);
+    }
+
+    .aura-rooftop-quote {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.3;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 14px;
+    }
+
+    .aura-rooftop-quote-sub {
+      font-size: 0.95rem;
+      letter-spacing: 1.5px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    /* Rooftop Tiles Grid (Dark Theme) */
+    .aura-rooftop-tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .aura-rooftop-tile {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      cursor: pointer;
+    }
+
+    .aura-rooftop-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .aura-rooftop-tile:hover img {
+      transform: scale(1.08);
+    }
+
+    .aura-rooftop-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(20, 10, 5, 0.88) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px 18px;
+      color: #fff;
+    }
+
+    .aura-rooftop-name {
+      font-family: 'Philosopher', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .aura-rooftop-desc {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.4;
+    }
+
+    /* =========================================================
+       SECTION 5: FLOOR PLANS (#floor-plans)
+       ========================================================= */
+    .aura-plans-section {
+      background: linear-gradient(180deg, rgba(22, 14, 9, 0.94) 0%, rgba(35, 22, 14, 0.96) 100%),
+                  url('assets/hero-avenue-aura.jpg');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #fff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .aura-plans-container {
+      max-width: 1260px;
+      margin: 0 auto;
+    }
+
+    .aura-plans-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .aura-plans-header .aura-section-eyebrow {
+      color: var(--aura-gold);
+    }
+
+    .aura-plans-title {
+      font-family: 'Philosopher', serif;
+      font-size: clamp(2rem, 3.4vw, 2.7rem);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .aura-plans-subtitle {
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* 3 Frosted Cards Side by Side Matching Bliss & Flora Reference */
+    .aura-plans-three-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+
+    .aura-plan-glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 4px;
+      padding: 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    }
+
+    .aura-plan-glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+      border-color: var(--aura-gold);
+    }
+
+    .aura-plan-img-holder {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2px;
+      padding: 12px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3.4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .aura-plan-img-holder img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .aura-plan-glass-card:hover .aura-plan-img-holder img {
+      transform: scale(1.04);
+    }
+
+    .aura-plan-card-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .aura-plan-card-specs {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+
+    .aura-plan-zoom-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.74rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--aura-gold);
+      font-weight: 700;
+      margin-top: auto;
+    }
+
+    /* 3D Isometric Unit Showcase (3 BHK & 4 BHK) */
+    .aura-unit-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .aura-unit-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .aura-unit-card:hover {
+      border-color: var(--aura-gold);
+      transform: translateY(-5px);
+    }
+
+    .aura-unit-media {
+      background: #ffffff;
+      border-radius: 2px;
+      padding: 12px;
+      aspect-ratio: 16 / 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .aura-unit-media img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .aura-unit-card-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.25rem;
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .aura-unit-card-sub {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 12px;
+    }
+
+    /* Prominent Centered Download Brochure Button */
+    .aura-download-row {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .aura-download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: var(--aura-gold);
+      color: #2b180a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 16px 36px;
+      border-radius: 4px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1px solid var(--aura-gold-light);
+    }
+
+    .aura-download-btn:hover {
+      background: #ffffff;
+      color: var(--aura-brand);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .aura-download-btn svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       SECTION 6: LOCATION & CONTACT (#contact)
+       ========================================================= */
+    .aura-contact-section {
+      background-color: #17100b;
+      color: #fff;
+      padding: 100px 50px;
+      position: relative;
+    }
+
+    .aura-contact-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .aura-contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .aura-contact-info-col h3,
+    .aura-form-col h3 {
+      font-family: 'Philosopher', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--aura-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .aura-contact-block {
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .aura-contact-link {
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 8px;
+      transition: color 0.2s ease;
+    }
+
+    .aura-contact-link:hover {
+      color: var(--aura-gold);
+    }
+
+    .aura-rera-badge {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 14px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      color: var(--aura-gold);
+      font-weight: 600;
+    }
+
+    /* Column 2: Maps */
+    .aura-map-col {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .aura-map-col-header {
+      font-family: 'Philosopher', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--aura-gold);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      padding-bottom: 8px;
+    }
+
+    .aura-map-thumb-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      cursor: pointer;
+      background: #ffffff;
+    }
+
+    .aura-map-thumb-wrap img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .aura-map-thumb-wrap:hover img {
+      transform: scale(1.05);
+    }
+
+    .aura-map-thumb-badge {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      background: rgba(31, 22, 16, 0.85);
+      color: var(--aura-gold);
+      font-size: 0.72rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      font-weight: 600;
+    }
+
+    .aura-map-col iframe {
+      width: 100%;
+      height: 180px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 4px;
+    }
+
+    /* Column 3: Inquiry Form */
+    .aura-form-input,
+    .aura-form-textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 2px;
+      padding: 12px 14px;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+      transition: all 0.2s ease;
+      outline: none;
+    }
+
+    .aura-form-input:focus,
+    .aura-form-textarea:focus {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: var(--aura-gold);
+    }
+
+    .aura-form-submit-btn {
+      width: 100%;
+      background: var(--aura-brand);
+      color: #fff;
+      border: 1px solid var(--aura-gold);
+      padding: 12px;
+      font-family: 'Philosopher', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .aura-form-submit-btn:hover {
+      background: var(--aura-gold);
+      color: #2b180a;
+    }
+
+    .aura-form-feedback {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      display: none;
+    }
+
+    .aura-form-feedback.success {
+      display: block;
+      color: #4ade80;
+    }
+
+    /* =========================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================= */
+    .aura-back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 48px;
+      height: 48px;
+      background: var(--aura-gold);
+      color: #2b180a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      z-index: 998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+    }
+
+    .aura-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .aura-back-to-top:hover {
+      background: #ffffff;
+      color: var(--aura-brand);
+      transform: translateY(-4px);
+    }
+
+    .aura-back-to-top svg {
+      width: 20px;
+      height: 20px;
+      fill: currentColor;
+    }
+
+    /* =========================================================
+       FLOOR PLAN LIGHTBOX MODAL
+       ========================================================= */
+    .aura-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 2000;
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .aura-modal.open {
+      display: flex;
+      opacity: 1;
+    }
+
+    .aura-modal-content {
+      position: relative;
+      background: #fff;
+      border-radius: 4px;
+      max-width: 95vw;
+      max-height: 90vh;
+      overflow: auto;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .aura-modal-img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .aura-modal-title {
+      font-family: 'Philosopher', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--aura-brand);
+      text-transform: uppercase;
+      margin-top: 16px;
+    }
+
+    .aura-modal-close {
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      background: rgba(0, 0, 0, 0.1);
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s ease;
+    }
+
+    .aura-modal-close:hover {
+      background: var(--aura-brand);
+      color: #fff;
+    }
+
+    /* =========================================================
+       RESPONSIVE ADAPTATIONS
+       ========================================================= */
+    @media (max-width: 1100px) {
+      .aura-amenities-tiles-grid,
+      .aura-rooftop-tiles-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .aura-plans-three-cards {
+        grid-template-columns: 1fr;
+      }
+      .aura-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .aura-sidebar {
+        transform: translateX(-100%);
+        width: 260px;
+        z-index: 1002;
+      }
+
+      .aura-sidebar.open {
+        transform: translateX(0);
+      }
+
+      .aura-sidebar-backdrop.active {
+        display: block;
+      }
+
+      .aura-mobile-bar {
+        display: flex;
+      }
+
+      .aura-main-wrapper {
+        margin-left: 0;
+        width: 100%;
+        margin-top: 64px;
+      }
+
+      .aura-about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .aura-unit-showcase-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .aura-about-section,
+      .aura-ground-section,
+      .aura-rooftop-section,
+      .aura-plans-section,
+      .aura-contact-section {
+        padding: 70px 24px;
+      }
+
+      .aura-hero-card {
+        padding: 35px 24px;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .aura-amenities-tiles-grid,
+      .aura-rooftop-tiles-grid {
+        grid-template-columns: 1fr;
+      }
+      .aura-feature-bullets {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="aura-digital-brochure-page">
+
+  <!-- =========================================================
+       FIXED SIDE NAVIGATION BAR (Matches Bliss / Flora Template)
+       ========================================================= -->
+  <aside class="aura-sidebar" id="auraSidebar">
+    <div class="aura-sidebar-brand">
+      <div class="aura-emblem-wrap" title="The Avenue Aura">
+        <img src="assets/logo-avenue-aura.png" alt="The Avenue Aura Logo" class="aura-emblem-img" />
+      </div>
+      <h2 class="aura-brand-title">The Avenue Aura</h2>
+      <p class="aura-brand-sub">Govind Nagar, Nashik</p>
+    </div>
+
+    <ul class="aura-nav-list" id="auraNavList">
+      <li class="aura-nav-item">
+        <a href="#home" class="aura-nav-link active" data-section="home">Home</a>
+      </li>
+      <li class="aura-nav-item">
+        <a href="#about" class="aura-nav-link" data-section="about">About</a>
+      </li>
+      <li class="aura-nav-item">
+        <a href="#ground-amenities" class="aura-nav-link" data-section="ground-amenities">Ground Amenities</a>
+      </li>
+      <li class="aura-nav-item">
+        <a href="#rooftop-amenities" class="aura-nav-link" data-section="rooftop-amenities">Rooftop Living</a>
+      </li>
+      <li class="aura-nav-item">
+        <a href="#floor-plans" class="aura-nav-link" data-section="floor-plans">Floor Plans</a>
+      </li>
+      <li class="aura-nav-item">
+        <a href="#contact" class="aura-nav-link" data-section="contact">Location &amp; Contact</a>
+      </li>
+    </ul>
+
+    <div class="aura-sidebar-footer">
+      <a href="projects.html" class="aura-return-btn">
+        <span>&larr; Return to Website</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <header class="aura-mobile-bar" id="auraMobileBar">
+    <a href="#home" class="aura-mobile-brand">
+      <div class="aura-mobile-brand-emblem">
+        <img src="assets/logo-avenue-aura.png" alt="Aura Logo" />
+      </div>
+      <span class="aura-mobile-brand-text">The Avenue Aura</span>
+    </a>
+    <button type="button" class="aura-mobile-toggle" id="auraMobileToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- Mobile Sidebar Backdrop -->
+  <div class="aura-sidebar-backdrop" id="auraBackdrop"></div>
+
+  <!-- =========================================================
+       MAIN SCROLLABLE CONTENT VIEWPORT
+       ========================================================= -->
+  <div class="aura-main-wrapper" id="auraMain">
+
+    <!-- 1. SECTION: HERO (#home) -->
+    <section class="aura-hero-section" id="home">
+      <div class="aura-hero-overlay"></div>
+      <div class="aura-hero-card">
+        <p class="aura-hero-tagline">Elevate your life...</p>
+        <h1 class="aura-hero-title">The Avenue Aura</h1>
+        <p class="aura-hero-subtitle">Limited Edition 3 &amp; 4 BHK Luxury Homes</p>
+        
+        <div class="aura-hero-meta-badges">
+          <span class="aura-meta-badge highlight">&check; Ready Possession</span>
+          <span class="aura-meta-badge">Govind Nagar &bull; Nashik</span>
+          <span class="aura-meta-badge">45+ Curated Amenities</span>
+          <span class="aura-meta-badge">MahaRERA: P51600031033</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SECTION: ABOUT (#about) -->
+    <section class="aura-about-section" id="about">
+      <div class="aura-about-grid">
+        
+        <div class="aura-about-media">
+          <img src="assets/aura-brochure/page_17.png" alt="The Avenue Aura Architectural Tower Elevation" />
+        </div>
+
+        <div class="aura-about-content">
+          <span class="aura-section-eyebrow">Residential Distinction</span>
+          <h2 class="aura-about-heading">Step into a World of Elegance</h2>
+          <p class="aura-about-subheading">Limited Edition 3 &amp; 4 BHK Luxury Residences</p>
+
+          <p class="aura-lead-text">
+            Elevate your lifestyle with <strong>The Avenue Aura</strong> &mdash; an exclusive sanctuary designed for those who appreciate understated luxury, expansive living spaces, and world-class amenities in prime <strong>Govind Nagar, Nashik</strong>.
+          </p>
+
+          <p class="aura-body-text">
+            The outside ambience is as important as the one inside, so at The Aura the external amenities do reflect a well-planned layout and much more. Set amidst manicured landscaped promenades, each residence is crafted with uninhibited natural cross-ventilation, expansive balconies, private master suites, and seamless road connectivity.
+          </p>
+
+          <ul class="aura-feature-bullets">
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Ready Possession 3 &amp; 4 BHK Homes</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>45+ Curated Ground &amp; Rooftop Amenities</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Rooftop Infinity Swimming Pool &amp; Deck</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Open-Air Sky Amphitheatre &amp; Stargazing</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Lord Ganesh Community Temple &amp; Lawns</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Dedicated Box Cricket Turf &amp; Play Arena</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Well-Equipped Gymnasium &amp; Aerobics Desk</span>
+            </li>
+            <li class="aura-bullet-item">
+              <span class="aura-bullet-icon">&check;</span>
+              <span>Behind Prakash Petrol Pump, Govind Nagar</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SECTION: GROUND LEVEL AMENITIES (#ground-amenities) -->
+    <section class="aura-ground-section" id="ground-amenities">
+      <div class="aura-amenities-container">
+        
+        <div class="aura-amenities-hero-text">
+          <span class="aura-section-eyebrow">Ground Level Living</span>
+          <h2 class="aura-amenities-quote">Step Into a World of Elegance</h2>
+          <p class="aura-amenities-quote-sub">
+            The outside ambience is as important as the one inside. The Aura's external amenities reflect a meticulously planned sanctuary for wellness, recreation, and spiritual peace.
+          </p>
+        </div>
+
+        <!-- Master Showcase: Children Play Area & Temple / Box Cricket -->
+        <div class="aura-amenity-master-showcase">
+          <img src="assets/aura-amenities/ground-play-area.jpg" alt="The Avenue Aura Ground Level Amenities Showcase" />
+          <div class="aura-amenity-master-caption">
+            <h4>Ground Level Landscaped Promenade &bull; Play &amp; Sports Enclave</h4>
+            <span style="font-size: 0.85rem; color: #888; font-weight: 600;">12 Ground Realm Amenities</span>
+          </div>
+        </div>
+
+        <!-- 8 Detailed Amenity Tiles -->
+        <div class="aura-amenities-tiles-grid">
+          
+          <!-- Tile 1: Children's Play Area -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-amenities/ground-play-area.jpg" alt="Children's Play Area" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Children's Play Area</h3>
+              <p class="aura-amenity-desc">Custom designed rubberized safe play equipment, vibrant slides, and interactive swings for children.</p>
+            </div>
+          </div>
+
+          <!-- Tile 2: Lord Ganesh Temple -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-amenities/temple-cricket.jpg" alt="Lord Ganesh Temple" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Lord Ganesh Temple</h3>
+              <p class="aura-amenity-desc">A sacred, serene community temple embedded within landscaped greens for daily peaceful contemplation.</p>
+            </div>
+          </div>
+
+          <!-- Tile 3: Box Cricket Turf -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-amenities/temple-cricket.jpg" alt="Box Cricket Turf" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Box Cricket Turf</h3>
+              <p class="aura-amenity-desc">Dedicated floodlit box cricket arena with perimeter safety nets for weekend tournaments and sports enthusiasts.</p>
+            </div>
+          </div>
+
+          <!-- Tile 4: Gymnasium & Health Club -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-brochure/page_4.png" alt="Gymnasium &amp; Health Club" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Well Equipped Gym</h3>
+              <p class="aura-amenity-desc">Air-conditioned modern fitness club outfitted with cardio machinery, free weights, and cross-training stations.</p>
+            </div>
+          </div>
+
+          <!-- Tile 5: Yoga & Aerobics Arena -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-amenities/rooftop-lawn.jpg" alt="Yoga &amp; Aerobics Arena" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Yoga &amp; Aerobics Desk</h3>
+              <p class="aura-amenity-desc">Spacious tranquil arena designed for morning yoga, meditation, pilates, and rhythmic aerobics sessions.</p>
+            </div>
+          </div>
+
+          <!-- Tile 6: Indoor Games Hub -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-amenities/rooftop-seating-alcove.jpg" alt="Indoor Games Hub" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Indoor Games Room</h3>
+              <p class="aura-amenity-desc">Dedicated recreational zone equipped with table tennis, carrom boards, chess tables, and social seating.</p>
+            </div>
+          </div>
+
+          <!-- Tile 7: Senior Citizens Seating -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-amenities/rooftop-jogging-track.jpg" alt="Senior Citizens Seating" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Senior Citizens Seating</h3>
+              <p class="aura-amenity-desc">Shaded garden pavilions and ergonomic benches offering peaceful conversation corners away from vehicular movement.</p>
+            </div>
+          </div>
+
+          <!-- Tile 8: Sand Pit & Community Amenities -->
+          <div class="aura-amenity-tile">
+            <div class="aura-amenity-tile-media">
+              <img src="assets/aura-brochure/page_3.png" alt="Sand Pit &amp; Community Amenities" />
+            </div>
+            <div class="aura-amenity-tile-body">
+              <h3 class="aura-amenity-name">Sand Pit &amp; Hall</h3>
+              <p class="aura-amenity-desc">Dedicated hygienic sand pit for toddlers, multipurpose community hall, EV charging station, and reticulated gas pipeline.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. SECTION: ROOFTOP LIVING (#rooftop-amenities) -->
+    <section class="aura-rooftop-section" id="rooftop-amenities">
+      <div class="aura-rooftop-container">
+        
+        <div class="aura-rooftop-hero-text">
+          <span class="aura-section-eyebrow">Sky Sanctuary</span>
+          <h2 class="aura-rooftop-quote">Terrace Level Premium Amenities</h2>
+          <p class="aura-rooftop-quote-sub">
+            A private resort atop the city lights. Curated exclusively for rejuvenation, fitness, and memorable evenings with family and friends.
+          </p>
+        </div>
+
+        <!-- Master Rooftop Showcase: Amphitheatre -->
+        <div class="aura-amenity-master-showcase" style="border-color: rgba(255,255,255,0.15);">
+          <img src="assets/aura-amenities/rooftop-amphitheatre.jpg" alt="The Avenue Aura Rooftop Amphitheatre" />
+          <div class="aura-amenity-master-caption" style="background: rgba(30, 20, 14, 0.95); border-color: rgba(255,255,255,0.1);">
+            <h4 style="color: var(--aura-gold);">Open-Air Rooftop Amphitheatre &bull; Terrace Recreation Realm</h4>
+            <span style="font-size: 0.85rem; color: rgba(255,255,255,0.7); font-weight: 600;">Panoramic City Views</span>
+          </div>
+        </div>
+
+        <!-- 8 Rooftop Amenity Tiles -->
+        <div class="aura-rooftop-tiles-grid">
+          
+          <!-- Tile 1: Rooftop Infinity Pool -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-infinity-pool.jpg', 'Rooftop Infinity Swimming Pool')">
+            <img src="assets/aura-amenities/rooftop-infinity-pool.jpg" alt="Rooftop Infinity Pool" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Rooftop Infinity Pool</h3>
+              <p class="aura-rooftop-desc">Crystal clear waters blending seamlessly into the horizon with adjacent kids' splash pool and sun loungers.</p>
+            </div>
+          </div>
+
+          <!-- Tile 2: Open-Air Amphitheatre -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-amphitheatre.jpg', 'Open-Air Rooftop Amphitheatre')">
+            <img src="assets/aura-amenities/rooftop-amphitheatre.jpg" alt="Rooftop Amphitheatre" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Sky Amphitheatre</h3>
+              <p class="aura-rooftop-desc">Stepped illuminated grass amphitheatre for acoustic musical evenings, movie screenings, and society gatherings.</p>
+            </div>
+          </div>
+
+          <!-- Tile 3: Jogging / Walking Track -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-jogging-track.jpg', 'Rooftop Jogging / Walking Track')">
+            <img src="assets/aura-amenities/rooftop-jogging-track.jpg" alt="Rooftop Jogging Track" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Jogging &amp; Walking Track</h3>
+              <p class="aura-rooftop-desc">Elevated perimeter jogging promenade offering fresh morning breezes and unobstructed mountain vistas.</p>
+            </div>
+          </div>
+
+          <!-- Tile 4: Green Gym -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-green-gym.jpg', 'Rooftop Outdoor Green Gym')">
+            <img src="assets/aura-amenities/rooftop-green-gym.jpg" alt="Rooftop Green Gym" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Outdoor Green Gym</h3>
+              <p class="aura-rooftop-desc">Open-air calisthenics stations and bodyweight workout equipment overlooking the Nashik city skyline.</p>
+            </div>
+          </div>
+
+          <!-- Tile 5: Seating Alcove -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-seating-alcove.jpg', 'Rooftop Seating Alcove &amp; Deck')">
+            <img src="assets/aura-amenities/rooftop-seating-alcove.jpg" alt="Rooftop Seating Alcove" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Seating Alcove</h3>
+              <p class="aura-rooftop-desc">Private plush outdoor lounge suites tucked under pergolas for intimate conversations and reading.</p>
+            </div>
+          </div>
+
+          <!-- Tile 6: Reflexology Path -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-reflexology-path.jpg', 'Rooftop Reflexology Stone Path')">
+            <img src="assets/aura-amenities/rooftop-reflexology-path.jpg" alt="Rooftop Reflexology Path" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Reflexology Path</h3>
+              <p class="aura-rooftop-desc">Curated river pebble acupressure path designed to stimulate energy points and boost holistic wellness.</p>
+            </div>
+          </div>
+
+          <!-- Tile 7: Artificial Lawn -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-lawn.jpg', 'Rooftop Artificial Turf Lawn')">
+            <img src="assets/aura-amenities/rooftop-lawn.jpg" alt="Rooftop Artificial Lawn" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Terrace Turf Lawn</h3>
+              <p class="aura-rooftop-desc">Lush, manicured all-weather artificial turf perfect for barefoot morning meditation and yoga.</p>
+            </div>
+          </div>
+
+          <!-- Tile 8: Pantry & Barbeque Area -->
+          <div class="aura-rooftop-tile" onclick="openAuraModal('assets/aura-amenities/rooftop-bbq.jpg', 'Rooftop Pantry &amp; Barbeque Deck')">
+            <img src="assets/aura-amenities/rooftop-bbq.jpg" alt="Rooftop Pantry &amp; BBQ" />
+            <div class="aura-rooftop-overlay">
+              <h3 class="aura-rooftop-name">Pantry / Barbeque</h3>
+              <p class="aura-rooftop-desc">Fully equipped open-air grill counter and preparation station for weekend cookouts and private parties.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SECTION: FLOOR PLANS (#floor-plans) -->
+    <section class="aura-plans-section" id="floor-plans">
+      <div class="aura-plans-container">
+        
+        <div class="aura-plans-header">
+          <span class="aura-section-eyebrow">Architectural Excellence</span>
+          <h2 class="aura-plans-title">Master Layouts &amp; Floor Plans</h2>
+          <p class="aura-plans-subtitle">
+            Inspect the official authentic floor plans from The Avenue Aura brochure. Click any plan to open full-resolution inspection mode.
+          </p>
+        </div>
+
+        <!-- 3 Frosted Glass Cards (Matching Bliss / Flora Reference Layout) -->
+        <div class="aura-plans-three-cards">
+          
+          <!-- Card 1: Ground Floor Plan -->
+          <div class="aura-plan-glass-card" onclick="openAuraModal('assets/aura-brochure/page_3.png', 'Ground Floor Plan &bull; Entrance &amp; 12 Amenities')">
+            <div class="aura-plan-img-holder">
+              <img src="assets/aura-brochure/page_3.png" alt="The Avenue Aura Ground Floor Plan" />
+            </div>
+            <h3 class="aura-plan-card-title">Ground Floor Plan</h3>
+            <p class="aura-plan-card-specs">9.00 M Road Frontage &bull; In/Out Ramps &bull; 12 Ground Realm Amenities &bull; EV Point</p>
+            <span class="aura-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+          <!-- Card 2: Typical First to Sixth Floor Plan -->
+          <div class="aura-plan-glass-card" onclick="openAuraModal('assets/aura-brochure/page_5.png', 'Typical First to Sixth Floor Plan &bull; 3 &amp; 4 BHK Homes')">
+            <div class="aura-plan-img-holder">
+              <img src="assets/aura-brochure/page_5.png" alt="The Avenue Aura Typical Floor Plan" />
+            </div>
+            <h3 class="aura-plan-card-title">Typical Floor Plan (1st-6th)</h3>
+            <p class="aura-plan-card-specs">Limited Edition 3 &amp; 4 BHK Homes &bull; Wing A &amp; Wing B &bull; Dual Elevators &bull; Balconies</p>
+            <span class="aura-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+          <!-- Card 3: Terrace Amenities Layout -->
+          <div class="aura-plan-glass-card" onclick="openAuraModal('assets/aura-brochure/page_15.png', 'Terrace Amenities Layout &bull; Infinity Pool &amp; Amphitheatre')">
+            <div class="aura-plan-img-holder">
+              <img src="assets/aura-brochure/page_15.png" alt="The Avenue Aura Terrace Layout Plan" />
+            </div>
+            <h3 class="aura-plan-card-title">Terrace Amenities Layout</h3>
+            <p class="aura-plan-card-specs">Rooftop Pool &bull; Sky Amphitheatre &bull; Jogging Promenade &bull; Reflexology &bull; BBQ</p>
+            <span class="aura-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect Full Plan</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- 3D Isometric View Cards for 3 BHK & 4 BHK -->
+        <div class="aura-unit-showcase-grid">
+          
+          <div class="aura-unit-card" onclick="openAuraModal('assets/aura-brochure/page_10.png', '3 BHK Residence &bull; 3D Isometric Cut-Section &amp; Layout Plan')">
+            <div class="aura-unit-media">
+              <img src="assets/aura-brochure/page_10.png" alt="3 BHK Residence 3D Isometric View" />
+            </div>
+            <h3 class="aura-unit-card-title">3 BHK Luxury Residence</h3>
+            <p class="aura-unit-card-sub">Flat 102 - 702 (B Wing) &bull; Living 17'9" x 16'3" &bull; Master Bedroom with Balcony</p>
+            <span class="aura-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect 3D Isometric Plan</span>
+            </span>
+          </div>
+
+          <div class="aura-unit-card" onclick="openAuraModal('assets/aura-brochure/page_11.png', '4 BHK Luxury Residence &bull; 3D Isometric Cut-Section &amp; Layout Plan')">
+            <div class="aura-unit-media">
+              <img src="assets/aura-brochure/page_11.png" alt="4 BHK Residence 3D Isometric View" />
+            </div>
+            <h3 class="aura-unit-card-title">4 BHK Master Residence</h3>
+            <p class="aura-unit-card-sub">Flat 103 - 603 (B Wing) &bull; Living 12' x 20'2" &bull; Dining &amp; Mandir &bull; Walk-in Dresser</p>
+            <span class="aura-plan-zoom-indicator">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+              <span>Inspect 3D Isometric Plan</span>
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Prominent Centered Download Brochure Button Matching Bliss & Flora Reference -->
+        <div class="aura-download-row">
+          <a href="assets/avenue-aura-brochure.pdf" download="The-Avenue-Aura-Brochure.pdf" class="aura-download-btn" id="auraDownloadBtn" title="Download Official Aura Brochure PDF">
+            <svg viewBox="0 0 24 24">
+              <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+            </svg>
+            <span>Download Brochure</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. SECTION: LOCATION & CONTACT (#contact) -->
+    <section class="aura-contact-section" id="contact">
+      <div class="aura-contact-container">
+        
+        <div class="aura-contact-grid">
+          
+          <!-- Column 1: Official Details -->
+          <div class="aura-contact-info-col">
+            <h3>Address</h3>
+            <div class="aura-contact-block">
+              <p><strong>Site Address:</strong></p>
+              <p>S. No. 803, Plot No. 25/26, Chowk No. 1, Behind Prakash Petrol Pump, Govind Nagar, Nashik - 422009.</p>
+              
+              <p style="margin-top: 14px;"><strong>Registered Office:</strong></p>
+              <p>Shop No 1, The Avenue, Chowk No 1, Behind Prakash Petrol Pump, Govind Nagar, Nashik.</p>
+            </div>
+
+            <h3>Contact</h3>
+            <div class="aura-contact-block">
+              <p>
+                <a href="tel:7277995566" class="aura-contact-link">
+                  <span>📞 +91 72 77 99 55 66</span>
+                </a>
+              </p>
+              <p>
+                <a href="tel:9699006377" class="aura-contact-link">
+                  <span>📞 +91 9699 00 63 77</span>
+                </a>
+              </p>
+              <p>
+                <a href="mailto:theavenuensk@gmail.com" class="aura-contact-link">
+                  <span>✉️ theavenuensk@gmail.com</span>
+                </a>
+              </p>
+              <p>
+                <a href="https://wa.me/917277995566" target="_blank" rel="noopener noreferrer" class="aura-contact-link" style="color: #4ade80;">
+                  <span>💬 WhatsApp: +91 72 77 99 55 66</span>
+                </a>
+              </p>
+            </div>
+
+            <div class="aura-rera-badge">
+              MahaRERA Reg. No: P51600031033
+            </div>
+          </div>
+
+          <!-- Column 2: Official Location Map & Google Map Embed -->
+          <div class="aura-map-col">
+            <div class="aura-map-col-header">
+              <span>Site Location &bull; Govind Nagar</span>
+            </div>
+            
+            <div class="aura-map-thumb-wrap" onclick="openAuraModal('assets/aura-brochure/page_19.png', 'The Avenue Aura &bull; Location Landmark Map &amp; Aerial View')" title="Click to view full Route Map">
+              <img src="assets/aura-amenities/aura-route-map.jpg" alt="The Avenue Aura Location Map" />
+              <span class="aura-map-thumb-badge">Click to Enlarge Map</span>
+            </div>
+
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.620251785549!2d73.76632487595772!3d19.982998623249058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bddeb1e13e0c0a7%3A0x67396a603ad6929f!2sGovind%20Nagar%2C%20Nashik%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade" 
+              title="The Avenue Aura Site Location Map">
+            </iframe>
+          </div>
+
+          <!-- Column 3: Contact Form (Matching Bliss Reference) -->
+          <div class="aura-form-col">
+            <h3>Schedule Site Visit</h3>
+            <form id="auraInquiryForm">
+              <input type="text" id="auraName" class="aura-form-input" placeholder="Your Name" required />
+              <input type="email" id="auraEmail" class="aura-form-input" placeholder="Your Email" required />
+              <input type="tel" id="auraPhone" class="aura-form-input" placeholder="Contact Number" required />
+              <textarea id="auraMessage" class="aura-form-textarea" placeholder="Configuration Preference (3 BHK / 4 BHK) or Questions" rows="4"></textarea>
+              <button type="submit" class="aura-form-submit-btn">Send Inquiry</button>
+              <div id="auraFormFeedback" class="aura-form-feedback"></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- =========================================================
+       FLOATING BACK TO TOP BUTTON
+       ========================================================= -->
+  <a href="#home" class="aura-back-to-top" id="auraBackTop" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </a>
+
+  <!-- =========================================================
+       FULL-SCREEN FLOOR PLAN LIGHTBOX MODAL
+       ========================================================= -->
+  <div class="aura-modal" id="auraModal">
+    <div class="aura-modal-content">
+      <button type="button" class="aura-modal-close" onclick="closeAuraModal()">&times;</button>
+      <img id="auraModalImg" src="" alt="Full-Screen Floor Plan" class="aura-modal-img" />
+      <h3 id="auraModalTitle" class="aura-modal-title"></h3>
+      <div style="margin-top: 14px;">
+        <a id="auraModalDownload" href="" download class="aura-download-btn" style="padding: 10px 22px; font-size: 0.8rem;">
+          Download This Plan
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       INTERACTION SCRIPTS (Exact same logic as Bliss / Flora)
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Mobile Menu Toggle
+      const mobileToggle = document.getElementById('auraMobileToggle');
+      const sidebar = document.getElementById('auraSidebar');
+      const backdrop = document.getElementById('auraBackdrop');
+
+      function toggleMobileMenu() {
+        mobileToggle.classList.toggle('open');
+        sidebar.classList.toggle('open');
+        backdrop.classList.toggle('active');
+      }
+
+      function closeMobileMenu() {
+        mobileToggle.classList.remove('open');
+        sidebar.classList.remove('open');
+        backdrop.classList.remove('active');
+      }
+
+      if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+      }
+      if (backdrop) {
+        backdrop.addEventListener('click', closeMobileMenu);
+      }
+
+      // 2. Smooth Navigation and Active Scroll-Spy
+      const navLinks = document.querySelectorAll('.aura-nav-link');
+      const sections = document.querySelectorAll('#auraMain section');
+      const backToTop = document.getElementById('auraBackTop');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href');
+          if (targetId && targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+              closeMobileMenu();
+              targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          }
+        });
+      });
+
+      // Scroll event for active section highlight & back-to-top button
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY + 200;
+
+        // Toggle back to top visibility
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+
+        // Active link tracking
+        sections.forEach(section => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute('id');
+
+          if (scrollPos >= top && scrollPos < top + height) {
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      });
+
+      // 3. Contact Form Submission
+      const form = document.getElementById('auraInquiryForm');
+      const feedback = document.getElementById('auraFormFeedback');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const name = document.getElementById('auraName').value;
+          feedback.textContent = `Thank you, ${name}! Your inquiry for The Avenue Aura has been received. Our sales team will contact you shortly.`;
+          feedback.className = 'aura-form-feedback success';
+          form.reset();
+        });
+      }
+    });
+
+    // 4. Floor Plan Lightbox Modal
+    const modal = document.getElementById('auraModal');
+    const modalImg = document.getElementById('auraModalImg');
+    const modalTitle = document.getElementById('auraModalTitle');
+    const modalDownload = document.getElementById('auraModalDownload');
+
+    function openAuraModal(imgSrc, title) {
+      modalImg.src = imgSrc;
+      modalTitle.textContent = title;
+      modalDownload.href = imgSrc;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeAuraModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeAuraModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeAuraModal();
+      }
+    });
+  </script>
+</body>
+</html>

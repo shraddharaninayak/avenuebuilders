@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Avenue Urbania | Digital Brochure | The Avenue Builders &amp; Developers Nashik</title>
+  <meta name="description" content="Explore The Avenue Urbania: 3 &amp; 4 BHK Luxury Sky Residences across two 20-storey towers featuring Four Tiers of Celebrity-Like Lifestyle, rooftop infinity pool, and open-air sky theatre at Parijat Nagar / Tidke Colony, Nashik. Interactive digital brochure." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Base Site Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Digital Brochure Presentation Styles for The Avenue Urbania -->
+  <style>
+    :root {
+      --urbania-brand: #0f1c30;
+      --urbania-brand-dark: #0a1220;
+      --urbania-brand-light: #162a47;
+      --urbania-cyan: #00a3e0;
+      --urbania-cyan-light: #38bdf8;
+      --urbania-cyan-dark: #0284c7;
+      --urbania-silver: #f1f5f9;
+      --urbania-sand: #f8fafc;
+      --urbania-border: rgba(0, 163, 224, 0.22);
+      --urbania-sidebar-width: 215px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body.urbania-digital-brochure-page {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--urbania-brand-dark);
+      color: #333;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FIXED VERTICAL SIDEBAR NAVIGATION
+       ========================================================= */
+    .urbania-sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--urbania-sidebar-width);
+      background-color: var(--urbania-brand);
+      color: #fff;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 4px 0 25px rgba(0, 0, 0, 0.6);
+      border-right: 1px solid var(--urbania-border);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .urbania-sidebar-brand {
+      padding: 26px 16px 20px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .urbania-emblem-wrap {
+      width: 104px;
+      height: 104px;
+      margin: 0 auto 12px auto;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ffffff 80%, #e2e8f0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 0 3px rgba(0, 163, 224, 0.55);
+      position: relative;
+    }
+
+    .urbania-emblem-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -5px;
+      border-radius: 50%;
+      border: 1px dashed rgba(0, 163, 224, 0.65);
+      pointer-events: none;
+    }
+
+    .urbania-emblem-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
+    }
+
+    .urbania-brand-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      margin-bottom: 4px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .urbania-brand-sub {
+      font-size: 0.62rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--urbania-cyan-light);
+      display: block;
+      font-weight: 600;
+    }
+
+    .urbania-nav-list {
+      list-style: none;
+      padding: 22px 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .urbania-nav-item {
+      width: 100%;
+    }
+
+    .urbania-nav-link {
+      display: flex;
+      align-items: center;
+      padding: 11px 20px;
+      color: rgba(255, 255, 255, 0.82);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      border-left: 3px solid transparent;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .urbania-nav-link:hover {
+      background-color: rgba(0, 163, 224, 0.12);
+      color: #ffffff;
+      padding-left: 24px;
+    }
+
+    .urbania-nav-link.active {
+      background-color: rgba(0, 163, 224, 0.22);
+      color: #ffffff;
+      border-left-color: var(--urbania-cyan);
+      font-weight: 700;
+    }
+
+    .urbania-nav-link.active::after {
+      content: '●';
+      position: absolute;
+      right: 18px;
+      font-size: 0.65rem;
+      color: var(--urbania-cyan);
+    }
+
+    .urbania-sidebar-footer {
+      padding: 18px 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: rgba(10, 18, 32, 0.7);
+    }
+
+    .urbania-return-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #ffffff;
+      background-color: transparent;
+      border: 1px solid rgba(0, 163, 224, 0.4);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .urbania-return-btn:hover {
+      background-color: var(--urbania-cyan);
+      border-color: var(--urbania-cyan);
+      color: var(--urbania-brand-dark);
+    }
+
+    /* Mobile Header Bar */
+    .urbania-mobile-bar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background-color: var(--urbania-brand);
+      z-index: 1001;
+      padding: 0 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      border-bottom: 1px solid var(--urbania-border);
+    }
+
+    .urbania-mobile-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .urbania-mobile-logo img {
+      height: 38px;
+      width: auto;
+      background: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .urbania-mobile-logo-text {
+      color: #fff;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+    }
+
+    .urbania-menu-toggle {
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .urbania-menu-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+    }
+
+    .urbania-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(3px);
+      z-index: 999;
+    }
+
+    /* Content Area */
+    .urbania-content-wrapper {
+      margin-left: var(--urbania-sidebar-width);
+      position: relative;
+      background-color: #ffffff;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    /* =========================================================
+       SECTION 1: HERO (#home)
+       ========================================================= */
+    .urbania-hero-section {
+      min-height: 100vh;
+      position: relative;
+      background: #0a1220;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px 60px 60px 60px;
+      overflow: hidden;
+    }
+
+    .urbania-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/urbania-brochure/urbania-hero-render.jpg');
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.46;
+      transform: scale(1.02);
+      transition: transform 8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .urbania-hero-section:hover .urbania-hero-bg {
+      transform: scale(1.06);
+    }
+
+    .urbania-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(10, 18, 32, 0.95) 0%,
+        rgba(15, 28, 48, 0.78) 45%,
+        rgba(10, 18, 32, 0.92) 100%
+      );
+    }
+
+    .urbania-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin-top: 20px;
+    }
+
+    .urbania-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--urbania-cyan-light);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .urbania-eyebrow::before,
+    .urbania-eyebrow::after {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--urbania-cyan);
+    }
+
+    .urbania-hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      line-height: 1.15;
+      color: #ffffff;
+      margin-bottom: 16px;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .urbania-hero-tagline {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+      color: var(--urbania-cyan-light);
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      margin-bottom: 24px;
+    }
+
+    .urbania-hero-desc {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.88);
+      max-width: 780px;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .urbania-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+
+    .urbania-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 18px;
+      background: rgba(0, 163, 224, 0.15);
+      border: 1px solid var(--urbania-border);
+      border-radius: 50px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #ffffff;
+      backdrop-filter: blur(4px);
+    }
+
+    .urbania-hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .urbania-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .urbania-cta-primary {
+      background-color: var(--urbania-cyan);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 163, 224, 0.4);
+    }
+
+    .urbania-cta-primary:hover {
+      background-color: var(--urbania-cyan-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 163, 224, 0.55);
+    }
+
+    .urbania-cta-secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .urbania-cta-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .urbania-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 32px;
+      margin-top: 40px;
+    }
+
+    .urbania-stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .urbania-stat-num {
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--urbania-cyan-light);
+    }
+
+    .urbania-stat-label {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Common Section Styles */
+    .urbania-section {
+      padding: 100px 60px;
+      position: relative;
+    }
+
+    .urbania-section-header {
+      max-width: 800px;
+      margin-bottom: 50px;
+    }
+
+    .urbania-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--urbania-brand);
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .urbania-subheading {
+      font-size: 1.05rem;
+      color: #64748b;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    /* =========================================================
+       SECTION 2: ABOUT & 4 TIERS OF LIVING (#about)
+       ========================================================= */
+    .urbania-about-section {
+      background-color: var(--urbania-sand);
+    }
+
+    .urbania-about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .urbania-about-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      color: #475569;
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+
+    .urbania-about-text p strong {
+      color: var(--urbania-brand);
+      font-weight: 600;
+    }
+
+    .urbania-about-quote-box {
+      border-left: 3px solid var(--urbania-cyan);
+      padding: 16px 20px;
+      background: rgba(0, 163, 224, 0.08);
+      border-radius: 0 6px 6px 0;
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      color: var(--urbania-brand);
+      font-style: italic;
+    }
+
+    .urbania-about-media-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(15, 28, 48, 0.16);
+      border: 1px solid rgba(0, 163, 224, 0.3);
+    }
+
+    .urbania-about-media-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .urbania-about-media-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .urbania-media-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(10, 18, 32, 0.92) 0%, rgba(10, 18, 32, 0) 100%);
+      color: #ffffff;
+    }
+
+    .urbania-media-caption h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+      color: var(--urbania-cyan-light);
+    }
+
+    .urbania-media-caption p {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* 4 TIERS OF LIFESTYLE GRID */
+    .urbania-tiers-container {
+      margin-top: 60px;
+    }
+
+    .urbania-tiers-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+    }
+
+    .urbania-tiers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .urbania-tier-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 28px 24px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .urbania-tier-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--urbania-cyan), var(--urbania-brand-light));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .urbania-tier-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(15, 28, 48, 0.12);
+      border-color: var(--urbania-cyan);
+    }
+
+    .urbania-tier-card:hover::before {
+      opacity: 1;
+    }
+
+    .urbania-tier-pill {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--urbania-cyan);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .urbania-tier-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.18rem;
+      color: var(--urbania-brand);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .urbania-tier-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .urbania-tier-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .urbania-tier-list li::before {
+      content: '✔';
+      color: var(--urbania-cyan);
+      font-size: 0.72rem;
+      margin-top: 2px;
+    }
+
+    /* =========================================================
+       SECTION 3: AMENITIES & LIFESTYLE (#amenities)
+       ========================================================= */
+    .urbania-amenities-section {
+      background: var(--urbania-brand-dark);
+      color: #ffffff;
+      padding: 100px 60px;
+      position: relative;
+    }
+
+    .urbania-amenities-section .urbania-eyebrow {
+      color: var(--urbania-cyan-light);
+    }
+
+    .urbania-amenities-section .urbania-title {
+      color: #ffffff;
+    }
+
+    .urbania-amenities-section .urbania-subheading {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    /* Amenities Visual Showcase Grid */
+    .urbania-gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .urbania-gallery-card {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 290px;
+      cursor: pointer;
+    }
+
+    .urbania-gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .urbania-gallery-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .urbania-gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 18, 32, 0.95) 0%, rgba(10, 18, 32, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 24px;
+      transition: background 0.3s ease;
+    }
+
+    .urbania-gallery-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+
+    .urbania-gallery-tag {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--urbania-cyan-light);
+    }
+
+    /* Highlights Banner */
+    .urbania-highlight-banner {
+      background: linear-gradient(135deg, rgba(15, 28, 48, 0.9) 0%, rgba(10, 18, 32, 0.95) 100%);
+      border: 1px solid var(--urbania-border);
+      border-radius: 8px;
+      padding: 40px;
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .urbania-hb-left h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+
+    .urbania-hb-left p {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.75;
+    }
+
+    .urbania-hb-right {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .urbania-hb-pill {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .urbania-hb-pill-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.6rem;
+      color: var(--urbania-cyan-light);
+      font-weight: 700;
+      display: block;
+    }
+
+    .urbania-hb-pill-label {
+      font-size: 0.72rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* =========================================================
+       SECTION 4: FLOOR PLANS (#floor-plans)
+       ========================================================= */
+    .urbania-plans-section {
+      background-color: #ffffff;
+    }
+
+    .urbania-plan-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .urbania-tab-btn {
+      padding: 10px 20px;
+      background: var(--urbania-sand);
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--urbania-brand);
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .urbania-tab-btn:hover {
+      border-color: var(--urbania-cyan);
+      color: var(--urbania-brand-dark);
+    }
+
+    .urbania-tab-btn.active {
+      background: var(--urbania-brand);
+      color: #ffffff;
+      border-color: var(--urbania-brand);
+    }
+
+    .urbania-plans-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .urbania-plan-card {
+      background: var(--urbania-sand);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .urbania-plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(15, 28, 48, 0.1);
+      border-color: var(--urbania-cyan);
+    }
+
+    .urbania-plan-img-wrap {
+      height: 320px;
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .urbania-plan-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .urbania-plan-card:hover .urbania-plan-img-wrap img {
+      transform: scale(1.03);
+    }
+
+    .urbania-plan-details {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .urbania-plan-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      color: var(--urbania-brand);
+      font-weight: 700;
+    }
+
+    .urbania-plan-desc {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.65;
+    }
+
+    .urbania-plan-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      background: #ffffff;
+      padding: 12px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+      margin-top: 8px;
+    }
+
+    .urbania-spec-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .urbania-spec-k {
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    .urbania-spec-v {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--urbania-brand);
+    }
+
+    .urbania-plan-action {
+      margin-top: 16px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .urbania-enlarge-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--urbania-brand);
+      color: #ffffff;
+      border-radius: 4px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: background 0.25s ease;
+    }
+
+    .urbania-enlarge-btn:hover {
+      background: var(--urbania-cyan);
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       SECTION 5: SPECIFICATIONS (#specifications)
+       ========================================================= */
+    .urbania-specs-section {
+      background-color: var(--urbania-sand);
+    }
+
+    .urbania-specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .urbania-spec-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+    }
+
+    .urbania-spec-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(15, 28, 48, 0.08);
+      border-color: var(--urbania-cyan);
+    }
+
+    .urbania-spec-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--urbania-brand);
+      margin-bottom: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .urbania-spec-bullet {
+      width: 6px;
+      height: 6px;
+      background: var(--urbania-cyan);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .urbania-spec-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    /* =========================================================
+       SECTION 6: LOCATION & CONNECTIVITY (#location)
+       ========================================================= */
+    .urbania-location-section {
+      background-color: #ffffff;
+    }
+
+    .urbania-location-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .urbania-location-features {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .urbania-loc-item {
+      background: var(--urbania-sand);
+      border: 1px solid #e2e8f0;
+      padding: 20px;
+      border-radius: 6px;
+    }
+
+    .urbania-loc-item h4 {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      color: var(--urbania-brand);
+      margin-bottom: 6px;
+    }
+
+    .urbania-loc-item p {
+      font-size: 0.84rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    .urbania-location-card {
+      background: var(--urbania-brand);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 40px;
+      border: 1px solid var(--urbania-border);
+      box-shadow: 0 16px 36px rgba(15, 28, 48, 0.2);
+    }
+
+    .urbania-location-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      color: var(--urbania-cyan-light);
+      margin-bottom: 14px;
+    }
+
+    .urbania-location-card p {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .urbania-address-box {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .urbania-address-box strong {
+      color: #ffffff;
+    }
+
+    /* =========================================================
+       SECTION 7: DOWNLOAD & CONTACT (#contact)
+       ========================================================= */
+    .urbania-contact-section {
+      background: linear-gradient(135deg, var(--urbania-brand-dark) 0%, var(--urbania-brand) 100%);
+      color: #ffffff;
+      padding: 100px 60px;
+    }
+
+    .urbania-contact-section .urbania-eyebrow {
+      color: var(--urbania-cyan-light);
+    }
+
+    .urbania-contact-section .urbania-title {
+      color: #ffffff;
+    }
+
+    .urbania-contact-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .urbania-contact-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .urbania-rera-box {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--urbania-border);
+      border-radius: 8px;
+      padding: 24px;
+    }
+
+    .urbania-rera-tag {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--urbania-cyan-light);
+      margin-bottom: 8px;
+      display: block;
+      font-weight: 700;
+    }
+
+    .urbania-rera-num {
+      font-family: 'Cinzel', serif;
+      font-size: 1.35rem;
+      color: #ffffff;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .urbania-rera-site {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 4px;
+    }
+
+    .urbania-office-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+    }
+
+    .urbania-office-details strong {
+      color: var(--urbania-cyan-light);
+    }
+
+    .urbania-download-box {
+      background: linear-gradient(135deg, rgba(15, 28, 48, 0.85) 0%, rgba(10, 18, 32, 0.95) 100%);
+      border: 1px solid var(--urbania-cyan);
+      border-radius: 8px;
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.5);
+    }
+
+    .urbania-download-icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(0, 163, 224, 0.15);
+      border: 1px solid var(--urbania-cyan);
+      border-radius: 50%;
+      margin: 0 auto 20px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--urbania-cyan);
+    }
+
+    .urbania-download-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.55rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .urbania-download-desc {
+      font-size: 0.92rem;
+      color: rgba(255, 255, 255, 0.78);
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .urbania-download-btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 16px 32px;
+      background: var(--urbania-cyan);
+      color: #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(0, 163, 224, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .urbania-download-btn-main:hover {
+      background: var(--urbania-cyan-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 26px rgba(0, 163, 224, 0.55);
+    }
+
+    /* Modal */
+    .urbania-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 18, 32, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .urbania-modal.open {
+      display: flex;
+      animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; transform: scale(0.97); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .urbania-modal-content {
+      position: relative;
+      max-width: 1200px;
+      max-height: 90vh;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+    }
+
+    .urbania-modal-header {
+      padding: 18px 24px;
+      background: var(--urbania-brand);
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--urbania-border);
+    }
+
+    .urbania-modal-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .urbania-modal-close {
+      background: transparent;
+      border: none;
+      color: #ffffff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0 4px;
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+
+    .urbania-modal-close:hover {
+      opacity: 1;
+      color: var(--urbania-cyan);
+    }
+
+    .urbania-modal-body {
+      padding: 24px;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8fafc;
+      flex: 1;
+    }
+
+    .urbania-modal-body img {
+      max-width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .urbania-modal-footer {
+      padding: 14px 24px;
+      background: #ffffff;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .urbania-modal-footer span {
+      font-size: 0.82rem;
+      color: #64748b;
+    }
+
+    .urbania-modal-download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: var(--urbania-brand);
+      color: #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: background 0.25s;
+    }
+
+    .urbania-modal-download-btn:hover {
+      background: var(--urbania-cyan);
+      color: #ffffff;
+    }
+
+    .urbania-back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      background: var(--urbania-cyan);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 990;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .urbania-back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .urbania-back-to-top:hover {
+      background: var(--urbania-cyan-light);
+      transform: translateY(-3px);
+    }
+
+    /* Responsiveness */
+    @media (max-width: 1024px) {
+      .urbania-sidebar {
+        transform: translateX(-100%);
+      }
+      .urbania-sidebar.open {
+        transform: translateX(0);
+      }
+      .urbania-mobile-bar {
+        display: flex;
+      }
+      .urbania-overlay.open {
+        display: block;
+      }
+      .urbania-content-wrapper {
+        margin-left: 0;
+        padding-top: 64px;
+      }
+      .urbania-hero-section {
+        padding: 60px 30px;
+      }
+      .urbania-section {
+        padding: 70px 30px;
+      }
+      .urbania-hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .urbania-about-grid,
+      .urbania-location-grid,
+      .urbania-contact-grid,
+      .urbania-highlight-banner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .urbania-tiers-grid,
+      .urbania-plans-grid,
+      .urbania-gallery-grid,
+      .urbania-specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .urbania-hero-section {
+        padding: 40px 20px;
+      }
+      .urbania-section {
+        padding: 50px 20px;
+      }
+      .urbania-hero-stats {
+        grid-template-columns: 1fr;
+      }
+      .urbania-location-features {
+        grid-template-columns: 1fr;
+      }
+      .urbania-hb-right {
+        grid-template-columns: 1fr;
+      }
+      .urbania-hero-actions {
+        flex-direction: column;
+      }
+      .urbania-cta-btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .urbania-modal {
+        padding: 12px;
+      }
+      .urbania-plan-img-wrap {
+        height: 260px;
+      }
+    }
+  </style>
+</head>
+
+<body class="urbania-digital-brochure-page">
+
+  <!-- =========================================================
+       FIXED VERTICAL SIDEBAR NAVIGATION
+       ========================================================= -->
+  <aside class="urbania-sidebar" id="urbaniaSidebar">
+    <div class="urbania-sidebar-brand">
+      <div class="urbania-emblem-wrap">
+        <img src="assets/logo-avenue-urbania.png" alt="The Avenue Urbania" class="urbania-emblem-img" />
+      </div>
+      <span class="urbania-brand-title">The Avenue Urbania</span>
+      <span class="urbania-brand-sub">Nex Gen Livin' Experience</span>
+    </div>
+
+    <ul class="urbania-nav-list" id="urbaniaNavList">
+      <li class="urbania-nav-item">
+        <a href="#home" class="urbania-nav-link active">Home</a>
+      </li>
+      <li class="urbania-nav-item">
+        <a href="#about" class="urbania-nav-link">Four Tiers of Living</a>
+      </li>
+      <li class="urbania-nav-item">
+        <a href="#amenities" class="urbania-nav-link">Amenities &amp; Sky Deck</a>
+      </li>
+      <li class="urbania-nav-item">
+        <a href="#floor-plans" class="urbania-nav-link">Floor Plans</a>
+      </li>
+      <li class="urbania-nav-item">
+        <a href="#specifications" class="urbania-nav-link">Specifications</a>
+      </li>
+      <li class="urbania-nav-item">
+        <a href="#location" class="urbania-nav-link">Location &amp; Map</a>
+      </li>
+      <li class="urbania-nav-item">
+        <a href="#contact" class="urbania-nav-link">Download &amp; Contact</a>
+      </li>
+    </ul>
+
+    <div class="urbania-sidebar-footer">
+      <a href="projects.html#urbania" class="urbania-return-btn" title="Back to All Projects">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Projects</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Mobile Top Bar -->
+  <div class="urbania-mobile-bar" id="urbaniaMobileBar">
+    <a href="#home" class="urbania-mobile-logo">
+      <img src="assets/logo-avenue-urbania.png" alt="The Avenue Urbania" />
+      <span class="urbania-mobile-logo-text">The Avenue Urbania</span>
+    </a>
+    <button class="urbania-menu-toggle" id="urbaniaMenuToggle" aria-label="Toggle Navigation Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="urbania-overlay" id="urbaniaOverlay"></div>
+
+  <!-- =========================================================
+       MAIN CONTENT WRAPPER
+       ========================================================= -->
+  <main class="urbania-content-wrapper">
+
+    <!-- 1. HERO SECTION (#home) -->
+    <section class="urbania-hero-section" id="home">
+      <div class="urbania-hero-bg"></div>
+      <div class="urbania-hero-overlay"></div>
+
+      <div class="urbania-hero-content">
+        <span class="urbania-eyebrow">JV Venture of Avenue &amp; Fortune &bull; Parijat Nagar</span>
+        <h1 class="urbania-hero-title">The Avenue Urbania</h1>
+        <p class="urbania-hero-tagline">3 &amp; 4 BHK Nex Gen Urban Living</p>
+        
+        <p class="urbania-hero-desc">
+          A revolution in high-end sky living engineered across <strong>Four Tiers of Celebrity-Like Lifestyle</strong>. Featuring two iconic 20-storey towers, only 72 exclusive residences, private elevator foyers, a rooftop infinity pool, and open-air sky theatre at prime Tidke Colony Rd, Parijat Nagar.
+        </p>
+
+        <div class="urbania-hero-badges">
+          <span class="urbania-badge-pill">2 Sky Towers &bull; 20 Storeys</span>
+          <span class="urbania-badge-pill">72 Luxurious Residences</span>
+          <span class="urbania-badge-pill">Only 2 Apts Per Floor</span>
+          <span class="urbania-badge-pill">Four Tiers of Living</span>
+          <span class="urbania-badge-pill">Rooftop Infinity Pool</span>
+        </div>
+
+        <div class="urbania-hero-actions">
+          <a href="#floor-plans" class="urbania-cta-btn urbania-cta-primary">
+            Explore Floor Plans
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="urbania-cta-btn urbania-cta-secondary">
+            Download Official Brochure
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="urbania-hero-stats">
+        <div class="urbania-stat-item">
+          <span class="urbania-stat-num">20 STOREYS</span>
+          <span class="urbania-stat-label">2 Sky-Scaling Towers</span>
+        </div>
+        <div class="urbania-stat-item">
+          <span class="urbania-stat-num">72 HOMES</span>
+          <span class="urbania-stat-label">2 Residences Per Floor</span>
+        </div>
+        <div class="urbania-stat-item">
+          <span class="urbania-stat-num">4 TIERS</span>
+          <span class="urbania-stat-label">Celebrity-Like Lifestyle</span>
+        </div>
+        <div class="urbania-stat-item">
+          <span class="urbania-stat-num">10'6" FT.</span>
+          <span class="urbania-stat-label">Floor-to-Floor Height</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. ABOUT & FOUR TIERS OF LIVING (#about) -->
+    <section class="urbania-section urbania-about-section" id="about">
+      <div class="urbania-section-header">
+        <span class="urbania-eyebrow">Architectural Vision</span>
+        <h2 class="urbania-title">Four Tiers of Celebrity-Like Lifestyle</h2>
+        <p class="urbania-subheading">
+          Urbania 3 &amp; 4 BHK residences are created for those who never compromise. A revolution in high-end living taking your 'joy of living' quotient to unprecedented heights.
+        </p>
+      </div>
+
+      <div class="urbania-about-grid">
+        <div class="urbania-about-text">
+          <p>
+            A joint venture of <strong>The Avenue Builders &amp; Developers</strong> and <strong>Fortune</strong>, Urbania introduces a distinctive multi-tiered lifestyle philosophy designed to offer dedicated spaces for private living, community wellness, social recreation, and rooftop relaxation.
+          </p>
+          <div class="urbania-about-quote-box">
+            &ldquo;An elite abode that reflects the best of you. Let the fortune smile where you reside.&rdquo;
+          </div>
+          <p>
+            Each tower rises 20 storeys into the Nashik skyline with expansive architectural balconies, sleek glass curtain elevator cores, and grand entrance monuments. Offering 3 and 4 BHK sky residences as well as palatial 5 and 6 BHK full-floor penthouses, Urbania provides complete acoustic privacy with just two apartments per floor.
+          </p>
+          <p>
+            Residents enjoy private elevator foyers, dedicated stilt and podium car parking, automated video door phones, and 24x7 gated security across the entire landscaped campus.
+          </p>
+        </div>
+
+        <div class="urbania-about-media-card">
+          <img src="assets/urbania-brochure/urbania-entrance-gate.jpg" alt="The Avenue Urbania Grand Entrance Gate" />
+          <div class="urbania-media-caption">
+            <h4>Grand Entrance Monument</h4>
+            <p>Sculptural Urbania archway, palm avenue, security cabin, and gated driveway</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 TIERS BREAKDOWN -->
+      <div class="urbania-tiers-container">
+        <div class="urbania-tiers-header">
+          <span class="urbania-eyebrow" style="margin-bottom: 8px;">Holistic Architecture</span>
+          <h3 style="font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--urbania-brand);">Engineered Across Four Distinguished Realms</h3>
+        </div>
+
+        <div class="urbania-tiers-grid">
+          <!-- Tier 1 -->
+          <div class="urbania-tier-card">
+            <span class="urbania-tier-pill">Tier I</span>
+            <h4 class="urbania-tier-title">Residences Realm</h4>
+            <ul class="urbania-tier-list">
+              <li>3 &amp; 4 BHK sky lifestyle residences</li>
+              <li>72 exclusive luxury homes</li>
+              <li>Per floor only 2 apartments</li>
+              <li>2 sky-scaling towers of 20 storeys</li>
+              <li>Generous 10'6" floor-to-floor height</li>
+              <li>5 &amp; 6 BHK full-floor combined options</li>
+            </ul>
+          </div>
+
+          <!-- Tier 2 -->
+          <div class="urbania-tier-card">
+            <span class="urbania-tier-pill">Tier II</span>
+            <h4 class="urbania-tier-title">Ground Community</h4>
+            <ul class="urbania-tier-list">
+              <li>Designer landscaped garden</li>
+              <li>Children park with rubberised safety floor</li>
+              <li>Senior citizens court &amp; benches</li>
+              <li>Aroma therapy pocket garden</li>
+              <li>Tranquil temple pavilion</li>
+              <li>Grand double-height entrance foyer</li>
+            </ul>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="urbania-tier-card">
+            <span class="urbania-tier-pill">Tier III</span>
+            <h4 class="urbania-tier-title">Recreation &amp; Sports</h4>
+            <ul class="urbania-tier-list">
+              <li>Fully-equipped indoor gym</li>
+              <li>Sky jogging &amp; walking track</li>
+              <li>Multipurpose community banquet hall</li>
+              <li>Indoor games arena (Snooker, Dart)</li>
+              <li>Outdoor sports court (Basketball)</li>
+              <li>Lounge seating &amp; viewing decks</li>
+            </ul>
+          </div>
+
+          <!-- Tier 4 -->
+          <div class="urbania-tier-card">
+            <span class="urbania-tier-pill">Tier IV</span>
+            <h4 class="urbania-tier-title">Terrace Sky Realm</h4>
+            <ul class="urbania-tier-list">
+              <li>Spectacular infinity pool for adults &amp; kids</li>
+              <li>Open-air theatre with sky projection</li>
+              <li>Spacious yoga &amp; aerobics lawn</li>
+              <li>Green carpet sky walkway</li>
+              <li>Acupressure reflexology path</li>
+              <li>Sunken pool deck &amp; star-gazing lounge</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. AMENITIES & LIFESTYLE (#amenities) -->
+    <section class="urbania-section urbania-amenities-section" id="amenities">
+      <div class="milestone-section-header">
+        <span class="urbania-eyebrow">Curated Living</span>
+        <h2 class="urbania-title">When the Sky is a Home to Amenities</h2>
+        <p class="urbania-subheading">
+          Life becomes an enchanting fairy tale as gorgeous podium and terrace amenities wrap you in world-class opulence. What an extraordinary way to live!
+        </p>
+      </div>
+
+      <!-- VISUAL SHOWCASE GALLERY -->
+      <div class="urbania-gallery-grid">
+        <div class="urbania-gallery-card">
+          <img src="assets/urbania-brochure/urbania-infinity-pool-theatre.jpg" alt="Rooftop Infinity Swimming Pool &amp; Sky Theatre" />
+          <div class="urbania-gallery-overlay">
+            <span class="urbania-gallery-tag">Tier IV &bull; Sky Deck</span>
+            <h4 class="urbania-gallery-title">Rooftop Infinity Pool</h4>
+          </div>
+        </div>
+
+        <div class="urbania-gallery-card">
+          <img src="assets/urbania-brochure/urbania-sky-carpet.jpg" alt="Sky Green Carpet Walkway" />
+          <div class="urbania-gallery-overlay">
+            <span class="urbania-gallery-tag">Tier IV &bull; Sky Promenade</span>
+            <h4 class="urbania-gallery-title">Sky Green Carpet</h4>
+          </div>
+        </div>
+
+        <div class="urbania-gallery-card">
+          <img src="assets/urbania-brochure/urbania-gym-recreation.jpg" alt="Indoor Gym &amp; Club" />
+          <div class="urbania-gallery-overlay">
+            <span class="urbania-gallery-tag">Tier III &bull; Wellness</span>
+            <h4 class="urbania-gallery-title">Indoor Gym &amp; Games</h4>
+          </div>
+        </div>
+
+        <div class="urbania-gallery-card">
+          <img src="assets/urbania-brochure/urbania-lobby.jpg" alt="Grand Entrance Reception Lobby" />
+          <div class="urbania-gallery-overlay">
+            <span class="urbania-gallery-tag">Arrival Realm</span>
+            <h4 class="urbania-gallery-title">Plush Reception Lounge</h4>
+          </div>
+        </div>
+
+        <div class="urbania-gallery-card">
+          <img src="assets/urbania-brochure/urbania-ground-amenities.jpg" alt="Ground Landscaped Garden &amp; Temple" />
+          <div class="urbania-gallery-overlay">
+            <span class="urbania-gallery-tag">Tier II &bull; Ground Realm</span>
+            <h4 class="urbania-gallery-title">Temple &amp; Sports Court</h4>
+          </div>
+        </div>
+
+        <div class="urbania-gallery-card">
+          <img src="assets/urbania-brochure/urbania-aerial-tower.jpg" alt="Tower Skyline Aerial Perspective" />
+          <div class="urbania-gallery-overlay">
+            <span class="urbania-gallery-tag">Master Architecture</span>
+            <h4 class="urbania-gallery-title">20-Storey Sky Towers</h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHTS BANNER -->
+      <div class="urbania-highlight-banner">
+        <div class="urbania-hb-left">
+          <h3>Unmatched Volumetric &amp; Spatial Luxury</h3>
+          <p>
+            Featuring 10'6" slab-to-slab floor heights, wide continuous balconies with glass railings, landscaped sky decks, and high-speed elevators opening into exclusive two-apartment lobbies.
+          </p>
+        </div>
+        <div class="urbania-hb-right">
+          <div class="urbania-hb-pill">
+            <span class="urbania-hb-pill-num">20</span>
+            <span class="urbania-hb-pill-label">Storeys High</span>
+          </div>
+          <div class="urbania-hb-pill">
+            <span class="urbania-hb-pill-num">72</span>
+            <span class="urbania-hb-pill-label">Residences Only</span>
+          </div>
+          <div class="urbania-hb-pill">
+            <span class="urbania-hb-pill-num">2</span>
+            <span class="urbania-hb-pill-label">Apts Per Floor</span>
+          </div>
+          <div class="urbania-hb-pill">
+            <span class="urbania-hb-pill-num">100%</span>
+            <span class="urbania-hb-pill-label">Corner Light &amp; Air</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. FLOOR PLANS SECTION (#floor-plans) -->
+    <section class="urbania-section urbania-plans-section" id="floor-plans">
+      <div class="urbania-section-header">
+        <span class="urbania-eyebrow">Architectural Layouts</span>
+        <h2 class="urbania-title">Master Floor &amp; Unit Plans</h2>
+        <p class="urbania-subheading">
+          Explore the authentic floor layouts for Ground &amp; Podium parking, 3 &amp; 4 BHK typical residences, 5 &amp; 6 BHK palatial penthouses, and recreational sky terraces.
+        </p>
+      </div>
+
+      <!-- Plan Filter Buttons -->
+      <div class="urbania-plan-tabs" id="urbaniaPlanTabs">
+        <button class="urbania-tab-btn active" data-plan="all">All Plans</button>
+        <button class="urbania-tab-btn" data-plan="residence">3 &amp; 4 BHK Units</button>
+        <button class="urbania-tab-btn" data-plan="penthouse">5 &amp; 6 BHK Penthouses</button>
+        <button class="urbania-tab-btn" data-plan="podium">Ground &amp; Podium</button>
+        <button class="urbania-tab-btn" data-plan="terrace">Recreation &amp; Terraces</button>
+      </div>
+
+      <div class="urbania-plans-grid" id="urbaniaPlansGrid">
+
+        <!-- Plan 1: 4 BHK Unit Plan (Tower A) -->
+        <div class="urbania-plan-card" data-category="residence">
+          <div class="urbania-plan-img-wrap">
+            <img src="assets/urbania-brochure/plan-4bhk-tower-a.jpg" alt="4 BHK Unit Plan Tower A" />
+          </div>
+          <div class="urbania-plan-details">
+            <div>
+              <h3 class="urbania-plan-title">4 BHK Unit Plan (Tower A)</h3>
+              <p class="urbania-plan-desc">
+                Expansive 4 BHK layout offering Type 1 &amp; Type 2 configurations with wide living and dining salons, private sit-out balconies, master bedrooms with walk-in wardrobes, dedicated puja mandir, island kitchen, store room, and servant utility.
+              </p>
+              <div class="urbania-plan-specs">
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Configuration</span>
+                  <span class="urbania-spec-v">4 BHK Luxury Sky Home</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Tower</span>
+                  <span class="urbania-spec-v">Tower A (East/West)</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Privacy</span>
+                  <span class="urbania-spec-v">Only 2 Units Per Floor</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Outdoor</span>
+                  <span class="urbania-spec-v">Multiple Sit-out Balconies</span>
+                </div>
+              </div>
+            </div>
+            <div class="urbania-plan-action">
+              <button class="urbania-enlarge-btn" data-src="assets/urbania-brochure/plan-4bhk-tower-a.jpg" data-title="4 BHK Unit Plan (Tower A)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 2: 3 BHK Unit Plan (Tower B) -->
+        <div class="urbania-plan-card" data-category="residence">
+          <div class="urbania-plan-img-wrap">
+            <img src="assets/urbania-brochure/plan-3bhk-tower-b.jpg" alt="3 BHK Unit Plan Tower B" />
+          </div>
+          <div class="urbania-plan-details">
+            <div>
+              <h3 class="urbania-plan-title">3 BHK Unit Plan (Tower B)</h3>
+              <p class="urbania-plan-desc">
+                Thoughtfully engineered 3 BHK layout featuring Type 1 &amp; Type 2 residences with spacious living hall, panoramic balcony, 3 designer bedrooms, pooja space, dry balcony utility, and store room.
+              </p>
+              <div class="urbania-plan-specs">
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Configuration</span>
+                  <span class="urbania-spec-v">3 BHK Luxury Sky Home</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Tower</span>
+                  <span class="urbania-spec-v">Tower B</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Ventilation</span>
+                  <span class="urbania-spec-v">3-Side Open Natural Air</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Amenities</span>
+                  <span class="urbania-spec-v">Walk-In Wardrobes</span>
+                </div>
+              </div>
+            </div>
+            <div class="urbania-plan-action">
+              <button class="urbania-enlarge-btn" data-src="assets/urbania-brochure/plan-3bhk-tower-b.jpg" data-title="3 BHK Unit Plan (Tower B)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 3: 5 & 6 BHK Combined Penthouses -->
+        <div class="urbania-plan-card" data-category="penthouse">
+          <div class="urbania-plan-img-wrap">
+            <img src="assets/urbania-brochure/plan-5bhk-6bhk-penthouses.jpg" alt="5 &amp; 6 BHK Palatial Combined Penthouses" />
+          </div>
+          <div class="urbania-plan-details">
+            <div>
+              <h3 class="urbania-plan-title">5 &amp; 6 BHK Palatial Penthouses</h3>
+              <p class="urbania-plan-desc">
+                Full-floor palatial residences occupying an entire tower level. Features grand 60-foot contiguous living and dining salons, dual master suites, private family lounges, home theatre room, multiple wrap-around balconies, and private elevator foyers.
+              </p>
+              <div class="urbania-plan-specs">
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Floor Span</span>
+                  <span class="urbania-spec-v">1 Full Floor &bull; 1 Family</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Configuration</span>
+                  <span class="urbania-spec-v">5 &amp; 6 BHK Royal Penthouse</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Balconies</span>
+                  <span class="urbania-spec-v">Full-Length Wrap-Around</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Elevators</span>
+                  <span class="urbania-spec-v">Direct Private Foyer</span>
+                </div>
+              </div>
+            </div>
+            <div class="urbania-plan-action">
+              <button class="urbania-enlarge-btn" data-src="assets/urbania-brochure/plan-5bhk-6bhk-penthouses.jpg" data-title="5 &amp; 6 BHK Palatial Penthouses">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 4: Typical Floor Plan (2nd to 18th Floor) -->
+        <div class="urbania-plan-card" data-category="residence">
+          <div class="urbania-plan-img-wrap">
+            <img src="assets/urbania-brochure/plan-typical-floors.jpg" alt="Typical Floor Plan 2nd to 18th Floor" />
+          </div>
+          <div class="urbania-plan-details">
+            <div>
+              <h3 class="urbania-plan-title">Typical Floor Plan (2nd - 18th)</h3>
+              <p class="urbania-plan-desc">
+                High-rise typical floor master configuration showcasing the dual-tower layout (Tower A &amp; Tower B). Only 2 residences per floor per tower with central elevator lobbies, fire escape stairs, and refuge balconies on select levels.
+              </p>
+              <div class="urbania-plan-specs">
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Density</span>
+                  <span class="urbania-spec-v">2 Apartments Per Floor</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Towers</span>
+                  <span class="urbania-spec-v">Tower A &amp; Tower B</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Floors</span>
+                  <span class="urbania-spec-v">2nd to 18th Storey</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Elevators</span>
+                  <span class="urbania-spec-v">Dual High-Speed Glass</span>
+                </div>
+              </div>
+            </div>
+            <div class="urbania-plan-action">
+              <button class="urbania-enlarge-btn" data-src="assets/urbania-brochure/plan-typical-floors.jpg" data-title="Typical Floor Plan (2nd to 18th Floor)">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 5: Ground & Podium Floor Plan -->
+        <div class="urbania-plan-card" data-category="podium">
+          <div class="urbania-plan-img-wrap">
+            <img src="assets/urbania-brochure/plan-ground-podium.jpg" alt="Ground &amp; Podium Floor Plan" />
+          </div>
+          <div class="urbania-plan-details">
+            <div>
+              <h3 class="urbania-plan-title">Ground &amp; Podium Floor Plan</h3>
+              <p class="urbania-plan-desc">
+                Site master plan showcasing the 12.00M wide access road, entrance gate monument, security cabin, double-height reception lobbies, multi-play sports court, temple, landscaped lawn, sand pit, and organized two-tier parking across Ground and Podium.
+              </p>
+              <div class="urbania-plan-specs">
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Road Width</span>
+                  <span class="urbania-spec-v">12.00M Wide Access Road</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Ground Amenities</span>
+                  <span class="urbania-spec-v">Temple, Sports Court, Lawn</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Parking Tiers</span>
+                  <span class="urbania-spec-v">Ground &amp; Podium Levels</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Security</span>
+                  <span class="urbania-spec-v">Gated Cabin &amp; CCTV</span>
+                </div>
+              </div>
+            </div>
+            <div class="urbania-plan-action">
+              <button class="urbania-enlarge-btn" data-src="assets/urbania-brochure/plan-ground-podium.jpg" data-title="Ground &amp; Podium Floor Plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plan 6: Recreational & Terrace Floor Plan -->
+        <div class="urbania-plan-card" data-category="terrace">
+          <div class="urbania-plan-img-wrap">
+            <img src="assets/urbania-brochure/plan-recreation-terrace.jpg" alt="Recreational &amp; Sky Terrace Floor Plan" />
+          </div>
+          <div class="urbania-plan-details">
+            <div>
+              <h3 class="urbania-plan-title">Recreational &amp; Sky Terrace Plans</h3>
+              <p class="urbania-plan-desc">
+                Architectural layouts of the Tier III Recreational floor (Indoor gym, jogging track, multipurpose hall, indoor games) and Tier IV Sky Terrace (Spectacular infinity swimming pool, pool deck, open-air theatre, yoga lawn, acupressure pathway, community garden).
+              </p>
+              <div class="urbania-plan-specs">
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Tier III</span>
+                  <span class="urbania-spec-v">Gym, Hall, Jogging Track</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Tier IV</span>
+                  <span class="urbania-spec-v">Infinity Pool &amp; Sky Theatre</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Sky Green</span>
+                  <span class="urbania-spec-v">Yoga &amp; Aerobics Lawn</span>
+                </div>
+                <div class="urbania-spec-col">
+                  <span class="urbania-spec-k">Panoramic</span>
+                  <span class="urbania-spec-v">360° City Skyline Views</span>
+                </div>
+              </div>
+            </div>
+            <div class="urbania-plan-action">
+              <button class="urbania-enlarge-btn" data-src="assets/urbania-brochure/plan-recreation-terrace.jpg" data-title="Recreational &amp; Sky Terrace Floor Plan">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+                Enlarge Plan
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 5. SPECIFICATIONS SECTION (#specifications) -->
+    <section class="urbania-section urbania-specs-section" id="specifications">
+      <div class="urbania-section-header">
+        <span class="urbania-eyebrow">Quality &amp; Craftsmanship</span>
+        <h2 class="urbania-title">Technical Specifications</h2>
+        <p class="urbania-subheading">
+          Engineered with uncompromising precision, premium branded fittings, and advanced safety standards in accordance with official brochure documentation.
+        </p>
+      </div>
+
+      <div class="urbania-specs-grid">
+        <!-- Spec 1: RCC & Masonry -->
+        <div class="urbania-spec-card">
+          <h3 class="urbania-spec-title"><span class="urbania-spec-bullet"></span> Structure &amp; Masonry</h3>
+          <ul class="urbania-spec-list">
+            <li><strong>RCC:</strong> Robust RCC Earthquake Resistant Frame Structure</li>
+            <li><strong>Brick Work:</strong> Autoclaved Aerated Concrete (AAC) Block Work</li>
+            <li><strong>External Plaster:</strong> Double Coat Sand-Faced Plaster</li>
+            <li><strong>Internal Plaster:</strong> Smooth Gypsum Finish</li>
+            <li><strong>Ceilings:</strong> Generous 10'6" Floor Top to Floor Top Height</li>
+          </ul>
+        </div>
+
+        <!-- Spec 2: Flooring & Paint -->
+        <div class="urbania-spec-card">
+          <h3 class="urbania-spec-title"><span class="urbania-spec-bullet"></span> Flooring &amp; Finishes</h3>
+          <ul class="urbania-spec-list">
+            <li><strong>Living &amp; Bedrooms:</strong> Premium Vitrified Tile Flooring</li>
+            <li><strong>Balcony:</strong> Rustic &amp; Anti-Skid Floor Tiles</li>
+            <li><strong>Wash Area:</strong> Anti-Skid or Rustic Vitrified Tiles</li>
+            <li><strong>Internal Paint:</strong> Wall Putty Finish with Acrylic Emulsion Paint</li>
+            <li><strong>External Paint:</strong> Weather-resistant Acrylic Exterior Paint</li>
+          </ul>
+        </div>
+
+        <!-- Spec 3: Kitchen & Utility -->
+        <div class="urbania-spec-card">
+          <h3 class="urbania-spec-title"><span class="urbania-spec-bullet"></span> Kitchen &amp; Store</h3>
+          <ul class="urbania-spec-list">
+            <li><strong>Platform:</strong> Natural Granite / Composite Marble Platform</li>
+            <li><strong>Flooring:</strong> Vitrified Tile Flooring with Island Space</li>
+            <li><strong>Dado:</strong> Premium Designer Ceramic Tiles</li>
+            <li><strong>Store Room:</strong> Dedicated Built-In Store &amp; Pantry Area</li>
+            <li><strong>Wash Area:</strong> Provision for Washing Machine &amp; Utility Sink</li>
+          </ul>
+        </div>
+
+        <!-- Spec 4: Doors & Windows -->
+        <div class="urbania-spec-card">
+          <h3 class="urbania-spec-title"><span class="urbania-spec-bullet"></span> Doors &amp; Windows</h3>
+          <ul class="urbania-spec-list">
+            <li><strong>Main Door:</strong> Decorative Both-Side Veneer Designer Main Door</li>
+            <li><strong>Internal Doors:</strong> Laminated Internal Doors &amp; Quality Door Frames</li>
+            <li><strong>Windows:</strong> High-Quality UPVC / Anodized Aluminium Windows</li>
+            <li><strong>Balcony Railings:</strong> MS / Aluminium / Toughened Safety Glass Railing</li>
+            <li><strong>Hardware:</strong> Premium Architectural Locks &amp; Brass Fixtures</li>
+          </ul>
+        </div>
+
+        <!-- Spec 5: Bathrooms & Sanitary -->
+        <div class="urbania-spec-card">
+          <h3 class="urbania-spec-title"><span class="urbania-spec-bullet"></span> Bathrooms &amp; Plumbing</h3>
+          <ul class="urbania-spec-list">
+            <li><strong>Dado Tiles:</strong> Premium Ceramic Tiles up to Lintel Level</li>
+            <li><strong>Basins:</strong> Granite / Composite Marble Countertop Basin</li>
+            <li><strong>Sanitary Ware:</strong> Wall-Hung EWCs (Hindware / Kohler / Toto / Eq.)</li>
+            <li><strong>CP Fittings:</strong> Premium Brass Fixtures (Jaquar Artize / Kohler / Grohe / Eq.)</li>
+            <li><strong>Piping:</strong> Concealed Corrosion-Free CPVC/UPVC Plumbing</li>
+          </ul>
+        </div>
+
+        <!-- Spec 6: Electrical & Security -->
+        <div class="urbania-spec-card">
+          <h3 class="urbania-spec-title"><span class="urbania-spec-bullet"></span> Electrification &amp; Safety</h3>
+          <ul class="urbania-spec-list">
+            <li><strong>Power Supply:</strong> 3-Phase Dedicated Electrical Power Connection</li>
+            <li><strong>Wiring:</strong> Concealed ISI-Certified Copper Wiring with Modular Switches</li>
+            <li><strong>Distribution:</strong> MCB Distribution Panel with Earth Leakage Breakers</li>
+            <li><strong>Security:</strong> Video Door Phone Linked with Reception &amp; Lobby Access</li>
+            <li><strong>Surveillance:</strong> Entire Campus &amp; Common Areas Under 24x7 CCTV</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LOCATION & CONNECTIVITY SECTION (#location) -->
+    <section class="urbania-section urbania-location-section" id="location">
+      <div class="urbania-section-header">
+        <span class="urbania-eyebrow">Prestigious Address</span>
+        <h2 class="urbania-title">Location &amp; Seamless Connectivity</h2>
+        <p class="urbania-subheading">
+          Strategically located at Tidke Colony Rd, Lavate Nagar, Parijat Nagar, Nashik - 422005 &mdash; surrounded by the city's finest educational institutes, shopping malls, and healthcare centres.
+        </p>
+      </div>
+
+      <div class="urbania-location-grid">
+        <div>
+          <p style="font-size: 1rem; color: #475569; line-height: 1.8;">
+            The Avenue Urbania enjoys prime location advantages with immediate transit routes to Mumbai Naka, City Centre Mall, and the central business district. Its peaceful yet well-connected residential enclave provides the perfect balance of urban accessibility and tranquil sanctuary.
+          </p>
+
+          <div class="urbania-location-features">
+            <div class="urbania-loc-item">
+              <h4>Mumbai Naka</h4>
+              <p>5 Minutes drive via major arterial roads for rapid highway connectivity.</p>
+            </div>
+            <div class="urbania-loc-item">
+              <h4>City Centre Mall</h4>
+              <p>Just 5 Minutes to Nashik's premier retail, dining, and multiplex destination.</p>
+            </div>
+            <div class="urbania-loc-item">
+              <h4>Wockhardt Hospital</h4>
+              <p>10 Minutes to multi-speciality tertiary healthcare facilities.</p>
+            </div>
+            <div class="urbania-loc-item">
+              <h4>Fravashi Academy</h4>
+              <p>15 Minutes to reputed international schools and colleges.</p>
+            </div>
+            <div class="urbania-loc-item">
+              <h4>ABB Circle</h4>
+              <p>20 Minutes to major commercial centers and corporate hubs.</p>
+            </div>
+            <div class="urbania-loc-item">
+              <h4>Nashik Station</h4>
+              <p>20 Minutes to Nashik Road Railway Junction.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="urbania-location-card">
+          <h3>The Avenue Urbania</h3>
+          <p>
+            An elite residential enclave engineered across Four Tiers of Celebrity-Like Lifestyle in prime Parijat Nagar.
+          </p>
+
+          <div class="urbania-address-box">
+            <span><strong>Site Address:</strong> Tidke Colony Rd, Lavate Nagar, Parijat Nagar, Nashik, Maharashtra 422005</span>
+            <span><strong>JV Venture:</strong> The Avenue Builders &amp; Developers &amp; Fortune</span>
+            <span><strong>Direct Helpline:</strong> +91 72 77 99 55 66</span>
+            <span><strong>Official Email:</strong> theavenuensk@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. DOWNLOAD & CONTACT SECTION (#contact) -->
+    <section class="urbania-section urbania-contact-section" id="contact">
+      <div class="urbania-section-header">
+        <span class="urbania-eyebrow">Connect &amp; Experience</span>
+        <h2 class="urbania-title">Download Official Brochure</h2>
+        <p class="urbania-subheading">
+          Obtain the complete official 19-page The Avenue Urbania brochure document or schedule a private consultation with our sales advisors.
+        </p>
+      </div>
+
+      <div class="urbania-contact-grid">
+        <div class="urbania-contact-info-block">
+          <div class="urbania-rera-box">
+            <span class="urbania-rera-tag">Prestigious Joint Venture</span>
+            <div class="urbania-rera-num">AVENUE &amp; FORTUNE</div>
+            <div class="urbania-rera-site">Official MahaRERA approved master development</div>
+          </div>
+
+          <div class="urbania-office-details">
+            <p><strong>Corporate Developers:</strong> The Avenue Builders &amp; Developers &amp; Fortune Group</p>
+            <p><strong>Site Office:</strong> Tidke Colony Rd, Lavate Nagar, Parijat Nagar, Nashik &mdash; 422005, Maharashtra, India</p>
+            <p><strong>Helpline Number:</strong> <a href="tel:7277995566" style="color: var(--urbania-cyan-light); text-decoration: none; font-weight: 700;">+91 72 77 99 55 66</a></p>
+            <p><strong>Official Email:</strong> theavenuensk@gmail.com</p>
+            <p><strong>Official Website:</strong> www.tabd.in</p>
+          </div>
+
+          <div style="font-size: 0.76rem; color: rgba(255, 255, 255, 0.55); line-height: 1.6;">
+            <strong>Disclaimer:</strong> The developers reserve the right to amend the plans, specifications, and elevations without prior notice. The contents of this digital brochure are purely conceptual and have no legal binding on the developers.
+          </div>
+        </div>
+
+        <div class="urbania-download-box">
+          <div class="urbania-download-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </div>
+          <h3 class="urbania-download-title">Official E-Brochure</h3>
+          <p class="urbania-download-desc">
+            Download the complete high-resolution 19-page master brochure of The Avenue Urbania including 3 &amp; 4 BHK unit plans, 4 Tiers of living, and rooftop infinity pool specifications in PDF format.
+          </p>
+          <a href="assets/The-Avenue-Urbania-Brochure.pdf" class="urbania-download-btn-main" download="The Avenue Urbania Brochure.pdf">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download Brochure (PDF)
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FULLSCREEN LIGHTBOX MODAL FOR FLOOR PLANS
+       ========================================================= -->
+  <div class="urbania-modal" id="urbaniaPlanModal">
+    <div class="urbania-modal-content">
+      <div class="urbania-modal-header">
+        <h3 class="urbania-modal-title" id="urbaniaModalTitle">Floor Plan View</h3>
+        <button class="urbania-modal-close" id="urbaniaModalClose" aria-label="Close Lightbox">&times;</button>
+      </div>
+      <div class="urbania-modal-body">
+        <img src="" alt="Enlarged Floor Plan" id="urbaniaModalImg" />
+      </div>
+      <div class="urbania-modal-footer">
+        <span>Use browser zoom or save image for high-resolution inspection</span>
+        <a href="" download="" class="urbania-modal-download-btn" id="urbaniaModalDownload">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Save Plan Image
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <a href="#home" class="urbania-back-to-top" id="urbaniaBackToTop" title="Back to Top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+  </a>
+
+  <!-- =========================================================
+       INTERACTION SCRIPTS
+       ========================================================= -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // 1. Mobile Sidebar Drawer Navigation
+      const menuToggle = document.getElementById('urbaniaMenuToggle');
+      const sidebar = document.getElementById('urbaniaSidebar');
+      const overlay = document.getElementById('urbaniaOverlay');
+      const navLinks = document.querySelectorAll('.urbania-nav-link');
+
+      function toggleMobileMenu() {
+        sidebar.classList.toggle('open');
+        overlay.classList.toggle('open');
+      }
+
+      function closeMobileMenu() {
+        sidebar.classList.remove('open');
+        overlay.classList.remove('open');
+      }
+
+      if (menuToggle) menuToggle.addEventListener('click', toggleMobileMenu);
+      if (overlay) overlay.addEventListener('click', closeMobileMenu);
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 1024) {
+            closeMobileMenu();
+          }
+        });
+      });
+
+      // 2. Active Navigation Highlighting on Scroll (Intersection Observer)
+      const sections = document.querySelectorAll('section[id]');
+      
+      function updateActiveNav() {
+        let currentSectionId = '';
+        const scrollPosition = window.scrollY + 200;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        if (currentSectionId) {
+          navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + currentSectionId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      }
+
+      window.addEventListener('scroll', updateActiveNav, { passive: true });
+      updateActiveNav();
+
+      // 3. Back to Top Button Visibility
+      const backToTop = document.getElementById('urbaniaBackToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      // 4. Floor Plan Tab Filtering
+      const tabBtns = document.querySelectorAll('.urbania-tab-btn');
+      const planCards = document.querySelectorAll('.urbania-plan-card');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          tabBtns.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          const filter = this.getAttribute('data-plan');
+
+          planCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-category') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // 5. Floor Plan Fullscreen Modal Lightbox
+      const modal = document.getElementById('urbaniaPlanModal');
+      const modalImg = document.getElementById('urbaniaModalImg');
+      const modalTitle = document.getElementById('urbaniaModalTitle');
+      const modalClose = document.getElementById('urbaniaModalClose');
+      const modalDownload = document.getElementById('urbaniaModalDownload');
+      const enlargeBtns = document.querySelectorAll('.urbania-enlarge-btn');
+
+      enlargeBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const src = this.getAttribute('data-src');
+          const title = this.getAttribute('data-title');
+          modalImg.src = src;
+          modalTitle.textContent = title;
+          modalDownload.href = src;
+          modalDownload.download = title.replace(/\s+/g, '_') + '.jpg';
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      // Also allow clicking plan card images to enlarge
+      const planImgWraps = document.querySelectorAll('.urbania-plan-img-wrap');
+      planImgWraps.forEach(wrap => {
+        wrap.style.cursor = 'pointer';
+        wrap.addEventListener('click', function() {
+          const btn = this.closest('.urbania-plan-card').querySelector('.urbania-enlarge-btn');
+          if (btn) btn.click();
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      if (modalClose) modalClose.addEventListener('click', closeModal);
+      if (modal) {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) closeModal();
+        });
+      }
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

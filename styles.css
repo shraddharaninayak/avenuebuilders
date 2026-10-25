@@ -2407,7 +2407,98 @@ select.form-control:focus {
    Inspired by Avenue25 & Architectural Editorial Design
    -------------------------------------------------------------------------- */
 
-/* A. Homepage Portfolio Spotlight Strip */
+/* 13-A. Homepage Welcome Section (Plain White Editorial Minimal with Smooth Parallax) */
+.home-welcome-section {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-white);
+  padding: 104px 24px;
+  overflow: hidden;
+}
+
+.welcome-container {
+  max-width: 1060px;
+  margin: 0 auto;
+  will-change: transform, opacity;
+  transition: transform 0.14s cubic-bezier(0.2, 0.9, 0.3, 1), opacity 0.25s ease-out;
+}
+
+.welcome-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 700;
+  color: var(--color-dark);
+  text-align: center;
+  margin: 0 0 28px 0;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+}
+
+.welcome-text-wrap {
+  width: 100%;
+}
+
+.welcome-description {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.15vw, 1.125rem);
+  font-weight: 400;
+  color: var(--color-body);
+  line-height: 1.88;
+  letter-spacing: 0.2px;
+  text-align: left;
+  margin: 0;
+}
+
+/* Scroll FadeUp Animation Helper */
+.fadeUpAnimation {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fadeUpAnimation.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeUpAnimation {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .home-welcome-section {
+    padding: 72px 24px;
+  }
+  .welcome-heading {
+    margin-bottom: 22px;
+  }
+  .welcome-description {
+    line-height: 1.8;
+  }
+}
+
+@media (max-width: 767px) {
+  .home-welcome-section {
+    padding: 56px 20px;
+  }
+  .welcome-heading {
+    font-size: clamp(1.5rem, 6vw, 1.95rem);
+    margin-bottom: 18px;
+    letter-spacing: 0.8px;
+  }
+  .welcome-description {
+    font-size: 0.98rem;
+    line-height: 1.76;
+    text-align: left;
+  }
+}
+
+/* B. Homepage Portfolio Spotlight Strip */
 .home-portfolio-strip {
   padding: 100px 24px;
   background-color: var(--color-sand-light);
@@ -2487,6 +2578,23 @@ select.form-control:focus {
 
 .home-trio-info {
   padding: 26px 22px;
+}
+
+.home-trio-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  margin-bottom: 14px;
+}
+
+.home-trio-logo {
+  max-height: 46px;
+  max-width: 155px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .home-trio-info h3 {
