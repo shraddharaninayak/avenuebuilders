@@ -169,151 +169,16 @@
         <!-- Filter Tabs -->
         <div class="projects-filter-bar fadeUpAnimation">
           <button class="filter-btn active" data-filter="all">ALL PROJECTS</button>
-          <button class="filter-btn" data-filter="ongoing">ONGOING LANDMARKS</button>
           <button class="filter-btn" data-filter="completed">OUR LEGACY</button>
+          <button class="filter-btn" data-filter="ongoing">ONGOING PROJECTS</button>
+          <button class="filter-btn" data-filter="layouts">COMPLETED LAYOUTS</button>
         </div>
 
-        <!-- SECTION A: ONGOING MASTER DEVELOPMENTS (ASYMMETRICAL EDITORIAL SPREADS) -->
-        <div class="projects-editorial-group" id="ongoing">
-          <div class="editorial-group-title fadeUpAnimation">
-            <span class="heading-eyebrow" style="color: var(--color-forest);">FEATURED MILESTONES</span>
-            <h2>Ongoing Architectural Developments</h2>
-          </div>
-
-          <div class="editorial-projects-list">
-            
-            <!-- Project 1: The Avenue Urbania (Hero Feature Spread) -->
-            <article class="project-editorial-feature fadeUpAnimation" data-category="ongoing residential" id="urbania">
-              <div class="feature-img-column">
-                <img src="assets/25-scaled.jpg" alt="The Avenue Urbania" />
-                <span class="editorial-status-pill">Under Construction</span>
-              </div>
-              <div class="feature-content-column">
-                <span class="editorial-type-label">3 &amp; 4 BHK LUXURY URBAN RESIDENCES</span>
-                <h3 class="editorial-title">The Avenue Urbania</h3>
-                <p class="editorial-tagline">Tiered Celebrity Lifestyle Residences</p>
-                <p class="editorial-summary">An elite residential abode engineered across four distinguished tiers of living: Tier I Grand Residences, Tier II Ground Realm dedicated to kids and community pavilions, Tier III Recreational Sanctuary featuring social lounges and resort-style lap pool, and Tier IV Sky Green Carpet Terrace.</p>
-                
-                <div class="editorial-meta-row">
-                  <div class="meta-item">
-                    <span class="meta-k">Location</span>
-                    <span class="meta-v">Govind Nagar, Nashik</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-k">Configuration</span>
-                    <span class="meta-v">3 &amp; 4 BHK Apartments</span>
-                  </div>
-                </div>
-
-                <div class="editorial-action">
-                  <a href="contact.html?project=Urbania" class="cta-rectangle dark">ENQUIRE PROJECT</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 2: The Avenue Flora (Reverse Feature Spread) -->
-            <article class="project-editorial-feature reverse fadeUpAnimation" data-category="ongoing commercial" id="flora" onclick="if(!event.target.closest('.editorial-action a')) window.location.href='flora.html';" style="cursor: pointer;">
-              <div class="feature-img-column">
-                <a href="flora.html" style="display: block; width: 100%; height: 100%; color: inherit;">
-                  <img src="assets/The-Avenue-Flora-Cam-view-768x655-1.jpg" alt="The Avenue Flora Commercial Hub" />
-                </a>
-                <span class="editorial-status-pill">Booking Open</span>
-              </div>
-              <div class="feature-content-column">
-                <span class="editorial-type-label">PREMIUM COMMERCIAL &amp; RETAIL PRESTIGE</span>
-                <h3 class="editorial-title"><a href="flora.html" style="color: inherit; text-decoration: none;">The Avenue Flora</a></h3>
-                <p class="editorial-tagline">Showroom &amp; Corporate Office Suites</p>
-                <p class="editorial-summary">A new era of commercial prestige in Govind Nagar. Highlights an expansive ground showroom floor with prominent street frontages, exclusive amenities, dedicated fitness center, flexible multi tier floor grids, and seamless vehicular ingress.</p>
-                
-                <div class="editorial-meta-row">
-                  <div class="meta-item">
-                    <span class="meta-k">Location</span>
-                    <span class="meta-v">Govind Nagar, Nashik</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-k">Offering</span>
-                    <span class="meta-v">Retail &amp; Corporate Suites</span>
-                  </div>
-                </div>
-
-                <div class="editorial-action">
-                  <a href="contact.html?project=Flora" class="cta-rectangle dark">ENQUIRE PROJECT</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 3: The Avenue Aura (Feature Spread) -->
-            <article class="project-editorial-feature fadeUpAnimation" data-category="ongoing residential" id="aura" onclick="if(!event.target.closest('.editorial-action a')) window.open('assets/avenue-aura-brochure.pdf', '_blank', 'noopener,noreferrer');" style="cursor: pointer;">
-              <div class="feature-img-column">
-                <a href="assets/avenue-aura-brochure.pdf" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%; color: inherit;" title="Click to view Avenue Aura Brochure">
-                  <img src="assets/AURA-view.jpg" alt="The Avenue Aura" />
-                </a>
-                <span class="editorial-status-pill">Fast Progress</span>
-              </div>
-              <div class="feature-content-column">
-                <span class="editorial-type-label">CONTEMPORARY RESIDENTIAL ENCLAVE</span>
-                <h3 class="editorial-title"><a href="assets/avenue-aura-brochure.pdf" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;" title="Click to view Avenue Aura Brochure">The Avenue Aura</a></h3>
-                <p class="editorial-tagline">Elegant &amp; Planned Residences</p>
-                <p class="editorial-summary">Step into a world of timeless elegance. Thoughtfully engineered floor layouts, grand entrance promenade, breezy terrace recreation zones, optimal cross ventilation, and effortless connectivity to Nashik's core arterial roads.</p>
-                
-                <div class="editorial-meta-row">
-                  <div class="meta-item">
-                    <span class="meta-k">Location</span>
-                    <span class="meta-v">Govind Nagar, Nashik</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-k">Highlights</span>
-                    <span class="meta-v">Terrace Amenities &amp; Vastu</span>
-                  </div>
-                </div>
-
-                <div class="editorial-action">
-                  <a href="assets/avenue-aura-brochure.pdf" target="_blank" rel="noopener noreferrer" class="cta-rectangle dark">VIEW BROCHURE</a>
-                  <a href="contact.html?project=Aura" class="cta-rectangle dark">ENQUIRE PROJECT</a>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 4: The Avenue Bliss (Reverse Feature Spread) -->
-            <article class="project-editorial-feature reverse fadeUpAnimation" data-category="ongoing residential" id="bliss" onclick="if(!event.target.closest('.editorial-action a')) window.location.href='bliss.html';" style="cursor: pointer;">
-              <div class="feature-img-column">
-                <a href="bliss.html" style="display: block; width: 100%; height: 100%; color: inherit;" title="Click to view The Avenue Bliss Details">
-                  <img src="assets/hero-avenue-bliss.jpg" alt="The Avenue Bliss Homes" />
-                </a>
-                <span class="editorial-status-pill">Selling Fast</span>
-              </div>
-              <div class="feature-content-column">
-                <span class="editorial-type-label">2 &amp; 3 BHK ELEVATED HOMES</span>
-                <h3 class="editorial-title"><a href="bliss.html" style="color: inherit; text-decoration: none;" title="Click to view The Avenue Bliss Details">The Avenue Bliss</a></h3>
-                <p class="editorial-tagline">Rooftop Living &amp; 2 &amp; 3 BHK Homes</p>
-                <p class="editorial-summary">Perfect happiness and luxury you truly deserve. Features landscaped rooftop gardens, designated children's play area, video door phone integration, Europa lock designer security doors, and power backup for common utilities.</p>
-                
-                <div class="editorial-meta-row">
-                  <div class="meta-item">
-                    <span class="meta-k">Location</span>
-                    <span class="meta-v">Govind Nagar / Nashik</span>
-                  </div>
-                  <div class="meta-item">
-                    <span class="meta-k">Enquiry Desk</span>
-                    <span class="meta-v">+91 7277995566</span>
-                  </div>
-                </div>
-
-                <div class="editorial-action">
-                  <a href="bliss.html" class="cta-rectangle dark">VIEW PROJECT</a>
-                  <a href="contact.html?project=Bliss" class="cta-rectangle dark">ENQUIRE PROJECT</a>
-                </div>
-              </div>
-            </article>
-
-          </div>
-        </div>
-
-        <!-- SECTION B: DELIVERED LANDMARKS (CLEAN ARCHITECTURAL GRID) -->
+        <!-- SECTION A: DELIVERED LANDMARKS (OUR LEGACY) -->
         <div class="projects-editorial-group" id="completed">
           <div class="editorial-group-title fadeUpAnimation">
             <span class="heading-eyebrow" style="color: var(--color-forest);">PROVEN TRACK RECORD</span>
-            <h2>Delivered Milestones &bull; 100% Handed Over</h2>
+            <h2>Our Legacy: Delivered Milestones</h2>
           </div>
 
           <div class="delivered-gallery-grid">
@@ -325,7 +190,9 @@
                 <span class="delivered-badge">&check; Delivered</span>
               </div>
               <div class="delivered-body">
-                <span class="delivered-type">Commercial Landmark Hub</span>
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-nx.png" alt="The Avenue NX" class="delivered-logo" />
+                </div>
                 <h3>The Avenue NX</h3>
                 <p>A signature commercial address delivered with exceptional build quality, housing thriving business enterprises and retail establishments.</p>
                 <p class="delivered-loc"><strong>Location:</strong> Plot 19 &amp; 20, Chowk #3, Govind Nagar, Nashik</p>
@@ -342,7 +209,9 @@
                 <span class="delivered-badge">&check; Delivered</span>
               </div>
               <div class="delivered-body">
-                <span class="delivered-type">Premium Residential Landmark</span>
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-grandeur.png" alt="The Avenue Grandeur" class="delivered-logo" />
+                </div>
                 <h3>The Avenue Grandeur</h3>
                 <p>Delivered adjacent to Govind Nagar Jogging Track with premium architectural design and joyous community spaces for families.</p>
                 <p class="delivered-loc"><strong>Location:</strong> Beside Jogging Track, Karmayogi Nagar, Nashik</p>
@@ -359,7 +228,9 @@
                 <span class="delivered-badge">&check; Delivered</span>
               </div>
               <div class="delivered-body">
-                <span class="delivered-type">Boutique Residential Enclave</span>
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-casa.png" alt="The Avenue Casa" class="delivered-logo" />
+                </div>
                 <h3>The Avenue Casa</h3>
                 <p>A calm, well connected residential development providing peaceful domestic serenity right in the heart of Govind Nagar.</p>
                 <p class="delivered-loc"><strong>Location:</strong> Opp. Karandikar Hospital, Govind Nagar, Nashik</p>
@@ -376,12 +247,269 @@
                 <span class="delivered-badge">&check; Delivered</span>
               </div>
               <div class="delivered-body">
-                <span class="delivered-type">Landmark Residential Tower</span>
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-one.png" alt="The Avenue One" class="delivered-logo" />
+                </div>
                 <h3>The Avenue One</h3>
                 <p>A testament to Avenue craftsmanship and punctuality, standing tall behind Ganapati Temple with full occupancy and happy residents.</p>
                 <p class="delivered-loc"><strong>Location:</strong> Behind Ganapati Temple, Govind Nagar, Nashik</p>
                 <div class="delivered-action">
                   <a href="contact.html?project=One" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 5: The Avenue Commercial -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed commercial">
+              <div class="delivered-img-wrap">
+                <img src="assets/hero-commercial-avenue.jpg" alt="The Avenue Commercial" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-commercial.png" alt="The Avenue Commercial" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Commercial</h3>
+                <p>Exclusive corporate offices and showroom spaces compendium delivered with prime roadside visibility and modern commercial infrastructure.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Commercial" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 6: The Avenue Aura -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential">
+              <div class="delivered-img-wrap">
+                <img src="assets/AURA-view.jpg" alt="The Avenue Aura" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-aura.png" alt="The Avenue Aura" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Aura</h3>
+                <p>Step into a world of timeless elegance. Thoughtfully engineered floor layouts, grand entrance promenade, breezy terrace amenities, and effortless connectivity.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Aura" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 7: The Avenue Bliss -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential">
+              <div class="delivered-img-wrap">
+                <img src="assets/hero-avenue-bliss.jpg" alt="The Avenue Bliss" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-bliss.png" alt="The Avenue Bliss" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Bliss</h3>
+                <p>Perfect happiness and luxury you truly deserve. Features landscaped rooftop gardens, children's play area, video door phone security, and common power backup.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Bliss" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 8: The Avenue Flora -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed commercial">
+              <div class="delivered-img-wrap">
+                <img src="assets/The-Avenue-Flora-Cam-view-768x655-1.jpg" alt="The Avenue Flora" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-flora.png" alt="The Avenue Flora" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Flora</h3>
+                <p>A new era of commercial prestige in Govind Nagar. Highlights an expansive ground showroom floor, exclusive amenities, fitness center, and multi-tier office grids.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Flora" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        <!-- SECTION B: ONGOING PROJECTS -->
+        <div class="projects-editorial-group" id="ongoing">
+          <div class="editorial-group-title fadeUpAnimation">
+            <span class="heading-eyebrow" style="color: var(--color-forest);">FEATURED MILESTONES</span>
+            <h2>Ongoing Architectural Projects</h2>
+          </div>
+
+          <div class="delivered-gallery-grid ongoing-gallery-grid">
+            
+            <!-- Ongoing 1: The Avenue Urbania -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="urbania">
+              <div class="delivered-img-wrap">
+                <img src="assets/25-scaled.jpg" alt="The Avenue Urbania" />
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-urbania.png" alt="The Avenue Urbania" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Urbania</h3>
+                <p>Tiered celebrity lifestyle residences engineered across four distinguished tiers of living: Tier I Grand Residences, Tier II Kids Pavilions, Tier III Recreational Sanctuary, and Tier IV Sky Green Carpet Terrace.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Urbania" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 2: The Avenue Milestone -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing commercial" id="milestone">
+              <div class="delivered-img-wrap">
+                <img src="assets/building-milestone.jpg" alt="The Avenue Milestone" style="object-position: center 25%;" />
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-milestone.png" alt="The Avenue Milestone" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Milestone</h3>
+                <p>An architecturally distinguished commercial landmark featuring prime street-facing showroom spaces, versatile multi-tier corporate office grids, state-of-the-art infrastructure, and strategic road connectivity.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Milestone" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 3: The Avenue Classico -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="classico">
+              <div class="delivered-img-wrap">
+                <img src="assets/building-classico.jpg" alt="The Avenue Classico" style="object-position: center 12%;" />
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-classico.png" alt="The Avenue Classico" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Classico</h3>
+                <p>An authentic luxury residential enclave offering expansive unit layouts, elegant architectural elevations, premium lifestyle specifications, and unmatched domestic serenity in prime Govind Nagar.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Classico" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 4: The Avenue Aaryana -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="aaryana">
+              <div class="delivered-img-wrap">
+                <img src="assets/building-aaryana.jpg" alt="The Avenue Aaryana" style="object-position: center 15%;" />
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-aaryana.png" alt="The Avenue Aaryana" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Aaryana</h3>
+                <p>Showcasing modern architectural concepts, spacious floor plans, lush landscaped surroundings, and comprehensive lifestyle amenities engineered for contemporary family living.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Aaryana" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 5: Viraj Avenue -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="viraj">
+              <div class="delivered-img-wrap">
+                <img src="assets/building-viraj.jpg" alt="Viraj Avenue" style="object-position: center center;" />
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-viraj-avenue.png" alt="Viraj Avenue" class="delivered-logo" />
+                </div>
+                <h3>Viraj Avenue</h3>
+                <p>A signature residential landmark crafted with meticulous master planning, generous living spaces, premium recreational amenities, and seamless proximity to top transit corridors.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Viraj" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- SECTION C: COMPLETED LAYOUTS -->
+        <div class="projects-editorial-group" id="layouts">
+          <div class="editorial-group-title fadeUpAnimation">
+            <span class="heading-eyebrow" style="color: var(--color-forest);">PLOTTED DEVELOPMENTS</span>
+            <h2>Completed Layouts &bull; Clear Title NA Plots</h2>
+          </div>
+
+          <div class="delivered-gallery-grid ongoing-gallery-grid">
+            
+            <!-- Layout 1: Pathardi Vadner NX -->
+            <article class="delivered-card fadeUpAnimation" data-category="layouts" id="pathardi-vadner-nx">
+              <div class="delivered-img-wrap">
+                <img src="assets/layout-pathardi-vadner-nx.jpg" alt="Pathardi Vadner NX Plotted Layout" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-pathardi-vadner-nx.png" alt="Pathardi Vadner NX" class="delivered-logo" />
+                </div>
+                <h3>Pathardi Vadner NX</h3>
+                <p>A masterfully engineered residential plotted layout offering clear-title NA plots, robust infrastructure, wide internal avenue roads, and seamless arterial connectivity along the flourishing Pathardi-Vadner growth belt.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Pathardi - Vadner Road, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Pathardi-Vadner-NX" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Layout 2: Indira Nagar NX -->
+            <article class="delivered-card fadeUpAnimation" data-category="layouts" id="indira-nagar-nx">
+              <div class="delivered-img-wrap">
+                <img src="assets/layout-indira-nagar-nx.jpg" alt="Indira Nagar NX Plotted Layout" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-indira-nagar-nx.png" alt="Indira Nagar NX" class="delivered-logo" />
+                </div>
+                <h3>Indira Nagar NX</h3>
+                <p>A prestigious plotted development featuring systematically demarcated residential NA plots with comprehensive civic utilities, underground cabling, lush green spaces, and direct proximity to central Indira Nagar.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Indira Nagar Annex, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Indira-Nagar-NX" class="cta-rectangle dark">ENQUIRE PROJECT</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Layout 3: Pathardi Vadner NX 2 -->
+            <article class="delivered-card fadeUpAnimation" data-category="layouts" id="pathardi-vadner-nx-2">
+              <div class="delivered-img-wrap">
+                <img src="assets/layout-pathardi-vadner-nx2.jpg" alt="Pathardi Vadner NX 2 Plotted Layout" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-pathardi-vadner-nx2.png" alt="Pathardi Vadner NX 2" class="delivered-logo" />
+                </div>
+                <h3>Pathardi Vadner NX 2</h3>
+                <p>The distinguished phase two plotted extension delivering prime NA residential plots with enhanced environmental landscaping, modern community amenities, street lighting, and exceptional capital growth potential.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Pathardi - Vadner Road, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Pathardi-Vadner-NX-2" class="cta-rectangle dark">ENQUIRE PROJECT</a>
                 </div>
               </div>
             </article>

@@ -3048,6 +3048,39 @@ select.form-control:focus {
   align-items: stretch;
 }
 
+/* Ongoing Architectural Developments Grid: 3 cards row 1, 2 centered cards row 2 */
+.ongoing-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.ongoing-gallery-grid .delivered-card {
+  flex: 0 0 calc((100% - 2 * 28px) / 3);
+  max-width: calc((100% - 2 * 28px) / 3);
+  width: calc((100% - 2 * 28px) / 3);
+}
+
+@media (max-width: 1100px) {
+  .ongoing-gallery-grid .delivered-card {
+    flex: 0 0 calc((100% - 28px) / 2);
+    max-width: calc((100% - 28px) / 2);
+    width: calc((100% - 28px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .ongoing-gallery-grid {
+    gap: 24px;
+  }
+  .ongoing-gallery-grid .delivered-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 .delivered-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -3101,6 +3134,23 @@ select.form-control:focus {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.delivered-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  margin-bottom: 14px;
+}
+
+.delivered-logo {
+  max-height: 46px;
+  max-width: 155px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .delivered-type {
