@@ -13,6 +13,13 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  if (!window.location.hash) {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }
+
   initStickyHeader();
   initSlideMenu();
   initDeveloperPopup();
@@ -174,8 +181,15 @@ function initLandmarksGallery() {
   const floatNext = document.querySelector('.landmarks-floating-next-btn');
 
   let swiperInstance = null;
+  let activeIndex = 0;
 
   function updateActiveIndex(idx) {
+    activeIndex = idx;
+    const currentDigit = document.querySelector('.current-rail-digit');
+    if (currentDigit) {
+      currentDigit.textContent = `0${idx + 1}`;
+    }
+
     numBtns.forEach(btn => {
       const bIdx = parseInt(btn.getAttribute('data-index'), 10);
       if (bIdx === idx) {
@@ -214,7 +228,7 @@ function initLandmarksGallery() {
         },
         1024: {
           slidesPerView: 3,
-          spaceBetween: 22,
+          spaceBetween: 20,
           allowTouchMove: false,
         },
       },
@@ -226,7 +240,7 @@ function initLandmarksGallery() {
     });
   }
 
-  // Connect left rail indicator buttons (01, 02, 03)
+  // Connect left rail indicator buttons
   numBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const idx = parseInt(btn.getAttribute('data-index'), 10);
@@ -241,25 +255,21 @@ function initLandmarksGallery() {
   // Connect previous arrow
   if (prevRail) {
     prevRail.addEventListener('click', () => {
+      let prevIdx = (activeIndex - 1 + 3) % 3;
       if (swiperInstance && window.innerWidth < 1024) {
-        swiperInstance.slidePrev();
+        swiperInstance.slideTo(prevIdx);
       } else {
-        const currentActive = document.querySelector('.nav-rail-num.active');
-        let curIdx = currentActive ? parseInt(currentActive.getAttribute('data-index'), 10) : 1;
-        let nextIdx = (curIdx - 1 + 3) % 3;
-        updateActiveIndex(nextIdx);
+        updateActiveIndex(prevIdx);
       }
     });
   }
 
   // Connect next arrows (rail next and right floating circular button)
   const handleNext = () => {
+    let nextIdx = (activeIndex + 1) % 3;
     if (swiperInstance && window.innerWidth < 1024) {
-      swiperInstance.slideNext();
+      swiperInstance.slideTo(nextIdx);
     } else {
-      const currentActive = document.querySelector('.nav-rail-num.active');
-      let curIdx = currentActive ? parseInt(currentActive.getAttribute('data-index'), 10) : 1;
-      let nextIdx = (curIdx + 1) % 3;
       updateActiveIndex(nextIdx);
     }
   };
@@ -268,14 +278,14 @@ function initLandmarksGallery() {
   if (floatNext) floatNext.addEventListener('click', handleNext);
 }
 
-/* 4b. Hero Background Video Autoplay Assurance */
-function initHeroVideo() {
+/* 4b. Hero Background Video Controller (Deferred Start After Cloud Intro) */
+let heroVideoStarted = false;
+
+function startHeroVideo() {
   const video = document.querySelector('.hero-video-bg');
-  if (!video) return;
+  if (!video || heroVideoStarted) return;
+  heroVideoStarted = true;
   video.muted = true;
-  try {
-    video.currentTime = 0;
-  } catch (e) {}
   const playPromise = video.play();
   if (playPromise !== undefined) {
     playPromise.catch(() => {
@@ -284,18 +294,37 @@ function initHeroVideo() {
   }
 }
 
+function initHeroVideo() {
+  const video = document.querySelector('.hero-video-bg');
+  if (!video) return;
+  video.muted = true;
+  video.pause();
+  try {
+    video.currentTime = 0;
+  } catch (e) {}
+}
+
 /* 4c. Unified Introductory Sequence:
    STAGE 1: Avenue Logo Intro (0.0s to ~3.2s)
-   STAGE 2: Cinematic Cloud Intro (~3.2s to ~5.7s, naturally dissolves 5.7s to 7.7s)
-   STAGE 3: Architectural Hero Video (Revealed smoothly underneath without flash)
+   STAGE 2: Cinematic Cloud Intro (Exactly 2.0s visible, 3.2s to 5.2s, then 1.0s smooth fade)
+   STAGE 3: Milestone Hero Video (Starts playback ONLY after cloud intro finishes at 6.2s)
 */
 function initCloudIntro() {
   const logoIntro = document.getElementById('avenue-intro');
   const cloudIntro = document.getElementById('cloudIntro');
 
   let cloudFadeTimer = null;
-  let cloudRemoveTimer = null;
+  let cloudCompleteTimer = null;
   let logoRemoveTimer = null;
+
+  function triggerCloudFade() {
+    if (!cloudIntro || cloudIntro.classList.contains('fade-out')) return;
+    cloudIntro.classList.add('fade-out');
+    cloudCompleteTimer = setTimeout(() => {
+      cloudIntro.style.display = 'none';
+      startHeroVideo();
+    }, 1000);
+  }
 
   // Stage 1: Avenue Logo Intro cleanup after its CSS exit animation completes (~3950ms)
   if (logoIntro) {
@@ -303,35 +332,35 @@ function initCloudIntro() {
       logoIntro.style.display = 'none';
     }, 4000);
 
-    // Click/tap to skip logo intro and proceed immediately to clouds
+    // Click/tap to skip logo intro; clouds remain visible for 2.0s from click
     logoIntro.addEventListener('click', () => {
       logoIntro.style.display = 'none';
+      if (cloudIntro && !cloudIntro.classList.contains('fade-out')) {
+        clearTimeout(cloudFadeTimer);
+        cloudFadeTimer = setTimeout(triggerCloudFade, 2000);
+      }
     });
   }
 
   // Stage 2: Cinematic Cloud Intro sequence
-  // After logo intro dissolves (~3.2s), clouds remain prominently visible for ~2500ms (until 5700ms).
-  // Then clouds dissolve naturally over 2000ms using the cubic-bezier transition,
-  // revealing the existing hero video underneath.
+  // After logo intro finishes (~3.2s), clouds remain visible for exactly 2 seconds (until 5200ms).
+  // Then clouds dissolve naturally over 1.0s (5200ms to 6200ms).
+  // The video starts playing only after the clouds completely disappear (6200ms).
   if (cloudIntro) {
-    cloudFadeTimer = setTimeout(() => {
-      cloudIntro.classList.add('fade-out');
-    }, 5700);
-
-    // After 7.8s, completely remove cloud overlay to free browser resources
-    cloudRemoveTimer = setTimeout(() => {
-      cloudIntro.style.display = 'none';
-    }, 7800);
+    cloudFadeTimer = setTimeout(triggerCloudFade, 5200);
 
     // Tap or click anywhere on cloud intro to immediately fade away to hero video
     cloudIntro.addEventListener('click', () => {
       clearTimeout(cloudFadeTimer);
-      clearTimeout(cloudRemoveTimer);
-      cloudIntro.classList.add('fade-out');
-      setTimeout(() => {
-        cloudIntro.style.display = 'none';
-      }, 2000);
+      clearTimeout(cloudCompleteTimer);
+      triggerCloudFade();
     });
+
+    // Safety fallback: ensure video starts even if timer was paused by background tab
+    setTimeout(startHeroVideo, 7000);
+  } else {
+    // If cloud intro element is absent, start video immediately
+    startHeroVideo();
   }
 }
 
@@ -431,33 +460,40 @@ function initProjectFiltering() {
 
   if (!filterBtns.length || !projectCards.length) return;
 
+  function applyFilter(filterValue) {
+    projectCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      if (filterValue === 'all' || (category && category.includes(filterValue))) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Update visibility of editorial groups based on matching items
+    document.querySelectorAll('.projects-editorial-group').forEach(group => {
+      const visibleItems = group.querySelectorAll('.project-editorial-feature[data-category]:not([style*="display: none"]), .delivered-card[data-category]:not([style*="display: none"])');
+      if (visibleItems.length === 0 && filterValue !== 'all') {
+        group.style.display = 'none';
+      } else {
+        group.style.display = '';
+      }
+    });
+  }
+
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || (category && category.includes(filterValue))) {
-          card.style.display = '';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-
-      // Update visibility of editorial groups based on matching items
-      document.querySelectorAll('.projects-editorial-group').forEach(group => {
-        const visibleItems = group.querySelectorAll('.project-editorial-feature[data-category]:not([style*="display: none"]), .delivered-card[data-category]:not([style*="display: none"])');
-        if (visibleItems.length === 0 && filterValue !== 'all') {
-          group.style.display = 'none';
-        } else {
-          group.style.display = '';
-        }
-      });
+      applyFilter(btn.getAttribute('data-filter'));
     });
   });
+
+  // Apply default active filter on page load (OUR LEGACY)
+  const defaultActiveBtn = document.querySelector('.filter-btn.active') || filterBtns[0];
+  if (defaultActiveBtn) {
+    applyFilter(defaultActiveBtn.getAttribute('data-filter'));
+  }
 }
 
 /* 7. Contact Form Validation and Simulation */

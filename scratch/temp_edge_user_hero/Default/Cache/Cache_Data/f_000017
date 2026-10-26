@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>The Avenue Builders & Developers | Premium Real Estate Developer Nashik</title>
+  <meta name="description" content="The Avenue Builders and Developers, premier real estate development company in Nashik established in 2019. Discover luxury residential and commercial landmarks including Flora, Aura, Urbania, and Bliss." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <!-- Typography: Cormorant Garamond + Philosopher + Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Swiper Carousel CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+  <!-- Preload Avenue Intro Logo Asset -->
+  <link rel="preload" as="image" href="assets/logo-avenue-colour.webp" fetchpriority="high" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="home">
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR
+       Logo on left | Empty space in middle | ENQUIRE NOW + Two-Line Hamburger on right
+       ========================================================================== -->
+  <div id="header" class="site-header">
+    <div class="menu-container">
+      <div class="menu-logo">
+        <a href="index.html" aria-label="The Avenue Builders & Developers">
+          <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders & Developers Logo" class="brand-logo-img" />
+        </a>
+      </div>
+
+      <div class="header-right-actions">
+        <a href="contact.html" class="btn-header-enquire">
+          <span class="btn-enquire-desktop">ENQUIRE NOW</span>
+          <span class="btn-contact-mobile">CONTACT</span>
+        </a>
+        <div class="menu-cta">
+          <a href="#" class="menu-cta-menu-hamburger" aria-label="Toggle Full Navigation Menu">
+            <span></span>
+            <span></span>
+            <span class="hamburger-bar-3"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SPLIT-PANEL LUXURY NAVIGATION DRAWER
+       ========================================================================== -->
+  <div id="headerMenuSlide">
+    <div class="menu-split-grid">
+      <!-- Left Panel: Brand Logo + Numbered Nav Menu Items (01 - 05) -->
+      <div class="menu-panel-nav">
+        <div class="menu-nav-top">
+          <div class="menu-slide-brand">
+            <a href="index.html" aria-label="The Avenue Builders & Developers">
+              <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders & Developers" />
+            </a>
+          </div>
+          <span class="menu-nav-tagline">Architectural Landmarks &bull; Est. 2019</span>
+        </div>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="menu-link active">
+              <span class="nav-idx">01</span>
+              <span class="nav-title">HOME</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="about.html" class="menu-link">
+              <span class="nav-idx">02</span>
+              <span class="nav-title">ABOUT US</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="services.html" class="menu-link">
+              <span class="nav-idx">03</span>
+              <span class="nav-title">SERVICES</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="projects.html" class="menu-link">
+              <span class="nav-idx">04</span>
+              <span class="nav-title">PROJECTS</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="contact.html" class="menu-link">
+              <span class="nav-idx">05</span>
+              <span class="nav-title">CONTACT US</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="menu-mobile-enquire">
+          <a href="contact.html" class="btn-header-enquire">ENQUIRE NOW</a>
+        </div>
+
+        <div class="menu-panel-nav-footer">
+          <p class="menu-subtext">Nashik&rsquo;s Premier Real Estate Development Group</p>
+        </div>
+      </div>
+
+      <!-- Right Panel: Architectural Visual + Close Button + Action Pills + Official Contact Info -->
+      <div class="menu-panel-action">
+        <div class="menu-action-bg" style="background-image: url('assets/hero-commercial-avenue.jpg');"></div>
+        <div class="menu-action-overlay"></div>
+
+        <div class="menu-action-header">
+          <button type="button" class="menu-close-trigger" aria-label="Close Navigation Menu">
+            <span class="close-symbol">&times;</span>
+            <span class="close-label">CLOSE</span>
+          </button>
+        </div>
+
+        <div class="menu-action-body">
+          <div class="menu-action-pills">
+            <a href="projects.html" class="action-pill pill-primary">
+              <span class="pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+              <span>START WITH A FLOOR PLAN</span>
+            </a>
+            <a href="contact.html" class="action-pill pill-secondary">
+              <span class="pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>TALK TO OUR TEAM</span>
+            </a>
+          </div>
+
+          <div class="menu-action-contact">
+            <span class="contact-eyebrow">CONTACT</span>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">PHONE:</span>
+              <span class="contact-meta-val"><a href="tel:9373632323">+91 9373632323</a> / <a href="tel:9175936496">+91 9175936496</a></span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">EMAIL:</span>
+              <span class="contact-meta-val"><a href="mailto:theavenuensk@gmail.com">theavenuensk@gmail.com</a></span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">HOURS:</span>
+              <span class="contact-meta-val">MON to SUN: 9:30 AM to 7:00 PM</span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">ADDRESS:</span>
+              <span class="contact-meta-val">Corporate Headquarters, The Avenue, Govind Nagar, Nashik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlaySlide"></div>
+
+  <main id="pageContent">
+
+    <!-- ==========================================================================
+         STAGE 1: AVENUE LOGO INTRO
+         Authentic animated ink-stroke drawing and color-sweep reveal
+         ========================================================================== -->
+    <div id="avenue-intro" data-intro="play" aria-hidden="true" class="avenue-intro-screen" style="position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; z-index: 2000; background-color: rgb(241, 234, 218); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+      <div class="avi-mark">
+        <svg class="avi-ink" viewBox="0 0 218.75 93.14" preserveAspectRatio="none" fill="none">
+          <defs>
+            <linearGradient id="avi-ink-tone" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="218.75" y2="0">
+              <stop offset="0" stop-color="#584738"></stop>
+              <stop offset="0.55" stop-color="#B59E7D"></stop>
+              <stop offset="1" stop-color="#B59E7D"></stop>
+            </linearGradient>
+            <clipPath id="avi-clip-9"><path d="M37.56 55.32L47.45 55.36L66.12 7.59L66.12 1.64L58.42 1.64Z"></path></clipPath>
+            <clipPath id="avi-clip-10"><path d="M65.82 7.59L66.12 7.59L85.3 55.34L95.23 55.28L73.77 1.65L65.82 1.64Z"></path></clipPath>
+            <clipPath id="avi-clip-11"><path d="M109.54 67.32L100.89 37.83L106.12 37.83L112.28 59.66L112.28 67.32Z"></path></clipPath>
+            <clipPath id="avi-clip-12"><path d="M111.98 59.66L112.28 59.66L118.14 37.83L123.38 37.83L114.81 67.32L111.98 67.32Z"></path></clipPath>
+            <clipPath id="avi-clip-18"><path d="M152.73 37.83L153.23 37.83L163.46 58.13L163.46 67.32L162.8 67.32L153.03 48.09L152.73 48.09Z"></path></clipPath>
+            <clipPath id="avi-clip-20"><path d="M172.75 37.82L177.61 37.82L177.61 53.78C177.61 56.26 177.68 57.87 177.8 58.63C178.01 59.92 178.53 60.93 179.35 61.64C180.16 62.35 181.24 62.71 182.58 62.71C183.71 62.71 184.63 62.45 185.35 61.95C186.07 61.45 186.55 60.76 186.82 59.86C187.08 58.97 187.21 57.05 187.21 54.12L187.21 37.82L192.08 37.82L192.08 53.31C192.08 57.27 191.86 60.12 191.44 61.89C191.02 63.65 190.06 65.08 188.58 66.17C187.1 67.27 185.14 67.81 182.71 67.81C180.18 67.81 178.21 67.36 176.79 66.45C175.38 65.55 174.35 64.28 173.71 62.64C173.07 60.99 172.75 57.96 172.75 53.55L172.75 37.82Z"></path></clipPath>
+          </defs>
+          <g class="avi-piece" style="--at:500ms;--dur:480ms;--sy:-6px"><path class="avi-stroke" d="M4.16 48.27V67.47" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:600ms;--dur:520ms;--sy:0px"><path class="avi-stroke" d="M6.4 57.87H31.17" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:700ms;--dur:540ms;--sy:0px"><path class="avi-stroke" d="M1.67 42.67H31.17" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:800ms;--dur:540ms;--sy:0px"><path class="avi-stroke" d="M31.17 28.21H1.67" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:1080ms;--dur:300ms;--sy:0px"><path class="avi-stroke" d="M15.78 40.49V30.39" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:900ms;--dur:540ms;--sy:0px"><path class="avi-stroke" d="M1.67 18.28H31.17" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.87"></path></g>
+          <g class="avi-piece" style="--at:1160ms;--dur:320ms;--sy:4px"><path class="avi-stroke" d="M4.16 16.1V2.79" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1230ms;--dur:320ms;--sy:4px"><path class="avi-stroke" d="M15.65 16.1V3.7" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:1300ms;--dur:320ms;--sy:4px"><path class="avi-stroke" d="M28.67 16.1V2.34" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:760ms;--dur:680ms;--sy:0px"><path class="avi-stroke" d="M41.42 58.13L64.45 -1.16" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="16" clip-path="url(#avi-clip-9)"></path></g>
+          <g class="avi-piece" style="--at:1180ms;--dur:640ms;--sy:0px"><path class="avi-stroke" d="M68.88 -1.16L91.33 58.11" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="16" clip-path="url(#avi-clip-10)"></path></g>
+          <g class="avi-piece" style="--at:1040ms;--dur:520ms;--sy:0px"><path class="avi-stroke" d="M102.94 35.91L112.74 69.23" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="10" clip-path="url(#avi-clip-11)"></path></g>
+          <g class="avi-piece" style="--at:1300ms;--dur:520ms;--sy:9px"><path class="avi-stroke" d="M113.07 69.26L121.23 35.88" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="10" clip-path="url(#avi-clip-12)"></path></g>
+          <g class="avi-piece" style="--at:1220ms;--dur:560ms;--sy:-10px"><path class="avi-stroke" d="M128.32 37.83V67.32" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:1520ms;--dur:360ms;--sy:0px"><path class="avi-stroke" d="M130.5 40.32H143.81" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1590ms;--dur:360ms;--sy:0px"><path class="avi-stroke" d="M130.5 51.81H142.9" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:1660ms;--dur:360ms;--sy:0px"><path class="avi-stroke" d="M130.5 64.83H144.26" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1360ms;--dur:520ms;--sy:0px"><path class="avi-stroke" d="M150.76 67.32V37.83" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.53"></path></g>
+          <g class="avi-piece" style="--at:1600ms;--dur:440ms;--sy:0px"><path class="avi-stroke" d="M151.32 39.39L164.78 65.99" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="10" clip-path="url(#avi-clip-18)"></path></g>
+          <g class="avi-piece" style="--at:1500ms;--dur:580ms;--sy:10px"><path class="avi-stroke" d="M165.43 67.32V37.83" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.54"></path></g>
+          <g class="avi-piece" style="--at:1560ms;--dur:720ms;--sy:0px"><path class="avi-stroke" d="M175.19 36.08L175.19 53.58C175.19 61.88 178.22 65.28 182.42 65.28C186.62 65.28 189.65 61.88 189.65 53.58L189.65 36.08" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="9" clip-path="url(#avi-clip-20)"></path></g>
+          <g class="avi-piece" style="--at:1700ms;--dur:540ms;--sy:-10px"><path class="avi-stroke" d="M199.61 37.83V67.32" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:1960ms;--dur:320ms;--sy:0px"><path class="avi-stroke" d="M201.79 40.32H215.1" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:2020ms;--dur:320ms;--sy:0px"><path class="avi-stroke" d="M201.79 51.81H214.2" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:2080ms;--dur:320ms;--sy:0px"><path class="avi-stroke" d="M201.79 64.83H215.55" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1820ms;--dur:560ms;--sy:0px"><path class="avi-stroke" d="M36.6 63.97H95.55" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="7.05"></path></g>
+        </svg>
+        <img class="avi-logo" src="assets/logo-avenue-colour.webp" alt="The Avenue Builders &amp; Developers" width="1400" height="596" fetchpriority="high" />
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+         CINEMATIC CLOUD OPENING INTRO
+         Full-screen opening experience before hero video starts
+         ========================================================================== -->
+    <div id="cloudIntro" class="cloud-intro-screen" aria-hidden="true">
+      <div class="cloud-intro-visual" style="background-image: url('assets/cloud-intro.jpg');"></div>
+      <div class="cloud-intro-smoke"></div>
+    </div>
+
+    <!-- ==========================================================================
+         HERO SECTION: FOCUSED ARCHITECTURAL SHOWCASE
+         Building fully visible, balanced composition, elegant typography
+         ========================================================================== -->
+    <div id="component" class="home-hero-curated">
+      <!-- Full-Screen Responsive HTML5 Video Background -->
+      <div class="hero-video-wrapper">
+        <video class="hero-video-bg" muted loop playsinline preload="auto">
+          <source src="assets/hero section change vedio.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="hero-video-fade-overlay"></div>
+
+        <!-- Prominently Centered Milestone Brand Overlay -->
+        <div class="hero-milestone-overlay">
+          <div class="hero-milestone-brand">
+            <img src="assets/logo-milestone-gold.png" alt="The Avenue Milestone" class="hero-milestone-logo" width="380" height="110" />
+            <span class="hero-milestone-tagline">Celebrating Your Achievements</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile-only Balanced Welcome Message -->
+      <div class="hero-mobile-welcome">
+        <h1 class="hero-mobile-welcome-title">Welcome to Avenue Builders &amp; Developers</h1>
+      </div>
+
+      <!-- Floating WhatsApp Button -->
+      <a href="https://wa.me/919373632323" class="floating-whatsapp-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with The Avenue on WhatsApp">
+        <svg viewBox="0 0 32 32" width="22" height="22" fill="#ffffff">
+          <path d="M16 2a13.9 13.9 0 0 0-12 21L2 30l7.2-1.9A13.9 13.9 0 1 0 16 2zm0 25.5a11.5 11.5 0 0 1-5.9-1.6l-.4-.3-4.3 1.1 1.1-4.2-.3-.5A11.5 11.5 0 1 1 16 27.5zm6.3-8.6c-.3-.2-2-.9-2.3-1s-.6-.2-.8.2-.9 1.1-1.1 1.3-.4.2-.7 0a9.2 9.2 0 0 1-2.7-1.7 10.2 10.2 0 0 1-1.9-2.3c-.2-.3 0-.5.2-.7s.3-.4.5-.6.2-.3.3-.5a.6.6 0 0 0 0-.6c-.1-.2-.8-1.9-1.1-2.6s-.6-.6-.8-.6h-.7a1.4 1.4 0 0 0-1 .5 4.3 4.3 0 0 0-1.3 3.2 7.4 7.4 0 0 0 1.6 3.9 16.9 16.9 0 0 0 6.5 5.8 22.3 22.3 0 0 0 2.2.8 5.3 5.3 0 0 0 2.4.2 3.9 3.9 0 0 0 2.6-1.8 3.2 3.2 0 0 0 .2-1.8c-.1-.1-.3-.2-.6-.4z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- ==========================================================================
+         SIGNATURE LANDMARKS: HORIZONTAL PROJECT GALLERY
+         Inspired by Reference Layout (3 side-by-side on desktop, interactive slider)
+         ========================================================================== -->
+    <section id="signature-landmarks" class="landmarks-editorial-section">
+      <!-- Section Background Layer with Stone Texture & Foliage Shadows -->
+      <div class="landmarks-backdrop"></div>
+
+      <div class="landmarks-container">
+        
+        <!-- Header & Top Editorial Area -->
+        <div class="landmarks-top-bar fadeUpAnimation">
+          <div class="landmarks-header-center">
+            <div class="landmarks-header-line"></div>
+            <span class="landmarks-eyebrow">OUR DEVELOPMENTS</span>
+            <h2 class="landmarks-title">SIGNATURE LANDMARKS</h2>
+            <p class="landmarks-subtitle">DISTINCTIVE DEVELOPMENTS. LASTING IMPRESSIONS.</p>
+          </div>
+
+          <div class="landmarks-top-editorial">
+            <p class="top-editorial-text">
+              Thoughtfully designed spaces that bring together architecture, location and a better way of living.
+            </p>
+            <div class="top-editorial-divider"></div>
+          </div>
+        </div>
+
+        <!-- Main Editorial Layout: Left Rail + 3 Cards + Right Next Control -->
+        <div class="landmarks-main-stage fadeUpAnimation">
+          
+          <!-- Left Editorial Vertical Column -->
+          <div class="landmarks-left-col">
+            <div class="landmarks-vert-quote">
+              <span>SPACES</span>
+              <span>PEOPLE</span>
+              <span>ARE PROUD</span>
+              <span>TO CALL</span>
+              <span>THEIRS</span>
+            </div>
+            <div class="landmarks-vert-line"></div>
+
+            <!-- Vertical Forest Green Navigation Rail -->
+            <div class="landmarks-nav-rail" aria-label="Project Navigation Controls">
+              <button class="nav-rail-arrow nav-rail-prev" type="button" aria-label="Previous Landmark">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="10 7 5 12 10 17"></polyline>
+                </svg>
+              </button>
+              
+              <div class="nav-rail-pills">
+                <button class="nav-rail-num active" data-index="0" type="button" aria-label="Select 01 Urbania">
+                  <span class="rail-digit current-rail-digit">01</span>
+                </button>
+                <span class="rail-divider"></span>
+                <button class="nav-rail-num nav-rail-total-btn" data-index="2" type="button" aria-label="Total 03 Projects">
+                  <span class="rail-digit total-rail-digit">03</span>
+                </button>
+              </div>
+
+              <button class="nav-rail-arrow nav-rail-next" type="button" aria-label="Next Landmark">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="14 7 19 12 14 17"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Cards Stage (Desktop Overlapping Grid / Responsive Carousel) -->
+          <div class="landmarks-cards-wrap swiper landmarks-swiper">
+            <div class="landmarks-cards-grid swiper-wrapper">
+
+              <!-- Card 1: The Avenue Urbania -->
+              <div class="swiper-slide landmark-slide-item">
+                <article class="landmark-editorial-card card-urbania is-active-focus" data-card-index="0">
+                  <div class="card-media-wrap">
+                    <img src="assets/25-scaled.jpg" alt="The Avenue Urbania Luxury High-Rise" class="card-media-img" loading="lazy" />
+                    <div class="card-badge-overlay">
+                      <span class="badge-num">01</span>
+                      <div class="badge-text-group">
+                        <span class="badge-status">ONGOING</span>
+                        <span class="badge-type">RESIDENTIAL</span>
+                      </div>
+                      <span class="badge-accent-line"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="card-content-panel panel-ivory">
+                    <div class="card-logo-holder">
+                      <img src="assets/logo-avenue-urbania.png" alt="The Avenue Urbania Logo" class="card-brand-logo logo-urbania" />
+                    </div>
+                    <h3 class="card-name-title">THE AVENUE URBANIA</h3>
+                    <p class="card-desc-text">3 &amp; 4 BHK Luxury Urban Living &bull; Govind Nagar</p>
+                    <div class="card-action-bar">
+                      <a href="urbania.html" class="card-action-link" aria-label="Discover The Avenue Urbania">
+                        <span class="action-label">DISCOVER PROJECT</span>
+                        <span class="action-arrow-btn">
+                          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="13 6 19 12 13 18"></polyline>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Card 2: The Avenue Flora (Center Focal Point) -->
+              <div class="swiper-slide landmark-slide-item">
+                <article class="landmark-editorial-card card-flora is-focal" data-card-index="1">
+                  <div class="card-media-wrap">
+                    <img src="assets/The-Avenue-Flora-Cam-view-768x655-1.jpg" alt="The Avenue Flora Commercial Building" class="card-media-img" loading="lazy" />
+                    <div class="card-badge-overlay">
+                      <span class="badge-num">02</span>
+                      <div class="badge-text-group">
+                        <span class="badge-status">ONGOING</span>
+                        <span class="badge-type">COMMERCIAL</span>
+                      </div>
+                      <span class="badge-accent-line"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="card-content-panel panel-forest">
+                    <div class="card-logo-holder">
+                      <img src="assets/The-Avenue-Flora.png" alt="The Avenue Flora Logo" class="card-brand-logo logo-flora" />
+                    </div>
+                    <h3 class="card-name-title">THE AVENUE FLORA</h3>
+                    <p class="card-desc-text">Showroom &amp; Corporate Office Suites &bull; Govind Nagar</p>
+                    <div class="card-action-bar">
+                      <a href="flora.html" class="card-action-link" aria-label="Discover The Avenue Flora">
+                        <span class="action-label">DISCOVER PROJECT</span>
+                        <span class="action-arrow-btn">
+                          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="13 6 19 12 13 18"></polyline>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Card 3: The Avenue Aura -->
+              <div class="swiper-slide landmark-slide-item">
+                <article class="landmark-editorial-card card-aura" data-card-index="2">
+                  <div class="card-media-wrap">
+                    <img src="assets/AURA-view.jpg" alt="The Avenue Aura Planned Residences" class="card-media-img" loading="lazy" />
+                    <div class="card-badge-overlay">
+                      <span class="badge-num">03</span>
+                      <div class="badge-text-group">
+                        <span class="badge-status">ONGOING</span>
+                        <span class="badge-type">RESIDENTIAL</span>
+                      </div>
+                      <span class="badge-accent-line"></span>
+                    </div>
+                  </div>
+                  
+                  <div class="card-content-panel panel-ivory">
+                    <div class="card-logo-holder">
+                      <img src="assets/logo-avenue-aura.png" alt="The Avenue Aura Logo" class="card-brand-logo logo-aura" />
+                    </div>
+                    <h3 class="card-name-title">THE AVENUE AURA</h3>
+                    <p class="card-desc-text">Timeless Planned Residences &bull; Govind Nagar</p>
+                    <div class="card-action-bar">
+                      <a href="aura.html" class="card-action-link" aria-label="Discover The Avenue Aura">
+                        <span class="action-label">DISCOVER PROJECT</span>
+                        <span class="action-arrow-btn">
+                          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="13 6 19 12 13 18"></polyline>
+                          </svg>
+                        </span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Subtle Circular Next-Arrow Control (Right side) -->
+          <button class="landmarks-floating-next-btn" type="button" aria-label="Next Project">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="13 6 19 12 13 18"></polyline>
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- Mobile Pagination Indicators -->
+        <div class="landmarks-mobile-dots swiper-pagination"></div>
+
+        <!-- View All Projects Centered Link -->
+        <div class="landmarks-view-all-wrap">
+          <a href="projects.html" class="landmarks-view-all-link">
+            VIEW ALL PROJECTS &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALL TO ACTION STATEMENT
+         Minimalist, impactful closing band
+         ========================================================================== -->
+    <section class="home-closing-cta">
+      <div class="container fadeUpAnimation">
+        <span class="heading-eyebrow" style="color: var(--color-gold-light);">CONNECT WITH THE AVENUE</span>
+        <h2>SHAPING ARCHITECTURAL LANDMARKS IN NASHIK</h2>
+        <p>Explore exclusive residential sanctuaries and premium commercial addresses designed for distinction.</p>
+        <div class="home-closing-actions">
+          <a href="projects.html" class="cta-rectangle">EXPLORE ALL PROJECTS</a>
+          <a href="contact.html" class="cta-rectangle">SCHEDULE SITE VISIT</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       DARK CHARCOAL FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <div class="footer-box">
+          <div class="footer-logo">
+            <a href="index.html">
+              <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders & Developers" />
+            </a>
+          </div>
+          <p>Delivering the joy of living, serenity of space, and exceptional landmark developments in Nashik since 2019.</p>
+        </div>
+
+        <div class="footer-box">
+          <p>
+            <b>Corporate Office</b>
+            Shop No 1, The Avenue,<br />
+            Chowk No 1, Behind Prakash Petrol Pump,<br />
+            Govind Nagar, Nashik, Maharashtra 422009<br /><br />
+            <b>General Enquiries</b>
+            <a href="tel:9373632323">+91 9373632323</a><br />
+            <a href="mailto:theavenuensk@gmail.com">theavenuensk@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <p>
+            <b>Explore Location</b>
+            <div class="direction-box">
+              <a href="https://maps.google.com/?q=The+Avenue+Govind+Nagar+Nashik" target="_blank" class="google" aria-label="Google Maps Location">
+                <svg viewBox="0 0 13 17" fill="none"><path d="M6.02 0C2.7 0 0 2.7 0 6.02C0 8.46 3.24 13.78 4.97 16.43C5.47 17.19 6.58 17.19 7.08 16.43C8.81 13.77 12.05 8.46 12.05 6.02C12.05 2.69 9.35 0 6.03 0H6.02ZM6.02 8.12C4.8 8.12 3.81 7.13 3.81 5.91C3.81 4.69 4.8 3.7 6.02 3.7C7.24 3.7 8.23 4.69 8.23 5.91C8.23 7.13 7.24 8.12 6.02 8.12Z" fill="white"></path></svg>
+              </a>
+            </div>
+            <b>Visiting Hours</b>
+            10:00 AM to 7:00 PM Daily
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <p><b>Quick Links</b></p>
+          <p style="margin-bottom: 16px;">
+            <a href="about.html">About Us</a> &bull; 
+            <a href="projects.html">Projects</a> &bull; 
+            <a href="services.html">Services</a> &bull; 
+            <a href="contact.html">Contact</a>
+          </p>
+          <p><b>Follow Us</b></p>
+          <div class="footer-social-list">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64h98.2V334.2H109.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H255V480H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64z"/></svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 The Avenue Builders and Developers. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

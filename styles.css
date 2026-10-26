@@ -1076,7 +1076,7 @@ button {
   opacity: 1;
   visibility: visible;
   background-color: transparent;
-  transition: opacity 2.0s cubic-bezier(0.35, 0, 0.25, 1), visibility 2.0s ease;
+  transition: opacity 1.0s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.0s ease;
   will-change: opacity, visibility;
 }
 
@@ -1092,8 +1092,8 @@ button {
   filter: blur(0px) brightness(1);
   will-change: transform, filter, opacity;
   animation: cloudAtmosphericDrift 10s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-  transition: filter 2.0s cubic-bezier(0.35, 0, 0.25, 1),
-              transform 2.0s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: filter 1.0s cubic-bezier(0.25, 1, 0.5, 1),
+              transform 1.0s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .cloud-intro-smoke {
@@ -1109,7 +1109,7 @@ button {
   pointer-events: none;
   filter: blur(0px);
   will-change: opacity, filter;
-  transition: opacity 2.0s cubic-bezier(0.35, 0, 0.25, 1), filter 2.0s ease;
+  transition: opacity 1.0s cubic-bezier(0.25, 1, 0.5, 1), filter 1.0s ease;
 }
 
 /* Dissolve state: clouds softly soften and diffuse like dispersing vapor */
@@ -1191,7 +1191,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center 30%;
   z-index: 0;
   pointer-events: none;
 }
@@ -1219,6 +1219,10 @@ button {
 }
 
 .hero-video-fade-overlay {
+  display: none;
+}
+
+.hero-mobile-welcome {
   display: none;
 }
 
@@ -3932,188 +3936,573 @@ select.form-control:focus {
 }
 
 /* G. Delivered Landmarks Architectural Gallery */
-.delivered-gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  align-items: stretch;
+/* ==========================================================================
+   PROJECTS PAGE - SIGNATURE LANDMARKS LUXURY EDITORIAL REDESIGN
+   ========================================================================== */
+
+.projects-page {
+  background-color: #faf7f2;
 }
 
-/* Ongoing Architectural Developments Grid: 3 cards row 1, 2 centered cards row 2 */
-.ongoing-gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 28px;
-}
-
-.ongoing-gallery-grid .delivered-card {
-  flex: 0 0 calc((100% - 2 * 28px) / 3);
-  max-width: calc((100% - 2 * 28px) / 3);
-  width: calc((100% - 2 * 28px) / 3);
-}
-
-@media (max-width: 1100px) {
-  .ongoing-gallery-grid .delivered-card {
-    flex: 0 0 calc((100% - 28px) / 2);
-    max-width: calc((100% - 28px) / 2);
-    width: calc((100% - 28px) / 2);
-  }
-}
-
-@media (max-width: 768px) {
-  .ongoing-gallery-grid {
-    gap: 24px;
-  }
-  .ongoing-gallery-grid .delivered-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-    width: 100%;
-  }
-}
-
-.delivered-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 3px;
-  overflow: hidden;
-  transition: var(--transition);
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.delivered-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
-}
-
-.delivered-img-wrap {
+/* Projects Page Architectural Hero */
+.projects-editorial-hero {
   position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  background-color: #faf7f2;
+  padding: 155px 24px 44px 24px;
   overflow: hidden;
-  background: #ebe8e1;
+  text-align: center;
 }
 
-.delivered-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.delivered-card:hover .delivered-img-wrap img {
-  transform: scale(1.06);
-}
-
-.delivered-badge {
+.projects-hero-backdrop {
   position: absolute;
-  bottom: 12px;
-  right: 12px;
-  background: var(--color-forest);
-  color: var(--color-white);
-  padding: 4px 10px;
-  font-size: 0.68rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-weight: 600;
+  inset: 0;
+  background-image: url('assets/landmarks-editorial-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.delivered-body {
-  padding: 24px 22px 20px;
+.projects-hero-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 247, 242, 0.42) 0%,
+    rgba(250, 247, 242, 0.1) 40%,
+    rgba(250, 247, 242, 0.65) 85%,
+    #faf7f2 100%
+  );
+}
+
+.projects-hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  align-items: center;
 }
 
-.delivered-logo-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
+.projects-hero-accent-line {
+  width: 1px;
+  height: 38px;
+  background-color: #c5a880;
   margin-bottom: 14px;
 }
 
-.delivered-logo {
-  max-height: 46px;
-  max-width: 155px;
+.projects-editorial-hero .heading-eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #b89d74;
+  margin-bottom: 10px;
+}
+
+.projects-hero-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.3rem, 4.2vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: clamp(4px, 0.8vw, 7px);
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 12px 0;
+  line-height: 1.15;
+}
+
+.projects-hero-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.70rem, 0.85vw, 0.82rem);
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #726859;
+  line-height: 1.6;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Projects Showcase Section */
+.projects-editorial-section {
+  position: relative;
+  background: linear-gradient(180deg, #faf7f2 0%, #f6f1e8 14%, #f3eee2 48%, #f6f1e8 82%, #f2eae0 100%);
+  padding: 0 24px 60px 24px;
+  overflow: hidden;
+}
+
+.projects-section-backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.45;
+  background-image: 
+    radial-gradient(circle at 4% 12%, rgba(197, 168, 128, 0.30) 0%, transparent 40%),
+    radial-gradient(circle at 96% 24%, rgba(197, 168, 128, 0.28) 0%, transparent 42%),
+    radial-gradient(circle at 6% 48%, rgba(24, 44, 32, 0.08) 0%, transparent 35%),
+    radial-gradient(circle at 94% 62%, rgba(197, 168, 128, 0.26) 0%, transparent 40%),
+    radial-gradient(circle at 8% 85%, rgba(197, 168, 128, 0.24) 0%, transparent 38%),
+    radial-gradient(circle at 92% 95%, rgba(24, 44, 32, 0.06) 0%, transparent 35%);
+}
+
+.projects-editorial-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Filter Tabs */
+.projects-filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 52px auto;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+}
+
+.projects-page .filter-btn {
+  padding: 11px 24px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(4px);
+  color: #2b332c;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.projects-page .filter-btn:hover:not(.active) {
+  background: rgba(197, 168, 128, 0.18);
+  border-color: #182c20;
+  color: #182c20;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 44, 32, 0.10);
+}
+
+.projects-page .filter-btn.active {
+  background: #182c20;
+  color: #ffffff;
+  border-color: #182c20;
+  box-shadow: 0 6px 18px rgba(24, 44, 32, 0.24);
+}
+
+/* Editorial Group Titles & Containers */
+.projects-editorial-group {
+  margin-bottom: 0;
+  position: relative;
+}
+
+/* Section B (Ongoing) Clean Presentation */
+.projects-editorial-group#ongoing {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.projects-page .editorial-group-title {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 36px auto;
+}
+
+.projects-page .editorial-group-title .heading-eyebrow {
+  color: #b89d74;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+}
+
+.projects-page .editorial-group-title h2 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(1.85rem, 2.7vw, 2.45rem);
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin-top: 6px;
+  line-height: 1.2;
+}
+
+/* Category 1: OUR LEGACY (8 cards - 4 columns x 2 rows) */
+.projects-page #completed .delivered-gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+
+/* Category 2: ONGOING PROJECTS (5 cards - Desktop 3 + 2 layout with centered 2nd row) */
+.projects-page #ongoing .delivered-gallery-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+
+.projects-page #ongoing .delivered-card {
+  flex: 0 0 calc((100% - 2 * 26px) / 3) !important;
+  max-width: calc((100% - 2 * 26px) / 3) !important;
+  width: calc((100% - 2 * 26px) / 3) !important;
+}
+
+/* Category 3: COMPLETED LAYOUTS (3 cards - Balanced 3-column row) */
+.projects-page #layouts .delivered-gallery-grid {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 26px !important;
+  align-items: stretch !important;
+}
+
+.projects-page #layouts .delivered-card {
+  flex: 0 0 calc((100% - 2 * 26px) / 3) !important;
+  max-width: calc((100% - 2 * 26px) / 3) !important;
+  width: calc((100% - 2 * 26px) / 3) !important;
+}
+
+/* Luxury Architectural Project Cards */
+.projects-page .delivered-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fdfcf9 45%, #f9f6ef 100%);
+  border: 1px solid rgba(197, 168, 128, 0.50);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 
+    0 8px 24px -4px rgba(22, 42, 30, 0.06),
+    0 2px 6px rgba(197, 168, 128, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.projects-page .delivered-card:hover {
+  transform: translateY(-6px);
+  border-color: #b59365;
+  box-shadow: 
+    0 20px 42px -6px rgba(22, 42, 30, 0.12),
+    0 4px 14px rgba(197, 168, 128, 0.22),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.95);
+}
+
+/* Image Container with Crisp Architectural Framing */
+.projects-page .delivered-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10.5;
+  overflow: hidden;
+  background: #e4ded4;
+  border-bottom: 2px solid rgba(197, 168, 128, 0.45);
+}
+
+.projects-page .delivered-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 -10px 20px -6px rgba(0, 0, 0, 0.16);
+}
+
+.projects-page .delivered-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.projects-page .delivered-card:hover .delivered-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* Status Badge Over Image */
+.projects-page .delivered-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(18, 36, 24, 0.94);
+  color: #ffffff;
+  padding: 5px 11px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.60rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 2px;
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Card Body & Information Panel */
+.projects-page .delivered-body {
+  padding: 24px 20px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  background: transparent;
+  position: relative;
+}
+
+.projects-page .delivered-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(197, 168, 128, 0.45), transparent);
+}
+
+/* Project Brand Logo */
+.projects-page .delivered-logo-wrap {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2px 0 14px 0;
+}
+
+.projects-page .delivered-logo {
+  max-height: 36px;
+  max-width: 135px;
   width: auto;
   height: auto;
   object-fit: contain;
+  margin: 0 auto;
   display: block;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.04));
 }
 
-.delivered-type {
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--color-gold);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.delivered-body h3 {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--color-dark);
-  margin-bottom: 10px;
-  min-height: 2.8rem;
-  display: flex;
-  align-items: flex-start;
-}
-
-.delivered-body p {
-  font-size: 0.88rem;
-  line-height: 1.7;
-  color: var(--color-body);
-  margin-bottom: 16px;
-  flex: 1;
-}
-
-.delivered-loc {
-  font-size: 0.8rem !important;
-  color: #777777 !important;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-  padding-top: 12px;
-  margin-bottom: 0 !important;
-  flex: none !important;
-}
-
-.delivered-action {
-  margin-top: auto;
-  padding-top: 14px;
-  border-top: 1px solid rgba(0, 0, 0, 0.06);
-}
-
-.delivered-action .cta-rectangle {
-  display: block;
-  width: 100%;
-  padding: 12px 16px;
-  font-size: 0.75rem;
-  letter-spacing: 2.5px;
-  text-align: center;
-  border: 1px solid var(--color-dark);
-  color: var(--color-dark);
-  background: transparent;
-  text-transform: uppercase;
+/* Project Title */
+.projects-page .delivered-body h3 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 1.22rem;
   font-weight: 600;
-  transition: var(--transition-fast);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 11px 0;
+  min-height: auto;
+  display: block;
+  line-height: 1.25;
+  transition: color 0.3s ease;
 }
 
-.delivered-action .cta-rectangle:hover {
-  background: var(--color-forest);
-  color: var(--color-white);
-  border-color: var(--color-forest);
-  letter-spacing: 2.5px;
+.projects-page .delivered-card:hover .delivered-body h3 {
+  color: #1f3e2c;
 }
 
-/* H. Responsive Breakpoints for Editorial Layouts */
-@media (max-width: 1100px) {
-  .delivered-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+/* Project Description */
+.projects-page .delivered-body p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.77rem;
+  line-height: 1.65;
+  color: #554e43;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+}
+
+/* Location Plaque */
+.projects-page .delivered-loc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem !important;
+  color: #5e5446 !important;
+  margin: auto 0 18px 0 !important;
+  padding: 7px 12px !important;
+  background: rgba(197, 168, 128, 0.12) !important;
+  border: 1px solid rgba(197, 168, 128, 0.35) !important;
+  border-radius: 2px !important;
+  letter-spacing: 0.4px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.projects-page .delivered-loc strong {
+  color: #162a1e;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+}
+
+/* Action Buttons */
+.projects-page .delivered-action {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 2px;
+  border-top: none;
+}
+
+.projects-page .delivered-action .cta-rectangle {
+  width: 100%;
+  height: 35px;
+  padding: 0 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.67rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 2px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Primary button: EXPLORE PROJECT */
+.projects-page .delivered-action .cta-rectangle.dark {
+  background: #182c20;
+  color: #faf7f2;
+  border: 1px solid #182c20;
+  box-shadow: 0 2px 6px rgba(24, 44, 32, 0.16);
+}
+
+.projects-page .delivered-action .cta-rectangle.dark:hover {
+  background: #233e2d;
+  border-color: #233e2d;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 44, 32, 0.24);
+}
+
+/* Secondary button: ENQUIRE PROJECT */
+.projects-page .delivered-action .cta-rectangle:not(.dark) {
+  background: rgba(255, 255, 255, 0.75);
+  color: #182c20;
+  border: 1px solid rgba(22, 42, 30, 0.38);
+}
+
+.projects-page .delivered-action .cta-rectangle:not(.dark):hover {
+  background: #182c20;
+  color: #ffffff;
+  border-color: #182c20;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(24, 44, 32, 0.20);
+}
+
+/* Single button on cards */
+.projects-page .delivered-action .cta-rectangle:only-child {
+  width: 100%;
+  height: 36px;
+  font-size: 0.68rem;
+  letter-spacing: 1.8px;
+}
+
+/* Building Image Specific Positioning */
+#aura .delivered-img-wrap img { object-position: center 8%; }
+#bliss .delivered-img-wrap img { object-position: center 5%; }
+#flora .delivered-img-wrap img { object-position: center 6%; }
+#commercial .delivered-img-wrap img { object-position: center center; }
+#nx .delivered-img-wrap img { object-position: center 10%; }
+#grandeur .delivered-img-wrap img { object-position: center 12%; }
+#casa .delivered-img-wrap img { object-position: center 8%; }
+#one .delivered-img-wrap img { object-position: center 6%; }
+#urbania .delivered-img-wrap img { object-position: center 18%; }
+#milestone .delivered-img-wrap img { object-position: center 12%; }
+#classico .delivered-img-wrap img { object-position: center 10%; }
+#aaryana .delivered-img-wrap img { object-position: center 12%; }
+#viraj .delivered-img-wrap img { object-position: center center; }
+#pathardi-vadner-nx .delivered-img-wrap img { object-position: center center; }
+#indira-nagar-nx .delivered-img-wrap img { object-position: center center; }
+#pathardi-vadner-nx-2 .delivered-img-wrap img { object-position: center center; }
+
+/* Responsive Breakpoints */
+@media (max-width: 1240px) {
+  .projects-page #completed .delivered-gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 22px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .projects-page #completed .delivered-gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+  .projects-page #ongoing .delivered-gallery-grid,
+  .projects-page #layouts .delivered-gallery-grid {
+    gap: 18px !important;
+  }
+  .projects-page #ongoing .delivered-card,
+  .projects-page #layouts .delivered-card {
+    flex: 0 0 calc((100% - 18px) / 2) !important;
+    max-width: calc((100% - 18px) / 2) !important;
+    width: calc((100% - 18px) / 2) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-editorial-hero {
+    padding: 120px 20px 35px 20px;
+  }
+  .projects-editorial-section {
+    padding: 0 16px 50px 16px !important;
+  }
+  .projects-filter-bar {
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+  .projects-page .filter-btn {
+    padding: 9px 16px;
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+  }
+  .projects-page #completed .delivered-gallery-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+  .projects-page #ongoing .delivered-gallery-grid,
+  .projects-page #layouts .delivered-gallery-grid {
+    gap: 20px !important;
+  }
+  .projects-page #completed .delivered-card,
+  .projects-page #ongoing .delivered-card,
+  .projects-page #layouts .delivered-card {
+    flex: 0 0 100% !important;
+    max-width: 380px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+  .projects-page .delivered-action .cta-rectangle {
+    font-size: 0.64rem;
+    letter-spacing: 1.2px;
   }
 }
 
@@ -4200,16 +4589,17 @@ select.form-control:focus {
     position: relative;
     width: 100%;
     flex: 0 0 auto;
-    height: 48svh;
-    min-height: 270px;
+    height: 52svh;
+    min-height: 310px;
+    max-height: 440px;
     margin-top: 52px;
     margin-bottom: 0px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 14%, black 86%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, black 14%, black 86%, transparent 100%);
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%);
   }
 
   .hero-video-bg {
@@ -4221,7 +4611,7 @@ select.form-control:focus {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    object-position: 70% center;
+    object-position: center 25%;
     pointer-events: none;
   }
 
@@ -4240,66 +4630,30 @@ select.form-control:focus {
     z-index: 2;
   }
 
-  /* 4. Lower Content: Intro Paragraph & CTA Buttons */
-  .hero-mobile-content {
+  /* 4. Lower Content: Balanced Welcome Heading */
+  .hero-mobile-welcome {
     display: block;
     position: relative;
     z-index: 10;
-    padding: 0 20px 28px 20px;
+    padding: 20px 20px 28px 20px;
     text-align: center;
   }
 
-  .hero-mobile-intro {
-    font-size: 0.76rem;
-    line-height: 1.62;
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 400;
-    max-width: 330px;
-    margin: 0 auto 18px auto;
-    letter-spacing: 0.1px;
+  .hero-mobile-welcome-title {
+    font-family: 'Cormorant Garamond', 'Philosopher', serif;
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+    font-weight: 500;
+    color: #ffffff;
+    letter-spacing: 1.2px;
+    line-height: 1.35;
+    margin: 0 auto;
+    max-width: 340px;
     text-align: center;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   }
 
-  .hero-mobile-actions {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: nowrap;
-  }
-
-  .hero-btn-flagship {
-    background: #ffffff;
-    color: #3b3026;
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 9px 16px;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    border-radius: 2px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    white-space: nowrap;
-  }
-
-  .hero-btn-flagship .arrow {
-    font-size: 0.8rem;
-    line-height: 1;
-  }
-
-  .hero-btn-schedule {
-    color: rgba(255, 255, 255, 0.92);
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    text-decoration: none;
-    border-bottom: 1.5px solid rgba(255, 255, 255, 0.65);
-    padding-bottom: 2px;
-    white-space: nowrap;
+  .hero-mobile-content {
+    display: none !important;
   }
 
   /* 5. Floating WhatsApp Button */
@@ -4330,25 +4684,16 @@ select.form-control:focus {
       gap: 10px;
     }
     .hero-video-wrapper {
-      height: 44svh;
-      min-height: 240px;
+      height: 48svh;
+      min-height: 280px;
       margin-top: 48px;
     }
-    .hero-mobile-actions {
-      gap: 10px;
+    .hero-mobile-welcome {
+      padding: 14px 16px 20px 16px;
     }
-    .hero-btn-flagship {
-      padding: 7px 10px;
-      font-size: 0.58rem;
-      letter-spacing: 1px;
-    }
-    .hero-btn-schedule {
-      font-size: 0.58rem;
-      letter-spacing: 1px;
-    }
-    .hero-mobile-intro {
-      font-size: 0.7rem;
-      margin-bottom: 12px;
+    .hero-mobile-welcome-title {
+      font-size: 1.3rem;
+      letter-spacing: 0.8px;
     }
     .floating-whatsapp-btn {
       width: 34px;
