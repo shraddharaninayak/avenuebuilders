@@ -798,13 +798,42 @@ button {
    - Strictly keeps desktop view intact (> 768px)
    ========================================================================== */
 @media (max-width: 768px) {
-  /* 1. Remove ENQUIRE NOW from visible mobile header */
+  /* 1. Mobile Header: CONTACT pill button */
   #header .header-right-actions .btn-header-enquire,
   .site-header .header-right-actions .btn-header-enquire {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 9999px !important;
+    padding: 5px 14px !important;
+    color: #ffffff !important;
+    font-size: 0.68rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    box-shadow: none !important;
+  }
+
+  .btn-enquire-desktop {
     display: none !important;
   }
 
-  /* 2. Mobile Header spacing: logo and hamburger have ample room and never overlap */
+  .btn-contact-mobile {
+    display: inline !important;
+  }
+
+  #headerMenuSlide .btn-enquire-desktop {
+    display: inline !important;
+  }
+
+  #headerMenuSlide .btn-contact-mobile {
+    display: none !important;
+  }
+
+  /* 2. Mobile Header spacing: logo, pill button, and hamburger neatly aligned */
   #header,
   .site-header {
     padding: 16px 20px;
@@ -816,19 +845,39 @@ button {
   }
 
   .menu-logo {
-    max-width: 145px;
+    max-width: 135px;
     flex-shrink: 0;
   }
 
   .menu-logo img,
   .brand-logo-img {
-    max-height: 38px;
+    max-height: 36px;
     width: auto;
   }
 
   .header-right-actions {
-    gap: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
     flex-shrink: 0;
+  }
+
+  .menu-cta-menu-hamburger {
+    width: 32px;
+    height: 32px;
+    padding: 6px 2px;
+    gap: 5px;
+    justify-content: center;
+  }
+
+  .menu-cta-menu-hamburger span {
+    width: 22px !important;
+    height: 2px !important;
+    background-color: #ffffff !important;
+  }
+
+  .menu-cta-menu-hamburger .hamburger-bar-3 {
+    display: none !important;
   }
 
   /* 3. Display the ENQUIRE NOW button neatly inside the hamburger navigation menu */
@@ -873,6 +922,144 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   3a. AVENUE LOGO OPENING INTRO (#avenue-intro)
+   Pre-cloud animated ink-stroke drawing, color sweep, and dissolution
+   -------------------------------------------------------------------------- */
+#avenue-intro {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(241 234 218);
+  animation: avi-exit 750ms cubic-bezier(0.65, 0, 0.35, 1) 3200ms forwards;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+#avenue-intro.fade-out,
+#avenue-intro[data-intro="skip"] {
+  display: none !important;
+}
+
+#avenue-intro .avi-mark {
+  position: relative;
+  aspect-ratio: 1400 / 596;
+  width: clamp(230px, 24vw, 400px);
+  animation: avi-mark-out 488ms cubic-bezier(0.4, 0, 0.2, 1) 3200ms forwards;
+}
+
+#avenue-intro .avi-ink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: avi-fade 250ms ease 2950ms forwards;
+}
+
+#avenue-intro .avi-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent 60%);
+  mask-image: linear-gradient(90deg, #000 40%, transparent 60%);
+  -webkit-mask-size: 250% 100%;
+  mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  animation: avi-sweep 750ms cubic-bezier(0.45, 0, 0.2, 1) 2250ms forwards;
+}
+
+#avenue-intro .avi-piece {
+  animation: avi-settle var(--dur) cubic-bezier(0.2, 0.7, 0.2, 1) var(--at) both;
+}
+
+#avenue-intro .avi-stroke {
+  stroke-dasharray: 1 2;
+  animation: avi-draw var(--dur) cubic-bezier(0.6, 0.05, 0.25, 1) var(--at) both;
+}
+
+@keyframes avi-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes avi-settle {
+  from { transform: translateY(var(--sy)); }
+  to { transform: none; }
+}
+
+@keyframes avi-sweep {
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes avi-fade {
+  to { opacity: 0; }
+}
+
+@keyframes avi-mark-out {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes avi-exit {
+  0% {
+    opacity: 1;
+    background-color: rgb(241 234 218 / 1);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+  99% {
+    opacity: 0;
+    background-color: rgb(241 234 218 / 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    background-color: rgb(241 234 218 / 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@keyframes avi-exit-reduced {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #avenue-intro {
+    animation: avi-exit-reduced 400ms ease 1000ms forwards;
+  }
+  #avenue-intro .avi-ink {
+    display: none;
+  }
+  #avenue-intro .avi-mark,
+  #avenue-intro .avi-logo {
+    animation: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    3b. CINEMATIC CLOUD OPENING INTRO (#cloudIntro)
    Atmospheric, cloudy, smoky natural dissolve revealing hero video
    -------------------------------------------------------------------------- */
@@ -904,7 +1091,7 @@ button {
   background-repeat: no-repeat;
   filter: blur(0px) brightness(1);
   will-change: transform, filter, opacity;
-  animation: cloudAtmosphericDrift 7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: cloudAtmosphericDrift 10s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   transition: filter 2.0s cubic-bezier(0.35, 0, 0.25, 1),
               transform 2.0s cubic-bezier(0.35, 0, 0.25, 1);
 }
@@ -1021,6 +1208,30 @@ button {
   );
   z-index: 1;
   pointer-events: none;
+}
+
+/* Default Desktop/Tablet states for Mobile Hero elements */
+.hero-video-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-video-fade-overlay {
+  display: none;
+}
+
+.hero-mobile-content {
+  display: none;
+}
+
+.floating-whatsapp-btn {
+  display: none;
+}
+
+.btn-contact-mobile {
+  display: none;
 }
 
 .component-swiper {
@@ -2698,6 +2909,10 @@ select.form-control:focus {
   color: #4a4a4a;
 }
 
+.pillar-desc p:not(:last-child) {
+  margin-bottom: 14px;
+}
+
 /* E. About Us Executive Leadership Dossier */
 .about-directors-section {
   padding: 110px 24px;
@@ -2727,62 +2942,64 @@ select.form-control:focus {
 .directors-editorial-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  max-width: 980px;
+  max-width: 1040px;
   margin: 0 auto;
-  gap: 36px;
+  gap: 32px;
   align-items: stretch;
 }
 
 .director-editorial-item {
   background: var(--color-sand-light);
   border: 1px solid var(--color-border);
-  padding: 36px 30px;
-  border-radius: 4px;
+  padding: 34px 28px;
+  border-radius: 6px;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
   height: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
 }
 
 .director-editorial-item:hover {
   background: var(--color-white);
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
 }
 
-.director-header {
+.director-card-header {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .director-portrait-wrap {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
+  width: 135px;
+  height: 150px;
+  border-radius: 6px;
   overflow: hidden;
-  background: var(--color-sand);
-  border: 2px solid var(--color-gold);
+  background: linear-gradient(180deg, #aac0e5 0%, #e5ebf7 100%);
+  border: 1px solid rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .director-portrait-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
 }
 
 .director-monogram {
   width: 100%;
   height: 100%;
-  border-radius: 50%;
   background: var(--color-forest);
   color: var(--color-white);
   display: flex;
@@ -2790,32 +3007,105 @@ select.form-control:focus {
   justify-content: center;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   flex-shrink: 0;
 }
 
-.director-header h3 {
+.director-info-header {
+  flex: 1;
+}
+
+.director-name {
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   letter-spacing: 1.5px;
   color: var(--color-dark);
   margin-bottom: 4px;
   text-transform: uppercase;
+  line-height: 1.25;
 }
 
 .director-qual {
-  font-size: 0.78rem;
+  display: block;
+  font-size: 0.82rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--color-forest);
-  font-weight: 600;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-.director-editorial-item p {
+.director-credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.director-badge {
+  display: inline-block;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--color-dark);
+  background: rgba(197, 160, 89, 0.16);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.director-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex: 1;
+}
+
+.director-block-heading {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.director-bio-text {
   font-size: 0.94rem;
-  line-height: 1.8;
+  line-height: 1.75;
   color: #4a4a4a;
+  margin: 0;
+}
+
+.director-points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.director-points-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-bottom: 6px;
+}
+
+.director-points-list li:last-child {
+  margin-bottom: 0;
+}
+
+.director-points-list li::before {
+  content: "•";
+  position: absolute;
+  left: 2px;
+  top: 0;
+  color: var(--color-gold);
+  font-size: 1.15rem;
+  line-height: 1.4;
 }
 
 /* F. Projects Editorial Asymmetrical Presentation */
@@ -3004,6 +3294,39 @@ select.form-control:focus {
   align-items: stretch;
 }
 
+/* Ongoing Architectural Developments Grid: 3 cards row 1, 2 centered cards row 2 */
+.ongoing-gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+}
+
+.ongoing-gallery-grid .delivered-card {
+  flex: 0 0 calc((100% - 2 * 28px) / 3);
+  max-width: calc((100% - 2 * 28px) / 3);
+  width: calc((100% - 2 * 28px) / 3);
+}
+
+@media (max-width: 1100px) {
+  .ongoing-gallery-grid .delivered-card {
+    flex: 0 0 calc((100% - 28px) / 2);
+    max-width: calc((100% - 28px) / 2);
+    width: calc((100% - 28px) / 2);
+  }
+}
+
+@media (max-width: 768px) {
+  .ongoing-gallery-grid {
+    gap: 24px;
+  }
+  .ongoing-gallery-grid .delivered-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 .delivered-card {
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -3057,6 +3380,23 @@ select.form-control:focus {
   display: flex;
   flex-direction: column;
   flex: 1;
+}
+
+.delivered-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  margin-bottom: 14px;
+}
+
+.delivered-logo {
+  max-height: 46px;
+  max-width: 155px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .delivered-type {
@@ -3158,21 +3498,219 @@ select.form-control:focus {
 }
 
 @media (max-width: 768px) {
+  /* 1. Full-Width Mobile Hero Container (Seamless Connection, No Outer Margins or Gaps) */
   #component,
   .home-hero-curated {
-    height: clamp(480px, 85vh, 620px);
-    min-height: 460px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    overflow: hidden;
+    min-height: 100svh;
+    background: linear-gradient(180deg, #857360 0%, #7d6b59 28%, #6d5b4a 65%, #594838 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+    box-shadow: none;
+    padding: 0;
   }
-  .inner-page-hero {
-    min-height: 100vh;
-    min-height: 100dvh;
-    padding: 130px 20px 60px 20px;
+
+  /* 2. Position Header Over Hero across Full Width */
+  .home #header,
+  .home .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    padding: 16px 20px 10px 20px;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    z-index: 50;
+    pointer-events: auto;
   }
-  .inner-hero-bg {
-    background-position: center center;
+
+  .home #header.scrolled,
+  .home .site-header.scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(43, 35, 28, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-radius: 0;
   }
+
+  /* 3. Center Video Section */
+  .hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    flex: 0 0 auto;
+    height: 48svh;
+    min-height: 270px;
+    margin-top: 52px;
+    margin-bottom: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 14%, black 86%, transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0%, black 14%, black 86%, transparent 100%);
+  }
+
   .hero-video-bg {
-    object-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: 70% center;
+    pointer-events: none;
+  }
+
+  .hero-video-fade-overlay {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(133, 115, 96, 0.45) 0%,
+      transparent 22%,
+      transparent 78%,
+      rgba(100, 84, 69, 0.55) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  /* 4. Lower Content: Intro Paragraph & CTA Buttons */
+  .hero-mobile-content {
+    display: block;
+    position: relative;
+    z-index: 10;
+    padding: 0 20px 28px 20px;
+    text-align: center;
+  }
+
+  .hero-mobile-intro {
+    font-size: 0.76rem;
+    line-height: 1.62;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 400;
+    max-width: 330px;
+    margin: 0 auto 18px auto;
+    letter-spacing: 0.1px;
+    text-align: center;
+  }
+
+  .hero-mobile-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+
+  .hero-btn-flagship {
+    background: #ffffff;
+    color: #3b3026;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 9px 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+  }
+
+  .hero-btn-flagship .arrow {
+    font-size: 0.8rem;
+    line-height: 1;
+  }
+
+  .hero-btn-schedule {
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.65);
+    padding-bottom: 2px;
+    white-space: nowrap;
+  }
+
+  /* 5. Floating WhatsApp Button */
+  .floating-whatsapp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    z-index: 25;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+  }
+
+  .floating-whatsapp-btn:hover {
+    transform: scale(1.08);
+  }
+
+  @media (max-width: 360px) {
+    #component,
+    .home-hero-curated {
+      gap: 10px;
+    }
+    .hero-video-wrapper {
+      height: 44svh;
+      min-height: 240px;
+      margin-top: 48px;
+    }
+    .hero-mobile-actions {
+      gap: 10px;
+    }
+    .hero-btn-flagship {
+      padding: 7px 10px;
+      font-size: 0.58rem;
+      letter-spacing: 1px;
+    }
+    .hero-btn-schedule {
+      font-size: 0.58rem;
+      letter-spacing: 1px;
+    }
+    .hero-mobile-intro {
+      font-size: 0.7rem;
+      margin-bottom: 12px;
+    }
+    .floating-whatsapp-btn {
+      width: 34px;
+      height: 34px;
+      bottom: 12px;
+      right: 12px;
+    }
   }
   .home-projects-trio {
     grid-template-columns: 1fr;
@@ -4080,347 +4618,25 @@ select.form-control:focus {
   }
 }
 
-/* ==========================================================================
-   RESPONSIVE LAYOUT & SPACING REFINEMENTS
-   Ensuring proper balance, proportional spacing, and zero overflow across:
-   - Mobile: 320px, 375px, 390px, 430px
-   - Tablet: 768px, 1024px
-   - Desktop: 1366px, 1440px, 1920px
-   ========================================================================== */
-
-/* 1. Global Viewport & Container Balance */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-}
-
-/* 2. Inner Page Hero Height Balance */
-/* Proportional luxury banner: brings content naturally into view without forcing 100vh */
-.inner-page-hero {
-  min-height: clamp(380px, 50vh, 560px);
-  padding: 140px 24px 60px 24px;
-}
-
-@media (min-width: 1200px) {
-  .inner-page-hero {
-    min-height: clamp(420px, 52vh, 600px);
-    padding: 150px 32px 70px 32px;
+@media (max-width: 580px) {
+  .director-editorial-item {
+    padding: 26px 20px;
   }
-}
-
-@media (max-width: 768px) {
-  .inner-page-hero {
-    min-height: clamp(320px, 46vh, 440px);
-    padding: 110px 20px 48px 20px;
+  .director-card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
   }
-}
-
-/* 3. Flora & Bliss Top Navigation Bar Header Clearance */
-.flora-top-bar {
-  padding: 110px 24px 20px 24px;
-}
-
-@media (max-width: 768px) {
-  .flora-top-bar {
-    padding: 85px 20px 16px 20px;
+  .director-portrait-wrap {
+    width: 140px;
+    height: 155px;
+    margin: 0 auto;
   }
-}
-
-/* 4. Slide-in Navigation Drawer Mobile Refinements (<840px) */
-@media (max-width: 840px) {
-  #headerMenuSlide {
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .menu-split-grid {
-    position: relative;
-    grid-template-columns: 1fr;
-    height: auto;
-    min-height: 100%;
-  }
-
-  /* Pin close button prominently at top-right of mobile drawer */
-  .menu-action-header {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    padding: 0;
-    z-index: 10;
-  }
-
-  .menu-panel-nav {
-    padding: 28px 24px 24px 24px;
-    border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .menu-nav-top {
-    padding-right: 90px; /* Leave breathing space for close button */
-    margin-bottom: 20px;
-  }
-
-  .menu-link {
-    padding: 13px 0;
-  }
-
-  .nav-title {
-    font-size: clamp(1.15rem, 5vw, 1.4rem);
-    letter-spacing: 2px;
-  }
-
-  .menu-action-body {
-    padding: 24px 24px 40px 24px;
-  }
-
-  .menu-action-pills {
-    margin-bottom: 22px;
-  }
-
-  .action-pill {
-    padding: 11px 18px;
-    font-size: 0.74rem;
-    letter-spacing: 1.5px;
-  }
-}
-
-/* 5. Section Padding & Rhythm Across Mobile (<768px and <480px) */
-@media (max-width: 768px) {
-  .section-padding,
-  .home-portfolio-strip,
-  .home-closing-cta,
-  .about-essay-section,
-  .about-philosophy-section,
-  .about-directors-section,
-  .projects-editorial-section,
-  .portfolio-brochure-section,
-  .flora-narrative-section,
-  .flora-plans-section,
-  .flora-ongoing-section,
-  .flora-location-section,
-  #overview,
-  #location {
-    padding: 64px 20px;
-  }
-
-  .home-strip-header,
-  .about-philosophy-header,
-  .editorial-group-title,
-  .flora-section-header,
-  .portfolio-gallery-header {
-    margin-bottom: 36px;
-  }
-
-  .projects-editorial-group {
-    margin-bottom: 60px;
-  }
-
-  .editorial-projects-list {
-    gap: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .section-padding,
-  .home-portfolio-strip,
-  .home-closing-cta,
-  .about-essay-section,
-  .about-philosophy-section,
-  .about-directors-section,
-  .projects-editorial-section,
-  .portfolio-brochure-section,
-  .flora-narrative-section,
-  .flora-plans-section,
-  .flora-ongoing-section,
-  .flora-location-section,
-  #overview,
-  #location {
-    padding: 48px 16px;
-  }
-
-  /* Headings & Word Wrap Balance */
-  h1, h2, .flora-header-title, .inner-hero-title {
-    word-break: break-word;
-    letter-spacing: 2px !important;
-  }
-
-  .heading-eyebrow, .hero-eyebrow-tag {
-    letter-spacing: 2.5px;
-  }
-}
-
-/* 6. Homepage Hero & Swiper Mobile Controls (<640px) */
-@media (max-width: 640px) {
-  #component .swiper-button-prev,
-  #component .swiper-button-next {
-    display: none !important;
-  }
-
-  .component-desc-box {
-    padding: 0 16px;
-  }
-
-  .component-desc-box .word-expand-box h1 {
-    margin-bottom: 12px;
-  }
-
-  .component-desc-box .word-expand-box p {
-    margin-bottom: 24px;
-    font-size: 0.92rem;
-  }
-
-  .component-desc-box .hero-button-group {
-    gap: 10px;
-  }
-}
-
-/* 7. Button Sizing & Touch Tap Targets on Mobile (<480px) */
-@media (max-width: 480px) {
-  .cta-rectangle,
-  .btn-primary,
-  .btn-secondary {
-    padding: 12px 18px;
-    font-size: 0.74rem;
-    letter-spacing: 1.8px;
-    max-width: 100%;
-    box-sizing: border-box;
-    white-space: normal;
-    word-wrap: break-word;
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
+  .director-credentials {
     justify-content: center;
   }
-
-  .cta-rectangle:hover,
-  .btn-primary:hover,
-  .btn-secondary:hover {
-    letter-spacing: 1.8px;
-  }
-}
-
-/* 8. Floor Plan Viewers (Bliss & Flora) on Mobile */
-@media (max-width: 640px) {
-  .flora-plans-nav {
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .flora-plan-btn,
-  .bliss-plan-btn {
-    padding: 10px 14px;
-    font-size: 0.72rem;
-    letter-spacing: 1.2px;
-    flex: 1 1 calc(50% - 8px);
-    text-align: center;
-  }
-
-  .flora-plan-pane,
-  .bliss-plan-pane {
-    padding: 14px 10px;
-  }
-
-  .flora-plan-caption {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .flora-plan-title {
-    font-size: 1.15rem;
-    letter-spacing: 1.5px;
-  }
-}
-
-/* 9. Bliss Rooftop Amenities Inline Grid Mobile Stacking */
-@media (max-width: 900px) {
-  .bliss-amenities-grid,
-  #amenities [style*="grid-template-columns: 1.25fr 1fr"] {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-}
-
-/* 10. Contact Form & Info Panel Mobile Proportions */
-@media (max-width: 600px) {
-  .contact-info-panel {
-    padding: 32px 20px;
-  }
-
-  .contact-form-panel {
-    padding: 28px 18px;
-    border-radius: 14px;
-  }
-
-  .contact-form-header .form-title {
-    font-size: 1.45rem;
-  }
-
-  .form-control {
-    padding: 11px 14px;
-    font-size: 0.88rem;
-  }
-
-  .btn-enquiry-submit {
-    padding: 13px 20px;
-    font-size: 0.78rem;
-    letter-spacing: 1.8px;
-  }
-}
-
-/* 11. Projects Category Filter Bar on Mobile */
-@media (max-width: 640px) {
-  .projects-filter-bar {
-    gap: 8px;
-    margin-bottom: 28px;
-  }
-
-  .filter-btn {
-    padding: 8px 14px;
-    font-size: 0.72rem;
-    letter-spacing: 1.5px;
-  }
-}
-
-/* 12. Editorial Feature Meta Row on Small Mobile (<480px) */
-@media (max-width: 480px) {
-  .editorial-meta-row {
-    gap: 12px;
-  }
-
-  .meta-item .meta-k {
-    font-size: 0.68rem;
-    letter-spacing: 1.5px;
-  }
-
-  .meta-item .meta-v {
-    font-size: 0.86rem;
-  }
-
-  .feature-content-column {
-    padding: 28px 18px;
-  }
-}
-
-/* 13. Service Detail Rows Direction Reset on Mobile */
-@media (max-width: 900px) {
-  .service-detail-row.reverse {
-    direction: ltr;
-  }
-}
-
-/* 14. Wide Desktop (>1440px) Clean Center Alignment */
-@media (min-width: 1441px) {
-  .menu-container,
-  .container,
-  .footer-container {
-    margin-left: auto;
-    margin-right: auto;
+  .director-name {
+    font-size: 1.25rem;
   }
 }
 

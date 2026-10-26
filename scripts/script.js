@@ -178,27 +178,55 @@ function initHeroVideo() {
   }
 }
 
-/* 4c. Cinematic Cloud Opening Intro */
+/* 4c. Unified Introductory Sequence:
+   STAGE 1: Avenue Logo Intro (0.0s to ~3.2s)
+   STAGE 2: Cinematic Cloud Intro (~3.2s to ~5.7s, naturally dissolves 5.7s to 7.7s)
+   STAGE 3: Architectural Hero Video (Revealed smoothly underneath without flash)
+*/
 function initCloudIntro() {
-  const intro = document.getElementById('cloudIntro');
-  if (!intro) return;
+  const logoIntro = document.getElementById('avenue-intro');
+  const cloudIntro = document.getElementById('cloudIntro');
 
-  // 0 to 2.5s: Cloud image remains visible
-  // 2.5s to 4.5s: Clouds gradually fade away, revealing the video underneath
-  const timer = setTimeout(() => {
-    intro.classList.add('fade-out');
-  }, 2500);
+  let cloudFadeTimer = null;
+  let cloudRemoveTimer = null;
+  let logoRemoveTimer = null;
 
-  // Tap or click anywhere to immediately skip intro
-  intro.addEventListener('click', () => {
-    clearTimeout(timer);
-    intro.classList.add('fade-out');
-  });
+  // Stage 1: Avenue Logo Intro cleanup after its CSS exit animation completes (~3950ms)
+  if (logoIntro) {
+    logoRemoveTimer = setTimeout(() => {
+      logoIntro.style.display = 'none';
+    }, 4000);
 
-  // After 4.5s (at 4600ms): The cloud overlay is completely removed from view
-  setTimeout(() => {
-    intro.style.display = 'none';
-  }, 4600);
+    // Click/tap to skip logo intro and proceed immediately to clouds
+    logoIntro.addEventListener('click', () => {
+      logoIntro.style.display = 'none';
+    });
+  }
+
+  // Stage 2: Cinematic Cloud Intro sequence
+  // After logo intro dissolves (~3.2s), clouds remain prominently visible for ~2500ms (until 5700ms).
+  // Then clouds dissolve naturally over 2000ms using the cubic-bezier transition,
+  // revealing the existing hero video underneath.
+  if (cloudIntro) {
+    cloudFadeTimer = setTimeout(() => {
+      cloudIntro.classList.add('fade-out');
+    }, 5700);
+
+    // After 7.8s, completely remove cloud overlay to free browser resources
+    cloudRemoveTimer = setTimeout(() => {
+      cloudIntro.style.display = 'none';
+    }, 7800);
+
+    // Tap or click anywhere on cloud intro to immediately fade away to hero video
+    cloudIntro.addEventListener('click', () => {
+      clearTimeout(cloudFadeTimer);
+      clearTimeout(cloudRemoveTimer);
+      cloudIntro.classList.add('fade-out');
+      setTimeout(() => {
+        cloudIntro.style.display = 'none';
+      }, 2000);
+    });
+  }
 }
 
 /* 5. Avenue25 Scroll FadeUp Animation */

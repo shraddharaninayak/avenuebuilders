@@ -922,6 +922,144 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   3a. AVENUE LOGO OPENING INTRO (#avenue-intro)
+   Pre-cloud animated ink-stroke drawing, color sweep, and dissolution
+   -------------------------------------------------------------------------- */
+#avenue-intro {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(241 234 218);
+  animation: avi-exit 750ms cubic-bezier(0.65, 0, 0.35, 1) 3200ms forwards;
+  pointer-events: auto;
+  overflow: hidden;
+}
+
+#avenue-intro.fade-out,
+#avenue-intro[data-intro="skip"] {
+  display: none !important;
+}
+
+#avenue-intro .avi-mark {
+  position: relative;
+  aspect-ratio: 1400 / 596;
+  width: clamp(230px, 24vw, 400px);
+  animation: avi-mark-out 488ms cubic-bezier(0.4, 0, 0.2, 1) 3200ms forwards;
+}
+
+#avenue-intro .avi-ink {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: avi-fade 250ms ease 2950ms forwards;
+}
+
+#avenue-intro .avi-logo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-mask-image: linear-gradient(90deg, #000 40%, transparent 60%);
+  mask-image: linear-gradient(90deg, #000 40%, transparent 60%);
+  -webkit-mask-size: 250% 100%;
+  mask-size: 250% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: 100% 0;
+  mask-position: 100% 0;
+  animation: avi-sweep 750ms cubic-bezier(0.45, 0, 0.2, 1) 2250ms forwards;
+}
+
+#avenue-intro .avi-piece {
+  animation: avi-settle var(--dur) cubic-bezier(0.2, 0.7, 0.2, 1) var(--at) both;
+}
+
+#avenue-intro .avi-stroke {
+  stroke-dasharray: 1 2;
+  animation: avi-draw var(--dur) cubic-bezier(0.6, 0.05, 0.25, 1) var(--at) both;
+}
+
+@keyframes avi-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes avi-settle {
+  from { transform: translateY(var(--sy)); }
+  to { transform: none; }
+}
+
+@keyframes avi-sweep {
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes avi-fade {
+  to { opacity: 0; }
+}
+
+@keyframes avi-mark-out {
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes avi-exit {
+  0% {
+    opacity: 1;
+    background-color: rgb(241 234 218 / 1);
+    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(18px);
+  }
+  99% {
+    opacity: 0;
+    background-color: rgb(241 234 218 / 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    background-color: rgb(241 234 218 / 0);
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@keyframes avi-exit-reduced {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #avenue-intro {
+    animation: avi-exit-reduced 400ms ease 1000ms forwards;
+  }
+  #avenue-intro .avi-ink {
+    display: none;
+  }
+  #avenue-intro .avi-mark,
+  #avenue-intro .avi-logo {
+    animation: none;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
    3b. CINEMATIC CLOUD OPENING INTRO (#cloudIntro)
    Atmospheric, cloudy, smoky natural dissolve revealing hero video
    -------------------------------------------------------------------------- */
@@ -953,7 +1091,7 @@ button {
   background-repeat: no-repeat;
   filter: blur(0px) brightness(1);
   will-change: transform, filter, opacity;
-  animation: cloudAtmosphericDrift 7s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: cloudAtmosphericDrift 10s cubic-bezier(0.25, 1, 0.5, 1) forwards;
   transition: filter 2.0s cubic-bezier(0.35, 0, 0.25, 1),
               transform 2.0s cubic-bezier(0.35, 0, 0.25, 1);
 }

@@ -20,6 +20,9 @@
   <!-- Swiper Carousel CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
+  <!-- Preload Avenue Intro Logo Asset -->
+  <link rel="preload" as="image" href="assets/logo-avenue-colour.webp" fetchpriority="high" />
+
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -166,6 +169,57 @@
   <div id="overlaySlide"></div>
 
   <main id="pageContent">
+
+    <!-- ==========================================================================
+         STAGE 1: AVENUE LOGO INTRO
+         Authentic animated ink-stroke drawing and color-sweep reveal
+         ========================================================================== -->
+    <div id="avenue-intro" data-intro="play" aria-hidden="true" class="avenue-intro-screen" style="position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100dvh; z-index: 2000; background-color: rgb(241, 234, 218); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+      <div class="avi-mark">
+        <svg class="avi-ink" viewBox="0 0 218.75 93.14" preserveAspectRatio="none" fill="none">
+          <defs>
+            <linearGradient id="avi-ink-tone" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="218.75" y2="0">
+              <stop offset="0" stop-color="#584738"></stop>
+              <stop offset="0.55" stop-color="#B59E7D"></stop>
+              <stop offset="1" stop-color="#B59E7D"></stop>
+            </linearGradient>
+            <clipPath id="avi-clip-9"><path d="M37.56 55.32L47.45 55.36L66.12 7.59L66.12 1.64L58.42 1.64Z"></path></clipPath>
+            <clipPath id="avi-clip-10"><path d="M65.82 7.59L66.12 7.59L85.3 55.34L95.23 55.28L73.77 1.65L65.82 1.64Z"></path></clipPath>
+            <clipPath id="avi-clip-11"><path d="M109.54 67.32L100.89 37.83L106.12 37.83L112.28 59.66L112.28 67.32Z"></path></clipPath>
+            <clipPath id="avi-clip-12"><path d="M111.98 59.66L112.28 59.66L118.14 37.83L123.38 37.83L114.81 67.32L111.98 67.32Z"></path></clipPath>
+            <clipPath id="avi-clip-18"><path d="M152.73 37.83L153.23 37.83L163.46 58.13L163.46 67.32L162.8 67.32L153.03 48.09L152.73 48.09Z"></path></clipPath>
+            <clipPath id="avi-clip-20"><path d="M172.75 37.82L177.61 37.82L177.61 53.78C177.61 56.26 177.68 57.87 177.8 58.63C178.01 59.92 178.53 60.93 179.35 61.64C180.16 62.35 181.24 62.71 182.58 62.71C183.71 62.71 184.63 62.45 185.35 61.95C186.07 61.45 186.55 60.76 186.82 59.86C187.08 58.97 187.21 57.05 187.21 54.12L187.21 37.82L192.08 37.82L192.08 53.31C192.08 57.27 191.86 60.12 191.44 61.89C191.02 63.65 190.06 65.08 188.58 66.17C187.1 67.27 185.14 67.81 182.71 67.81C180.18 67.81 178.21 67.36 176.79 66.45C175.38 65.55 174.35 64.28 173.71 62.64C173.07 60.99 172.75 57.96 172.75 53.55L172.75 37.82Z"></path></clipPath>
+          </defs>
+          <g class="avi-piece" style="--at:500ms;--dur:480ms;--sy:-6px"><path class="avi-stroke" d="M4.16 48.27V67.47" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:600ms;--dur:520ms;--sy:0px"><path class="avi-stroke" d="M6.4 57.87H31.17" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:700ms;--dur:540ms;--sy:0px"><path class="avi-stroke" d="M1.67 42.67H31.17" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:800ms;--dur:540ms;--sy:0px"><path class="avi-stroke" d="M31.17 28.21H1.67" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:1080ms;--dur:300ms;--sy:0px"><path class="avi-stroke" d="M15.78 40.49V30.39" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:900ms;--dur:540ms;--sy:0px"><path class="avi-stroke" d="M1.67 18.28H31.17" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.87"></path></g>
+          <g class="avi-piece" style="--at:1160ms;--dur:320ms;--sy:4px"><path class="avi-stroke" d="M4.16 16.1V2.79" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1230ms;--dur:320ms;--sy:4px"><path class="avi-stroke" d="M15.65 16.1V3.7" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:1300ms;--dur:320ms;--sy:4px"><path class="avi-stroke" d="M28.67 16.1V2.34" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:760ms;--dur:680ms;--sy:0px"><path class="avi-stroke" d="M41.42 58.13L64.45 -1.16" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="16" clip-path="url(#avi-clip-9)"></path></g>
+          <g class="avi-piece" style="--at:1180ms;--dur:640ms;--sy:0px"><path class="avi-stroke" d="M68.88 -1.16L91.33 58.11" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="16" clip-path="url(#avi-clip-10)"></path></g>
+          <g class="avi-piece" style="--at:1040ms;--dur:520ms;--sy:0px"><path class="avi-stroke" d="M102.94 35.91L112.74 69.23" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="10" clip-path="url(#avi-clip-11)"></path></g>
+          <g class="avi-piece" style="--at:1300ms;--dur:520ms;--sy:9px"><path class="avi-stroke" d="M113.07 69.26L121.23 35.88" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="10" clip-path="url(#avi-clip-12)"></path></g>
+          <g class="avi-piece" style="--at:1220ms;--dur:560ms;--sy:-10px"><path class="avi-stroke" d="M128.32 37.83V67.32" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:1520ms;--dur:360ms;--sy:0px"><path class="avi-stroke" d="M130.5 40.32H143.81" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1590ms;--dur:360ms;--sy:0px"><path class="avi-stroke" d="M130.5 51.81H142.9" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:1660ms;--dur:360ms;--sy:0px"><path class="avi-stroke" d="M130.5 64.83H144.26" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1360ms;--dur:520ms;--sy:0px"><path class="avi-stroke" d="M150.76 67.32V37.83" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.53"></path></g>
+          <g class="avi-piece" style="--at:1600ms;--dur:440ms;--sy:0px"><path class="avi-stroke" d="M151.32 39.39L164.78 65.99" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="10" clip-path="url(#avi-clip-18)"></path></g>
+          <g class="avi-piece" style="--at:1500ms;--dur:580ms;--sy:10px"><path class="avi-stroke" d="M165.43 67.32V37.83" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.54"></path></g>
+          <g class="avi-piece" style="--at:1560ms;--dur:720ms;--sy:0px"><path class="avi-stroke" d="M175.19 36.08L175.19 53.58C175.19 61.88 178.22 65.28 182.42 65.28C186.62 65.28 189.65 61.88 189.65 53.58L189.65 36.08" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="9" clip-path="url(#avi-clip-20)"></path></g>
+          <g class="avi-piece" style="--at:1700ms;--dur:540ms;--sy:-10px"><path class="avi-stroke" d="M199.61 37.83V67.32" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.86"></path></g>
+          <g class="avi-piece" style="--at:1960ms;--dur:320ms;--sy:0px"><path class="avi-stroke" d="M201.79 40.32H215.1" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:2020ms;--dur:320ms;--sy:0px"><path class="avi-stroke" d="M201.79 51.81H214.2" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.99"></path></g>
+          <g class="avi-piece" style="--at:2080ms;--dur:320ms;--sy:0px"><path class="avi-stroke" d="M201.79 64.83H215.55" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="4.98"></path></g>
+          <g class="avi-piece" style="--at:1820ms;--dur:560ms;--sy:0px"><path class="avi-stroke" d="M36.6 63.97H95.55" pathLength="1" stroke="url(#avi-ink-tone)" stroke-width="7.05"></path></g>
+        </svg>
+        <img class="avi-logo" src="assets/logo-avenue-colour.webp" alt="The Avenue Builders &amp; Developers" width="1400" height="596" fetchpriority="high" />
+      </div>
+    </div>
 
     <!-- ==========================================================================
          CINEMATIC CLOUD OPENING INTRO
