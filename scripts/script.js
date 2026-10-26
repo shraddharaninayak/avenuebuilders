@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSlideMenu();
   initDeveloperPopup();
   initHeroSwiper();
+  initLandmarksGallery();
   initHeroVideo();
   initCloudIntro();
   initScrollAnimations();
@@ -160,6 +161,111 @@ function initHeroSwiper() {
       }, 600);
     }, 6000);
   }
+}
+
+/* 4c. Signature Landmarks Architectural Editorial Gallery Controller */
+function initLandmarksGallery() {
+  const swiperElem = document.querySelector('.landmarks-swiper');
+  if (!swiperElem) return;
+
+  const numBtns = document.querySelectorAll('.nav-rail-num');
+  const prevRail = document.querySelector('.nav-rail-prev');
+  const nextRail = document.querySelector('.nav-rail-next');
+  const floatNext = document.querySelector('.landmarks-floating-next-btn');
+
+  let swiperInstance = null;
+
+  function updateActiveIndex(idx) {
+    numBtns.forEach(btn => {
+      const bIdx = parseInt(btn.getAttribute('data-index'), 10);
+      if (bIdx === idx) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    const cards = document.querySelectorAll('.landmark-editorial-card');
+    cards.forEach(card => {
+      const cIdx = parseInt(card.getAttribute('data-card-index'), 10);
+      if (cIdx === idx) {
+        card.classList.add('is-active-focus');
+      } else {
+        card.classList.remove('is-active-focus');
+      }
+    });
+  }
+
+  if (typeof Swiper !== 'undefined') {
+    swiperInstance = new Swiper('.landmarks-swiper', {
+      slidesPerView: 1.15,
+      spaceBetween: 16,
+      speed: 650,
+      grabCursor: true,
+      watchOverflow: true,
+      pagination: {
+        el: '.landmarks-mobile-dots',
+        clickable: true,
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 18,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 22,
+          allowTouchMove: false,
+        },
+      },
+      on: {
+        slideChange: function () {
+          updateActiveIndex(this.realIndex);
+        },
+      },
+    });
+  }
+
+  // Connect left rail indicator buttons (01, 02, 03)
+  numBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.getAttribute('data-index'), 10);
+      if (swiperInstance && window.innerWidth < 1024) {
+        swiperInstance.slideTo(idx);
+      } else {
+        updateActiveIndex(idx);
+      }
+    });
+  });
+
+  // Connect previous arrow
+  if (prevRail) {
+    prevRail.addEventListener('click', () => {
+      if (swiperInstance && window.innerWidth < 1024) {
+        swiperInstance.slidePrev();
+      } else {
+        const currentActive = document.querySelector('.nav-rail-num.active');
+        let curIdx = currentActive ? parseInt(currentActive.getAttribute('data-index'), 10) : 1;
+        let nextIdx = (curIdx - 1 + 3) % 3;
+        updateActiveIndex(nextIdx);
+      }
+    });
+  }
+
+  // Connect next arrows (rail next and right floating circular button)
+  const handleNext = () => {
+    if (swiperInstance && window.innerWidth < 1024) {
+      swiperInstance.slideNext();
+    } else {
+      const currentActive = document.querySelector('.nav-rail-num.active');
+      let curIdx = currentActive ? parseInt(currentActive.getAttribute('data-index'), 10) : 1;
+      let nextIdx = (curIdx + 1) % 3;
+      updateActiveIndex(nextIdx);
+    }
+  };
+
+  if (nextRail) nextRail.addEventListener('click', handleNext);
+  if (floatNext) floatNext.addEventListener('click', handleNext);
 }
 
 /* 4b. Hero Background Video Autoplay Assurance */

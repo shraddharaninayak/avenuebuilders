@@ -2277,6 +2277,13 @@
        ========================================================= -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
+      if (!window.location.hash) {
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+        window.scrollTo(0, 0);
+      }
+
       // 1. Mobile Sidebar Drawer Navigation
       const menuToggle = document.getElementById('urbaniaMenuToggle');
       const sidebar = document.getElementById('urbaniaSidebar');

@@ -234,88 +234,137 @@
     </div>
 
     <!-- ==========================================================================
-         WELCOME TO AVENUE BUILDERS & DEVELOPERS
-         Matched to Reference Screenshot
+         SIGNATURE LANDMARKS: HORIZONTAL PROJECT GALLERY
+         Inspired by Reference Layout (3 side-by-side on desktop, interactive slider)
          ========================================================================== -->
-    <section id="welcome" class="home-welcome-section">
-      <div class="welcome-container fadeUpAnimation active">
-        <h2 class="welcome-heading">Welcome To Avenue Builders &amp; Developers</h2>
-        <div class="welcome-text-wrap">
-          <p class="welcome-description">
-            Avenue Builders &amp; Developers, established in <strong>2019</strong>, is a leading property Development and Construction company in North Maharashtra.
-          </p>
-          <p class="welcome-description">
-            With more than a decade’s combined experience, the portfolio includes residential, commercial, industrial and agriculture developments &amp; delivered more than <strong>1.2 Million Sq. Ft</strong> till date.
-          </p>
-          <p class="welcome-description">
-            The team <strong>focuses</strong> on meeting client’s need with innovative solutions, informed by international market trends.
-          </p>
-          <p class="welcome-description">
-            <strong>The company emphasizes on quality, customer satisfaction, and strong relationships built on trust.</strong>
-          </p>
+    <section id="signature-landmarks" class="landmarks-gallery-section">
+      <div class="landmarks-container">
+        
+        <!-- Section Header (Centered Heading + Subtitle) -->
+        <div class="landmarks-header fadeUpAnimation active">
+          <h2 class="landmarks-title">SIGNATURE LANDMARKS</h2>
+          <p class="landmarks-subtitle">DISCOVER OUR DISTINCTIVE DEVELOPMENTS</p>
         </div>
-      </div>
-    </section>
 
-    <!-- ==========================================================================
-         CURATED PORTFOLIO SPOTLIGHT: COMPACT EDITORIAL PREVIEWS
-         ========================================================================== -->
-    <section class="home-portfolio-strip">
-      <div class="container">
-        <div class="home-strip-header fadeUpAnimation active">
-          <div>
-            <span class="heading-eyebrow" style="color: var(--color-forest);">PORTFOLIO HIGHLIGHTS</span>
-            <h2 class="home-strip-title">SIGNATURE LANDMARKS</h2>
+        <!-- Horizontal Project Gallery Slider Wrapper -->
+        <div class="landmarks-gallery-wrap fadeUpAnimation active">
+          
+          <!-- Navigation Arrow: Previous -->
+          <button class="landmarks-nav-btn landmarks-nav-prev" type="button" aria-label="Previous Project">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <!-- Swiper Container -->
+          <div class="swiper landmarks-swiper">
+            <div class="swiper-wrapper">
+              
+              <!-- Slide 1: The Avenue Urbania -->
+              <div class="swiper-slide landmark-slide">
+                <a href="../pages/projects.html#urbania" class="landmark-card" aria-label="Explore The Avenue Urbania">
+                  <div class="landmark-img-box">
+                    <img src="../images/25-scaled.jpg" alt="The Avenue Urbania" loading="lazy" />
+                    <span class="landmark-badge">Ongoing &bull; Residential</span>
+                  </div>
+                  <div class="landmark-meta-box">
+                    <div class="landmark-logo-wrap">
+                      <img src="../images/logo-avenue-urbania.png" alt="The Avenue Urbania" class="landmark-logo" />
+                    </div>
+                    <h3 class="landmark-name">The Avenue Urbania</h3>
+                    <p class="landmark-desc">3 &amp; 4 BHK Luxury Urban Living &bull; Govind Nagar</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 2: The Avenue Flora -->
+              <div class="swiper-slide landmark-slide">
+                <a href="../pages/projects.html#flora" class="landmark-card" aria-label="Explore The Avenue Flora">
+                  <div class="landmark-img-box">
+                    <img src="../images/The-Avenue-Flora-Cam-view-768x655-1.jpg" alt="The Avenue Flora" loading="lazy" />
+                    <span class="landmark-badge">Ongoing &bull; Commercial</span>
+                  </div>
+                  <div class="landmark-meta-box">
+                    <div class="landmark-logo-wrap">
+                      <img src="../images/logo-avenue-flora.png" alt="The Avenue Flora" class="landmark-logo" />
+                    </div>
+                    <h3 class="landmark-name">The Avenue Flora</h3>
+                    <p class="landmark-desc">Showroom &amp; Corporate Office Suites &bull; Govind Nagar</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 3: The Avenue Aura -->
+              <div class="swiper-slide landmark-slide">
+                <a href="../pages/projects.html#aura" class="landmark-card" aria-label="Explore The Avenue Aura">
+                  <div class="landmark-img-box">
+                    <img src="../images/AURA-view.jpg" alt="The Avenue Aura" loading="lazy" />
+                    <span class="landmark-badge">Ongoing &bull; Residential</span>
+                  </div>
+                  <div class="landmark-meta-box">
+                    <div class="landmark-logo-wrap">
+                      <img src="../images/logo-avenue-aura.png" alt="The Avenue Aura" class="landmark-logo" />
+                    </div>
+                    <h3 class="landmark-name">The Avenue Aura</h3>
+                    <p class="landmark-desc">Timeless Planned Residences &bull; Govind Nagar</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 4: The Avenue Bliss -->
+              <div class="swiper-slide landmark-slide">
+                <a href="../pages/projects.html#bliss" class="landmark-card" aria-label="Explore The Avenue Bliss">
+                  <div class="landmark-img-box">
+                    <img src="../images/hero-avenue-bliss.jpg" alt="The Avenue Bliss" loading="lazy" />
+                    <span class="landmark-badge">Delivered &bull; Residential</span>
+                  </div>
+                  <div class="landmark-meta-box">
+                    <div class="landmark-logo-wrap">
+                      <img src="../images/logo-avenue-bliss.png" alt="The Avenue Bliss" class="landmark-logo" />
+                    </div>
+                    <h3 class="landmark-name">The Avenue Bliss</h3>
+                    <p class="landmark-desc">2 &amp; 3 BHK Elevated Rooftop Residences &bull; Govind Nagar</p>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Slide 5: The Avenue Commercial -->
+              <div class="swiper-slide landmark-slide">
+                <a href="../pages/projects.html#commercial" class="landmark-card" aria-label="Explore The Avenue Commercial">
+                  <div class="landmark-img-box">
+                    <img src="../images/hero-commercial-avenue.jpg" alt="The Avenue Commercial" loading="lazy" />
+                    <span class="landmark-badge">Delivered &bull; Commercial</span>
+                  </div>
+                  <div class="landmark-meta-box">
+                    <div class="landmark-logo-wrap">
+                      <img src="../images/logo-avenue-commercial.png" alt="The Avenue Commercial" class="landmark-logo" />
+                    </div>
+                    <h3 class="landmark-name">The Avenue Commercial</h3>
+                    <p class="landmark-desc">Exclusive Corporate Offices &bull; Govind Nagar</p>
+                  </div>
+                </a>
+              </div>
+
+            </div>
           </div>
+
+          <!-- Navigation Arrow: Next -->
+          <button class="landmarks-nav-btn landmarks-nav-next" type="button" aria-label="Next Project">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+
+        </div>
+
+        <!-- Pagination Indicators (Dots) -->
+        <div class="landmarks-pagination swiper-pagination"></div>
+
+        <!-- Subtle Bottom Link to Full Portfolio -->
+        <div class="landmarks-bottom-action fadeUpAnimation active">
           <a href="../pages/projects.html" class="cta-underline black">VIEW ALL PROJECTS →</a>
         </div>
 
-        <div class="home-projects-trio">
-          <!-- Item 1: Urbania -->
-          <a href="../pages/projects.html" class="home-trio-card fadeUpAnimation active">
-            <div class="home-trio-img-wrap">
-              <img src="../images/25-scaled.jpg" alt="The Avenue Urbania">
-              <span class="home-trio-tag">Ongoing • Residential</span>
-            </div>
-            <div class="home-trio-info">
-              <div class="delivered-logo-wrap home-trio-logo-wrap">
-                <img src="../images/logo-avenue-urbania.png" alt="The Avenue Urbania" class="delivered-logo home-trio-logo">
-              </div>
-              <h3>The Avenue Urbania</h3>
-              <p>3 &amp; 4 BHK Luxury Urban Living • Govind Nagar</p>
-            </div>
-          </a>
-
-          <!-- Item 2: Flora -->
-          <a href="../pages/projects.html" class="home-trio-card fadeUpAnimation active">
-            <div class="home-trio-img-wrap">
-              <img src="../images/The-Avenue-Flora-Cam-view-768x655-1.jpg" alt="The Avenue Flora">
-              <span class="home-trio-tag">Ongoing • Commercial</span>
-            </div>
-            <div class="home-trio-info">
-              <div class="delivered-logo-wrap home-trio-logo-wrap">
-                <img src="../images/logo-avenue-flora.png" alt="The Avenue Flora" class="delivered-logo home-trio-logo">
-              </div>
-              <h3>The Avenue Flora</h3>
-              <p>Showroom &amp; Corporate Office Suites • Govind Nagar</p>
-            </div>
-          </a>
-
-          <!-- Item 3: Aura -->
-          <a href="../pages/projects.html" class="home-trio-card fadeUpAnimation active">
-            <div class="home-trio-img-wrap">
-              <img src="../images/AURA-view.jpg" alt="The Avenue Aura">
-              <span class="home-trio-tag">Ongoing • Residential</span>
-            </div>
-            <div class="home-trio-info">
-              <div class="delivered-logo-wrap home-trio-logo-wrap">
-                <img src="../images/logo-avenue-aura.png" alt="The Avenue Aura" class="delivered-logo home-trio-logo">
-              </div>
-              <h3>The Avenue Aura</h3>
-              <p>Timeless Planned Residences • Govind Nagar</p>
-            </div>
-          </a>
-        </div>
       </div>
     </section>
 

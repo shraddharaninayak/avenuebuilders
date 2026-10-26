@@ -2638,119 +2638,761 @@ select.form-control:focus {
     text-align: left;
   }
 }
-
-/* B. Homepage Portfolio Spotlight Strip */
-.home-portfolio-strip {
-  padding: 100px 24px;
-  background-color: var(--color-sand-light);
-}
-
-.home-strip-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 50px;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.home-strip-title {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: var(--color-dark);
-  margin-top: 6px;
-}
-
-.home-projects-trio {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-}
-
-.home-trio-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-white);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 2px;
-  overflow: hidden;
-  transition: var(--transition);
-}
-
-.home-trio-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-.home-trio-img-wrap {
+/* --------------------------------------------------------------------------
+   13-B. SIGNATURE LANDMARKS: ARCHITECTURAL EDITORIAL SECTION
+   Faithfully reproduced to match the reference design layout and composition
+   -------------------------------------------------------------------------- */
+.landmarks-editorial-section {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
+  padding: 76px 0 48px 0;
+  background-color: #f7f3ec;
   overflow: hidden;
-  background: #ebe8e1;
 }
 
-.home-trio-img-wrap img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.home-trio-card:hover .home-trio-img-wrap img {
-  transform: scale(1.06);
-}
-
-.home-trio-tag {
+.landmarks-backdrop {
   position: absolute;
-  top: 14px;
-  left: 14px;
-  background: rgba(18, 28, 23, 0.88);
-  color: var(--color-white);
-  padding: 5px 12px;
-  font-size: 0.72rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-weight: 600;
-  backdrop-filter: blur(4px);
+  inset: 0;
+  background-image: url('assets/landmarks-editorial-bg.jpg');
+  background-size: cover;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  opacity: 1;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.home-trio-info {
-  padding: 26px 22px;
+.landmarks-backdrop::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 243, 236, 0.22) 0%,
+    rgba(247, 243, 236, 0.04) 30%,
+    transparent 65%,
+    rgba(238, 230, 218, 0.12) 100%
+  );
 }
 
-.home-trio-logo-wrap {
+.landmarks-editorial-section .landmarks-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* 1. Top Bar: Centered Heading + Upper-Right Editorial Quote */
+.landmarks-top-bar {
+  position: relative;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  height: 52px;
-  margin-bottom: 14px;
+  margin-bottom: 26px;
 }
 
-.home-trio-logo {
-  max-height: 46px;
-  max-width: 155px;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+.landmarks-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.landmarks-header-line {
+  width: 1px;
+  height: 34px;
+  background-color: #c5a880;
+  margin-bottom: 12px;
+}
+
+.landmarks-eyebrow {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #b89d74;
+  margin-bottom: 7px;
   display: block;
 }
 
-.home-trio-info h3 {
-  font-family: var(--font-display);
-  font-size: 1.35rem;
-  letter-spacing: 1.5px;
-  color: var(--color-dark);
-  margin-bottom: 6px;
+.landmarks-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.1rem, 3.1vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: clamp(5px, 0.5vw, 7px);
   text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 8px 0;
+  line-height: 1.12;
 }
 
-.home-trio-info p {
-  font-size: 0.86rem;
-  color: #666666;
-  letter-spacing: 0.5px;
+.landmarks-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.66rem, 0.75vw, 0.74rem);
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #8e8476;
+  margin: 0;
+}
+
+/* Upper-Right Editorial Quote */
+.landmarks-top-editorial {
+  position: absolute;
+  right: 12px;
+  top: 18px;
+  max-width: 250px;
+  text-align: left;
+}
+
+.top-editorial-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.48;
+  color: #5d554a;
+  margin: 0 0 8px 0;
+  font-weight: 400;
+}
+
+.top-editorial-divider {
+  width: 36px;
+  height: 1px;
+  background-color: #c5a880;
+  margin-left: 0;
+}
+
+/* 2. Main Editorial Layout: Left Rail + 3 Cards Stage */
+.landmarks-main-stage {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  gap: 18px;
+}
+
+/* Left Column: Vertical Text + Navigation Rail */
+.landmarks-left-col {
+  flex: 0 0 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 4px;
+  z-index: 15;
+}
+
+.landmarks-vert-quote {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.64rem;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: #7a6242;
+  font-weight: 700;
+  line-height: 1.75;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.75);
+}
+
+.landmarks-vert-line {
+  width: 1px;
+  height: 48px;
+  background-color: #c5a880;
+  margin-bottom: 20px;
+  margin-left: 1px;
+}
+
+/* Vertical Forest Green Navigation Rail */
+.landmarks-nav-rail {
+  width: 58px;
+  background: #182c20;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 14px 0;
+  gap: 12px;
+  box-shadow: 0 10px 28px rgba(10, 24, 16, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.nav-rail-arrow {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.82);
+  cursor: pointer;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.nav-rail-arrow:hover {
+  color: #c5a880;
+  transform: scale(1.15);
+}
+
+.nav-rail-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-rail-num {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 2px 4px;
+  transition: all 0.25s ease;
+  line-height: 1;
+}
+
+.rail-divider {
+  width: 16px;
+  height: 1px;
+  background-color: #c5a880;
+}
+
+.nav-rail-total-btn {
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+.nav-rail-total-btn:hover {
+  color: #ffffff;
+}
+
+/* 3. Cards Wrap & Grid */
+.landmarks-cards-wrap {
+  flex: 1;
+  position: relative;
+  min-width: 0;
+}
+
+.landmarks-cards-grid {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* Desktop: 3-Column Overlapping Art-Directed Spread matching reference */
+@media (min-width: 1024px) {
+  .landmarks-cards-wrap {
+    overflow: visible !important;
+  }
+  .landmarks-cards-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+    transform: none !important;
+  }
+  .landmarks-editorial-section .landmark-slide-item {
+    width: 100% !important;
+    margin: 0 !important;
+    display: flex;
+  }
+}
+
+.landmarks-editorial-section .landmark-slide-item {
+  flex: 1;
+  width: auto;
+  height: auto;
+  display: flex;
+  min-width: 0;
+}
+
+.landmark-editorial-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  background: #faf7f2;
+}
+
+/* Stepped 3-Card Offset Composition from Reference */
+.card-urbania {
+  margin-top: 0;
+  z-index: 10;
+}
+
+.card-flora {
+  margin-top: 24px; /* Center card starts slightly lower as focal point */
+  z-index: 12;
+  background: #182c20;
+  box-shadow: -6px 0 20px rgba(0, 0, 0, 0.12), 0 22px 50px rgba(10, 24, 16, 0.32);
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card-aura {
+  margin-top: 28px;
+  z-index: 10;
+  border-left: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.08), 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+.landmark-editorial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.14);
+}
+
+.card-flora:hover {
+  transform: translateY(18px);
+  box-shadow: -6px 0 24px rgba(0, 0, 0, 0.16), 0 28px 60px rgba(10, 24, 16, 0.38);
+}
+
+.landmark-editorial-card.is-active-focus {
+  outline: 1px solid rgba(197, 168, 128, 0.45);
+}
+
+/* Card Media Wrap & Architectural Image */
+.card-media-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #e6e2d8;
+}
+
+.card-urbania .card-media-wrap,
+.card-flora .card-media-wrap,
+.card-aura .card-media-wrap {
+  aspect-ratio: 16 / 11.2;
+}
+
+.card-media-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-urbania .card-media-img {
+  object-position: center 20%;
+}
+
+.card-flora .card-media-img {
+  object-position: center 6%;
+}
+
+.card-aura .card-media-img {
+  object-position: center 7%;
+}
+
+.landmark-editorial-card:hover .card-media-img {
+  transform: scale(1.04);
+}
+
+/* Tag Overlay at Top-Left of Architectural Image */
+.card-badge-overlay {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.badge-num {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 1.85rem;
+  line-height: 1;
+  color: #ffffff;
+  font-weight: 400;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.badge-text-group {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 1.8px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.badge-accent-line {
+  width: 22px;
+  height: 1px;
+  background-color: rgba(197, 168, 128, 0.85);
+  align-self: center;
+  margin-left: 2px;
+}
+
+/* Content Panels */
+.card-content-panel {
+  padding: 22px 20px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.panel-ivory {
+  background-color: #faf7f2;
+  color: #162a1e;
+}
+
+.panel-forest {
+  background-color: #182c20;
+  color: #f7f4ed;
+}
+
+/* Logo Holder - Horizontally Centered */
+.card-logo-holder {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.card-brand-logo {
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.logo-urbania {
+  max-height: 25px;
+  max-width: 135px;
+}
+
+.logo-flora {
+  max-height: 32px;
+  max-width: 130px;
+}
+
+.logo-aura {
+  max-height: 34px;
+  max-width: 38px;
+}
+
+/* Project Name & Desc */
+.card-name-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 1.22rem;
+  font-weight: 600;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 0 0 5px 0;
+  line-height: 1.25;
+}
+
+.panel-ivory .card-name-title {
+  color: #162a1e;
+}
+
+.panel-forest .card-name-title {
+  color: #ffffff;
+}
+
+.card-desc-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  margin: 0 0 18px 0;
+  font-weight: 400;
+}
+
+.panel-ivory .card-desc-text {
+  color: #5c554a;
+}
+
+.panel-forest .card-desc-text {
+  color: #b8c7bc;
+}
+
+/* Action Bar (Underlined Link + Circle Arrow Button) */
+.card-action-bar {
+  margin-top: auto;
+}
+
+.card-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.action-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: opacity 0.25s ease;
+}
+
+.panel-ivory .action-label {
+  color: #162a1e;
+}
+
+.panel-forest .action-label {
+  color: #c5a880;
+}
+
+.action-arrow-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.panel-ivory .action-arrow-btn {
+  border: 1px solid rgba(197, 168, 128, 0.75);
+  color: #162a1e;
+}
+
+.panel-forest .action-arrow-btn {
+  border: 1px solid rgba(197, 168, 128, 0.75);
+  color: #c5a880;
+}
+
+.card-action-link:hover .action-arrow-btn {
+  transform: translateX(2px) scale(1.05);
+}
+
+.panel-ivory .card-action-link:hover .action-arrow-btn {
+  background-color: #162a1e;
+  color: #ffffff;
+  border-color: #162a1e;
+}
+
+.panel-forest .card-action-link:hover .action-arrow-btn {
+  background-color: #c5a880;
+  color: #182c20;
+  border-color: #c5a880;
+}
+
+/* Floating Circular Next Button (Right Side) */
+.landmarks-floating-next-btn {
+  position: absolute;
+  right: -20px;
+  top: 52%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.6);
+  color: #162a1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.landmarks-floating-next-btn:hover {
+  background: #182c20;
+  color: #c5a880;
+  border-color: #182c20;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.landmarks-mobile-dots {
+  display: none;
+}
+
+/* Centered View All Projects Link Below Carousel */
+.landmarks-view-all-wrap {
+  text-align: center;
+  margin-top: 42px;
+  position: relative;
+  z-index: 5;
+}
+
+.landmarks-view-all-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  color: #162a1e;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #c5a880;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.landmarks-view-all-link:hover {
+  color: #8c7047;
+  text-decoration-color: #162a1e;
+  transform: translateY(-1px);
+}
+
+/* 4. Responsive Queries */
+@media (max-width: 1200px) {
+  .landmarks-top-bar {
+    flex-direction: column;
+    align-items: center;
+  }
+  .landmarks-top-editorial {
+    position: static;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 14px;
+  }
+  .top-editorial-divider {
+    margin: 8px auto 0 auto;
+  }
+  .landmarks-floating-next-btn {
+    right: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .landmarks-editorial-section {
+    padding: 50px 0 65px 0;
+  }
+  .landmarks-backdrop::after {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 243, 236, 0.75) 0%,
+      rgba(247, 243, 236, 0.45) 30%,
+      rgba(247, 243, 236, 0.15) 65%,
+      rgba(238, 230, 218, 0.22) 100%
+    );
+  }
+  .landmarks-editorial-section .landmarks-container {
+    padding: 0 20px;
+  }
+  .landmarks-main-stage {
+    gap: 16px;
+  }
+  .landmarks-left-col {
+    display: none;
+  }
+  .card-flora,
+  .card-aura {
+    margin-top: 0 !important;
+  }
+  .landmarks-floating-next-btn {
+    display: none;
+  }
+  .landmarks-cards-wrap {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 10px 0 15px 0;
+  }
+  .landmarks-cards-wrap::-webkit-scrollbar {
+    display: none;
+  }
+  .landmarks-cards-grid {
+    display: flex !important;
+    gap: 16px !important;
+    width: max-content !important;
+  }
+  .landmarks-editorial-section .landmark-slide-item {
+    flex: 0 0 84vw !important;
+    max-width: 360px !important;
+    scroll-snap-align: center;
+    height: auto;
+  }
+  .landmarks-mobile-dots {
+    position: static !important;
+    bottom: auto !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+  .landmarks-mobile-dots .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background: rgba(22, 42, 30, 0.28);
+    opacity: 1;
+    border-radius: 50%;
+    transition: all 0.35s ease;
+  }
+  .landmarks-mobile-dots .swiper-pagination-bullet-active {
+    width: 22px;
+    height: 8px;
+    border-radius: 4px;
+    background: #182c20;
+  }
+}
+
+@media (max-width: 768px) {
+  .landmarks-editorial-section {
+    padding: 44px 0 54px 0;
+  }
+  .landmarks-editorial-section .landmarks-container {
+    padding: 0 16px;
+  }
+  .landmarks-title {
+    font-size: 1.85rem;
+    letter-spacing: 3px;
+  }
+  .landmarks-subtitle {
+    font-size: 0.68rem;
+    letter-spacing: 2px;
+  }
+  .landmarks-editorial-section .landmark-slide-item {
+    flex: 0 0 84vw !important;
+    max-width: 330px !important;
+  }
+  .card-urbania .card-media-wrap,
+  .card-flora .card-media-wrap,
+  .card-aura .card-media-wrap {
+    aspect-ratio: 16 / 12;
+  }
+  .card-content-panel {
+    padding: 18px 16px 20px 16px;
+  }
+  .card-name-title {
+    font-size: 1.15rem;
+  }
+  .card-desc-text {
+    font-size: 0.74rem;
+    margin-bottom: 14px;
+  }
+  .landmarks-view-all-wrap {
+    margin-top: 24px;
+  }
+  .landmarks-view-all-link {
+    font-size: 0.70rem;
+    letter-spacing: 2.2px;
+  }
 }
 
 /* B. Homepage Minimal Impact Closing CTA */
