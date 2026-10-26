@@ -2574,6 +2574,9 @@ select.form-control:focus {
 
 .welcome-text-wrap {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
 }
 
 .welcome-description {
