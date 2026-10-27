@@ -5951,5 +5951,613 @@ select.form-control:focus {
   }
 }
 
+/* =========================================================
+   ABOUT PAGE - SIGNATURE LUXURY CONTINUOUS ARCHITECTURAL REDESIGN
+   ========================================================= */
+
+.about-page {
+  background-color: #faf6f0;
+  color: #162a1e;
+  overflow-x: hidden;
+}
+
+
+/* Continuous Architectural Environment */
+.about-continuous-environment {
+  position: relative;
+  background-color: #f6f2ea;
+  background-image: url('assets/avenue-stone-seamless.jpg');
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+
+/* Left architectural frame: sunlit limestone column with draping greenery */
+.about-continuous-environment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background-image: url('assets/avenue-pillar-seamless.png');
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 220px auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+/* Right architectural frame: limestone column with sunlight & olive greenery */
+.about-continuous-environment::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 220px;
+  background-image: url('assets/about-pillar-right-seamless.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: 220px auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+.about-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section 1: Hero */
+.about-hero-section {
+  padding: 165px 0 65px 0;
+  position: relative;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-hero-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #76572a;
+  margin-bottom: 14px;
+}
+
+.about-hero-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.7rem, 4.4vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 4px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 22px 0;
+}
+
+.about-hero-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.90rem, 1.02vw, 1rem);
+  line-height: 1.8;
+  color: #4a453e;
+  max-width: 480px;
+  margin: 0;
+}
+
+.about-hero-media-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(22, 42, 30, 0.12);
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  background: #eae5dc;
+}
+
+.about-hero-media-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero-media-wrap:hover img {
+  transform: scale(1.02);
+}
+
+/* Section 2: Our Story */
+.about-story-section {
+  padding: 55px 0 65px 0;
+  position: relative;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-story-col-left .story-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #76572a;
+  margin-bottom: 10px;
+}
+
+.about-story-col-left h2 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.3rem, 3.4vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 22px 0;
+  line-height: 1.15;
+}
+
+.about-story-col-left .story-lead-quote {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+  line-height: 1.6;
+  color: #1e3324;
+  border-left: 2.5px solid #c5a880;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.about-story-col-right p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.82;
+  color: #4a453e;
+  margin: 0 0 16px 0;
+}
+
+.about-story-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-col-right strong {
+  color: #162a1e;
+  font-weight: 600;
+}
+
+/* Section 3: Achievements Bar */
+.about-achievements-bar {
+  padding: 10px 0 65px 0;
+  position: relative;
+}
+
+.about-achievements-inner {
+  background: rgba(255, 252, 247, 0.60);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(197, 168, 128, 0.45);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.45);
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.about-stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.about-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(197, 168, 128, 0.4);
+}
+
+.about-stat-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b89d74;
+  flex-shrink: 0;
+}
+
+.about-stat-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-stat-number {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 1.95rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #162a1e;
+  letter-spacing: 0.5px;
+}
+
+.about-stat-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #635c52;
+  letter-spacing: 0.4px;
+  margin-top: 3px;
+}
+
+/* Section 3: Guiding Principles (Purpose, Aspiration & Philosophy) */
+.about-philosophy-editorial {
+  padding: 45px 0 85px 0;
+  position: relative;
+}
+
+.about-section-header-center {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 52px auto;
+}
+
+.about-section-header-center .section-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #76572a;
+  margin-bottom: 10px;
+}
+
+.about-section-header-center h2 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.3rem, 3.4vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #162a1e;
+  line-height: 1.18;
+  margin: 0 0 16px 0;
+}
+
+.about-section-header-center p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: #595248;
+  margin: 0 auto;
+}
+
+.about-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.about-principle-col {
+  position: relative;
+  padding-right: 36px;
+}
+
+.about-principle-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: rgba(197, 168, 128, 0.4);
+}
+
+.principle-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.principle-num {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #c5a880;
+  line-height: 1;
+}
+
+.principle-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0;
+}
+
+.about-principle-col p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.90rem;
+  line-height: 1.75;
+  color: #4a453e;
+  margin: 0;
+}
+
+.about-principle-col strong {
+  color: #162a1e;
+  font-weight: 700;
+}
+
+/* Section 6: Executive Leadership */
+.about-leadership-section {
+  padding: 50px 0 95px 0;
+  position: relative;
+}
+
+.about-directors-deck {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.director-dossier-card {
+  background: rgba(255, 252, 247, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  border-radius: 4px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: start;
+  transition: all 0.3s ease;
+}
+
+.director-dossier-card:hover {
+  background: rgba(255, 254, 250, 0.92);
+  border-color: rgba(197, 168, 128, 0.7);
+  box-shadow: 0 16px 36px rgba(22, 42, 30, 0.07);
+  transform: translateY(-2px);
+}
+
+.director-card-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.director-photo-wrap {
+  width: 140px;
+  height: 160px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  background: #e8e2d8;
+  margin-bottom: 12px;
+}
+
+.director-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.director-name-plate {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #162a1e;
+  text-transform: uppercase;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+}
+
+.director-designation {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8c7657;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.director-pill {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #162a1e;
+  background: rgba(197, 168, 128, 0.20);
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  padding: 4px 8px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.director-card-right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+
+.director-role-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #162a1e;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.director-responsibilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.director-responsibilities-list li {
+  position: relative;
+  padding-left: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #4a453e;
+  margin-bottom: 7px;
+}
+
+.director-responsibilities-list li:last-child {
+  margin-bottom: 0;
+}
+
+.director-responsibilities-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #c5a880;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .about-hero-grid,
+  .about-story-grid {
+    gap: 36px;
+  }
+  
+  .about-continuous-environment::before,
+  .about-continuous-environment::after {
+    width: 120px;
+    background-size: 120px auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-continuous-environment::before,
+  .about-continuous-environment::after {
+    display: none;
+  }
+  
+  .about-hero-grid,
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .about-achievements-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .about-stat-item:nth-child(2)::after {
+    display: none;
+  }
+  
+  .about-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .about-principle-col {
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.4);
+  }
+  
+  .about-principle-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .about-principle-col:not(:last-child)::after {
+    display: none;
+  }
+  
+  .about-directors-deck {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  .about-hero-section {
+    padding: 120px 0 45px 0;
+  }
+  
+  .about-container {
+    padding: 0 20px;
+  }
+  
+  .about-achievements-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+  
+  .about-stat-item:not(:last-child)::after {
+    display: none;
+  }
+  
+  .about-stat-item {
+    justify-content: flex-start;
+  }
+  
+  .director-dossier-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .director-photo-wrap {
+    margin: 0 auto 12px auto;
+  }
+  
+  .director-card-left {
+    text-align: center;
+  }
+  
+  .director-card-right {
+    padding-left: 0;
+  }
+}
+
+
 
 

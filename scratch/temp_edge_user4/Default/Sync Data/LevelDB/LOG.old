@@ -1,2 +1,3 @@
-2026/10/26-23:05:08.413 64b4 Creating DB d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_user4\Default\Sync Data\LevelDB since it was missing.
-2026/10/26-23:05:08.431 64b4 Reusing MANIFEST d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_user4\Default\Sync Data\LevelDB/MANIFEST-000001
+2026/10/26-23:11:37.285 32b4 Reusing MANIFEST d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_user4\Default\Sync Data\LevelDB/MANIFEST-000001
+2026/10/26-23:11:37.288 32b4 Recovering log #3
+2026/10/26-23:11:37.303 32b4 Reusing old log d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_user4\Default\Sync Data\LevelDB/000003.log 
