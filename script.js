@@ -465,6 +465,7 @@ function initProjectFiltering() {
       const category = card.getAttribute('data-category');
       if (filterValue === 'all' || (category && category.includes(filterValue))) {
         card.style.display = '';
+        card.classList.add('active');
       } else {
         card.style.display = 'none';
       }
@@ -477,6 +478,7 @@ function initProjectFiltering() {
         group.style.display = 'none';
       } else {
         group.style.display = '';
+        group.querySelectorAll('.fadeUpAnimation').forEach(el => el.classList.add('active'));
       }
     });
   }
