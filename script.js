@@ -298,20 +298,60 @@ function initHeroVideo() {
   const video = document.querySelector('.hero-video-bg');
   if (!video) return;
   video.muted = true;
-  video.pause();
-  try {
-    video.currentTime = 0;
-  } catch (e) {}
+
+  // If intro has already been played in this browser session, start the hero video immediately
+  if (sessionStorage.getItem('tabd_intro_played')) {
+    startHeroVideo();
+  } else {
+    video.pause();
+    try {
+      video.currentTime = 0;
+    } catch (e) {}
+  }
 }
 
 /* 4c. Unified Introductory Sequence:
    STAGE 1: Avenue Logo Intro (0.0s to ~3.2s)
    STAGE 2: Cinematic Cloud Intro (Exactly 2.0s visible, 3.2s to 5.2s, then 1.0s smooth fade)
    STAGE 3: Milestone Hero Video (Starts playback ONLY after cloud intro finishes at 6.2s)
+   
+   Session Behavior:
+   - First visit in session: Plays full sequence (Logo -> 2s Cloud -> Hero Video).
+   - On refresh: Skips intro, loads Home page directly, starts video immediately.
+   - On clicking Home or navigating back: Skips intro, loads Home page directly.
+   - Navigating between pages: Never replays intro.
 */
 function initCloudIntro() {
   const logoIntro = document.getElementById('avenue-intro');
   const cloudIntro = document.getElementById('cloudIntro');
+
+  // Check if intro has already been played in this browser session
+  const hasIntroPlayed = Boolean(sessionStorage.getItem('tabd_intro_played'));
+
+  // If on a page without intro elements (e.g. About, Projects, Services, Contact),
+  // record the session flag so navigating to Home later will not replay the intro.
+  if (!logoIntro && !cloudIntro) {
+    sessionStorage.setItem('tabd_intro_played', 'true');
+    return;
+  }
+
+  // If intro was already played in this session (e.g. page refresh or clicking Home):
+  if (hasIntroPlayed) {
+    document.documentElement.classList.add('skip-intro');
+    if (logoIntro) {
+      logoIntro.style.display = 'none';
+      logoIntro.setAttribute('data-intro', 'skip');
+    }
+    if (cloudIntro) {
+      cloudIntro.style.display = 'none';
+      cloudIntro.classList.add('fade-out');
+    }
+    startHeroVideo();
+    return;
+  }
+
+  // First visit in this session: record the flag so subsequent reloads or navigations skip intro
+  sessionStorage.setItem('tabd_intro_played', 'true');
 
   let cloudFadeTimer = null;
   let cloudCompleteTimer = null;

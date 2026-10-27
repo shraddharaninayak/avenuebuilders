@@ -942,8 +942,15 @@ button {
 }
 
 #avenue-intro.fade-out,
-#avenue-intro[data-intro="skip"] {
+#avenue-intro[data-intro="skip"],
+html.skip-intro #avenue-intro,
+html.skip-intro #cloudIntro,
+html.skip-intro .cloud-intro-screen,
+html.skip-intro .avenue-intro-screen {
   display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 #avenue-intro .avi-mark {
@@ -1164,9 +1171,10 @@ button {
 .home-hero-curated {
   position: relative;
   width: 100%;
-  min-height: 82vh;
-  height: 86vh;
-  max-height: 960px;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--color-forest-dark);
   overflow: hidden;
   display: flex;
@@ -1177,9 +1185,11 @@ button {
 @media (min-width: 1200px) {
   #component,
   .home-hero-curated {
-    min-height: 700px;
-    height: 88vh;
-    max-height: 1020px;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    max-height: none;
   }
 }
 
@@ -1191,7 +1201,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center bottom;
   z-index: 0;
   pointer-events: none;
 }
@@ -2930,6 +2940,7 @@ select.form-control:focus {
 }
 
 /* Stepped 3-Card Offset Composition from Reference */
+.card-aura,
 .card-urbania {
   margin-top: 0;
   z-index: 10;
@@ -2943,7 +2954,7 @@ select.form-control:focus {
   border-left: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.card-aura {
+.card-aryana {
   margin-top: 28px;
   z-index: 10;
   border-left: 1px solid rgba(255, 255, 255, 0.6);
@@ -2974,7 +2985,8 @@ select.form-control:focus {
 
 .card-urbania .card-media-wrap,
 .card-flora .card-media-wrap,
-.card-aura .card-media-wrap {
+.card-aura .card-media-wrap,
+.card-aryana .card-media-wrap {
   aspect-ratio: 16 / 11.2;
 }
 
@@ -2996,6 +3008,10 @@ select.form-control:focus {
 
 .card-aura .card-media-img {
   object-position: center 7%;
+}
+
+.card-aryana .card-media-img {
+  object-position: center 20%;
 }
 
 .landmark-editorial-card:hover .card-media-img {
@@ -3090,6 +3106,12 @@ select.form-control:focus {
 .logo-aura {
   max-height: 34px;
   max-width: 38px;
+}
+
+.logo-aryana,
+.logo-aaryana {
+  max-height: 32px;
+  max-width: 135px;
 }
 
 /* Project Name & Desc */
@@ -3399,38 +3421,249 @@ select.form-control:focus {
   }
 }
 
-/* B. Homepage Minimal Impact Closing CTA */
-.home-closing-cta {
-  background: var(--color-forest);
-  color: var(--color-white);
-  padding: 100px 24px;
+/* ==========================================================================
+   ARCHITECTURAL STONE CTA SECTION (Matching Reference Design)
+   Shared across Home, About Us, Projects, Services, Contact Us, Portfolio
+   ========================================================================== */
+.home-closing-cta,
+.projects-forest-cta {
+  position: relative;
+  z-index: 5 !important;
+  background-color: #f6f2ea !important;
+  background-image: url('assets/avenue-stone-seamless.jpg') !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-size: 100% auto !important;
+  color: #162e20 !important;
+  padding: 85px 24px 100px 24px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+  border-top: 1px solid rgba(197, 168, 128, 0.45) !important;
+}
+
+/* Left architectural frame: sunlit limestone pillar with olive foliage & soft leaf shadows */
+.home-closing-cta::before,
+.projects-forest-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: clamp(100px, 14vw, 220px);
+  background-image: url('assets/avenue-pillar-seamless.png');
+  background-repeat: repeat-y;
+  background-position: left center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+/* Right architectural frame: vertical timber architectural slats & shrub greenery */
+.home-closing-cta::after,
+.projects-forest-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: clamp(100px, 14vw, 220px);
+  background-image: url('assets/avenue-slats-seamless.png');
+  background-repeat: repeat-y;
+  background-position: right center;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+/* Subtle architectural stone plinth / step ledge across the bottom */
+.home-closing-cta .cta-bottom-plinth,
+.projects-forest-cta .cta-bottom-plinth {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 38px;
+  background: linear-gradient(to top, rgba(206, 186, 158, 0.95) 0%, rgba(226, 212, 192, 0.65) 40%, rgba(240, 230, 215, 0.20) 80%, transparent 100%);
+  border-top: 1.5px solid rgba(175, 145, 100, 0.45);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Center Content Container */
+.home-closing-cta > .container,
+.projects-forest-cta > .container {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.home-closing-cta h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  letter-spacing: clamp(3px, 0.8vw, 6px);
-  text-transform: uppercase;
-  color: var(--color-white);
-  margin: 12px 0 16px 0;
-  line-height: 1.25;
+/* Refined Gold Eyebrow Label */
+.home-closing-cta .heading-eyebrow,
+.home-closing-cta .cta-brand-tag,
+.projects-forest-cta .heading-eyebrow,
+.projects-forest-cta .cta-brand-tag {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #8e6e3e !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 3.5px !important;
+  text-transform: uppercase !important;
+  margin: 0 auto !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
 }
 
-.home-closing-cta p {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.05rem;
-  max-width: 680px;
-  margin: 0 auto 36px auto;
-  line-height: 1.7;
-  font-weight: 300;
-}
-
-.home-closing-actions {
+/* Diamond Accent Line */
+.cta-diamond-accent,
+.home-closing-cta .title-diamond-accent,
+.projects-forest-cta .title-diamond-accent {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px auto 16px auto;
+}
+
+.cta-diamond-accent .diamond-line,
+.home-closing-cta .title-diamond-accent .diamond-line,
+.projects-forest-cta .title-diamond-accent .diamond-line {
+  display: inline-block;
+  width: 44px;
+  height: 1.5px;
+  background: rgba(142, 110, 62, 0.65);
+}
+
+.cta-diamond-accent .diamond-gem,
+.home-closing-cta .title-diamond-accent .diamond-gem,
+.projects-forest-cta .title-diamond-accent .diamond-gem {
+  color: #8e6e3e;
+  font-size: 0.60rem;
+  line-height: 1;
+}
+
+/* Elegant Dark Forest-Green Heading */
+.home-closing-cta h2,
+.home-closing-cta .cta-bar-title,
+.projects-forest-cta h2,
+.projects-forest-cta .cta-bar-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif !important;
+  font-size: clamp(1.9rem, 3.2vw, 2.85rem) !important;
+  font-weight: 500 !important;
+  letter-spacing: 2.8px !important;
+  text-transform: uppercase !important;
+  color: #162e20 !important;
+  margin: 0 auto 16px auto !important;
+  line-height: 1.25 !important;
+  max-width: 820px !important;
+  text-align: center !important;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+/* Description Text */
+.home-closing-cta p,
+.home-closing-cta .cta-bar-desc,
+.projects-forest-cta p,
+.projects-forest-cta .cta-bar-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #3d3b37 !important;
+  font-size: clamp(0.88rem, 1.05vw, 0.98rem) !important;
+  line-height: 1.7 !important;
+  font-weight: 400 !important;
+  max-width: 650px !important;
+  margin: 0 auto 28px auto !important;
+  text-align: center !important;
+}
+
+/* Actions Row: Centered with 16px gap */
+.home-closing-actions,
+.cta-bar-actions-group {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  margin: 0 auto !important;
+}
+
+/* Primary Button: Solid Dark-Green */
+.home-closing-cta .cta-rectangle,
+.home-closing-cta .cta-bar-btn,
+.projects-forest-cta .cta-bar-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 46px !important;
+  padding: 0 28px !important;
+  background: #182c20 !important;
+  color: #ffffff !important;
+  border: 1px solid #182c20 !important;
+  border-radius: 2px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: 0 3px 10px rgba(24, 44, 32, 0.22) !important;
+}
+
+.home-closing-cta .cta-rectangle:hover,
+.home-closing-cta .cta-bar-btn:hover,
+.projects-forest-cta .cta-bar-btn:hover {
+  background: #244230 !important;
+  border-color: #244230 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(24, 44, 32, 0.32) !important;
+}
+
+/* Secondary Button: Outlined with Warm Gold Border & Dark-Green Text */
+.home-closing-cta .cta-rectangle:nth-child(2),
+.home-closing-cta .cta-bar-btn-secondary,
+.projects-forest-cta .cta-bar-btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  height: 46px !important;
+  padding: 0 28px !important;
+  background: rgba(220, 206, 185, 0.25) !important;
+  color: #182c20 !important;
+  border: 1px solid rgba(165, 138, 98, 0.85) !important;
+  border-radius: 2px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-shadow: none !important;
+}
+
+.home-closing-cta .cta-rectangle:nth-child(2):hover,
+.home-closing-cta .cta-bar-btn-secondary:hover,
+.projects-forest-cta .cta-bar-btn-secondary:hover {
+  background: rgba(165, 138, 98, 0.18) !important;
+  border-color: #182c20 !important;
+  color: #182c20 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(24, 44, 32, 0.12) !important;
 }
 
 /* C. About Us Editorial Layout (No repetitive boxed cards, no dashes) */
@@ -4028,42 +4261,47 @@ select.form-control:focus {
   margin: 0 auto;
 }
 
-/* Projects Showcase Section */
+/* Projects Showcase Section - One Continuous Architectural Environment */
 .projects-editorial-section {
   position: relative;
-  background-color: #f7f3ec;
-  background-image: 
-    radial-gradient(circle at 50% 12%, rgba(255, 255, 255, 0.75) 0%, transparent 65%),
-    url('assets/limestone-wall-texture.jpg');
-  background-size: cover;
+  background-color: #f6f2ea;
+  background-image: url('assets/avenue-stone-seamless.jpg');
+  background-repeat: repeat-y;
   background-position: center top;
-  padding: 0 24px 65px 24px;
+  background-size: 100% auto;
+  padding: 0 24px 60px 24px;
   overflow: hidden;
 }
 
+/* Left architectural frame: sunlit limestone wall, cascading olive branches, leaf shadows running continuously */
 .projects-editorial-section::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 175px;
-  height: 100%;
-  background: url('assets/foliage-left-pillar.png') no-repeat left top;
-  background-size: 175px auto;
+  bottom: 0;
+  width: 250px;
+  background-image: url('assets/avenue-pillar-seamless.png');
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 250px auto;
   pointer-events: none;
   z-index: 1;
   opacity: 0.95;
 }
 
+/* Right architectural frame: vertical timber wood slats architectural screen running continuously */
 .projects-editorial-section::after {
   content: '';
   position: absolute;
   top: 0;
   right: 0;
-  width: 175px;
-  height: 100%;
-  background: url('assets/foliage-right-pillar.png') no-repeat right top;
-  background-size: 175px auto;
+  bottom: 0;
+  width: 250px;
+  background-image: url('assets/avenue-slats-seamless.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: 250px auto;
   pointer-events: none;
   z-index: 1;
   opacity: 0.95;
@@ -4086,7 +4324,7 @@ select.form-control:focus {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin: 0 auto 46px auto;
+  margin: 0 auto 42px auto;
   flex-wrap: wrap;
   position: relative;
   z-index: 5;
@@ -4141,7 +4379,7 @@ select.form-control:focus {
 .projects-page .editorial-group-title {
   text-align: center;
   max-width: 750px;
-  margin: 0 auto 30px auto;
+  margin: 0 auto 28px auto;
 }
 
 .projects-page .editorial-group-title .heading-eyebrow {
@@ -4161,15 +4399,40 @@ select.form-control:focus {
   text-transform: uppercase;
   color: #162a1e;
   margin-top: 5px;
+  margin-bottom: 0;
   line-height: 1.2;
+}
+
+/* Diamond Line Ornament under Title */
+.projects-page .title-diamond-accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px auto 0 auto;
+}
+
+.projects-page .diamond-line {
+  display: inline-block;
+  width: 42px;
+  height: 1px;
+  background: rgba(197, 168, 128, 0.65);
+}
+
+.projects-page .diamond-gem {
+  color: #c5a880;
+  font-size: 0.55rem;
+  line-height: 1;
 }
 
 /* Category 1: OUR LEGACY (8 cards - 4 columns x 2 rows) */
 .projects-page #completed .delivered-gallery-grid {
   display: grid !important;
   grid-template-columns: repeat(4, 1fr) !important;
-  gap: 22px !important;
+  column-gap: 22px !important;
+  row-gap: 28px !important;
   align-items: stretch !important;
+  margin: 0 auto !important;
 }
 
 /* Category 2: ONGOING PROJECTS (5 cards - Desktop 3 + 2 layout with centered 2nd row) */
@@ -4177,8 +4440,10 @@ select.form-control:focus {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
-  gap: 22px !important;
+  column-gap: 22px !important;
+  row-gap: 28px !important;
   align-items: stretch !important;
+  margin: 0 auto !important;
 }
 
 .projects-page #ongoing .delivered-card {
@@ -4192,8 +4457,10 @@ select.form-control:focus {
   display: flex !important;
   flex-wrap: wrap !important;
   justify-content: center !important;
-  gap: 22px !important;
+  column-gap: 22px !important;
+  row-gap: 28px !important;
   align-items: stretch !important;
+  margin: 0 auto !important;
 }
 
 .projects-page #layouts .delivered-card {
@@ -4204,13 +4471,13 @@ select.form-control:focus {
 
 /* Luxury Architectural Project Cards */
 .projects-page .delivered-card {
-  background: #ffffff;
-  border: 1px solid rgba(197, 168, 128, 0.42);
+  background: #fbf9f5;
+  border: 1px solid rgba(197, 168, 128, 0.45);
   border-radius: 2px;
   overflow: hidden;
   box-shadow: 
-    0 6px 20px -2px rgba(22, 42, 30, 0.05),
-    0 1px 3px rgba(0, 0, 0, 0.03);
+    0 4px 18px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.02);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -4222,8 +4489,8 @@ select.form-control:focus {
   transform: translateY(-4px);
   border-color: #b59365;
   box-shadow: 
-    0 16px 32px -4px rgba(22, 42, 30, 0.10),
-    0 2px 8px rgba(197, 168, 128, 0.18);
+    0 14px 30px -4px rgba(22, 42, 30, 0.09),
+    0 2px 8px rgba(197, 168, 128, 0.16);
 }
 
 /* Image Container with Crisp Architectural Framing */
@@ -4269,13 +4536,13 @@ select.form-control:focus {
 
 /* Card Body & Information Panel */
 .projects-page .delivered-body {
-  padding: 22px 18px 20px 18px;
+  padding: 20px 18px 18px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   flex: 1;
-  background: #ffffff;
+  background: #fbf9f5;
   position: relative;
 }
 
@@ -4328,23 +4595,24 @@ select.form-control:focus {
   font-weight: 400;
 }
 
-/* Location Plaque */
+/* Location Plaque with Location Pin Icon */
 .projects-page .delivered-loc {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.68rem !important;
-  color: #4b443a !important;
+  font-size: 0.67rem !important;
+  color: #4a443b !important;
   letter-spacing: 0.4px !important;
-  margin: auto 0 14px 0 !important;
+  margin: auto 0 13px 0 !important;
   padding: 6px 12px !important;
-  background: #f4f0e8 !important;
-  border: 1px solid rgba(197, 168, 128, 0.40) !important;
+  background: #f2ede4 !important;
+  border: 1px solid rgba(197, 168, 128, 0.45) !important;
   border-radius: 2px !important;
   width: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 3px;
+  line-height: 1.3;
 }
 
 .projects-page .delivered-loc strong {
@@ -4354,6 +4622,20 @@ select.form-control:focus {
   text-transform: uppercase;
   font-size: 0.65rem;
   margin-right: 2px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.projects-page .delivered-loc strong::before {
+  content: '';
+  display: inline-block;
+  width: 9px;
+  height: 12px;
+  margin-right: 5px;
+  vertical-align: -1px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23162a1e'%3E%3Cpath d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* Action Buttons */
@@ -4404,9 +4686,9 @@ select.form-control:focus {
 
 /* Secondary button: ENQUIRE PROJECT */
 .projects-page .delivered-action .cta-rectangle:not(.dark) {
-  background: #ffffff;
+  background: #fbf9f5;
   color: #182c20;
-  border: 1px solid rgba(24, 44, 32, 0.45);
+  border: 1px solid rgba(24, 44, 32, 0.40);
 }
 
 .projects-page .delivered-action .cta-rectangle:not(.dark):hover {
@@ -4436,100 +4718,23 @@ select.form-control:focus {
 #pathardi-vadner-nx-2 .delivered-img-wrap img { object-position: center center; }
 
 /* =========================================================
-   PREMIUM FOREST-GREEN ENQUIRY SECTION (Inspired by Reference)
+   LEGACY COMPATIBILITY: CTA BAR LAYOUT (Defaults to Centered Architecture)
    ========================================================= */
-.projects-forest-cta {
-  position: relative;
-  background-color: #14281b;
-  background-image: 
-    radial-gradient(circle at 50% 25%, rgba(27, 56, 38, 0.85) 0%, rgba(18, 38, 25, 0.98) 100%),
-    url('assets/projects-cta-green-bg.jpg');
-  background-size: cover;
-  background-position: center center;
-  color: #ffffff;
-  padding: 72px 24px;
+.cta-bar-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  overflow: hidden;
-  border-top: 1px solid rgba(197, 168, 128, 0.35);
-}
-
-.projects-forest-cta .cta-content-wrapper {
-  max-width: 820px;
+  gap: 0;
+  max-width: 860px;
   margin: 0 auto;
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
-.projects-forest-cta .cta-eyebrow-line-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  margin-bottom: 14px;
-}
-
-.projects-forest-cta .cta-gold-line {
-  display: inline-block;
-  width: 48px;
-  height: 1px;
-  background: rgba(197, 168, 128, 0.65);
-}
-
-.projects-forest-cta .cta-eyebrow-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 3.5px;
-  color: #c5a880;
-  text-transform: uppercase;
-}
-
-.projects-forest-cta .cta-heading-serif {
-  font-family: 'Cormorant Garamond', 'Philosopher', serif;
-  font-size: clamp(1.85rem, 3.2vw, 2.5rem);
-  font-weight: 500;
-  letter-spacing: 3px;
-  color: #ffffff;
-  text-transform: uppercase;
-  margin: 0 0 12px 0;
-  line-height: 1.25;
-}
-
-.projects-forest-cta .cta-subheading-text {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.86rem;
-  color: rgba(245, 240, 230, 0.85);
-  max-width: 680px;
-  margin: 0 auto 26px auto;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-.projects-forest-cta .cta-enquire-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 32px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.70rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #ffffff;
-  background: rgba(18, 36, 24, 0.55);
-  border: 1px solid rgba(197, 168, 128, 0.65);
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.projects-forest-cta .cta-enquire-btn:hover {
-  background: #c5a880;
-  color: #162a1e;
-  border-color: #c5a880;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  transform: translateY(-1px);
+.cta-bar-divider {
+  display: none !important;
 }
 
 /* =========================================================
@@ -5872,5 +6077,1349 @@ select.form-control:focus {
   }
 }
 
+/* =========================================================
+   ABOUT PAGE - SIGNATURE LUXURY CONTINUOUS ARCHITECTURAL REDESIGN
+   ========================================================= */
+
+.about-page {
+  background-color: #faf6f0;
+  color: #162a1e;
+  overflow-x: hidden;
+}
 
 
+/* Continuous Architectural Environment */
+.about-continuous-environment {
+  position: relative;
+  background-color: #f6f2ea;
+  background-image: url('assets/avenue-stone-seamless.jpg');
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+  overflow: hidden;
+}
+
+/* Left architectural frame: sunlit limestone column with draping greenery */
+.about-continuous-environment::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  background-image: url('assets/avenue-pillar-seamless.png');
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: 220px auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+/* Right architectural frame: limestone column with sunlight & olive greenery */
+.about-continuous-environment::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 220px;
+  background-image: url('assets/about-pillar-right-seamless.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: 220px auto;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.92;
+}
+
+.about-container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Section 1: Hero */
+.about-hero-section {
+  padding: 165px 0 65px 0;
+  position: relative;
+}
+
+.about-hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.about-hero-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #76572a;
+  margin-bottom: 14px;
+}
+
+.about-hero-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.7rem, 4.4vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 4px;
+  line-height: 1.08;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 22px 0;
+}
+
+.about-hero-desc {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: clamp(0.90rem, 1.02vw, 1rem);
+  line-height: 1.8;
+  color: #4a453e;
+  max-width: 480px;
+  margin: 0;
+}
+
+.about-hero-media-wrap {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 48px rgba(22, 42, 30, 0.12);
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  background: #eae5dc;
+}
+
+.about-hero-media-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-hero-media-wrap:hover img {
+  transform: scale(1.02);
+}
+
+/* Section 2: Our Story */
+.about-story-section {
+  padding: 55px 0 65px 0;
+  position: relative;
+}
+
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-story-col-left .story-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: #76572a;
+  margin-bottom: 10px;
+}
+
+.about-story-col-left h2 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.3rem, 3.4vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0 0 22px 0;
+  line-height: 1.15;
+}
+
+.about-story-col-left .story-lead-quote {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 1.45vw, 1.4rem);
+  line-height: 1.6;
+  color: #1e3324;
+  border-left: 2.5px solid #c5a880;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.about-story-col-right p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.82;
+  color: #4a453e;
+  margin: 0 0 16px 0;
+}
+
+.about-story-col-right p:last-child {
+  margin-bottom: 0;
+}
+
+.about-story-col-right strong {
+  color: #162a1e;
+  font-weight: 600;
+}
+
+/* Section 3: Achievements Bar */
+.about-achievements-bar {
+  padding: 10px 0 65px 0;
+  position: relative;
+}
+
+.about-achievements-inner {
+  background: rgba(255, 252, 247, 0.60);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(197, 168, 128, 0.45);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.45);
+  padding: 22px 28px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+
+.about-stat-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 8px 16px;
+  position: relative;
+}
+
+.about-stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(197, 168, 128, 0.4);
+}
+
+.about-stat-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b89d74;
+  flex-shrink: 0;
+}
+
+.about-stat-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-stat-number {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 1.95rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #162a1e;
+  letter-spacing: 0.5px;
+}
+
+.about-stat-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: #635c52;
+  letter-spacing: 0.4px;
+  margin-top: 3px;
+}
+
+/* Section 3: Guiding Principles (Purpose, Aspiration & Philosophy) */
+.about-philosophy-editorial {
+  padding: 45px 0 85px 0;
+  position: relative;
+}
+
+.about-section-header-center {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 52px auto;
+}
+
+.about-section-header-center .section-eyebrow {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #76572a;
+  margin-bottom: 10px;
+}
+
+.about-section-header-center h2 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(2.3rem, 3.4vw, 2.9rem);
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #162a1e;
+  line-height: 1.18;
+  margin: 0 0 16px 0;
+}
+
+.about-section-header-center p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.94rem;
+  line-height: 1.75;
+  color: #595248;
+  margin: 0 auto;
+}
+
+.about-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.about-principle-col {
+  position: relative;
+  padding-right: 36px;
+}
+
+.about-principle-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 1px;
+  background: rgba(197, 168, 128, 0.4);
+}
+
+.principle-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.principle-num {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #c5a880;
+  line-height: 1;
+}
+
+.principle-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #162a1e;
+  margin: 0;
+}
+
+.about-principle-col p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.90rem;
+  line-height: 1.75;
+  color: #4a453e;
+  margin: 0;
+}
+
+.about-principle-col strong {
+  color: #162a1e;
+  font-weight: 700;
+}
+
+/* Section 6: Executive Leadership */
+.about-leadership-section {
+  padding: 50px 0 95px 0;
+  position: relative;
+}
+
+.about-directors-deck {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.director-dossier-card {
+  background: rgba(255, 252, 247, 0.75);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  border-radius: 4px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 24px;
+  align-items: start;
+  transition: all 0.3s ease;
+}
+
+.director-dossier-card:hover {
+  background: rgba(255, 254, 250, 0.92);
+  border-color: rgba(197, 168, 128, 0.7);
+  box-shadow: 0 16px 36px rgba(22, 42, 30, 0.07);
+  transform: translateY(-2px);
+}
+
+.director-card-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.director-photo-wrap {
+  width: 140px;
+  height: 160px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 168, 128, 0.4);
+  background: #e8e2d8;
+  margin-bottom: 12px;
+}
+
+.director-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+}
+
+.director-name-plate {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #162a1e;
+  text-transform: uppercase;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+}
+
+.director-designation {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #8c7657;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.director-pill {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #162a1e;
+  background: rgba(197, 168, 128, 0.20);
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  padding: 4px 8px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.director-card-right {
+  display: flex;
+  flex-direction: column;
+  padding-left: 8px;
+}
+
+.director-role-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #162a1e;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.director-responsibilities-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.director-responsibilities-list li {
+  position: relative;
+  padding-left: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #4a453e;
+  margin-bottom: 7px;
+}
+
+.director-responsibilities-list li:last-child {
+  margin-bottom: 0;
+}
+
+.director-responsibilities-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #c5a880;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1100px) {
+  .about-hero-grid,
+  .about-story-grid {
+    gap: 36px;
+  }
+  
+  .about-continuous-environment::before,
+  .about-continuous-environment::after {
+    width: 120px;
+    background-size: 120px auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-continuous-environment::before,
+  .about-continuous-environment::after {
+    display: none;
+  }
+  
+  .about-hero-grid,
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .about-achievements-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .about-stat-item:nth-child(2)::after {
+    display: none;
+  }
+  
+  .about-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .about-principle-col {
+    padding-right: 0;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(197, 168, 128, 0.4);
+  }
+  
+  .about-principle-col:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
+  .about-principle-col:not(:last-child)::after {
+    display: none;
+  }
+  
+  .about-directors-deck {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 580px) {
+  .about-hero-section {
+    padding: 120px 0 45px 0;
+  }
+  
+  .about-container {
+    padding: 0 20px;
+  }
+  
+  .about-achievements-inner {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 18px;
+  }
+  
+  .about-stat-item:not(:last-child)::after {
+    display: none;
+  }
+  
+  .about-stat-item {
+    justify-content: flex-start;
+  }
+  
+  .director-dossier-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  .director-photo-wrap {
+    margin: 0 auto 12px auto;
+  }
+  
+  .director-card-left {
+    text-align: center;
+  }
+  
+  .director-card-right {
+    padding-left: 0;
+  }
+}
+
+/* ==========================================================================
+   SERVICES & CONTACT PAGES - LUXURY ARCHITECTURAL EDITORIAL REDESIGN
+   Exact match to Projects Page Design System:
+   - Warm beige, natural stone-textured backgrounds (#f6f2ea + avenue-stone-seamless.jpg)
+   - Left architectural pillar frame & Right architectural slats frame
+   - Forest green, ivory, and muted gold colour palette
+   - Elegant serif headings (Cormorant Garamond / Philosopher)
+   - Title diamond accents and refined Plus Jakarta Sans body typography
+   - Continuous uninterrupted visual flow from hero to closing CTA and footer
+   ========================================================================== */
+
+/* Page Backgrounds */
+.services-page,
+.contact-page {
+  background-color: #faf7f2;
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES & CONTACT EDITORIAL HERO
+   -------------------------------------------------------------------------- */
+.services-editorial-hero,
+.contact-editorial-hero {
+  position: relative;
+  background-color: #faf7f2;
+  padding: 155px 24px 44px 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES & CONTACT CONTINUOUS STONE-TEXTURED SECTION
+   -------------------------------------------------------------------------- */
+.services-editorial-section,
+.contact-editorial-section {
+  position: relative;
+  background-color: #f6f2ea;
+  background-image: url('assets/avenue-stone-seamless.jpg');
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+  padding: 0 clamp(20px, 4vw, 50px) 70px clamp(20px, 4vw, 50px);
+  overflow: hidden;
+}
+
+/* Left architectural frame: sunlit limestone pillar with olive foliage */
+.services-editorial-section::before,
+.contact-editorial-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: clamp(90px, 9.5vw, 150px);
+  background-image: url('assets/avenue-pillar-seamless.png');
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: auto 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+}
+
+/* Right architectural frame: vertical timber architectural slats */
+.services-editorial-section::after,
+.contact-editorial-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: clamp(90px, 9.5vw, 150px);
+  background-image: url('assets/avenue-slats-seamless.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: auto 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+}
+
+.services-editorial-section > .container,
+.contact-editorial-section > .container {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 clamp(16px, 2.5vw, 36px);
+}
+
+/* Diamond Line Ornament under Titles (Center & Left variants) */
+.title-diamond-accent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px auto 0 auto;
+}
+
+.title-diamond-accent.left-aligned {
+  justify-content: flex-start;
+  margin: 10px 0 0 0;
+}
+
+.diamond-line {
+  display: inline-block;
+  width: 44px;
+  height: 1.5px;
+  background: rgba(142, 108, 55, 0.65);
+}
+
+.diamond-gem {
+  color: #7a5824;
+  font-size: 0.60rem;
+  line-height: 1;
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES PAGE: ARCHITECTURAL DISCIPLINE CARDS
+   -------------------------------------------------------------------------- */
+.services-disciplines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 52px;
+  margin: 10px auto 0 auto;
+  max-width: 1060px;
+}
+
+.services-discipline-card {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(175, 145, 100, 0.35);
+  border-radius: 0;
+  box-shadow: none;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 48px;
+  padding: 10px 0 52px 0;
+  position: relative;
+  overflow: visible;
+}
+
+.services-discipline-card:last-child {
+  border-bottom: none;
+  padding-bottom: 10px;
+}
+
+.services-discipline-card:hover {
+  transform: none;
+  border-color: rgba(175, 145, 100, 0.35);
+  box-shadow: none;
+}
+
+.services-discipline-card.reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.services-discipline-card.reverse .service-detail-content {
+  order: 2;
+  padding-left: 0;
+  padding-right: clamp(0px, 1.5vw, 18px);
+}
+
+.services-discipline-card.reverse .service-detail-img-wrap {
+  order: 1;
+}
+
+/* Discipline Content Panel */
+.services-discipline-card .service-detail-content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+  padding-left: clamp(0px, 1.5vw, 18px);
+}
+
+.services-discipline-card .heading-eyebrow {
+  color: #7a5824;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: inline-block;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.services-discipline-card h3 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(1.75rem, 2.3vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #0c1810;
+  margin: 4px 0 0 0;
+  line-height: 1.22;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.services-discipline-card p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.75;
+  color: #17241c;
+  margin: 18px 0 22px 0;
+  font-weight: 500;
+}
+
+/* Feature Bullets */
+.services-discipline-card .service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.services-discipline-card .service-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.87rem;
+  color: #0e1a12;
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.services-discipline-card .pillar-icon-box {
+  background: #0f2316;
+  color: #d6be96;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 6px rgba(15, 35, 22, 0.28);
+  border: 1px solid rgba(175, 145, 100, 0.45);
+}
+
+/* Discipline Image Framing */
+.services-discipline-card .service-detail-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #ebe5d8;
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  box-shadow: 0 8px 24px rgba(22, 42, 30, 0.07);
+}
+
+.services-discipline-card .service-detail-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.services-discipline-card:hover .service-detail-img-wrap img {
+  transform: scale(1.03);
+}
+
+/* Secondary Action button for closing CTA is styled globally under .home-closing-cta */
+
+/* --------------------------------------------------------------------------
+   CONTACT US PAGE: SEAMLESS ARCHITECTURAL GRID & LUXURY FORM
+   -------------------------------------------------------------------------- */
+.contact-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 56px;
+  align-items: start;
+  margin-top: 15px;
+}
+
+/* Column 1: Corporate Info directly on natural stone background */
+.contact-corporate-panel {
+  background: transparent;
+  color: #162a1e;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-corporate-panel .heading-eyebrow {
+  color: #7a5824;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: inline-block;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.contact-corporate-panel h3 {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(1.8rem, 2.3vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #0c1810;
+  margin: 4px 0 0 0;
+  line-height: 1.22;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.contact-corporate-panel p.sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #17241c;
+  margin: 16px 0 28px 0;
+  font-weight: 500;
+}
+
+.contact-corporate-panel .contact-details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.contact-corporate-panel .contact-item-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-corporate-panel .contact-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  background: #0f2316;
+  border: 1px solid rgba(175, 145, 100, 0.45);
+  color: #d6be96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  box-shadow: 0 2px 8px rgba(15, 35, 22, 0.22);
+}
+
+.contact-corporate-panel .contact-item-content h4 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.70rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #7a5824;
+  font-weight: 800;
+  margin: 0 0 4px 0;
+}
+
+.contact-corporate-panel .contact-item-content p {
+  color: #0e1a12;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.86rem;
+  line-height: 1.6;
+  margin: 0 0 4px 0;
+  font-weight: 600;
+}
+
+.contact-corporate-panel .contact-item-content a {
+  color: #0c1810;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.contact-corporate-panel .contact-item-content a:hover {
+  color: #7a5824;
+  text-decoration: underline;
+}
+
+.contact-hours-plaque {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.contact-hours-plaque-inner {
+  padding: 16px 0 0 0;
+  background: transparent;
+  backdrop-filter: none;
+  border: none;
+  border-top: 1px solid rgba(197, 168, 128, 0.35);
+  border-radius: 0;
+}
+
+.contact-hours-tag {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #7a5824;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.contact-hours-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #0c1810;
+  font-size: 0.86rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Column 2: Enquiry Form directly on natural stone background */
+.contact-form-panel {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form-header {
+  margin-bottom: 24px;
+}
+
+.contact-form-header .heading-eyebrow {
+  color: #7a5824;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: inline-block;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.45);
+}
+
+.contact-form-header .form-title {
+  font-family: 'Cormorant Garamond', 'Philosopher', serif;
+  font-size: clamp(1.8rem, 2.3vw, 2.35rem);
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #0c1810;
+  margin: 4px 0 0 0;
+  line-height: 1.22;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.contact-form-header .form-subtitle {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #17241c;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 14px 0 0 0;
+  font-weight: 500;
+}
+
+/* Form Fields */
+.contact-form-panel .form-group {
+  margin-bottom: 18px;
+}
+
+.contact-form-panel .form-row-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-form-panel label {
+  display: block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #0c1810;
+  margin-bottom: 6px;
+}
+
+.contact-form-panel .required-mark {
+  color: #7a5824;
+  font-weight: 800;
+}
+
+.contact-form-panel .form-control {
+  width: 100%;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(197, 168, 128, 0.55);
+  border-radius: 2px;
+  color: #162a1e;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  padding: 12px 14px;
+  transition: all 0.25s ease;
+}
+
+.contact-form-panel .form-control:focus {
+  background: #ffffff;
+  border-color: #182c20;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(24, 44, 32, 0.12);
+}
+
+.contact-form-panel .form-control::placeholder {
+  color: #8c8275;
+}
+
+.contact-form-panel select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23162a1e' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+.contact-form-panel textarea.form-control {
+  min-height: 85px;
+  resize: vertical;
+}
+
+/* Submit Button Matching Projects Page */
+.contact-form-panel .btn-enquiry-submit {
+  background: #182c20;
+  color: #ffffff;
+  border: 1px solid #182c20;
+  height: 48px;
+  width: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 6px;
+  box-shadow: 0 3px 8px rgba(24, 44, 32, 0.18);
+}
+
+.contact-form-panel .btn-enquiry-submit:hover {
+  background: #244230;
+  border-color: #244230;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(24, 44, 32, 0.26);
+}
+
+.contact-form-panel .btn-enquiry-submit:active {
+  transform: translateY(0);
+}
+
+/* Feedback Messages */
+.form-feedback {
+  display: none;
+  padding: 12px 16px;
+  border-radius: 2px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.80rem;
+  line-height: 1.5;
+  margin-top: 14px;
+}
+
+.form-feedback.success {
+  background: #162a1e;
+  color: #ffffff;
+  border: 1px solid #c5a880;
+}
+
+.form-feedback.success strong {
+  color: #c5a880;
+}
+
+.form-feedback.error {
+  background: #fbf2f2;
+  color: #8c2424;
+  border: 1px solid #e0b4b4;
+}
+
+/* Architectural Framing for Google Map */
+.contact-map-plaque {
+  margin-top: 56px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid rgba(197, 168, 128, 0.45);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+  background: transparent;
+}
+
+.contact-map-header {
+  background: #182c20;
+  color: #c5a880;
+  padding: 12px 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid rgba(197, 168, 128, 0.35);
+}
+
+.contact-map-header svg {
+  color: #c5a880;
+  flex-shrink: 0;
+}
+
+.contact-map-plaque iframe {
+  display: block;
+  width: 100%;
+  height: 380px;
+  border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES FOR SERVICES & CONTACT
+   -------------------------------------------------------------------------- */
+@media (max-width: 1240px) {
+  .services-editorial-section::before,
+  .services-editorial-section::after,
+  .contact-editorial-section::before,
+  .contact-editorial-section::after {
+    width: 90px;
+    opacity: 0.75;
+  }
+  .services-discipline-card {
+    gap: 36px;
+  }
+  .contact-editorial-grid {
+    gap: 38px;
+  }
+}
+
+@media (max-width: 960px) {
+  .services-editorial-section::before,
+  .services-editorial-section::after,
+  .contact-editorial-section::before,
+  .contact-editorial-section::after {
+    display: none;
+  }
+  .services-discipline-card,
+  .services-discipline-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    padding: 24px 0 36px 0;
+  }
+  .services-discipline-card.reverse .service-detail-content {
+    order: 1;
+  }
+  .services-discipline-card.reverse .service-detail-img-wrap {
+    order: 2;
+  }
+  .services-discipline-card .service-detail-content,
+  .services-discipline-card.reverse .service-detail-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .contact-editorial-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .contact-corporate-panel,
+  .contact-form-panel {
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-editorial-hero,
+  .contact-editorial-hero {
+    padding: 130px 18px 36px 18px;
+  }
+  .services-editorial-section,
+  .contact-editorial-section {
+    padding: 0 16px 45px 16px !important;
+  }
+  .services-disciplines-list {
+    gap: 32px;
+  }
+  .services-discipline-card {
+    padding: 16px 0 30px 0;
+  }
+  .services-discipline-card h3 {
+    font-size: 1.48rem;
+    color: #0c1810;
+    font-weight: 600;
+  }
+  .services-discipline-card p {
+    font-size: 0.85rem;
+    line-height: 1.65;
+    color: #17241c;
+    font-weight: 500;
+    margin: 14px 0 18px 0;
+  }
+  .services-discipline-card .service-feature-item {
+    font-size: 0.84rem;
+    color: #0e1a12;
+    font-weight: 600;
+  }
+  .services-discipline-card .heading-eyebrow {
+    font-size: 0.72rem;
+    color: #7a5824;
+    font-weight: 800;
+  }
+  .contact-form-panel .form-row-dual {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .contact-corporate-panel,
+  .contact-form-panel {
+    padding: 0;
+  }
+  .contact-map-plaque iframe {
+    height: 300px;
+  }
+}

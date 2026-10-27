@@ -25,6 +25,13 @@
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Check session state immediately to prevent intro flash on refresh or internal navigation -->
+  <script>
+    if (sessionStorage.getItem('tabd_intro_played')) {
+      document.documentElement.classList.add('skip-intro');
+    }
+  </script>
 </head>
 <body class="home">
 
@@ -308,7 +315,7 @@
               </button>
               
               <div class="nav-rail-pills">
-                <button class="nav-rail-num active" data-index="0" type="button" aria-label="Select 01 Urbania">
+                <button class="nav-rail-num active" data-index="0" type="button" aria-label="Select 01 Aura">
                   <span class="rail-digit current-rail-digit">01</span>
                 </button>
                 <span class="rail-divider"></span>
@@ -330,15 +337,15 @@
           <div class="landmarks-cards-wrap swiper landmarks-swiper">
             <div class="landmarks-cards-grid swiper-wrapper">
 
-              <!-- Card 1: The Avenue Urbania -->
+              <!-- Card 1: The Avenue Aura -->
               <div class="swiper-slide landmark-slide-item">
-                <article class="landmark-editorial-card card-urbania is-active-focus" data-card-index="0">
+                <article class="landmark-editorial-card card-aura is-active-focus" data-card-index="0">
                   <div class="card-media-wrap">
-                    <img src="assets/25-scaled.jpg" alt="The Avenue Urbania Luxury High-Rise" class="card-media-img" loading="lazy" />
+                    <img src="assets/AURA-view.jpg" alt="The Avenue Aura Planned Residences" class="card-media-img" loading="lazy" />
                     <div class="card-badge-overlay">
                       <span class="badge-num">01</span>
                       <div class="badge-text-group">
-                        <span class="badge-status">ONGOING</span>
+                        <span class="badge-status">OUR LEGACY</span>
                         <span class="badge-type">RESIDENTIAL</span>
                       </div>
                       <span class="badge-accent-line"></span>
@@ -347,12 +354,12 @@
                   
                   <div class="card-content-panel panel-ivory">
                     <div class="card-logo-holder">
-                      <img src="assets/logo-avenue-urbania.png" alt="The Avenue Urbania Logo" class="card-brand-logo logo-urbania" />
+                      <img src="assets/logo-avenue-aura.png" alt="The Avenue Aura Logo" class="card-brand-logo logo-aura" />
                     </div>
-                    <h3 class="card-name-title">THE AVENUE URBANIA</h3>
-                    <p class="card-desc-text">3 &amp; 4 BHK Luxury Urban Living &bull; Govind Nagar</p>
+                    <h3 class="card-name-title">THE AVENUE AURA</h3>
+                    <p class="card-desc-text">Timeless Planned Residences &bull; Govind Nagar</p>
                     <div class="card-action-bar">
-                      <a href="urbania.html" class="card-action-link" aria-label="Discover The Avenue Urbania">
+                      <a href="aura.html" class="card-action-link" aria-label="Discover The Avenue Aura">
                         <span class="action-label">DISCOVER PROJECT</span>
                         <span class="action-arrow-btn">
                           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -374,7 +381,7 @@
                     <div class="card-badge-overlay">
                       <span class="badge-num">02</span>
                       <div class="badge-text-group">
-                        <span class="badge-status">ONGOING</span>
+                        <span class="badge-status">OUR LEGACY</span>
                         <span class="badge-type">COMMERCIAL</span>
                       </div>
                       <span class="badge-accent-line"></span>
@@ -402,11 +409,11 @@
                 </article>
               </div>
 
-              <!-- Card 3: The Avenue Aura -->
+              <!-- Card 3: The Avenue Aryana -->
               <div class="swiper-slide landmark-slide-item">
-                <article class="landmark-editorial-card card-aura" data-card-index="2">
+                <article class="landmark-editorial-card card-aryana" data-card-index="2">
                   <div class="card-media-wrap">
-                    <img src="assets/AURA-view.jpg" alt="The Avenue Aura Planned Residences" class="card-media-img" loading="lazy" />
+                    <img src="assets/building-aaryana.jpg" alt="The Avenue Aryana Exclusive Residences" class="card-media-img" loading="lazy" />
                     <div class="card-badge-overlay">
                       <span class="badge-num">03</span>
                       <div class="badge-text-group">
@@ -419,12 +426,12 @@
                   
                   <div class="card-content-panel panel-ivory">
                     <div class="card-logo-holder">
-                      <img src="assets/logo-avenue-aura.png" alt="The Avenue Aura Logo" class="card-brand-logo logo-aura" />
+                      <img src="assets/logo-avenue-aaryana.png" alt="The Avenue Aryana Logo" class="card-brand-logo logo-aryana" />
                     </div>
-                    <h3 class="card-name-title">THE AVENUE AURA</h3>
-                    <p class="card-desc-text">Timeless Planned Residences &bull; Govind Nagar</p>
+                    <h3 class="card-name-title">THE AVENUE ARYANA</h3>
+                    <p class="card-desc-text">Exclusive 3 BHK Residences &bull; Karmayogi Nagar</p>
                     <div class="card-action-bar">
-                      <a href="aura.html" class="card-action-link" aria-label="Discover The Avenue Aura">
+                      <a href="aaryana.html" class="card-action-link" aria-label="Discover The Avenue Aryana">
                         <span class="action-label">DISCOVER PROJECT</span>
                         <span class="action-arrow-btn">
                           <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
@@ -469,13 +476,19 @@
          Minimalist, impactful closing band
          ========================================================================== -->
     <section class="home-closing-cta">
+      <div class="cta-bottom-plinth" aria-hidden="true"></div>
       <div class="container fadeUpAnimation">
-        <span class="heading-eyebrow" style="color: var(--color-gold-light);">CONNECT WITH THE AVENUE</span>
+        <span class="heading-eyebrow">CONNECT WITH THE AVENUE</span>
+        <div class="cta-diamond-accent">
+          <span class="diamond-line"></span>
+          <span class="diamond-gem">&#9670;</span>
+          <span class="diamond-line"></span>
+        </div>
         <h2>SHAPING ARCHITECTURAL LANDMARKS IN NASHIK</h2>
         <p>Explore exclusive residential sanctuaries and premium commercial addresses designed for distinction.</p>
         <div class="home-closing-actions">
-          <a href="projects.html" class="cta-rectangle">EXPLORE ALL PROJECTS</a>
-          <a href="contact.html" class="cta-rectangle">SCHEDULE SITE VISIT</a>
+          <a href="projects.html" class="cta-rectangle">EXPLORE ALL PROJECTS &rarr;</a>
+          <a href="contact.html" class="cta-rectangle">SCHEDULE SITE VISIT &rarr;</a>
         </div>
       </div>
     </section>
