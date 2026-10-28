@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Projects & Properties | The Avenue Builders & Developers (TABD)</title>
+  <meta name="description" content="Explore ongoing and completed residential and commercial projects by The Avenue Builders and Developers in Nashik, including Urbania, Flora, Aura, Bliss, Grandeur, and Casa." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="projects-page">
+
+  <!-- TOP NAVIGATION BAR -->
+  <div id="header" class="site-header">
+    <div class="menu-container">
+      <div class="menu-logo">
+        <a href="index.html" aria-label="The Avenue Builders & Developers">
+          <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders & Developers Logo" class="brand-logo-img" />
+        </a>
+      </div>
+
+      <div class="header-right-actions">
+        <a href="contact.html" class="btn-header-enquire">ENQUIRE NOW</a>
+        <div class="menu-cta">
+          <a href="#" class="menu-cta-menu-hamburger" aria-label="Toggle Full Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="headerMenuSlide">
+    <div class="menu-split-grid">
+      <!-- Left Panel: Brand Logo + Numbered Nav Menu Items (01 - 05) -->
+      <div class="menu-panel-nav">
+        <div class="menu-nav-top">
+          <div class="menu-slide-brand">
+            <a href="index.html" aria-label="The Avenue Builders & Developers">
+              <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders & Developers" />
+            </a>
+          </div>
+          <span class="menu-nav-tagline">Architectural Landmarks &bull; Est. 2019</span>
+        </div>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="menu-link">
+              <span class="nav-idx">01</span>
+              <span class="nav-title">HOME</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="about.html" class="menu-link">
+              <span class="nav-idx">02</span>
+              <span class="nav-title">ABOUT US</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="services.html" class="menu-link">
+              <span class="nav-idx">03</span>
+              <span class="nav-title">SERVICES</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="projects.html" class="menu-link active">
+              <span class="nav-idx">04</span>
+              <span class="nav-title">PROJECTS</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="contact.html" class="menu-link">
+              <span class="nav-idx">05</span>
+              <span class="nav-title">CONTACT US</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="menu-mobile-enquire">
+          <a href="contact.html" class="btn-header-enquire">ENQUIRE NOW</a>
+        </div>
+
+        <div class="menu-panel-nav-footer">
+          <p class="menu-subtext">Nashik&rsquo;s Premier Real Estate Development Group</p>
+        </div>
+      </div>
+
+      <!-- Right Panel: Architectural Visual + Close Button + Action Pills + Official Contact Info -->
+      <div class="menu-panel-action">
+        <div class="menu-action-bg" style="background-image: url('assets/hero-commercial-avenue.jpg');"></div>
+        <div class="menu-action-overlay"></div>
+
+        <div class="menu-action-header">
+          <button type="button" class="menu-close-trigger" aria-label="Close Navigation Menu">
+            <span class="close-symbol">&times;</span>
+            <span class="close-label">CLOSE</span>
+          </button>
+        </div>
+
+        <div class="menu-action-body">
+          <div class="menu-action-pills">
+            <a href="projects.html" class="action-pill pill-primary">
+              <span class="pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+              <span>START WITH A FLOOR PLAN</span>
+            </a>
+            <a href="contact.html" class="action-pill pill-secondary">
+              <span class="pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>TALK TO OUR TEAM</span>
+            </a>
+          </div>
+
+          <div class="menu-action-contact">
+            <span class="contact-eyebrow">CONTACT</span>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">PHONE:</span>
+              <span class="contact-meta-val"><a href="tel:9373632323">+91 9373632323</a> / <a href="tel:9175936496">+91 9175936496</a></span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">EMAIL:</span>
+              <span class="contact-meta-val"><a href="mailto:theavenuensk@gmail.com">theavenuensk@gmail.com</a></span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">HOURS:</span>
+              <span class="contact-meta-val">MON to SUN: 9:30 AM to 7:00 PM</span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">ADDRESS:</span>
+              <span class="contact-meta-val">Corporate Headquarters, The Avenue, Govind Nagar, Nashik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlaySlide"></div>
+
+  <main id="pageContent">
+    <!-- EDITORIAL INNER PAGE HERO -->
+    <section class="projects-editorial-hero">
+      <div class="projects-hero-backdrop"></div>
+      <div class="container">
+        <div class="projects-hero-inner fadeUpAnimation">
+          <div class="projects-hero-accent-line"></div>
+          <span class="heading-eyebrow">PORTFOLIO OF EXCELLENCE</span>
+          <h1 class="projects-hero-title">OUR ARCHITECTURAL LANDMARKS</h1>
+          <p class="projects-hero-desc">Discover our comprehensive collection of ongoing master developments and delivered landmark projects across Govind Nagar, Karmayogi Nagar, and prime Nashik locations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDITORIAL PROJECT SHOWCASE SECTION -->
+    <section class="projects-editorial-section">
+      <div class="projects-section-backdrop" aria-hidden="true"></div>
+      <div class="container">
+        
+        <!-- Filter Tabs -->
+        <div class="projects-filter-bar fadeUpAnimation">
+          <button class="filter-btn active" data-filter="completed">OUR LEGACY</button>
+          <button class="filter-btn" data-filter="ongoing">ONGOING PROJECTS</button>
+          <button class="filter-btn" data-filter="layouts">COMPLETED LAYOUTS</button>
+        </div>
+
+        <!-- SECTION A: DELIVERED LANDMARKS (OUR LEGACY) -->
+        <div class="projects-editorial-group" id="completed">
+          <div class="editorial-group-title fadeUpAnimation">
+            <span class="heading-eyebrow">PROVEN TRACK RECORD</span>
+            <h2>Our Legacy: Delivered Milestones</h2>
+            <div class="title-diamond-accent">
+              <span class="diamond-line"></span>
+              <span class="diamond-gem">&#9670;</span>
+              <span class="diamond-line"></span>
+            </div>
+          </div>
+
+          <div class="delivered-gallery-grid">
+            
+            <!-- Delivered 1: The Avenue Aura -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential" id="aura" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='aura.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="aura.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/hero-avenue-aura.jpg" alt="The Avenue Aura" />
+                </a>
+                <span class="delivered-badge">&check; Ready Possession</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="aura.html">
+                    <img src="assets/logo-avenue-aura.png" alt="The Avenue Aura" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="aura.html" style="color: inherit; text-decoration: none;">The Avenue Aura</a></h3>
+                <p>Step into a world of timeless elegance. Limited Edition 3 &amp; 4 BHK luxury residences, grand entrance promenade, 45+ ground &amp; rooftop amenities, and effortless connectivity.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="aura.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Aura" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 2: The Avenue Bliss -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential" id="bliss" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='bliss.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="bliss.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/hero-avenue-bliss.jpg" alt="The Avenue Bliss" />
+                </a>
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="bliss.html">
+                    <img src="assets/logo-avenue-bliss.png" alt="The Avenue Bliss" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="bliss.html" style="color: inherit; text-decoration: none;">The Avenue Bliss</a></h3>
+                <p>Perfect happiness and luxury you truly deserve. Features landscaped rooftop gardens, children's play area, video door phone security, and common power backup.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="bliss.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Bliss" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 3: The Avenue Flora -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed commercial" id="flora" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='flora.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="flora.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/The-Avenue-Flora-Cam-view-768x655-1.jpg" alt="The Avenue Flora" />
+                </a>
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="flora.html">
+                    <img src="assets/logo-avenue-flora.png" alt="The Avenue Flora" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="flora.html" style="color: inherit; text-decoration: none;">The Avenue Flora</a></h3>
+                <p>A new era of commercial prestige in Old Gangapur Naka. Highlights expansive ground showroom floor, exclusive amenities, fitness center, and multi-tier corporate office grids.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Old Gangapur Naka, Nashik</p>
+                <div class="delivered-action">
+                  <a href="flora.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Flora" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 4: The Avenue Commercial -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed commercial" id="commercial" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='commercial.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="commercial.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/hero-commercial-avenue.jpg" alt="The Avenue Commercial" />
+                </a>
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-commercial.png" alt="The Avenue Commercial" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Commercial</h3>
+                <p>Exclusive corporate offices and showroom spaces compendium delivered with prime roadside visibility and modern commercial infrastructure.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="commercial.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Commercial" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 5: The Avenue NX -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed commercial" id="nx">
+              <div class="delivered-img-wrap">
+                <img src="assets/nx-1.jpg" alt="The Avenue NX Delivered Landmark" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-nx.png" alt="The Avenue NX" class="delivered-logo" />
+                </div>
+                <h3>The Avenue NX</h3>
+                <p>A signature commercial address delivered with exceptional build quality, housing thriving business enterprises and retail establishments.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Plot 19 &amp; 20, Chowk #3, Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=NX&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=NX" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 6: The Avenue Grandeur -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential" id="grandeur">
+              <div class="delivered-img-wrap">
+                <img src="assets/Granduar.jpg" alt="The Avenue Grandeur Luxury Apartments" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-grandeur.png" alt="The Avenue Grandeur" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Grandeur</h3>
+                <p>Delivered adjacent to Govind Nagar Jogging Track with premium architectural design and joyous community spaces for families.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Beside Jogging Track, Karmayogi Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Grandeur&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Grandeur" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 7: The Avenue Casa -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential" id="casa">
+              <div class="delivered-img-wrap">
+                <img src="assets/casa.jpg" alt="The Avenue Casa Completed Project" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-casa.png" alt="The Avenue Casa" class="delivered-logo" />
+                </div>
+                <h3>The Avenue Casa</h3>
+                <p>A calm, well connected residential development providing peaceful domestic serenity right in the heart of Govind Nagar.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Opp. Karandikar Hospital, Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Casa&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Casa" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Delivered 8: The Avenue One -->
+            <article class="delivered-card fadeUpAnimation" data-category="completed residential" id="one">
+              <div class="delivered-img-wrap">
+                <img src="assets/one-1-2-727x1024-1.jpg" alt="The Avenue One" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-avenue-one.png" alt="The Avenue One" class="delivered-logo" />
+                </div>
+                <h3>The Avenue One</h3>
+                <p>A testament to Avenue craftsmanship and punctuality, standing tall behind Ganapati Temple with full occupancy and happy residents.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Behind Ganapati Temple, Govind Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=One&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=One" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- SECTION B: ONGOING PROJECTS -->
+        <div class="projects-editorial-group" id="ongoing">
+          <div class="editorial-group-title fadeUpAnimation">
+            <span class="heading-eyebrow">FEATURED MILESTONES</span>
+            <h2>Ongoing Architectural Projects</h2>
+            <div class="title-diamond-accent">
+              <span class="diamond-line"></span>
+              <span class="diamond-gem">&#9670;</span>
+              <span class="diamond-line"></span>
+            </div>
+          </div>
+
+          <div class="delivered-gallery-grid">
+            
+            <!-- Ongoing 1: The Avenue Urbania -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="urbania" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='urbania.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="urbania.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/25-scaled.jpg" alt="The Avenue Urbania" />
+                </a>
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="urbania.html">
+                    <img src="assets/logo-avenue-urbania.png" alt="The Avenue Urbania" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="urbania.html" style="color: inherit; text-decoration: none;">The Avenue Urbania</a></h3>
+                <p>Tiered celebrity lifestyle residences across twin 20-storey towers featuring Four Tiers of Living: Tier I Sky Residences (3 &amp; 4 BHK), Tier II Ground Community, Tier III Recreational Club, and Tier IV Sky Green Carpet Terrace with infinity pool at Parijat Nagar.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Tidke Colony Rd, Parijat Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="urbania.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Urbania" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 2: The Avenue Milestone -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential commercial" id="milestone" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='milestone.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="milestone.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/building-milestone.jpg" alt="The Avenue Milestone" />
+                </a>
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="milestone.html">
+                    <img src="assets/logo-avenue-milestone.png" alt="The Avenue Milestone" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="milestone.html" style="color: inherit; text-decoration: none;">The Avenue Milestone</a></h3>
+                <p>Nashik's first-ever 4.5 BHK prestigious residences across twin high-rise towers featuring unprecedented 12.5 ft ceiling heights, expansive living salons, ground street-facing commercial showrooms, and 50+ unique lifestyle experiences at Karmayogi Nagar.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Karmayogi Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="milestone.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Milestone" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 3: The Avenue Classico -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="classico" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='classico.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="classico.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/building-classico.jpg" alt="The Avenue Classico" />
+                </a>
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="classico.html">
+                    <img src="assets/logo-avenue-classico.png" alt="The Avenue Classico" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="classico.html" style="color: inherit; text-decoration: none;">The Avenue Classico</a></h3>
+                <p>Premium 4 BHK smart homes inspired by Roman classical architecture, featuring 1 Floor 1 Royal Family living, dual high-speed elevators, smart home automation, and corner road frontage at Karmayogi Nagar, R.D. Circle.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Karmayogi Nagar, R.D. Circle, Nashik</p>
+                <div class="delivered-action">
+                  <a href="classico.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Classico" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 4: The Avenue Aaryana -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing residential" id="aaryana" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='aaryana.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="aaryana.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/building-aaryana.jpg" alt="The Avenue Aaryana" />
+                </a>
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="aaryana.html">
+                    <img src="assets/logo-avenue-aaryana.png" alt="The Avenue Aaryana" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="aaryana.html" style="color: inherit; text-decoration: none;">The Avenue Aaryana</a></h3>
+                <p>Modern luxury exclusive 3 BHK apartments featuring 2 units per floor, private &amp; common rooftop terraces, 3-tier security, and unmatched connectivity at Karmayogi Nagar, Near R.D. Circle.</p>
+                <p class="delivered-loc"><strong>Location:</strong> R.D. Circle, Karmayogi Nagar, Nashik</p>
+                <div class="delivered-action">
+                  <a href="aaryana.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Aaryana" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Ongoing 5: Viraj Avenue -->
+            <article class="delivered-card fadeUpAnimation" data-category="ongoing commercial" id="viraj" onclick="if(!event.target.closest('.delivered-action a')) window.location.href='viraj.html';" style="cursor: pointer;">
+              <div class="delivered-img-wrap">
+                <a href="viraj.html" style="display: block; width: 100%; height: 100%;">
+                  <img src="assets/building-viraj.jpg" alt="Viraj Avenue" />
+                </a>
+                <span class="delivered-badge">&#9679; Ongoing</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <a href="viraj.html">
+                    <img src="assets/logo-viraj-avenue.png" alt="Viraj Avenue" class="delivered-logo" />
+                  </a>
+                </div>
+                <h3><a href="viraj.html" style="color: inherit; text-decoration: none;">Viraj Avenue</a></h3>
+                <p>Upcoming landmark offering modern office spaces, showrooms, shops, banquet hall, and hospital with 60M D.P. Road frontage opposite Bali Mandir, Panchavati Annex.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Opp. Bali Mandir, Panchavati Annex, Nashik</p>
+                <div class="delivered-action">
+                  <a href="viraj.html" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Viraj" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- SECTION C: COMPLETED LAYOUTS -->
+        <div class="projects-editorial-group" id="layouts">
+          <div class="editorial-group-title fadeUpAnimation">
+            <span class="heading-eyebrow">PLOTTED DEVELOPMENTS</span>
+            <h2>Completed Layouts &bull; Clear Title NA Plots</h2>
+            <div class="title-diamond-accent">
+              <span class="diamond-line"></span>
+              <span class="diamond-gem">&#9670;</span>
+              <span class="diamond-line"></span>
+            </div>
+          </div>
+
+          <div class="delivered-gallery-grid">
+            
+            <!-- Layout 1: Pathardi Vadner NX -->
+            <article class="delivered-card fadeUpAnimation" data-category="layouts" id="pathardi-vadner-nx">
+              <div class="delivered-img-wrap">
+                <img src="assets/layout-pathardi-vadner-nx.jpg" alt="Pathardi Vadner NX Plotted Layout" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-pathardi-vadner-nx.png" alt="Pathardi Vadner NX" class="delivered-logo" />
+                </div>
+                <h3>Pathardi Vadner NX</h3>
+                <p>A masterfully engineered residential plotted layout offering clear-title NA plots, robust infrastructure, wide internal avenue roads, and seamless arterial connectivity along the flourishing Pathardi-Vadner growth belt.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Pathardi - Vadner Road, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Pathardi-Vadner-NX&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Pathardi-Vadner-NX" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Layout 2: Indira Nagar NX -->
+            <article class="delivered-card fadeUpAnimation" data-category="layouts" id="indira-nagar-nx">
+              <div class="delivered-img-wrap">
+                <img src="assets/layout-indira-nagar-nx.jpg" alt="Indira Nagar NX Plotted Layout" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-indira-nagar-nx.png" alt="Indira Nagar NX" class="delivered-logo" />
+                </div>
+                <h3>Indira Nagar NX</h3>
+                <p>A prestigious plotted development featuring systematically demarcated residential NA plots with comprehensive civic utilities, underground cabling, lush green spaces, and direct proximity to central Indira Nagar.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Indira Nagar Annex, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Indira-Nagar-NX&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Indira-Nagar-NX" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Layout 3: Pathardi Vadner NX 2 -->
+            <article class="delivered-card fadeUpAnimation" data-category="layouts" id="pathardi-vadner-nx-2">
+              <div class="delivered-img-wrap">
+                <img src="assets/layout-pathardi-vadner-nx2.jpg" alt="Pathardi Vadner NX 2 Plotted Layout" />
+                <span class="delivered-badge">&check; Delivered</span>
+              </div>
+              <div class="delivered-body">
+                <div class="delivered-logo-wrap">
+                  <img src="assets/logo-pathardi-vadner-nx2.png" alt="Pathardi Vadner NX 2" class="delivered-logo" />
+                </div>
+                <h3>Pathardi Vadner NX 2</h3>
+                <p>The distinguished phase two plotted extension delivering prime NA residential plots with enhanced environmental landscaping, modern community amenities, street lighting, and exceptional capital growth potential.</p>
+                <p class="delivered-loc"><strong>Location:</strong> Pathardi - Vadner Road, Nashik</p>
+                <div class="delivered-action">
+                  <a href="contact.html?project=Pathardi-Vadner-NX-2&action=explore" class="cta-rectangle dark">EXPLORE PROJECT &rarr;</a>
+                  <a href="contact.html?project=Pathardi-Vadner-NX-2" class="cta-rectangle">ENQUIRE PROJECT &rarr;</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION BAND (DISCUSS YOUR SPACE REQUIREMENTS) -->
+    <section class="home-closing-cta">
+      <div class="cta-bottom-plinth" aria-hidden="true"></div>
+      <div class="container fadeUpAnimation">
+        <span class="heading-eyebrow">LET'S BUILD YOUR TOMORROW</span>
+        <div class="cta-diamond-accent">
+          <span class="diamond-line"></span>
+          <span class="diamond-gem">&#9670;</span>
+          <span class="diamond-line"></span>
+        </div>
+        <h2>DISCUSS YOUR SPACE REQUIREMENTS</h2>
+        <p>Get in touch with our experts to find the perfect residential or commercial space for your needs.</p>
+        <div class="home-closing-actions">
+          <a href="contact.html" class="cta-rectangle">ENQUIRE NOW &rarr;</a>
+          <a href="contact.html" class="cta-rectangle">SCHEDULE SITE VISIT &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LUXURY ARCHITECTURAL FOOTER -->
+  <footer class="site-footer projects-site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Logo Column -->
+        <div class="footer-box footer-brand-box">
+          <div class="footer-logo">
+            <a href="index.html" aria-label="The Avenue Builders & Developers">
+              <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders & Developers" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 1: Quick Links -->
+        <div class="footer-box">
+          <h4 class="footer-heading">QUICK LINKS</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Our Projects</a></li>
+            <li><a href="projects.html#layouts">Completed Layouts</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Our Projects -->
+        <div class="footer-box">
+          <h4 class="footer-heading">OUR PROJECTS</h4>
+          <ul class="footer-nav-list">
+            <li><a href="projects.html#ongoing">Ongoing Projects</a></li>
+            <li><a href="projects.html#completed">Our Legacy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Connect With Us -->
+        <div class="footer-box footer-connect-box">
+          <h4 class="footer-heading">CONNECT WITH US</h4>
+          <div class="footer-contact-rows">
+            <div class="footer-contact-row">
+              <svg class="footer-icon" width="13" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Govind Nagar, Nashik, Maharashtra 422009</span>
+            </div>
+            <div class="footer-contact-row">
+              <svg class="footer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><a href="tel:912532970707">+91 253 297 0707</a></span>
+            </div>
+            <div class="footer-contact-row">
+              <svg class="footer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span><a href="mailto:info@theavenue.co.in">info@theavenue.co.in</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: Follow Us -->
+        <div class="footer-box footer-follow-box">
+          <h4 class="footer-heading">FOLLOW US</h4>
+          <div class="footer-social-row">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43zM9.75 15.02V8.5l5.75 3.26-5.75 3.26z"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 The Avenue Builders and Developers. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -57,6 +57,16 @@ body {
   background-color: var(--color-white);
   line-height: 1.7;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Ensure stone/beige themed pages match page background so no white side gaps can ever appear */
+body.about-page,
+body.services-page,
+body.projects-page,
+body.contact-page {
+  background-color: #f6f2ea;
 }
 
 img {
@@ -804,14 +814,14 @@ button {
     display: inline-flex !important;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
     background: rgba(255, 255, 255, 0.08) !important;
     border-radius: 9999px !important;
-    padding: 5px 14px !important;
+    padding: 7px 18px !important;
     color: #ffffff !important;
-    font-size: 0.68rem !important;
+    font-size: 0.74rem !important;
     font-weight: 700 !important;
-    letter-spacing: 1px !important;
+    letter-spacing: 1.2px !important;
     text-transform: uppercase !important;
     text-decoration: none !important;
     box-shadow: none !important;
@@ -836,7 +846,7 @@ button {
   /* 2. Mobile Header spacing: logo, pill button, and hamburger neatly aligned */
   #header,
   .site-header {
-    padding: 16px 20px;
+    padding: 16px 20px 12px 20px;
   }
 
   #header.scrolled,
@@ -845,33 +855,34 @@ button {
   }
 
   .menu-logo {
-    max-width: 135px;
+    max-width: 155px;
     flex-shrink: 0;
   }
 
   .menu-logo img,
   .brand-logo-img {
-    max-height: 36px;
+    max-height: 42px;
     width: auto;
+    object-fit: contain;
   }
 
   .header-right-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
     flex-shrink: 0;
   }
 
   .menu-cta-menu-hamburger {
-    width: 32px;
-    height: 32px;
-    padding: 6px 2px;
-    gap: 5px;
+    width: 38px;
+    height: 38px;
+    padding: 6px 4px;
+    gap: 6px;
     justify-content: center;
   }
 
   .menu-cta-menu-hamburger span {
-    width: 22px !important;
+    width: 25px !important;
     height: 2px !important;
     background-color: #ffffff !important;
   }
@@ -3429,16 +3440,42 @@ select.form-control:focus {
 .projects-forest-cta {
   position: relative;
   z-index: 5 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
   background-color: #f6f2ea !important;
   background-image: url('assets/avenue-stone-seamless.jpg') !important;
   background-repeat: repeat-y !important;
   background-position: center top !important;
-  background-size: 100% auto !important;
+  background-size: cover !important;
   color: #162e20 !important;
-  padding: 85px 24px 100px 24px !important;
+  padding: clamp(65px, 8vw, 95px) 24px clamp(75px, 9vw, 105px) 24px !important;
   text-align: center !important;
   overflow: hidden !important;
   border-top: 1px solid rgba(197, 168, 128, 0.45) !important;
+}
+
+@media (min-width: 1200px) {
+  .home-closing-cta,
+  .projects-forest-cta {
+    background-size: 100% auto !important;
+  }
+}
+
+/* Seamless continuity when CTA is inside or follows a continuous stone environment */
+.about-continuous-environment .home-closing-cta,
+.services-continuous-environment .home-closing-cta,
+.about-page .home-closing-cta,
+.services-page .home-closing-cta {
+  background: transparent !important;
+  border-top: none !important;
+}
+
+.about-continuous-environment .home-closing-cta::before,
+.about-continuous-environment .home-closing-cta::after,
+.services-continuous-environment .home-closing-cta::before,
+.services-continuous-environment .home-closing-cta::after {
+  display: none !important;
 }
 
 /* Left architectural frame: sunlit limestone pillar with olive foliage & soft leaf shadows */
@@ -3453,7 +3490,7 @@ select.form-control:focus {
   background-image: url('assets/avenue-pillar-seamless.png');
   background-repeat: repeat-y;
   background-position: left center;
-  background-size: contain;
+  background-size: 100% auto;
   pointer-events: none;
   z-index: 1;
   opacity: 0.95;
@@ -3471,7 +3508,7 @@ select.form-control:focus {
   background-image: url('assets/avenue-slats-seamless.png');
   background-repeat: repeat-y;
   background-position: right center;
-  background-size: contain;
+  background-size: 100% auto;
   pointer-events: none;
   z-index: 1;
   opacity: 0.95;
@@ -3496,6 +3533,8 @@ select.form-control:focus {
 .home-closing-cta > .container,
 .projects-forest-cta > .container {
   max-width: 860px;
+  width: 100%;
+  box-sizing: border-box;
   margin: 0 auto;
   position: relative;
   z-index: 3;
@@ -3592,6 +3631,8 @@ select.form-control:focus {
   gap: 16px !important;
   flex-wrap: wrap !important;
   margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 700px !important;
 }
 
 /* Primary Button: Solid Dark-Green */
@@ -3665,6 +3706,97 @@ select.form-control:focus {
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 12px rgba(24, 44, 32, 0.12) !important;
 }
+
+/* Tablet Responsive for CTA */
+@media (max-width: 991px) {
+  .home-closing-cta::before,
+  .projects-forest-cta::before,
+  .home-closing-cta::after,
+  .projects-forest-cta::after {
+    width: clamp(55px, 8vw, 85px);
+    opacity: 0.55;
+  }
+}
+
+/* Mobile Responsive for CTA (eliminates side intrusions, ensures full visibility & tapability) */
+@media (max-width: 767px) {
+  .home-closing-cta,
+  .projects-forest-cta {
+    padding: 55px 16px 65px 16px !important;
+    background-size: cover !important;
+  }
+
+  .home-closing-cta::before,
+  .projects-forest-cta::before,
+  .home-closing-cta::after,
+  .projects-forest-cta::after {
+    display: none !important;
+  }
+
+  .home-closing-cta > .container,
+  .projects-forest-cta > .container {
+    padding: 0 10px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .home-closing-cta .heading-eyebrow,
+  .projects-forest-cta .heading-eyebrow {
+    font-size: 0.68rem !important;
+    letter-spacing: 2.5px !important;
+  }
+
+  .home-closing-cta h2,
+  .home-closing-cta .cta-bar-title,
+  .projects-forest-cta h2,
+  .projects-forest-cta .cta-bar-title {
+    font-size: clamp(1.38rem, 5.2vw, 1.85rem) !important;
+    letter-spacing: 1.5px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 12px !important;
+    padding: 0 4px !important;
+  }
+
+  .home-closing-cta p,
+  .home-closing-cta .cta-bar-desc,
+  .projects-forest-cta p,
+  .projects-forest-cta .cta-bar-desc {
+    font-size: 0.86rem !important;
+    line-height: 1.65 !important;
+    margin-bottom: 22px !important;
+    padding: 0 4px !important;
+  }
+
+  .home-closing-actions,
+  .cta-bar-actions-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    gap: 12px !important;
+    margin: 0 auto !important;
+  }
+
+  .home-closing-cta .cta-rectangle,
+  .home-closing-cta .cta-bar-btn,
+  .projects-forest-cta .cta-bar-btn,
+  .home-closing-cta .cta-rectangle:nth-child(2),
+  .home-closing-cta .cta-bar-btn-secondary,
+  .projects-forest-cta .cta-bar-btn-secondary {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    height: 48px !important;
+    padding: 0 16px !important;
+    font-size: 0.70rem !important;
+    letter-spacing: 1.5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+}
+
 
 /* C. About Us Editorial Layout (No repetitive boxed cards, no dashes) */
 .about-essay-section {
@@ -4979,24 +5111,29 @@ select.form-control:focus {
 }
 
 @media (max-width: 768px) {
-  /* 1. Full-Width Mobile Hero Container (Seamless Connection, No Outer Margins or Gaps) */
+  /* 1. Full-Screen Mobile Hero with Luxury Reception Architectural Background */
   #component,
   .home-hero-curated {
     position: relative;
     width: 100%;
     max-width: 100%;
+    min-height: 100svh;
+    height: 100svh;
     margin: 0;
     border-radius: 0;
     overflow: hidden;
-    min-height: 100svh;
-    background: linear-gradient(180deg, #857360 0%, #7d6b59 28%, #6d5b4a 65%, #594838 100%);
+    background-color: #725a3c;
+    background-image: url('assets/hero-mobile-reception-bg.jpg');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    gap: 16px;
+    justify-content: flex-end;
+    align-items: center;
     box-shadow: none;
-    padding: 0;
+    padding: 0 0 clamp(48px, 9.5svh, 85px) 0;
+    box-sizing: border-box;
   }
 
   /* 2. Position Header Over Hero across Full Width */
@@ -5009,7 +5146,7 @@ select.form-control:focus {
     width: 100%;
     max-width: 100%;
     transform: none;
-    padding: 16px 20px 10px 20px;
+    padding: 24px 20px 12px 20px !important;
     background: transparent !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
@@ -5025,28 +5162,30 @@ select.form-control:focus {
     left: 0;
     right: 0;
     width: 100%;
-    background: rgba(43, 35, 28, 0.95) !important;
+    background: rgba(35, 28, 22, 0.95) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
+    padding: 12px 20px !important;
     border-radius: 0;
   }
 
-  /* 3. Center Video Section */
+  /* 3. Hero Video Functionality with Architectural Background Fallback */
   .hero-video-wrapper {
-    position: relative;
+    display: block !important;
+    position: absolute;
+    inset: 0;
     width: 100%;
-    flex: 0 0 auto;
-    height: 52svh;
-    min-height: 310px;
-    max-height: 440px;
-    margin-top: 52px;
-    margin-bottom: 0px;
+    height: 100%;
+    z-index: 1;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%);
-    mask-image: linear-gradient(180deg, transparent 0%, black 12%, black 88%, transparent 100%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+
+  .hero-video-wrapper.is-playing,
+  .hero-video-wrapper.video-playing {
+    opacity: 1 !important;
   }
 
   .hero-video-bg {
@@ -5058,95 +5197,103 @@ select.form-control:focus {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    object-position: center 25%;
+    object-position: center bottom;
     pointer-events: none;
   }
 
   .hero-video-fade-overlay {
-    display: block;
+    display: block !important;
     position: absolute;
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(133, 115, 96, 0.45) 0%,
+      rgba(20, 16, 12, 0.45) 0%,
       transparent 22%,
-      transparent 78%,
-      rgba(100, 84, 69, 0.55) 100%
+      transparent 68%,
+      rgba(241, 234, 218, 0.82) 90%,
+      rgba(241, 234, 218, 0.94) 100%
     );
     pointer-events: none;
     z-index: 2;
   }
 
-  /* 4. Lower Content: Balanced Welcome Heading */
+  /* 4. Lower Content: Balanced Welcome Heading & Gold Divider */
   .hero-mobile-welcome {
-    display: block;
-    position: relative;
-    z-index: 10;
-    padding: 20px 20px 28px 20px;
-    text-align: center;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+    padding: 0 20px !important;
+    margin: 0 auto !important;
+    z-index: 10 !important;
+    box-sizing: border-box !important;
   }
 
   .hero-mobile-welcome-title {
-    font-family: 'Cormorant Garamond', 'Philosopher', serif;
-    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
-    font-weight: 500;
-    color: #ffffff;
-    letter-spacing: 1.2px;
-    line-height: 1.35;
-    margin: 0 auto;
-    max-width: 340px;
-    text-align: center;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    font-family: var(--font-display), 'Philosopher', 'Cormorant Garamond', Georgia, serif !important;
+    font-size: clamp(1.78rem, 6.7vw, 2.3rem) !important;
+    font-weight: 600 !important;
+    color: #1b2c23 !important; /* Deep botanical dark green / near-black matching reference */
+    letter-spacing: 0.3px !important;
+    line-height: 1.28 !important;
+    margin: 0 auto !important;
+    max-width: 340px !important;
+    text-align: center !important;
+    text-shadow: none !important;
+  }
+
+  /* Subtle Gold Diamond Divider Beneath Heading */
+  .hero-mobile-gold-divider {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 180px !important;
+    margin: 14px auto 0 auto !important;
+  }
+
+  .hero-mobile-gold-divider .hero-divider-line {
+    flex: 1 !important;
+    height: 1px !important;
+    background-color: #c5a059 !important;
+    opacity: 0.75 !important;
+  }
+
+  .hero-mobile-gold-divider .hero-divider-diamond {
+    font-size: 7px !important;
+    color: #c5a059 !important;
+    line-height: 1 !important;
+    display: inline-block !important;
+    transform: scale(0.9) !important;
+    opacity: 0.9 !important;
   }
 
   .hero-mobile-content {
     display: none !important;
   }
 
-  /* 5. Floating WhatsApp Button */
+  /* 5. Floating WhatsApp Button Removed on Mobile */
   .floating-whatsapp-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    width: 40px;
-    height: 40px;
-    background-color: #25D366;
-    border-radius: 50%;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
-    z-index: 25;
-    text-decoration: none;
-    transition: transform 0.25s ease;
-  }
-
-  .floating-whatsapp-btn:hover {
-    transform: scale(1.08);
+    display: none !important;
   }
 
   @media (max-width: 360px) {
     #component,
     .home-hero-curated {
-      gap: 10px;
-    }
-    .hero-video-wrapper {
-      height: 48svh;
-      min-height: 280px;
-      margin-top: 48px;
-    }
-    .hero-mobile-welcome {
-      padding: 14px 16px 20px 16px;
+      padding-bottom: 40px;
     }
     .hero-mobile-welcome-title {
-      font-size: 1.3rem;
-      letter-spacing: 0.8px;
+      font-size: 1.55rem !important;
+      max-width: 290px !important;
+    }
+    .hero-mobile-gold-divider {
+      width: 150px !important;
+      margin-top: 10px !important;
     }
     .floating-whatsapp-btn {
-      width: 34px;
-      height: 34px;
-      bottom: 12px;
-      right: 12px;
+      display: none !important;
     }
   }
   .home-projects-trio {
@@ -5183,42 +5330,141 @@ select.form-control:focus {
     text-align: center;
   }
 
-  /* Mobile Footer: Clean Center Alignment & Balanced Spacing */
-  footer,
-  .site-footer {
-    padding: 60px 20px 36px 20px;
-    text-align: center;
+  /* Mobile Footer: Exact Architectural Design Matching Reference Screenshot */
+  .projects-site-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 52px 20px 32px 20px !important;
+    background: #111311 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    margin-bottom: 40px;
-    text-align: center;
+
+  .projects-site-footer .footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 10px !important;
+    box-sizing: border-box !important;
   }
-  .footer-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+  .projects-site-footer .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 30px !important;
+    margin-bottom: 32px !important;
   }
-  .footer-logo img,
-  .footer-box .brand-logo-img {
-    margin: 0 auto 16px auto;
+
+  .projects-site-footer .footer-box {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
   }
-  .direction-box {
-    justify-content: center;
+
+  .projects-site-footer .footer-brand-box {
+    justify-content: center !important;
+    margin-bottom: 4px !important;
   }
-  .footer-social-list {
-    justify-content: center;
+
+  .projects-site-footer .footer-brand-box .footer-logo img {
+    max-height: 44px !important;
+    width: auto !important;
+    margin: 0 auto !important;
   }
-  .footer-copyright,
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    gap: 10px;
-    padding-top: 24px;
+
+  .projects-site-footer .footer-heading {
+    text-align: center !important;
+    color: #c5a880 !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    margin: 0 0 14px 0 !important;
+  }
+
+  .projects-site-footer .footer-nav-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 12px !important;
+    padding: 0 !important;
+    list-style: none !important;
+  }
+
+  .projects-site-footer .footer-nav-list a {
+    font-size: 0.85rem !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    text-decoration: none !important;
+    letter-spacing: 0.3px !important;
+    transition: color 0.25s ease !important;
+  }
+
+  .projects-site-footer .footer-nav-list a:hover {
+    color: #ffffff !important;
+  }
+
+  .projects-site-footer .footer-contact-rows {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .projects-site-footer .footer-contact-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 10px !important;
+    font-size: 0.82rem !important;
+    color: rgba(255, 255, 255, 0.88) !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+  }
+
+  .projects-site-footer .footer-contact-row a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  .projects-site-footer .footer-social-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    margin: 0 auto !important;
+  }
+
+  .projects-site-footer .social-link {
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    transition: all 0.25s ease !important;
+  }
+
+  .projects-site-footer .social-link:hover {
+    background: rgba(197, 168, 128, 0.35) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .projects-site-footer .footer-copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 24px !important;
+    text-align: center !important;
+    font-size: 0.72rem !important;
+    color: rgba(255, 255, 255, 0.52) !important;
+    line-height: 1.5 !important;
+    max-width: 330px !important;
+    margin: 0 auto !important;
   }
 }
 
@@ -6082,7 +6328,7 @@ select.form-control:focus {
    ========================================================= */
 
 .about-page {
-  background-color: #faf6f0;
+  background-color: #f6f2ea;
   color: #162a1e;
   overflow-x: hidden;
 }
@@ -6091,12 +6337,21 @@ select.form-control:focus {
 /* Continuous Architectural Environment */
 .about-continuous-environment {
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background-color: #f6f2ea;
   background-image: url('assets/avenue-stone-seamless.jpg');
   background-repeat: repeat-y;
   background-position: center top;
-  background-size: 100% auto;
+  background-size: cover;
   overflow: hidden;
+}
+
+@media (min-width: 1100px) {
+  .about-continuous-environment {
+    background-size: 100% auto;
+  }
 }
 
 /* Left architectural frame: sunlit limestone column with draping greenery */
@@ -6276,10 +6531,10 @@ select.form-control:focus {
 }
 
 .about-achievements-inner {
-  background: rgba(255, 252, 247, 0.60);
-  backdrop-filter: blur(8px);
-  border-top: 1px solid rgba(197, 168, 128, 0.45);
-  border-bottom: 1px solid rgba(197, 168, 128, 0.45);
+  background: rgba(255, 252, 247, 0.40);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid rgba(197, 168, 128, 0.32);
+  border-bottom: 1px solid rgba(197, 168, 128, 0.32);
   padding: 22px 28px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -6698,39 +6953,37 @@ select.form-control:focus {
 /* Page Backgrounds */
 .services-page,
 .contact-page {
-  background-color: #faf7f2;
+  background-color: #f6f2ea;
+  color: #162a1e;
+  overflow-x: hidden;
 }
 
 /* --------------------------------------------------------------------------
-   SERVICES & CONTACT EDITORIAL HERO
+   SERVICES CONTINUOUS ARCHITECTURAL ENVIRONMENT
+   Stone-textured background flows continuously across Hero, Disciplines, and Closing CTA
+   without white strips, gaps, or interruptions.
    -------------------------------------------------------------------------- */
-.services-editorial-hero,
-.contact-editorial-hero {
+.services-continuous-environment {
   position: relative;
-  background-color: #faf7f2;
-  padding: 155px 24px 44px 24px;
-  overflow: hidden;
-  text-align: center;
-}
-
-/* --------------------------------------------------------------------------
-   SERVICES & CONTACT CONTINUOUS STONE-TEXTURED SECTION
-   -------------------------------------------------------------------------- */
-.services-editorial-section,
-.contact-editorial-section {
-  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   background-color: #f6f2ea;
   background-image: url('assets/avenue-stone-seamless.jpg');
   background-repeat: repeat-y;
   background-position: center top;
-  background-size: 100% auto;
-  padding: 0 clamp(20px, 4vw, 50px) 70px clamp(20px, 4vw, 50px);
+  background-size: cover;
   overflow: hidden;
 }
 
+@media (min-width: 1100px) {
+  .services-continuous-environment {
+    background-size: 100% auto;
+  }
+}
+
 /* Left architectural frame: sunlit limestone pillar with olive foliage */
-.services-editorial-section::before,
-.contact-editorial-section::before {
+.services-continuous-environment::before {
   content: '';
   position: absolute;
   top: 0;
@@ -6747,7 +7000,96 @@ select.form-control:focus {
 }
 
 /* Right architectural frame: vertical timber architectural slats */
-.services-editorial-section::after,
+.services-continuous-environment::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: clamp(90px, 9.5vw, 150px);
+  background-image: url('assets/avenue-slats-seamless.png');
+  background-repeat: repeat-y;
+  background-position: right top;
+  background-size: auto 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+}
+
+@media (max-width: 960px) {
+  .services-continuous-environment::before,
+  .services-continuous-environment::after {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES & CONTACT EDITORIAL HERO
+   -------------------------------------------------------------------------- */
+.services-editorial-hero {
+  position: relative;
+  background: transparent !important;
+  padding: 155px 24px 35px 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.services-page .services-editorial-hero .projects-hero-backdrop {
+  display: none !important; /* Removes white gradient cutoff so stone texture flows uninterrupted */
+}
+
+.contact-editorial-hero {
+  position: relative;
+  background-color: #f6f2ea;
+  padding: 155px 24px 44px 24px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   SERVICES & CONTACT STONE-TEXTURED SECTION
+   -------------------------------------------------------------------------- */
+.services-editorial-section {
+  position: relative;
+  background: transparent !important;
+  padding: 0 clamp(20px, 4vw, 50px) 70px clamp(20px, 4vw, 50px);
+  overflow: hidden;
+}
+
+.services-editorial-section::before,
+.services-editorial-section::after {
+  display: none !important;
+}
+
+.contact-editorial-section {
+  position: relative;
+  background-color: #f6f2ea;
+  background-image: url('assets/avenue-stone-seamless.jpg');
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-size: 100% auto;
+  padding: 0 clamp(20px, 4vw, 50px) 70px clamp(20px, 4vw, 50px);
+  overflow: hidden;
+}
+
+/* Left architectural frame for Contact: sunlit limestone pillar with olive foliage */
+.contact-editorial-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: clamp(90px, 9.5vw, 150px);
+  background-image: url('assets/avenue-pillar-seamless.png');
+  background-repeat: repeat-y;
+  background-position: left top;
+  background-size: auto 100%;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.88;
+}
+
+/* Right architectural frame for Contact: vertical timber architectural slats */
 .contact-editorial-section::after {
   content: '';
   position: absolute;

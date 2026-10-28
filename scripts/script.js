@@ -281,16 +281,67 @@ function initLandmarksGallery() {
 /* 4b. Hero Background Video Controller (Deferred Start After Cloud Intro) */
 let heroVideoStarted = false;
 
+function markHeroVideoPlaying() {
+  const wrapper = document.querySelector('.hero-video-wrapper');
+  if (wrapper) {
+    wrapper.classList.add('is-playing', 'video-playing');
+  }
+}
+
 function startHeroVideo() {
   const video = document.querySelector('.hero-video-bg');
-  if (!video || heroVideoStarted) return;
-  heroVideoStarted = true;
+  if (!video) return;
+
+  // Mobile & desktop video attributes
   video.muted = true;
-  const playPromise = video.play();
-  if (playPromise !== undefined) {
-    playPromise.catch(() => {
-      // Browser autoplay policy handled safely
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  // Add listeners to mark playing as soon as frames render
+  if (!video.paused && video.currentTime > 0) {
+    markHeroVideoPlaying();
+  } else {
+    video.addEventListener('playing', markHeroVideoPlaying, { once: true });
+    video.addEventListener('timeupdate', function onFirstTime() {
+      if (video.currentTime > 0) {
+        markHeroVideoPlaying();
+        video.removeEventListener('timeupdate', onFirstTime);
+      }
     });
+  }
+
+  heroVideoStarted = true;
+
+  const attemptPlay = () => {
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        markHeroVideoPlaying();
+      }).catch((err) => {
+        console.warn('Hero video autoplay restriction encountered:', err);
+        // Graceful touch/click fallback if autoplay was restricted by mobile browser
+        const triggerPlayOnGesture = () => {
+          video.play().then(() => {
+            markHeroVideoPlaying();
+          }).catch(() => {});
+          window.removeEventListener('touchstart', triggerPlayOnGesture);
+          window.removeEventListener('click', triggerPlayOnGesture);
+        };
+        window.addEventListener('touchstart', triggerPlayOnGesture, { passive: true, once: true });
+        window.addEventListener('click', triggerPlayOnGesture, { passive: true, once: true });
+      });
+    }
+  };
+
+  if (video.readyState >= 2) {
+    attemptPlay();
+  } else {
+    attemptPlay();
+    video.addEventListener('canplay', attemptPlay, { once: true });
+    video.addEventListener('loadeddata', attemptPlay, { once: true });
   }
 }
 
@@ -298,6 +349,18 @@ function initHeroVideo() {
   const video = document.querySelector('.hero-video-bg');
   if (!video) return;
   video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  // Handle video load errors safely to retain the static architectural fallback background
+  video.addEventListener('error', (e) => {
+    console.warn('Hero video load issue, keeping fallback background:', e);
+    const wrapper = document.querySelector('.hero-video-wrapper');
+    if (wrapper) wrapper.classList.remove('is-playing', 'video-playing');
+  });
 
   // If intro has already been played in this browser session, start the hero video immediately
   if (sessionStorage.getItem('tabd_intro_played')) {

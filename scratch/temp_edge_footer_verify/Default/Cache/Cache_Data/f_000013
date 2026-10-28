@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>About Us | The Avenue Builders &amp; Developers (TABD)</title>
+  <meta name="description" content="Learn about The Avenue Builders and Developers, founded in 2019 in Nashik, our mission, vision, values, leadership team, and track record." />
+  
+  <!-- Website Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="about-page">
+
+  <!-- ==========================================================================
+       TOP NAVIGATION BAR
+       Logo on left | Empty space in middle | ENQUIRE NOW + Two-Line Hamburger on right
+       ========================================================================== -->
+  <div id="header" class="site-header">
+    <div class="menu-container">
+      <div class="menu-logo">
+        <a href="index.html" aria-label="The Avenue Builders &amp; Developers">
+          <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders &amp; Developers Logo" class="brand-logo-img" />
+        </a>
+      </div>
+
+      <div class="header-right-actions">
+        <a href="contact.html" class="btn-header-enquire">
+          <span class="btn-enquire-desktop">ENQUIRE NOW</span>
+          <span class="btn-contact-mobile">CONTACT</span>
+        </a>
+        <div class="menu-cta">
+          <a href="#" class="menu-cta-menu-hamburger" aria-label="Toggle Full Navigation Menu">
+            <span></span>
+            <span></span>
+            <span class="hamburger-bar-3"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="headerMenuSlide">
+    <div class="menu-split-grid">
+      <!-- Left Panel: Brand Logo + Numbered Nav Menu Items (01 - 05) -->
+      <div class="menu-panel-nav">
+        <div class="menu-nav-top">
+          <div class="menu-slide-brand">
+            <a href="index.html" aria-label="The Avenue Builders &amp; Developers">
+              <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders &amp; Developers" />
+            </a>
+          </div>
+          <span class="menu-nav-tagline">Architectural Landmarks &bull; Est. 2019</span>
+        </div>
+
+        <ul class="menu-list">
+          <li class="menu-item">
+            <a href="index.html" class="menu-link">
+              <span class="nav-idx">01</span>
+              <span class="nav-title">HOME</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="about.html" class="menu-link active">
+              <span class="nav-idx">02</span>
+              <span class="nav-title">ABOUT US</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="services.html" class="menu-link">
+              <span class="nav-idx">03</span>
+              <span class="nav-title">SERVICES</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="projects.html" class="menu-link">
+              <span class="nav-idx">04</span>
+              <span class="nav-title">PROJECTS</span>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="contact.html" class="menu-link">
+              <span class="nav-idx">05</span>
+              <span class="nav-title">CONTACT US</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="menu-mobile-enquire">
+          <a href="contact.html" class="btn-header-enquire">ENQUIRE NOW</a>
+        </div>
+
+        <div class="menu-panel-nav-footer">
+          <p class="menu-subtext">Nashik&rsquo;s Premier Real Estate Development Group</p>
+        </div>
+      </div>
+
+      <!-- Right Panel: Architectural Visual + Close Button + Action Pills + Official Contact Info -->
+      <div class="menu-panel-action">
+        <div class="menu-action-bg" style="background-image: url('assets/hero-commercial-avenue.jpg');"></div>
+        <div class="menu-action-overlay"></div>
+
+        <div class="menu-action-header">
+          <button type="button" class="menu-close-trigger" aria-label="Close Navigation Menu">
+            <span class="close-symbol">&times;</span>
+            <span class="close-label">CLOSE</span>
+          </button>
+        </div>
+
+        <div class="menu-action-body">
+          <div class="menu-action-pills">
+            <a href="projects.html" class="action-pill pill-primary">
+              <span class="pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </span>
+              <span>START WITH A FLOOR PLAN</span>
+            </a>
+            <a href="contact.html" class="action-pill pill-secondary">
+              <span class="pill-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span>TALK TO OUR TEAM</span>
+            </a>
+          </div>
+
+          <div class="menu-action-contact">
+            <span class="contact-eyebrow">CONTACT</span>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">PHONE:</span>
+              <span class="contact-meta-val"><a href="tel:9373632323">+91 9373632323</a> / <a href="tel:9175936496">+91 9175936496</a></span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">EMAIL:</span>
+              <span class="contact-meta-val"><a href="mailto:theavenuensk@gmail.com">theavenuensk@gmail.com</a></span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">HOURS:</span>
+              <span class="contact-meta-val">MON to SUN: 9:30 AM to 7:00 PM</span>
+            </div>
+            <div class="contact-meta-row">
+              <span class="contact-meta-label">ADDRESS:</span>
+              <span class="contact-meta-val">Corporate Headquarters, The Avenue, Govind Nagar, Nashik</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="overlaySlide"></div>
+
+  <!-- ONE CONTINUOUS LUXURY ARCHITECTURAL BROCHURE ENVIRONMENT -->
+  <main id="pageContent" class="about-continuous-environment">
+    
+    <!-- 1. HERO: ABOUT AVENUE GROUP -->
+    <section class="about-hero-section">
+      <div class="about-container">
+        <div class="about-hero-grid fadeUpAnimation">
+          <div class="about-hero-text">
+            <span class="about-hero-eyebrow">OUR LEGACY &amp; HERITAGE</span>
+            <h1 class="about-hero-title">ABOUT<br />AVENUE GROUP</h1>
+            <p class="about-hero-desc">Pioneering progressive real estate developments with enduring passion, uncompromising quality, and more than a decade’s combined experience in Nashik.</p>
+          </div>
+          <div class="about-hero-media">
+            <div class="about-hero-media-wrap">
+              <img src="assets/about-hero-building.jpg" alt="About Avenue Group - Architectural Masterpiece" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. OUR STORY -->
+    <section class="about-story-section">
+      <div class="about-container">
+        <div class="about-story-grid fadeUpAnimation">
+          <div class="about-story-col-left">
+            <span class="story-eyebrow">ESTABLISHED 2019</span>
+            <h2>OUR STORY</h2>
+            <div class="story-quote-wrap">
+              <blockquote class="story-lead-quote">
+                &ldquo;We deliver beyond residential properties. We deliver to our customers the joy of living, the serenity of space, and the place to interact with family.&rdquo;
+              </blockquote>
+            </div>
+          </div>
+
+          <div class="about-story-col-right">
+            <p>Avenue Builders &amp; Developers, established in <strong>2019</strong>, is a leading property development and construction company in North Maharashtra.</p>
+            <p>With more than a decade’s combined experience, the portfolio includes residential, commercial, industrial and agriculture developments &amp; delivered more than <strong>1.2 Million Sq. Ft</strong> till date.</p>
+            <p>The team <strong>focuses</strong> on meeting client’s need with innovative solutions, informed by international market trends.</p>
+            <p><strong>The company emphasizes on quality, customer satisfaction, and strong relationships built on trust.</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ACHIEVEMENTS (REFINED HORIZONTAL STATS BAR) -->
+    <section class="about-achievements-bar">
+      <div class="about-container">
+        <div class="about-achievements-inner fadeUpAnimation">
+          
+          <!-- Stat 1 -->
+          <div class="about-stat-item">
+            <div class="about-stat-icon-wrap" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/>
+                <path d="M6 12H4a2 2 0 0 0-2 2v8h4"/>
+                <path d="M18 9h2a2 2 0 0 1 2 2v11h-4"/>
+                <path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/>
+              </svg>
+            </div>
+            <div class="about-stat-text-wrap">
+              <span class="about-stat-number">1.2M+</span>
+              <span class="about-stat-label">Sq. Ft. Delivered</span>
+            </div>
+          </div>
+
+          <!-- Stat 2 -->
+          <div class="about-stat-item">
+            <div class="about-stat-icon-wrap" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+                <path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/>
+                <path d="M8 18h.01"/><path d="M12 18h.01"/><path d="M16 18h.01"/>
+              </svg>
+            </div>
+            <div class="about-stat-text-wrap">
+              <span class="about-stat-number">10+</span>
+              <span class="about-stat-label">Years of Experience</span>
+            </div>
+          </div>
+
+          <!-- Stat 3 -->
+          <div class="about-stat-item">
+            <div class="about-stat-icon-wrap" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="about-stat-text-wrap">
+              <span class="about-stat-number">500+</span>
+              <span class="about-stat-label">Happy Families</span>
+            </div>
+          </div>
+
+          <!-- Stat 4 -->
+          <div class="about-stat-item">
+            <div class="about-stat-icon-wrap" aria-hidden="true">
+              <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 22h16"/>
+                <path d="M9 22V7l3-4 3 4v15"/>
+                <path d="M4 22V12l5-3"/>
+                <path d="M20 22V12l-5-3"/>
+                <circle cx="12" cy="11" r="1"/>
+              </svg>
+            </div>
+            <div class="about-stat-text-wrap">
+              <span class="about-stat-number">15+</span>
+              <span class="about-stat-label">Landmark Projects</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EXECUTIVE LEADERSHIP -->
+    <section class="about-leadership-section">
+      <div class="about-container">
+        <div class="about-section-header-center fadeUpAnimation">
+          <span class="section-eyebrow">EXECUTIVE LEADERSHIP</span>
+          <h2>MEET THE DIRECTORS OF THE AVENUE</h2>
+          <p>Distinguished leaders driving strategic innovation, financial excellence, and distinctive architectural design.</p>
+        </div>
+
+        <div class="about-directors-deck fadeUpAnimation">
+          
+          <!-- Director 1 -->
+          <div class="director-dossier-card">
+            <div class="director-card-left">
+              <div class="director-photo-wrap">
+                <img src="assets/director-mukund-sabu.jpg" alt="Mr. Mukund R. Sabu" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" />
+                <div class="director-monogram" style="display:none;">MS</div>
+              </div>
+              <h3 class="director-name-plate">MR. MUKUND R. SABU</h3>
+              <span class="director-designation">DIRECTOR</span>
+              <span class="director-pill">MBA IN MARKETING</span>
+              <span class="director-pill">16+ YEARS EXPERIENCE</span>
+            </div>
+
+            <div class="director-card-right">
+              <h4 class="director-role-heading">KEY RESPONSIBILITIES &amp; EXPERIENCE</h4>
+              <ul class="director-responsibilities-list">
+                <li>16+ years of experience in Real Estate.</li>
+                <li>MBA in Marketing.</li>
+                <li>Leads Sales and Execution Department.</li>
+                <li>Ensures High-quality client service.</li>
+                <li>Focus on timely work delivery and on-budget projects.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Director 2 -->
+          <div class="director-dossier-card">
+            <div class="director-card-left">
+              <div class="director-photo-wrap">
+                <img src="assets/director-nayan-bhandari.jpg" alt="Mr. Nayan S. Bhandari" onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';" />
+                <div class="director-monogram" style="display:none;">NB</div>
+              </div>
+              <h3 class="director-name-plate">MR. NAYAN S. BHANDARI</h3>
+              <span class="director-designation">DIRECTOR</span>
+              <span class="director-pill">MBA IN FINANCE</span>
+              <span class="director-pill">23+ YEARS EXPERIENCE</span>
+            </div>
+
+            <div class="director-card-right">
+              <h4 class="director-role-heading">KEY RESPONSIBILITIES &amp; EXPERIENCE</h4>
+              <ul class="director-responsibilities-list">
+                <li>MBA in Finance.</li>
+                <li>Over 23 years of experience in finance and accounting.</li>
+                <li>Key roles include financial planning, budgeting, and <strong>STRATEGIC</strong> analysis.</li>
+                <li>His financial expertise contributes significantly to the company's strategic goals.</li>
+                <li>Empaneled in various banks as a Financial advisor.</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GUIDING PRINCIPLES (PURPOSE, ASPIRATION & PHILOSOPHY) -->
+    <section class="about-philosophy-editorial">
+      <div class="about-container">
+        <div class="about-section-header-center fadeUpAnimation">
+          <span class="section-eyebrow">GUIDING PRINCIPLES</span>
+          <h2>PURPOSE, ASPIRATION &amp; PHILOSOPHY</h2>
+          <p>To create exceptional living experiences by blending creativity, sustainability, and technology, while fostering a culture of trust, transparency and customer delight.</p>
+        </div>
+
+        <div class="about-principles-grid fadeUpAnimation">
+          <!-- Principle 1 -->
+          <div class="about-principle-col">
+            <div class="principle-header">
+              <span class="principle-num">01</span>
+              <h3 class="principle-title">MISSION</h3>
+            </div>
+            <p>We strive to build not just homes, but communities that celebrate life, diversity and the <strong>PURSUIT OF HAPPINESS</strong>.</p>
+          </div>
+
+          <!-- Principle 2 -->
+          <div class="about-principle-col">
+            <div class="principle-header">
+              <span class="principle-num">02</span>
+              <h3 class="principle-title">VISION</h3>
+            </div>
+            <p>Empowering lives by crafting spaces that inspire, innovates and ignite possibilities, where every individual can thrive and feel at Home.</p>
+          </div>
+
+          <!-- Principle 3 -->
+          <div class="about-principle-col">
+            <div class="principle-header">
+              <span class="principle-num">03</span>
+              <h3 class="principle-title">OUR VALUE</h3>
+            </div>
+            <p>We deliver beyond residential properties. We deliver to our customers the joy of living, the serenity of space, and the place to interact with their family, a place for them to rest and relax, a dream home with a beautiful environment.</p>
+          </div>
+        </div>
+      </div>
+    <!-- 7. FINAL CALL TO ACTION (LUXURY ARCHITECTURAL CLOSING) -->
+    <section class="home-closing-cta">
+      <div class="cta-bottom-plinth" aria-hidden="true"></div>
+      <div class="container fadeUpAnimation">
+        <span class="heading-eyebrow">LET'S BUILD YOUR TOMORROW</span>
+        <div class="cta-diamond-accent">
+          <span class="diamond-line"></span>
+          <span class="diamond-gem">&#9670;</span>
+          <span class="diamond-line"></span>
+        </div>
+        <h2>DISCUSS YOUR SPACE REQUIREMENTS</h2>
+        <p>Get in touch with our experts to find the perfect residential or commercial space for your needs.</p>
+        <div class="home-closing-actions">
+          <a href="contact.html" class="cta-rectangle">ENQUIRE NOW &rarr;</a>
+          <a href="projects.html" class="cta-rectangle">EXPLORE ALL PROJECTS &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LUXURY ARCHITECTURAL FOOTER -->
+  <footer class="site-footer projects-site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Logo Column -->
+        <div class="footer-box footer-brand-box">
+          <div class="footer-logo">
+            <a href="index.html" aria-label="The Avenue Builders &amp; Developers">
+              <img src="assets/The-Avenue-Builders-Developers-white-1024x425.png" alt="The Avenue Builders &amp; Developers" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 1: Quick Links -->
+        <div class="footer-box">
+          <h4 class="footer-heading">QUICK LINKS</h4>
+          <ul class="footer-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Our Projects</a></li>
+            <li><a href="projects.html#layouts">Completed Layouts</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 2: Our Projects -->
+        <div class="footer-box">
+          <h4 class="footer-heading">OUR PROJECTS</h4>
+          <ul class="footer-nav-list">
+            <li><a href="projects.html#ongoing">Ongoing Projects</a></li>
+            <li><a href="projects.html#completed">Our Legacy</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Connect With Us -->
+        <div class="footer-box footer-connect-box">
+          <h4 class="footer-heading">CONNECT WITH US</h4>
+          <div class="footer-contact-rows">
+            <div class="footer-contact-row">
+              <svg class="footer-icon" width="13" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Govind Nagar, Nashik, Maharashtra 422009</span>
+            </div>
+            <div class="footer-contact-row">
+              <svg class="footer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><a href="tel:912532970707">+91 253 297 0707</a></span>
+            </div>
+            <div class="footer-contact-row">
+              <svg class="footer-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span><a href="mailto:info@theavenue.co.in">info@theavenue.co.in</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: Follow Us -->
+        <div class="footer-box footer-follow-box">
+          <h4 class="footer-heading">FOLLOW US</h4>
+          <div class="footer-social-row">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.43zM9.75 15.02V8.5l5.75 3.26-5.75 3.26z"/></svg></a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-link"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1-2 2 2 2 0 0 1 2-2z"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 The Avenue Builders and Developers. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
