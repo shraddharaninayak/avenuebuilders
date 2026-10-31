@@ -1,0 +1,95 @@
+{
+   "checksum": "41b8d3f5f3abe16ae1753e1656285e1b",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13437409829838606",
+            "date_last_used": "0",
+            "guid": "5d0c5661-c5c8-4408-a011-df3b24ad5620",
+            "id": "10",
+            "name": "",
+            "show_icon": false,
+            "source": "sync",
+            "type": "url",
+            "url": "http://127.0.0.1:5500/",
+            "visit_count": 1
+         }, {
+            "date_added": "13437899987133537",
+            "date_last_used": "0",
+            "guid": "f42a2b3c-5ceb-424d-89a8-fb68eea8e401",
+            "id": "9",
+            "name": "Amazon.co.uk - Online Shopping",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "http://www.amazon.com/gp/ubp/oneButton/config/redirectHome?tagbase=hpbk-ubpl&ref=aagateway-edgebook-hp",
+            "visit_count": 0
+         }, {
+            "date_added": "13437899987133220",
+            "date_last_used": "0",
+            "guid": "85de6f0a-52e0-46ca-9103-d85d20cf4824",
+            "id": "8",
+            "name": "Agoda",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://js.redirect.hp.com/jumpstation?bd=agoda&c=232&locale=*&pf=*&tp=edge&TYPE=3",
+            "visit_count": 0
+         }, {
+            "date_added": "13437899987132398",
+            "date_last_used": "0",
+            "guid": "d90f22ed-5322-41e4-ad3c-2a36d1d1b8d2",
+            "id": "7",
+            "name": "McAfee Security",
+            "show_icon": false,
+            "source": "oem_preload",
+            "type": "url",
+            "url": "https://www.mcafee.com/consumer/v/browserfav/hp.html",
+            "visit_count": 0
+         } ],
+         "date_added": "13437899986057963",
+         "date_last_used": "0",
+         "date_modified": "13437899987133537",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Favorites bar",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "other": {
+         "children": [  ],
+         "date_added": "13437899986057963",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13437899986057963",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile favorites",
+         "source": "unknown",
+         "type": "folder"
+      },
+      "workspaces_v2": {
+         "children": [  ],
+         "date_added": "13437899986057963",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "75aa6670-344f-549d-b742-660f029506ab",
+         "id": "5",
+         "name": "Workspaces",
+         "source": "unknown",
+         "type": "folder"
+      }
+   },
+   "sync_metadata": "CjEKDgiIgQISCHMSi5ChAQAAEgAqGHFOUHNvMU9VWXlJVXBBVzRsNWtSSnc9PUgDoAYHEowBCAUShwEKHHdSQnJaTCs2UEE5YXZLZ2pOUDdKWERMY2Z2cz0SJDBlY2JmOTdlLTI2ODUtNTcwMy05ZDE3LWJiNTE0MjA1YWI2NhgAIAAoADCjk6ybpDM48JSsm6QzQPCUrJukM0ocbm14NjVzUUR2eEk4VGdFZXYrQStudHRvU240PWUAAAAAwj4CYAASjAEIAxKHAQocbmpnRHU4OGVDcnZYcDg2cEQ3ZkhHY3FGcDg4PRIkNGJjY2YxNzEtMGEwNi01NTEyLWFkNjgtMmE2OWZlOTZhNzhmGAAgACgAMP+yksfYMTi/vJLH2DFAv7ySx9gxShx5ek5CMDFjbjU0QTdjUlUwdVQrL1BnbVR0VW89ZQAAAADCPgJgABKsAQgKEqcBChwrU0lobHlLNys4NHJZS2JwMVN1VmlCVGJ2WjA9EiQ1ZDBjNTY2MS1jNWM4LTQ0MDgtYTAxMS1kZjNiMjRhZDU2MjAYACAAKAAwjYKXg5k0OKaSz5qXNECmks+alzRKHEk0bnd5amxDS21aY0EvREFubUQ5M3hXZnNiTT1aHiIcZXQ1UElTb3hlSXNkVUNsNERENHE5ZEllNDJVPWWI7atrwj4CYAUSjAEIARKHAQoceXhKLzZmdmtlY3I3a3A1RVF6QjR0V0xwZGJFPRIkNmM5MTIwZTMtYmQ3OC01Y2UxLTlmNGEtMGU4Y2FlOTA0MmQ2GAAgACgAMPmyksfYMTjqu5LH2DFA6ruSx9gxShxhUkNXTGdoRjliNUlucUtJRHZ1Si9qdlFrRmM9ZQAAAADCPgJgABKMAQgCEocBChxZY1NUb252RVNQd3FDczRMMmNyVmh2NjhMOTg9EiRkYjI5YWQ1YS01ZTExLTU4MzEtYTEyNy0wNDI0NzIzN2RmMzYYACAAKAAw+rKSx9gxOIa8ksfYMUCGvJLH2DFKHG9QVmtod0JSYlY2NUtDV1IyK0lPTkhXb091OD1lAAAAAMI+AmAAMAA4AA==",
+   "version": 1
+}

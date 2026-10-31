@@ -1,0 +1,21 @@
+2026-10-31 05:59:46.659: [INFO] CurrentProfilePath: d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_commercial\Default
+2026-10-31 05:59:46.659: [INFO] Profiles total count: 1
+2026-10-31 05:59:46.660: [INFO] Profile: name=Profile 1 path=d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_commercial\Default lastActive=null
+2026-10-31 05:59:46.660: [INFO] LastUsedProfileDir: d:\INTERNSHIPS\SOCIAL MEDIA MANANGMENT[SKILLNEX]\WEBSITES\AvenueBuilders\scratch\temp_edge_commercial\Default
+2026-10-31 05:59:46.660: [INFO] VisibilityChanged: 0
+2026-10-31 05:59:47.133: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-31 05:59:47.133: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-31 05:59:47.133: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-31 05:59:47.133: [INFO] OnDoneLoading sync enabled: 0
+2026-10-31 05:59:47.133: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-31 05:59:47.133: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-31 05:59:47.133: [INFO] BookmarksSnapshot Startup total=3 bar=3 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-31 05:59:47.144: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-31 06:00:41.238: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-31 06:00:41.275: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-31 06:00:41.317: [INFO] Primary account changed.
+2026-10-31 06:00:41.317: [INFO] OnPrimaryAccountChanged PrimaryAccountChangeEvent::Type::kSet
+2026-10-31 06:00:41.347: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-31 06:00:41.428: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 3
+2026-10-31 06:01:22.406: [INFO] BookmarkNodeAdded, ABU: 0
+2026-10-31 06:02:35.038: [INFO] Sync initialization duration: 113091ms

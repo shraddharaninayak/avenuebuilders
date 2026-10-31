@@ -4835,7 +4835,7 @@ select.form-control:focus {
 #aura .delivered-img-wrap img { object-position: center 4%; }
 #bliss .delivered-img-wrap img { object-position: center 5%; }
 #flora .delivered-img-wrap img { object-position: center 6%; }
-#commercial .delivered-img-wrap img { object-position: center center; }
+#commercial .delivered-img-wrap img { object-position: center top; }
 #nx .delivered-img-wrap img { object-position: center 8%; }
 #grandeur .delivered-img-wrap img { object-position: center 10%; }
 #casa .delivered-img-wrap img { object-position: center 6%; }
