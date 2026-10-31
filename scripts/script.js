@@ -563,11 +563,14 @@ function initProjectFiltering() {
 
   if (!filterBtns.length || !projectCards.length) return;
 
+  const validCategories = Array.from(filterBtns).map(btn => btn.getAttribute('data-filter')).filter(Boolean);
+
   function applyFilter(filterValue) {
     projectCards.forEach(card => {
       const category = card.getAttribute('data-category');
       if (filterValue === 'all' || (category && category.includes(filterValue))) {
         card.style.display = '';
+        card.classList.add('active');
       } else {
         card.style.display = 'none';
       }
@@ -580,23 +583,137 @@ function initProjectFiltering() {
         group.style.display = 'none';
       } else {
         group.style.display = '';
+        group.querySelectorAll('.fadeUpAnimation').forEach(el => el.classList.add('active'));
       }
     });
   }
 
+  function resolveCategory() {
+    const rawHash = (window.location.hash || '').replace(/^#/, '').toLowerCase().trim();
+
+    // 1. Direct match with a filter category (e.g. #completed, #ongoing, #layouts)
+    if (rawHash && validCategories.includes(rawHash)) {
+      return { category: rawHash, targetId: null };
+    }
+
+    // 2. Hash might be a specific project card ID (e.g. #urbania, #milestone, #aaryana, #aura, etc.)
+    if (rawHash) {
+      const targetCard = document.getElementById(rawHash);
+      if (targetCard) {
+        const catAttr = (targetCard.getAttribute('data-category') || '').toLowerCase();
+        const matched = validCategories.find(cat => catAttr.includes(cat));
+        if (matched) {
+          return { category: matched, targetId: rawHash };
+        }
+        const parentGroup = targetCard.closest('.projects-editorial-group');
+        if (parentGroup && validCategories.includes(parentGroup.id)) {
+          return { category: parentGroup.id, targetId: rawHash };
+        }
+      }
+    }
+
+    // 3. History state
+    if (history.state && history.state.category && validCategories.includes(history.state.category)) {
+      return { category: history.state.category, targetId: null };
+    }
+
+    // 4. Session storage (preserves category across back/forward and navigation)
+    try {
+      const savedCategory = sessionStorage.getItem('tabd_active_project_category');
+      if (savedCategory && validCategories.includes(savedCategory)) {
+        return { category: savedCategory, targetId: null };
+      }
+    } catch (e) {}
+
+    // 5. Default category: button with .active in HTML or first button
+    const defaultActiveBtn = document.querySelector('.filter-btn.active') || filterBtns[0];
+    const defaultCategory = defaultActiveBtn ? defaultActiveBtn.getAttribute('data-filter') : validCategories[0];
+    return { category: defaultCategory, targetId: null };
+  }
+
+  function setActiveCategory(category, updateHistory = false, targetId = null) {
+    if (!validCategories.includes(category)) return;
+
+    // Update active state on filter buttons
+    filterBtns.forEach(btn => {
+      if (btn.getAttribute('data-filter') === category) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+
+    // Apply card and group filtering
+    applyFilter(category);
+
+    // Save in sessionStorage
+    try {
+      sessionStorage.setItem('tabd_active_project_category', category);
+    } catch (e) {}
+
+    // Push new history state and update hash if this was a user interaction
+    if (updateHistory) {
+      const targetHash = '#' + category;
+      if (window.location.hash !== targetHash) {
+        history.pushState({ category: category }, '', targetHash);
+      }
+    }
+
+    // If navigated via specific card hash (like #urbania), scroll to card smoothly
+    if (targetId) {
+      setTimeout(() => {
+        const el = document.getElementById(targetId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 100);
+    }
+  }
+
+  // Filter button clicks
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      applyFilter(btn.getAttribute('data-filter'));
+      const filterValue = btn.getAttribute('data-filter');
+      setActiveCategory(filterValue, true);
     });
   });
 
-  // Apply default active filter on page load (OUR LEGACY)
-  const defaultActiveBtn = document.querySelector('.filter-btn.active') || filterBtns[0];
-  if (defaultActiveBtn) {
-    applyFilter(defaultActiveBtn.getAttribute('data-filter'));
+  // Remember active category when clicking any project link or card
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const activeBtn = document.querySelector('.filter-btn.active');
+      if (activeBtn) {
+        const cat = activeBtn.getAttribute('data-filter');
+        try {
+          sessionStorage.setItem('tabd_active_project_category', cat);
+        } catch (e) {}
+      }
+    });
+  });
+
+  // Listen to browser Back and Forward navigation
+  window.addEventListener('popstate', () => {
+    const { category, targetId } = resolveCategory();
+    setActiveCategory(category, false, targetId);
+  });
+
+  window.addEventListener('hashchange', () => {
+    const { category, targetId } = resolveCategory();
+    setActiveCategory(category, false, targetId);
+  });
+
+  // Handle bfcache page restoration (common on mobile and desktop Back button)
+  window.addEventListener('pageshow', () => {
+    const { category, targetId } = resolveCategory();
+    setActiveCategory(category, false, targetId);
+  });
+
+  // Initial category resolution on page load
+  const initial = resolveCategory();
+  if (!window.location.hash && initial.category) {
+    history.replaceState({ category: initial.category }, '', '#' + initial.category);
   }
+  setActiveCategory(initial.category, false, initial.targetId);
 }
 
 /* 7. Contact Form Validation and Simulation */

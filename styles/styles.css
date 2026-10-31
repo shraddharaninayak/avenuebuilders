@@ -2758,8 +2758,8 @@ select.form-control:focus {
   font-size: clamp(0.66rem, 0.75vw, 0.74rem);
   letter-spacing: 3.5px;
   text-transform: uppercase;
-  font-weight: 500;
-  color: #8e8476;
+  font-weight: 600;
+  color: #554e45;
   margin: 0;
 }
 
@@ -3319,10 +3319,11 @@ select.form-control:focus {
   .landmarks-backdrop::after {
     background: linear-gradient(
       180deg,
-      rgba(247, 243, 236, 0.75) 0%,
-      rgba(247, 243, 236, 0.45) 30%,
-      rgba(247, 243, 236, 0.15) 65%,
-      rgba(238, 230, 218, 0.22) 100%
+      rgba(247, 243, 236, 0.96) 0%,
+      rgba(247, 243, 236, 0.90) 180px,
+      rgba(247, 243, 236, 0.70) 320px,
+      rgba(247, 243, 236, 0.35) 65%,
+      rgba(238, 230, 218, 0.5) 100%
     );
   }
   .landmarks-editorial-section .landmarks-container {
@@ -3396,13 +3397,60 @@ select.form-control:focus {
   .landmarks-editorial-section .landmarks-container {
     padding: 0 16px;
   }
+  .landmarks-top-bar {
+    padding: 8px 12px 14px 12px;
+    background: radial-gradient(ellipse 90% 80% at 50% 50%, rgba(247, 243, 236, 0.75) 0%, rgba(247, 243, 236, 0) 100%);
+    margin-bottom: 22px;
+  }
+  .landmarks-header-line {
+    width: 2px;
+    height: 28px;
+    background-color: #b8935c;
+    margin-bottom: 10px;
+  }
+  .landmarks-eyebrow {
+    color: #8c6a38;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    margin-bottom: 6px;
+    text-shadow: 0 1px 2px rgba(247, 243, 236, 0.9);
+  }
   .landmarks-title {
-    font-size: 1.85rem;
-    letter-spacing: 3px;
+    font-size: clamp(1.85rem, 6.8vw, 2.25rem);
+    letter-spacing: 3.2px;
+    font-weight: 600;
+    color: #122216;
+    line-height: 1.15;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 3px rgba(247, 243, 236, 0.9);
   }
   .landmarks-subtitle {
-    font-size: 0.68rem;
+    font-size: 0.72rem;
     letter-spacing: 2px;
+    font-weight: 600;
+    color: #27382c;
+    line-height: 1.45;
+    text-shadow: 0 1px 2px rgba(247, 243, 236, 0.95);
+  }
+  .landmarks-top-editorial {
+    max-width: 320px;
+    margin: 12px auto 0 auto;
+    text-align: center;
+  }
+  .top-editorial-text {
+    font-size: 0.84rem;
+    line-height: 1.55;
+    color: #222f26;
+    font-weight: 500;
+    margin: 0 auto 10px auto;
+    text-shadow: 0 1px 2px rgba(247, 243, 236, 0.95);
+  }
+  .top-editorial-divider {
+    width: 44px;
+    height: 1.5px;
+    background-color: #b8935c;
+    margin: 8px auto 0 auto;
   }
   .landmarks-editorial-section .landmark-slide-item {
     flex: 0 0 84vw !important;
